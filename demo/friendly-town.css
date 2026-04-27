@@ -1,0 +1,459 @@
+:root {
+  --ink: #2f2417;
+  --ink-soft: #5a3d24;
+  --forest: #243f2b;
+  --green: #2f6b3f;
+  --parchment: #f2e1b8;
+  --paper: #f8edcf;
+  --paper-deep: #dec58e;
+  --walnut: #6f4728;
+  --wood: #3f2718;
+  --brass: #c9962e;
+  --blue: #49759a;
+  --burgundy: #8b3f3b;
+  --shadow: rgba(37, 24, 12, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--forest);
+  background-image:
+    linear-gradient(rgba(36, 63, 43, 0.86), rgba(36, 63, 43, 0.9)),
+    url("../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
+  background-size: auto, 480px 480px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 66px;
+  padding: 10px clamp(16px, 4vw, 44px);
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(36, 63, 43, 0.92), rgba(36, 63, 43, 0.92)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+  background-size: auto, 420px 420px;
+  border-bottom: 3px solid var(--brass);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 22px);
+  font-size: 14px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: color-mix(in srgb, var(--paper) 88%, white 12%);
+  border-bottom: 1px solid transparent;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  border-bottom-color: var(--brass);
+  outline: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 86svh;
+  display: grid;
+  align-items: end;
+  padding: clamp(88px, 12vh, 140px) clamp(20px, 7vw, 96px) clamp(46px, 8vh, 72px);
+  overflow: hidden;
+  color: var(--paper);
+  background-image:
+    linear-gradient(90deg, rgba(28, 39, 23, 0.78) 0%, rgba(28, 39, 23, 0.45) 44%, rgba(28, 39, 23, 0.18) 100%),
+    linear-gradient(0deg, rgba(28, 39, 23, 0.72) 0%, rgba(28, 39, 23, 0.04) 40%),
+    url("../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px solid var(--brass);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34px;
+  background-image: url("../src/assets/orchard-vale/ornaments/divider-leaf-horizontal-gold.svg");
+  background-repeat: repeat-x;
+  background-size: 220px 24px;
+  background-position: bottom center;
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.kicker {
+  margin: 0 0 14px;
+  font-size: 17px;
+  color: var(--brass);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(54px, 10vw, 128px);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.dek {
+  max-width: 680px;
+  margin: 22px 0 0;
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.35;
+}
+
+.courier {
+  position: absolute;
+  right: clamp(18px, 7vw, 92px);
+  bottom: 42px;
+  width: 128px;
+  height: 128px;
+  background-image: url("../src/assets/orchard-vale/motion/spritesheets/motion-courier-delivery-spritesheet.png");
+  background-size: 1024px 128px;
+  animation: courier-play 1.2s steps(8) infinite;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.28));
+}
+
+@keyframes courier-play {
+  to {
+    background-position: -1024px 0;
+  }
+}
+
+.article-shell {
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.88), rgba(248, 237, 207, 0.9)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+  background-size: auto, 520px 520px;
+  padding: clamp(28px, 6vw, 74px) clamp(16px, 5vw, 72px) clamp(40px, 8vw, 90px);
+}
+
+.article-grid {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 66px);
+  align-items: start;
+}
+
+.article-rail {
+  position: sticky;
+  top: 92px;
+  padding: 22px;
+  background:
+    linear-gradient(rgba(242, 225, 184, 0.92), rgba(242, 225, 184, 0.92)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+  background-size: auto, 420px 420px;
+  border: 3px solid var(--walnut);
+  box-shadow: inset 0 0 0 4px var(--paper-deep), 0 10px 24px var(--shadow);
+}
+
+.rail-crest {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+.article-rail h2,
+.article-body h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: var(--forest);
+}
+
+.article-rail h2 {
+  text-align: center;
+  font-size: 27px;
+}
+
+.article-rail dl {
+  margin: 20px 0 0;
+  display: grid;
+  gap: 16px;
+}
+
+.article-rail dt {
+  color: var(--burgundy);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.article-rail dd {
+  margin: 4px 0 0;
+  line-height: 1.35;
+}
+
+.article-body {
+  max-width: 780px;
+}
+
+.article-body p {
+  font-size: 19px;
+  line-height: 1.68;
+  margin: 0 0 22px;
+}
+
+.article-body .lede {
+  font-size: clamp(22px, 2.6vw, 31px);
+  line-height: 1.42;
+  color: var(--forest);
+}
+
+.article-body h2 {
+  margin-top: clamp(34px, 7vw, 72px);
+  margin-bottom: 18px;
+}
+
+.wide-figure {
+  margin: clamp(30px, 6vw, 58px) 0;
+  border: 3px solid var(--walnut);
+  background: var(--paper);
+  box-shadow: 0 12px 26px var(--shadow);
+}
+
+.wide-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.wide-figure figcaption {
+  padding: 12px 16px 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.customs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0 6px;
+}
+
+.customs section {
+  min-width: 0;
+  padding: 18px;
+  background: color-mix(in srgb, var(--paper) 86%, white 14%);
+  border: 2px solid color-mix(in srgb, var(--walnut) 74%, var(--brass) 26%);
+}
+
+.customs img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.customs h3,
+.visit-panel h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.15;
+  color: var(--forest);
+}
+
+.customs p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.voices {
+  display: grid;
+  gap: 16px;
+  margin: 28px 0 6px;
+}
+
+.voices figure {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 16px;
+  background: rgba(242, 225, 184, 0.74);
+  border-left: 5px solid var(--blue);
+}
+
+.voices img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.voices blockquote {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--forest);
+}
+
+.voices figcaption {
+  grid-column: 2;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.visit-panel {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  margin-top: 32px;
+  padding: clamp(18px, 4vw, 28px);
+  background:
+    linear-gradient(rgba(47, 107, 63, 0.93), rgba(47, 107, 63, 0.9)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+  background-size: auto, 420px 420px;
+  color: var(--paper);
+  border: 3px solid var(--wood);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.visit-panel img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.visit-panel h3 {
+  color: var(--paper);
+}
+
+.visit-panel p {
+  color: color-mix(in srgb, var(--paper) 92%, white 8%);
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--brass);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: 78svh;
+    padding-top: 76px;
+  }
+
+  .courier {
+    width: 96px;
+    height: 96px;
+    background-size: 768px 96px;
+    right: 12px;
+    bottom: 26px;
+  }
+
+  @keyframes courier-play {
+    to {
+      background-position: -768px 0;
+    }
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-rail {
+    position: static;
+  }
+
+  .customs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .voices figure,
+  .visit-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .voices figcaption {
+    grid-column: auto;
+  }
+
+  .visit-panel img {
+    width: 148px;
+    height: 148px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .courier {
+    animation: none;
+    background-image: url("../src/assets/orchard-vale/motion/static/motion-courier-delivery-static.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

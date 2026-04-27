@@ -1,0 +1,31 @@
+/*
+  Orchard Vale theme foundation.
+  Tokens and base styles will land here before the demo page is built.
+*/
+
+:root {
+  --ov-ink: #1b1208;
+  --ov-ink-soft: #3b2714;
+  --ov-parchment: #f4e6c5;
+  --ov-parchment-warm: #ead2a3;
+  --ov-parchment-aged: #c9a866;
+  --ov-wood-dark: #181006;
+  --ov-wood: #2b1a0b;
+  --ov-wood-light: #563316;
+  --ov-brass: #c7942f;
+  --ov-brass-light: #e0bd62;
+  --ov-brass-dark: #6c4215;
+  --ov-green-black: #102812;
+  --ov-green: #204f1d;
+  --ov-green-light: #69a646;
+  --ov-blue: #245f99;
+  --ov-red: #b12d22;
+  --ov-orange: #d97a24;
+  --ov-gold: #d7a927;
+  --ov-purple: #7d4fa6;
+  --ov-display: "IM Fell English SC", "Cinzel Decorative", Georgia, serif;
+  --ov-serif: "IM Fell English", Georgia, serif;
+  --ov-ui: "Arial Narrow", "Trebuchet MS", Arial, sans-serif;
+  --ov-mono: "IBM Plex Mono", Consolas, monospace;
+}
+

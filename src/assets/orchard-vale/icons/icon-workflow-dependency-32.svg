@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Dependency</title>
+  <desc id="desc">Orchard Vale workflow icon: Dependency.</desc>
+  <g><path d="M24 39 L18 45 C14 49 8 43 12 39 L20 31 C24 27 30 31 27 35" fill="none" stroke="#49759a" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M40 25 L46 19 C50 15 56 21 52 25 L44 33 C40 37 34 33 37 29" fill="none" stroke="#49759a" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="27" y1="37" x2="37" y2="27" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

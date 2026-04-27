@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="584" viewBox="0 0 1024 584" fill="none">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1d178"/>
+      <stop offset="0.42" stop-color="#c89531"/>
+      <stop offset="0.72" stop-color="#7a4b18"/>
+      <stop offset="1" stop-color="#e0b95b"/>
+    </linearGradient>
+    <linearGradient id="darkWood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b3515"/>
+      <stop offset="0.45" stop-color="#2b190b"/>
+      <stop offset="1" stop-color="#100904"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8cad4e"/>
+      <stop offset="0.55" stop-color="#3f7629"/>
+      <stop offset="1" stop-color="#183b16"/>
+    </linearGradient>
+    <filter id="inkShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="0.7" flood-color="#160d05" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <g filter="url(#inkShadow)">
+    <rect x="12" y="12" width="1000" height="560" rx="18" fill="none" stroke="#2a1708" stroke-width="10"/>
+    <rect x="24" y="24" width="976" height="536" rx="12" fill="none" stroke="url(#brass)" stroke-width="5"/>
+    <rect x="42" y="42" width="940" height="500" rx="8" fill="none" stroke="#6d4215" stroke-width="3"/>
+    <path d="M34 76 C64 35 103 30 158 34 M866 34 C922 30 962 35 990 76 M34 508 C64 549 103 554 158 550 M866 550 C922 554 962 549 990 508" stroke="#c89531" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="60" cy="60" r="10" fill="url(#brass)" stroke="#2a1708" stroke-width="3"/>
+    <circle cx="964" cy="60" r="10" fill="url(#brass)" stroke="#2a1708" stroke-width="3"/>
+    <circle cx="60" cy="524" r="10" fill="url(#brass)" stroke="#2a1708" stroke-width="3"/>
+    <circle cx="964" cy="524" r="10" fill="url(#brass)" stroke="#2a1708" stroke-width="3"/>
+  </g>
+</svg>

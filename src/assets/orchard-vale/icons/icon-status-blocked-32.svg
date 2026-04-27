@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Blocked</title>
+  <desc id="desc">Orchard Vale status icon: Blocked.</desc>
+  <g><circle cx="32" cy="32" r="24" fill="#f0d0c5" stroke="#a94436" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="18" y1="46" x2="46" y2="18" stroke="#a94436" stroke-width="6" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

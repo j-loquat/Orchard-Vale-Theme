@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Package</title>
+  <desc id="desc">Orchard Vale infrastructure icon: Package.</desc>
+  <g><path d="M15 24 L32 14 L49 24 V47 L32 57 L15 47 Z" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M15 24 L32 34 L49 24 M32 34 V57" fill="none" stroke="#6f4728" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M24 19 L41 29" fill="none" stroke="#c9962e" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 92" width="64" height="92" role="img" aria-labelledby="title desc">
+  <title id="title">Timeline Now Marker Banner</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Timeline Now Marker Banner.</desc>
+  <g><line x1="32" y1="16" x2="32" y2="86" stroke="#6f4728" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M18 12 H48 L42 28 H18 Z" fill="#2f6b3f" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="86" r="3" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc">
+  <title id="title">Small Stat Medallion</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Small Stat Medallion.</desc>
+  <g><circle cx="32" cy="32" r="25" fill="#f8edcf" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="32" r="18" fill="#f2e1b8" stroke="#c9962e" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M22 40 C29 27 36 27 43 40" fill="none" stroke="#2f6b3f" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scholar's Hollow Research Report Workbench</title>
+  <link rel="stylesheet" href="scholars-hollow-workbench.css">
+</head>
+<body>
+  <main class="workbench-shell" aria-label="Scholar's Hollow research report workbench">
+    <header class="top-rail">
+      <section class="title-scroll" aria-labelledby="page-title">
+        <img class="crest" src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.png" alt="">
+        <div>
+          <h1 id="page-title">Scholar's Hollow</h1>
+          <p>Research Report Workbench</p>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Report metrics">
+        <article><span>Words</span><strong>3,842</strong><small>+412 today</small></article>
+        <article><span>Sources</span><strong>28</strong><small>3 new</small></article>
+        <article><span>Citations</span><strong>56</strong><small>2 verified</small></article>
+        <article><span>Claims</span><strong>14</strong><small>12 supported</small></article>
+        <article><span>Readability</span><strong>Good</strong><small>Grade 9.2</small></article>
+      </section>
+
+      <section class="top-controls" aria-label="Workbench controls">
+        <label>Filters <select><option>All Evidence</option></select></label>
+        <label>Time Range <select><option>All Time</option></select></label>
+        <div class="collaborators" aria-label="Collaborators">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox collaborator">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl collaborator">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger collaborator">
+          <span>+2</span>
+        </div>
+        <div class="weather">
+          <img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="">
+          <strong>10:42 AM</strong>
+          <span>Orchard Vale, 18C</span>
+        </div>
+      </section>
+    </header>
+
+    <aside class="left-rail" aria-label="Study library">
+      <section class="rail-panel">
+        <h2>Study Library</h2>
+        <ul class="library-list">
+          <li><img src="../src/assets/orchard-vale/motifs/research/motif-research-scroll-96.svg" alt=""> Orchard Vale History</li>
+          <li><img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt=""> Local Ecology & Wildlife</li>
+          <li class="active"><img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt=""> Village Infrastructure</li>
+          <li><img src="../src/assets/orchard-vale/icons/icon-finance-investment-tree-32.svg" alt=""> Agrarian Economies</li>
+          <li><img src="../src/assets/orchard-vale/icons/icon-infra-crown-32.svg" alt=""> Folklore & Traditions</li>
+        </ul>
+      </section>
+
+      <section class="rail-panel">
+        <h2>Source Collections</h2>
+        <dl class="source-list">
+          <div><dt>Government Records</dt><dd>12</dd></div>
+          <div><dt>Guild Archives</dt><dd>9</dd></div>
+          <div><dt>Field Studies</dt><dd>7</dd></div>
+          <div><dt>Maps & Plans</dt><dd>5</dd></div>
+          <div><dt>Oral Histories</dt><dd>6</dd></div>
+        </dl>
+      </section>
+
+      <section class="rail-panel">
+        <h2>Saved Searches</h2>
+        <ul class="plain-list">
+          <li>Watermill efficiency</li>
+          <li>Road maintenance costs</li>
+          <li>Population growth</li>
+          <li>Timber imports 5y</li>
+        </ul>
+      </section>
+
+      <section class="rail-panel report-sections">
+        <h2>Report Sections</h2>
+        <ol>
+          <li>Executive Summary <span></span></li>
+          <li>Introduction <span></span></li>
+          <li class="open">Infrastructure Overview <span></span></li>
+          <li class="selected">A. Roads & Bridges <span></span></li>
+          <li>B. Water Systems</li>
+          <li>C. Public Buildings</li>
+          <li>Economic Impact</li>
+          <li>Recommendations</li>
+        </ol>
+      </section>
+
+      <img class="rail-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger researcher reading a ledger">
+      <button class="new-report" type="button">+ New Report</button>
+    </aside>
+
+    <section class="editor-shell" aria-label="Research editor">
+      <nav class="toolbar" aria-label="Formatting toolbar">
+        <button type="button">↶</button>
+        <button type="button">↷</button>
+        <select aria-label="Paragraph style"><option>Paragraph</option></select>
+        <button type="button"><strong>B</strong></button>
+        <button type="button"><em>I</em></button>
+        <button type="button"><u>U</u></button>
+        <button type="button">S</button>
+        <button type="button">•</button>
+        <button type="button">1.</button>
+        <button type="button">☰</button>
+        <button type="button">"</button>
+        <button type="button">▦</button>
+        <button type="button">▧</button>
+        <button type="button">🔗</button>
+        <select aria-label="Style"><option>Style</option></select>
+      </nav>
+
+      <article class="report-page">
+        <img class="report-scene" src="../src/assets/orchard-vale/scenes/wide-16x9/scene-countryside-route-map-wide-16x9.webp" alt="Illustrated bridge and country road">
+        <img class="fox-helper" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox field researcher holding notes">
+        <h2>III. Infrastructure Overview</h2>
+        <h3>A. Roads & Bridges</h3>
+        <p class="lead"><span class="dropcap">T</span>he road network of Orchard Vale is the lifeline of our rural economy, connecting farms, forges, and markets across a diverse landscape. Over the past decade, steady investments in maintenance and bridge restoration have improved reliability, though seasonal wear and funding gaps remain persistent challenges.</p>
+
+        <div class="report-widgets">
+          <aside class="quote-card">
+            <strong>"</strong>
+            <p>A well-kept road does more than move goods, it moves opportunity.</p>
+            <span>Master Tamsin Fieldwarden</span>
+          </aside>
+
+          <section class="donut-card" aria-label="Road condition chart">
+            <h4>Road Condition By Length</h4>
+            <div class="donut-wrap">
+              <div class="donut"><span>124<br>km total</span></div>
+              <ul>
+                <li><span class="swatch excellent"></span> Excellent <b>28%</b></li>
+                <li><span class="swatch good"></span> Good <b>38%</b></li>
+                <li><span class="swatch fair"></span> Fair <b>24%</b></li>
+                <li><span class="swatch poor"></span> Poor <b>10%</b></li>
+              </ul>
+            </div>
+            <small>Source: Public Works Survey, Spring 18,025</small>
+          </section>
+
+          <aside class="takeaway-card">
+            <h4><img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.png" alt=""> Key Takeaway</h4>
+            <p>Bridge restorations deliver the highest reliability impact per gold invested.</p>
+            <img class="owl-helper" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl analyst reading evidence">
+          </aside>
+        </div>
+
+        <div class="report-lower">
+          <p>Bridges remain the costliest assets to maintain, yet their failure risk has decreased notably since the 18,020 flood season. Preventative upkeep proves far less costly than emergency reconstruction.</p>
+          <table>
+            <caption>Maintenance Costs (Gold)</caption>
+            <thead><tr><th>Category</th><th>18,022</th><th>18,023</th><th>18,024</th><th>18,025*</th></tr></thead>
+            <tbody>
+              <tr><td>Roads</td><td>2,450</td><td>2,615</td><td>2,710</td><td>2,980</td></tr>
+              <tr><td>Bridges</td><td>1,820</td><td>2,140</td><td>1,965</td><td>2,280</td></tr>
+              <tr><td>Total</td><td>4,270</td><td>4,755</td><td>4,675</td><td>5,260</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <footer class="report-footnotes">
+          <ol>
+            <li>Public Works Annual Report, 18,025, p. 14.</li>
+            <li>Field Survey Notes, Master Tamsin Fieldwarden, 18,024.</li>
+          </ol>
+          <span>12</span>
+        </footer>
+
+        <img class="mouse-helper" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse clerk writing at a desk">
+      </article>
+    </section>
+
+    <aside class="right-rail" aria-label="Evidence and verification">
+      <section class="rail-panel evidence-panel">
+        <h2>Evidence Cards</h2>
+        <article>
+          <img src="../src/assets/orchard-vale/motifs/research/motif-research-evidence-card-96.svg" alt="">
+          <div><strong>Public Works Annual Report</strong><span>18,025 - Government Records</span><mark>High Relevance</mark></div>
+          <small>p. 14</small>
+        </article>
+        <article>
+          <img src="../src/assets/orchard-vale/motifs/research/motif-research-scroll-96.svg" alt="">
+          <div><strong>Field Survey: North Road</strong><span>18,024 - Field Studies</span><mark class="amber">Medium Relevance</mark></div>
+          <small>pp. 7-9</small>
+        </article>
+        <article>
+          <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="">
+          <div><strong>Bridge Restoration Ledger</strong><span>18,023 - Government Records</span><mark>High Relevance</mark></div>
+          <small>p. 3</small>
+        </article>
+        <article>
+          <img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="">
+          <div><strong>Travellers' Diary</strong><span>18,022 - Oral Histories</span><mark class="amber">Medium Relevance</mark></div>
+          <small>p. 11</small>
+        </article>
+        <button type="button">+ Add Evidence</button>
+      </section>
+
+      <section class="rail-panel citations-panel">
+        <h2>Citations (56)</h2>
+        <ol>
+          <li>Public Works Annual Report, 18,025, p. 14.</li>
+          <li>Field Survey Notes, Master Tamsin Fieldwarden, 18,024.</li>
+          <li>Bridge Restoration Ledger, 18,023, p. 3.</li>
+        </ol>
+        <a href="#">View All Citations -></a>
+      </section>
+
+      <section class="rail-panel notes-panel">
+        <h2>Analyst Notes</h2>
+        <p>Consider adding seasonal path impassability data from Winter 18,024 surveys. Correlates with trade dips.</p>
+        <span>Nara Quickquill - 9:15 AM</span>
+        <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit analyst portrait">
+      </section>
+
+      <section class="rail-panel fact-panel">
+        <h2>Fact-Check Status</h2>
+        <div class="fact-grid">
+          <article><img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt=""><strong>12</strong><span>All Good</span></article>
+          <article><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt=""><strong>2</strong><span>Needs Review</span></article>
+          <article><img src="../src/assets/orchard-vale/icons/icon-status-error-32.svg" alt=""><strong>0</strong><span>Not Supported</span></article>
+        </div>
+        <button type="button">Run Full Fact-Check</button>
+      </section>
+    </aside>
+
+    <footer class="bottom-tray">
+      <section class="timeline-tray" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">Source Timeline</h2>
+        <div class="timeline-line" aria-hidden="true">
+          <span style="left: 4%"></span><span style="left: 24%"></span><span style="left: 39%"></span><span style="left: 58%"></span><span style="left: 72%"></span><span style="left: 93%"></span>
+        </div>
+        <div class="timeline-years"><span>18,018</span><span>18,020</span><span>18,022</span><span>18,024</span><span>18,026</span></div>
+        <p><b>Reports (8)</b> <b>Surveys (9)</b> <b>Records (7)</b> <b>Interviews (4)</b></p>
+      </section>
+
+      <section class="updates-tray" aria-labelledby="updates-title">
+        <h2 id="updates-title">Recent Updates</h2>
+        <dl>
+          <div><dt>10:32 AM</dt><dd>Added evidence: Bridge Restoration Ledger, 18,023</dd></div>
+          <div><dt>10:15 AM</dt><dd>Updated table: Maintenance Costs (Gold)</dd></div>
+          <div><dt>9:58 AM</dt><dd>Added note to Roads & Bridges section</dd></div>
+          <div><dt>9:41 AM</dt><dd>Fact-check run completed</dd></div>
+        </dl>
+      </section>
+
+      <section class="publish-tray" aria-labelledby="publish-title">
+        <h2 id="publish-title">Export & Publish</h2>
+        <div class="export-buttons">
+          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-pdf-32.svg" alt="">Export PDF</button>
+          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-docx-32.svg" alt="">Export DOCX</button>
+          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-markdown-32.svg" alt="">Export Markdown</button>
+          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-share-report-32.svg" alt="">Share Report</button>
+        </div>
+        <div class="publish-row">
+          <span>Publish Status: DRAFT</span>
+          <small>Last saved: 10:42 AM</small>
+          <button type="button">Publish Report -></button>
+        </div>
+      </section>
+    </footer>
+  </main>
+</body>
+</html>

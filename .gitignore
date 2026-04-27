@@ -1,0 +1,36 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Node/Python artifacts if local tooling is added later
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Demo screenshots: keep polished overview captures, ignore temporary validation captures.
+demo/screenshots/*
+!demo/screenshots/
+!demo/screenshots/*-desktop.png
+!demo/screenshots/*-mobile.png
+
+# Keep theme assets tracked.
+!src/assets/

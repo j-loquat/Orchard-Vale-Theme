@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc">
+  <title id="title">Pin Marker Amber</title>
+  <desc id="desc">Orchard Vale map control asset: Pin Marker Amber.</desc>
+  <g><path d="M32 5 C43 5 52 14 52 25 C52 41 38 49 32 60 C26 49 12 41 12 25 C12 14 21 5 32 5 Z" fill="#d18a2e" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="25" r="10" fill="#f8edcf" stroke="#6f4728" stroke-width="2.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="25" r="4" fill="#e7c66a" stroke="#6f4728" stroke-width="1.6" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

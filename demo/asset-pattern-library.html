@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Vale Pattern Library</title>
+  <link rel="stylesheet" href="asset-pattern-library.css">
+</head>
+<body>
+  <main class="library-shell">
+    <header class="library-header">
+      <section class="title-card" aria-labelledby="page-title">
+        <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="Orchard Vale crest">
+        <div>
+          <p>Theme Specimen Book</p>
+          <h1 id="page-title">Orchard Vale Pattern Library</h1>
+          <span>A tabbed field guide to the reusable scenery, panels, heraldry, icons, data pieces, textures, empty states, motion stills, and UI recipes.</span>
+        </div>
+      </section>
+      <section class="summary-card" aria-label="Asset library summary">
+        <article><strong>11</strong><span>Asset families</span></article>
+        <article><strong>7</strong><span>Gallery tabs</span></article>
+        <article><strong>1</strong><span>Reusable visual system</span></article>
+      </section>
+    </header>
+
+    <nav class="tab-rail" aria-label="Pattern library sections">
+      <button type="button" class="tab-button" id="tab-scenes" role="tab" aria-selected="true" aria-controls="panel-scenes" data-tab="scenes">Scenes & Maps</button>
+      <button type="button" class="tab-button" id="tab-frames" role="tab" aria-selected="false" aria-controls="panel-frames" data-tab="frames">Frames & Panels</button>
+      <button type="button" class="tab-button" id="tab-heraldry" role="tab" aria-selected="false" aria-controls="panel-heraldry" data-tab="heraldry">Heraldry</button>
+      <button type="button" class="tab-button" id="tab-icons" role="tab" aria-selected="false" aria-controls="panel-icons" data-tab="icons">Icons & Motifs</button>
+      <button type="button" class="tab-button" id="tab-data" role="tab" aria-selected="false" aria-controls="panel-data" data-tab="data">Data Viz</button>
+      <button type="button" class="tab-button" id="tab-textures" role="tab" aria-selected="false" aria-controls="panel-textures" data-tab="textures">Textures</button>
+      <button type="button" class="tab-button" id="tab-recipes" role="tab" aria-selected="false" aria-controls="panel-recipes" data-tab="recipes">UI Recipes</button>
+    </nav>
+
+    <section class="hero-specimen" aria-live="polite">
+      <div>
+        <p id="specimen-kicker">Scenes & Maps</p>
+        <h2 id="specimen-title">Backdrops for village-scale interfaces</h2>
+        <span id="specimen-copy">Use wide scenes for first-viewport atmosphere, map backgrounds for operational dashboards, and controls or markers for location-aware panels.</span>
+      </div>
+      <div class="specimen-viewer" aria-label="Selected asset preview">
+        <img id="specimen-image" src="../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp" alt="Selected Orchard Vale asset preview">
+      </div>
+    </section>
+
+    <section class="tab-panels">
+      <section class="tab-panel is-active" id="panel-scenes" role="tabpanel" aria-labelledby="tab-scenes" data-panel="scenes">
+        <div class="section-heading">
+          <p>Scenes & Maps</p>
+          <h2>Large scenic anchors and navigable places</h2>
+        </div>
+        <div class="wide-grid">
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp" alt="Orchard Vale village scene">
+            <h3>Village Overview Scene</h3>
+            <p>Use for home screens, friendly editorial pages, and first-run onboarding.</p>
+          </article>
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-guildhall-planner-wide-16x9.webp" alt="Guildhall planner scene">
+            <h3>Guildhall Planner Scene</h3>
+            <p>Use for project management, work planning, and team coordination demos.</p>
+          </article>
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-library-studyhall-wide-16x9.webp" alt="Library studyhall scene">
+            <h3>Library Studyhall Scene</h3>
+            <p>Use for research, writing, documents, citations, and knowledge-base screens.</p>
+          </article>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/scenes/scenes-contact-sheet-16x9.png" alt="Scene contact sheet">
+            <h3>Scene Contact Sheet</h3>
+          </article>
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/maps/maps-and-controls-contact-sheet.png" alt="Maps and controls contact sheet">
+            <h3>Maps & Controls Contact Sheet</h3>
+          </article>
+        </div>
+        <div class="wide-grid maps">
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp" alt="Village overview map">
+            <h3>Village Map</h3>
+          </article>
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/maps/backgrounds/map-district-guildhall-unlabeled-16x9.webp" alt="Guildhall district map">
+            <h3>Guildhall District</h3>
+          </article>
+          <article class="specimen-card wide">
+            <img src="../src/assets/orchard-vale/maps/backgrounds/map-route-countryside-empty-16x9.webp" alt="Countryside route map">
+            <h3>Route Map</h3>
+          </article>
+        </div>
+        <div class="icon-strip">
+          <img src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg" alt="Compass rose">
+          <img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="Map layers control">
+          <img src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Blue map pin">
+          <img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="Green shield marker">
+          <img src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="Dashed route line">
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-frames" role="tabpanel" aria-labelledby="tab-frames" data-panel="frames" hidden>
+        <div class="section-heading">
+          <p>Frames & Panels</p>
+          <h2>The layout vocabulary</h2>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/backplates/backplates-contact-sheet.png" alt="Backplates contact sheet">
+            <h3>Backplates</h3>
+          </article>
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/ornaments/ornaments-contact-sheet.png" alt="Ornaments contact sheet">
+            <h3>Ornaments</h3>
+          </article>
+        </div>
+        <div class="component-grid">
+          <article class="panel-sample green-board"><h3>Green Signboard Header</h3><p>Use for major app sections, lane titles, command rails, and selected panels.</p></article>
+          <article class="panel-sample parchment-card"><h3>Parchment Card</h3><p>Use for repeated cards, notes, metrics, detail panels, and readable content blocks.</p><div class="sample-lines"><span></span><span></span><span></span></div></article>
+          <article class="panel-sample ribbon-card"><h3>Ribbon Label</h3><p>Use for active tabs, saved views, category labels, and banner affordances.</p><span class="ribbon-sample">Selected View</span></article>
+          <article class="panel-sample button-card"><h3>Button States</h3><div><button>Primary</button><button class="secondary">Secondary</button></div></article>
+        </div>
+        <div class="ornament-grid">
+          <img src="../src/assets/orchard-vale/ornaments/corner-brass-ivy-top-left.svg" alt="Brass ivy corner">
+          <img src="../src/assets/orchard-vale/ornaments/divider-leaf-horizontal-gold.svg" alt="Gold leaf divider">
+          <img src="../src/assets/orchard-vale/ornaments/frame-overlay-wood-brass-panel.svg" alt="Wood brass frame overlay">
+          <img src="../src/assets/orchard-vale/ornaments/hinge-brass-vertical.svg" alt="Brass hinge">
+          <img src="../src/assets/orchard-vale/ornaments/rivet-brass-small.svg" alt="Brass rivet">
+          <img src="../src/assets/orchard-vale/ornaments/scroll-endcap-left.svg" alt="Scroll endcap">
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-heraldry" role="tabpanel" aria-labelledby="tab-heraldry" data-panel="heraldry" hidden>
+        <div class="section-heading">
+          <p>Crests, Seals & Heraldry</p>
+          <h2>Identity, trust, status, and ritual</h2>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/heraldry/heraldry-contact-sheet.png" alt="Heraldry contact sheet">
+            <h3>Heraldry Contact Sheet</h3>
+          </article>
+          <article class="heraldry-feature">
+            <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.png" alt="Guildhall board crest">
+            <div><p>Application crest</p><h3>Guildhall Board</h3><span>Use as page identity or a major workspace mark.</span></div>
+          </article>
+        </div>
+        <div class="crest-grid">
+          <img src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.png" alt="Book quill crest">
+          <img src="../src/assets/orchard-vale/heraldry/crest-crossed-tools-fullcolor-512.png" alt="Crossed tools crest">
+          <img src="../src/assets/orchard-vale/heraldry/crest-finance-coin-tree-fullcolor-512.png" alt="Finance coin tree crest">
+          <img src="../src/assets/orchard-vale/heraldry/crest-gear-shield-fullcolor-512.png" alt="Gear shield crest">
+          <img src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.png" alt="Mail calendar crest">
+          <img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.png" alt="Shield check crest">
+          <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="Approved seal">
+          <img src="../src/assets/orchard-vale/heraldry/seal-review-blue-512.png" alt="Review seal">
+          <img src="../src/assets/orchard-vale/heraldry/seal-blocked-red-512.png" alt="Blocked seal">
+          <img src="../src/assets/orchard-vale/heraldry/seal-urgent-orange-512.png" alt="Urgent seal">
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-icons" role="tabpanel" aria-labelledby="tab-icons" data-panel="icons" hidden>
+        <div class="section-heading">
+          <p>Icons & Motifs</p>
+          <h2>Functional controls and domain symbols</h2>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/icons/icons-contact-sheet.png" alt="Icons contact sheet">
+            <h3>Icon Contact Sheet</h3>
+          </article>
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/motifs/motifs-contact-sheet.png" alt="Motifs contact sheet">
+            <h3>Motif Contact Sheet</h3>
+          </article>
+        </div>
+        <div class="small-asset-grid">
+          <figure><img src="../src/assets/orchard-vale/icons/icon-nav-search-32.svg" alt="Search icon"><figcaption>Search</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="Filter icon"><figcaption>Filters</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="Healthy icon"><figcaption>Healthy</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="Warning icon"><figcaption>Warning</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/icons/icon-workflow-bug-32.svg" alt="Bug icon"><figcaption>Bug</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/icons/icon-export-pdf-32.svg" alt="PDF export icon"><figcaption>Export PDF</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/project/motif-project-work-board-96.svg" alt="Project work board motif"><figcaption>Project Board</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/research/motif-research-quill-96.svg" alt="Research quill motif"><figcaption>Research</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/finance/motif-finance-coins-96.svg" alt="Finance coins motif"><figcaption>Finance</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/ai/motif-ai-agent-medallion-96.svg" alt="AI agent motif"><figcaption>Agent</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/operations/motif-operations-wagon-96.svg" alt="Operations wagon motif"><figcaption>Operations</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-calendar-tile-96.svg" alt="Calendar motif"><figcaption>Calendar</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-data" role="tabpanel" aria-labelledby="tab-data" data-panel="data" hidden>
+        <div class="section-heading">
+          <p>Data Visualization</p>
+          <h2>Charts that still feel like Orchard Vale</h2>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/data-viz/data-viz-contact-sheet.png" alt="Data visualization contact sheet">
+            <h3>Data Viz Contact Sheet</h3>
+          </article>
+          <article class="chart-demo">
+            <h3>Ledger Health</h3>
+            <div class="meter"><span style="width: 78%"></span></div>
+            <div class="bars"><i style="height: 42%"></i><i style="height: 74%"></i><i style="height: 58%"></i><i style="height: 86%"></i><i style="height: 65%"></i></div>
+            <p>Use the SVG pieces as frames, ticks, labels, meters, and callouts around CSS or canvas data.</p>
+          </article>
+        </div>
+        <div class="small-asset-grid">
+          <figure><img src="../src/assets/orchard-vale/data-viz/chart-frame-ornate-rect.svg" alt="Chart frame"><figcaption>Chart Frame</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/data-viz/meter-track-parchment.svg" alt="Meter track"><figcaption>Meter Track</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/data-viz/meter-fill-green.svg" alt="Green meter fill"><figcaption>Green Fill</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/data-viz/timeline-now-marker-banner.svg" alt="Now marker"><figcaption>Now Marker</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/data-viz/callout-pin-medallion.svg" alt="Callout pin"><figcaption>Callout</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/data-viz/tooltip-parchment-shell.svg" alt="Tooltip shell"><figcaption>Tooltip</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-textures" role="tabpanel" aria-labelledby="tab-textures" data-panel="textures" hidden>
+        <div class="section-heading">
+          <p>Textures & Materials</p>
+          <h2>The surface system underneath everything</h2>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/textures/texture-contact-sheet.png" alt="Texture contact sheet">
+            <h3>Texture Contact Sheet</h3>
+          </article>
+          <article class="texture-note">
+            <h3>CSS Surface Tokens</h3>
+            <p>Use these as background layers under regular CSS color overlays. That keeps the interface readable while preserving the handcrafted paper, signboard, brass, and carved-wood feel.</p>
+          </article>
+        </div>
+        <div class="texture-grid">
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png')"><figcaption>Aged Parchment</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png')"><figcaption>Seamless Parchment</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-green-signboard-1024.png')"><figcaption>Green Signboard</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-wood-walnut-panel-1024.png')"><figcaption>Walnut Panel</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png')"><figcaption>Dark Carved Wood</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-brass-hammered-1024.png')"><figcaption>Hammered Brass</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-watercolor-countryside-wash-1024.png')"><figcaption>Watercolor Wash</figcaption></figure>
+          <figure style="--texture: url('../src/assets/orchard-vale/textures/overlay-ink-speckle-subtle-1024.png')"><figcaption>Ink Speckle Overlay</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-recipes" role="tabpanel" aria-labelledby="tab-recipes" data-panel="recipes" hidden>
+        <div class="section-heading">
+          <p>UI Recipes</p>
+          <h2>Composed patterns ready to adapt</h2>
+        </div>
+        <div class="recipe-grid">
+          <article class="notice-recipe">
+            <header><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt=""><span>Priority Notice</span></header>
+            <h3>Bridge crew review</h3>
+            <p>Use a parchment body, green header, brass border, and one status icon for readable notices.</p>
+          </article>
+          <article class="metric-recipe">
+            <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="Approved seal">
+            <div><strong>94%</strong><span>Healthy Systems</span></div>
+          </article>
+          <article class="task-recipe">
+            <small>PLAT-1082</small><span>Enhancement</span>
+            <h3>Prepare release notes</h3>
+            <p><img src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt=""> 3 subtasks open</p>
+          </article>
+          <article class="empty-recipe">
+            <img src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.png" alt="Owl no results empty state">
+            <h3>No matching records</h3>
+            <p>Pair larger empty-state art with concise action text.</p>
+          </article>
+        </div>
+        <div class="asset-row">
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/empty-states/empty-states-contact-sheet.png" alt="Empty states contact sheet">
+            <h3>Empty States</h3>
+          </article>
+          <article class="sheet-card">
+            <img src="../src/assets/orchard-vale/motion/motion-contact-sheet.png" alt="Motion contact sheet">
+            <h3>Motion Stills & Sprites</h3>
+          </article>
+        </div>
+        <div class="small-asset-grid">
+          <figure><img src="../src/assets/orchard-vale/empty-states/empty-rabbit-calendar-clear-800.png" alt="Rabbit calendar empty state"><figcaption>Calendar Clear</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/empty-states/empty-mole-gears-inspection-800.png" alt="Mole gear empty state"><figcaption>Inspection</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motion/static/motion-lantern-flicker-static.png" alt="Lantern motion still"><figcaption>Lantern</figcaption></figure>
+          <figure><img src="../src/assets/orchard-vale/motion/static/motion-quill-writing-static.png" alt="Quill motion still"><figcaption>Quill</figcaption></figure>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div class="lightbox" id="image-lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close image preview">Close</button>
+    <div class="lightbox-frame">
+      <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+    </div>
+    <p id="lightbox-caption"></p>
+  </div>
+  <script src="asset-pattern-library.js"></script>
+</body>
+</html>

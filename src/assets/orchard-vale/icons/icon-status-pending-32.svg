@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Pending</title>
+  <desc id="desc">Orchard Vale status icon: Pending.</desc>
+  <g><path d="M20 11 H44 M20 53 H44" fill="none" stroke="#6f4728" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M23 14 C23 26 30 27 32 32 C34 27 41 26 41 14 Z" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M23 50 C23 38 30 37 32 32 C34 37 41 38 41 50 Z" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M28 22 H36" fill="none" stroke="#d18a2e" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M27 46 H37" fill="none" stroke="#d18a2e" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-labelledby="title desc">
+  <title id="title">Compass Rose Brass</title>
+  <desc id="desc">Orchard Vale map control asset: Compass Rose Brass.</desc>
+  <g><circle cx="64" cy="64" r="48" fill="#f8edcf" stroke="#6f4728" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="64" cy="64" r="32" fill="#e7c66a" stroke="#6f4728" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><polygon points="64,12 74,55 116,64 74,73 64,116 54,73 12,64 54,55" fill="#f2e1b8" stroke="#2f2417" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><polygon points="64,23 70,58 105,64 70,70 64,105 58,70 23,64 58,58" fill="#2f6b3f" stroke="#2f2417" stroke-width="1.8" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="64" cy="64" r="6" fill="#c9962e" stroke="#6f4728" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

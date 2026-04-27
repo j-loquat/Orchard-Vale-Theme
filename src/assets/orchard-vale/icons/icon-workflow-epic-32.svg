@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Epic</title>
+  <desc id="desc">Orchard Vale workflow icon: Epic.</desc>
+  <g><rect x="18" y="22" width="28" height="29" rx="3" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="14" y="15" width="36" height="11" rx="2" fill="#2f6b3f" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="24" y1="22" x2="24" y2="15" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="40" y1="22" x2="40" y2="15" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M25 51 V39 C25 30 39 30 39 39 V51" fill="#e7c66a" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

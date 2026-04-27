@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="title desc">
+  <title id="title">Productivity Clock</title>
+  <desc id="desc">Orchard Vale app-specific motif: Productivity Clock.</desc>
+  <g><circle cx="48" cy="48" r="29" fill="#f8edcf" stroke="#2f2417" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="48" y1="48" x2="48" y2="29" stroke="#2f6b3f" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="48" y1="48" x2="62" y2="55" stroke="#6f4728" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="48" cy="48" r="3" fill="#c9962e" stroke="#6f4728" stroke-width="1.6" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="title desc">
+  <title id="title">Project Work Board</title>
+  <desc id="desc">Orchard Vale app-specific motif: Project Work Board.</desc>
+  <g><rect x="16" y="20" width="64" height="52" rx="4" fill="#8b5b33" stroke="#2f2417" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="24" y="29" width="14" height="13" rx="2" fill="#f2e1b8" stroke="#2f2417" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="43" y="29" width="14" height="13" rx="2" fill="#f2e1b8" stroke="#2f2417" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="58" y="49" width="14" height="13" rx="2" fill="#f2e1b8" stroke="#2f2417" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="16" y1="47" x2="80" y2="47" stroke="#c9962e" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

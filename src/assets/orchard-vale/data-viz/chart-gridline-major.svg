@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 16" width="240" height="16" role="img" aria-labelledby="title desc">
+  <title id="title">Major Gridline</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Major Gridline.</desc>
+  <g><path d="M6 8 H234" fill="none" stroke="#c9ad6e" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="6" cy="8" r="1.8" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="234" cy="8" r="1.8" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Inbox</title>
+  <desc id="desc">Orchard Vale nav icon: Inbox.</desc>
+  <g><path d="M12 22 H52 L47 51 H17 Z" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M18 34 H26 L29 41 H35 L38 34 H46" fill="none" stroke="#2f2417" stroke-width="3.3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M22 16 H42" fill="none" stroke="#c9962e" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="32" y1="13" x2="32" y2="31" stroke="#2f6b3f" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><polyline points="24,24 32,32 40,24" fill="none" stroke="#2f6b3f" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

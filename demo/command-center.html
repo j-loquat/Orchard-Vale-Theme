@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Vale Command Center</title>
+  <link rel="stylesheet" href="command-center.css">
+</head>
+<body>
+  <div class="command-shell">
+    <aside class="command-sidebar" aria-label="Command center navigation">
+      <a class="brand" href="friendly-town.html" aria-label="Back to Orchard Vale article">
+        <img src="../src/assets/orchard-vale/heraldry/crest-gear-shield-fullcolor-512.png" alt="">
+        <span>Orchard Vale Command Center</span>
+      </a>
+
+      <section class="watch-seal" aria-labelledby="watch-title">
+        <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="">
+        <div>
+          <p class="kicker">Village state</p>
+          <h2 id="watch-title">Steady Watch</h2>
+          <span>All public paths open</span>
+        </div>
+      </section>
+
+      <nav class="side-nav" aria-label="Command center sections">
+        <a class="active" href="#map">
+          <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="">
+          Situation Map
+        </a>
+        <a href="#alerts">
+          <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="">
+          Alerts
+        </a>
+        <a href="#systems">
+          <img src="../src/assets/orchard-vale/icons/icon-infra-pipeline-32.svg" alt="">
+          Systems
+        </a>
+        <a href="#response">
+          <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="">
+          Response
+        </a>
+        <a href="#ledger">
+          <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="">
+          Event Ledger
+        </a>
+      </nav>
+
+      <section class="routine-card" aria-labelledby="routine-title">
+        <div class="routine-motion" aria-hidden="true"></div>
+        <h2 id="routine-title">Active Routines</h2>
+        <ul>
+          <li><span></span> Courier sync every 8 min</li>
+          <li><span></span> Supply check every bell</li>
+          <li><span></span> Path watch until dusk</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="command-main">
+      <header class="command-hero">
+        <div class="hero-copy">
+          <p class="kicker">Watchtower operations</p>
+          <h1>Orchard Vale Command Center</h1>
+          <p>Live village coordination for alerts, stewards, dependencies, routes, public systems, and response actions.</p>
+        </div>
+        <div class="hero-actions" aria-label="Command actions">
+          <button class="button secondary" type="button">
+            <img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="">
+            Filter Watch
+          </button>
+          <button class="button primary" type="button">
+            <img src="../src/assets/orchard-vale/icons/icon-action-publish-32.svg" alt="">
+            Send Dispatch
+          </button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-label="Command summary">
+        <article class="status-card good">
+          <img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="">
+          <span>Town Health</span>
+          <strong>94%</strong>
+          <small>Open, calm, well staffed</small>
+        </article>
+        <article class="status-card warn">
+          <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="">
+          <span>Active Alerts</span>
+          <strong>3</strong>
+          <small>One needs action before dusk</small>
+        </article>
+        <article class="status-card blue">
+          <img src="../src/assets/orchard-vale/icons/icon-infra-server-32.svg" alt="">
+          <span>Guild Systems</span>
+          <strong>12</strong>
+          <small>11 green, 1 amber</small>
+        </article>
+        <article class="status-card amber">
+          <img src="../src/assets/orchard-vale/icons/icon-workflow-dependency-32.svg" alt="">
+          <span>Dependencies</span>
+          <strong>5</strong>
+          <small>Two tied to market traffic</small>
+        </article>
+        <article class="status-card purple">
+          <img src="../src/assets/orchard-vale/icons/icon-data-timeline-32.svg" alt="">
+          <span>Next Bell</span>
+          <strong>15:40</strong>
+          <small>West bridge path clears</small>
+        </article>
+      </section>
+
+      <div class="command-grid">
+        <section class="panel situation-panel" id="map" aria-labelledby="map-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Live overview</p>
+              <h2 id="map-title">Village Situation Map</h2>
+            </div>
+            <div class="map-tools" aria-label="Map controls">
+              <button type="button" aria-label="Zoom in"><img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-in.svg" alt=""></button>
+              <button type="button" aria-label="Locate watch"><img src="../src/assets/orchard-vale/maps/controls/map-control-locate.svg" alt=""></button>
+              <button type="button" aria-label="Map layers"><img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt=""></button>
+            </div>
+          </div>
+          <div class="situation-map">
+            <img class="map-art" src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp" alt="Illustrated overview map of Orchard Vale">
+            <img class="marker gate" src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="North gate clear">
+            <img class="marker bridge" src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="Bridge watch amber">
+            <img class="marker mill" src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Watermill automation healthy">
+            <img class="marker forge" src="../src/assets/orchard-vale/maps/controls/marker-shield-red.svg" alt="Forge supply alert">
+            <img class="route route-one" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="">
+            <img class="route route-two" src="../src/assets/orchard-vale/maps/controls/route-line-solid-green.svg" alt="">
+            <div class="map-label label-gate">North gate clear</div>
+            <div class="map-label label-bridge">Bridge delay</div>
+            <div class="map-label label-mill">Watermill sync</div>
+          </div>
+          <ul class="map-legend" aria-label="Map legend">
+            <li><img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt=""> Clear post</li>
+            <li><img src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt=""> Watch needed</li>
+            <li><img src="../src/assets/orchard-vale/maps/controls/marker-shield-red.svg" alt=""> Action required</li>
+          </ul>
+          <div class="signal-row" aria-label="Map telemetry">
+            <article>
+              <img src="../src/assets/orchard-vale/data-viz/category-symbol-shield.svg" alt="">
+              <span>Gate posts</span>
+              <strong>4/4 clear</strong>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/data-viz/category-symbol-map-pin.svg" alt="">
+              <span>Watched routes</span>
+              <strong>7 active</strong>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/data-viz/category-symbol-bell.svg" alt="">
+              <span>Next signal</span>
+              <strong>15:40</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel alert-panel" id="alerts" aria-labelledby="alerts-title">
+          <div class="panel-heading compact">
+            <div>
+              <p class="kicker">Attention queue</p>
+              <h2 id="alerts-title">Active Alerts</h2>
+            </div>
+            <img src="../src/assets/orchard-vale/heraldry/seal-urgent-orange-512.png" alt="">
+          </div>
+          <div class="alert-list">
+            <article class="alert-card urgent">
+              <div class="alert-top">
+                <span class="badge red">Urgent</span>
+                <time datetime="2026-04-27T15:10">15:10</time>
+              </div>
+              <h3>Bridge lantern oil delayed</h3>
+              <p>Courier route is clear, but the oil crate is still at the west depot.</p>
+              <footer>
+                <img src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.png" alt="Robin courier portrait">
+                <span>Robin assigned</span>
+              </footer>
+            </article>
+            <article class="alert-card warning">
+              <div class="alert-top">
+                <span class="badge amber">Watch</span>
+                <time datetime="2026-04-27T14:45">14:45</time>
+              </div>
+              <h3>Market crowd near fountain</h3>
+              <p>Welcome table needs one extra steward to keep the path moving.</p>
+            </article>
+            <article class="alert-card review">
+              <div class="alert-top">
+                <span class="badge blue">Review</span>
+                <time datetime="2026-04-27T14:20">14:20</time>
+              </div>
+              <h3>Archive desk form update</h3>
+              <p>Question labels are ready for Alder's final wording pass.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel systems-panel" id="systems" aria-labelledby="systems-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Service health</p>
+              <h2 id="systems-title">Guild Systems</h2>
+            </div>
+            <img class="heading-icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-pipeline-96.svg" alt="">
+          </div>
+          <div class="systems-layout">
+            <div class="health-chart" aria-label="System health chart">
+              <div class="chart-bars">
+                <span style="height: 82%"></span>
+                <span style="height: 64%"></span>
+                <span style="height: 92%"></span>
+                <span style="height: 74%"></span>
+                <span style="height: 88%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 96%"></span>
+              </div>
+              <div class="chart-medallion">11/12</div>
+            </div>
+            <div class="system-list">
+              <article>
+                <img src="../src/assets/orchard-vale/icons/icon-infra-pipeline-32.svg" alt="">
+                <div>
+                  <strong>Courier routing</strong>
+                  <span>Healthy, 8 minute cadence</span>
+                </div>
+                <mark class="status good">Green</mark>
+              </article>
+              <article>
+                <img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="">
+                <div>
+                  <strong>Watermill automation</strong>
+                  <span>One belt inspection pending</span>
+                </div>
+                <mark class="status warn">Amber</mark>
+              </article>
+              <article>
+                <img src="../src/assets/orchard-vale/icons/icon-infra-shield-32.svg" alt="">
+                <div>
+                  <strong>Gate watch</strong>
+                  <span>North and south posts staffed</span>
+                </div>
+                <mark class="status good">Green</mark>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel response-panel" id="response" aria-labelledby="response-title">
+          <div class="panel-heading compact">
+            <div>
+              <p class="kicker">Coordinated response</p>
+              <h2 id="response-title">Bridge Oil Delay</h2>
+            </div>
+            <img src="../src/assets/orchard-vale/motion/static/motion-shield-check-complete-static.png" alt="">
+          </div>
+          <ol class="response-steps">
+            <li class="done">
+              <span></span>
+              <div>
+                <strong>Confirm path</strong>
+                <p>West bridge route is clear.</p>
+              </div>
+            </li>
+            <li class="active">
+              <span></span>
+              <div>
+                <strong>Send runner</strong>
+                <p>Robin carries the depot note.</p>
+              </div>
+            </li>
+            <li>
+              <span></span>
+              <div>
+                <strong>Light first bracket</strong>
+                <p>Rowan starts from market side.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="action-row">
+            <button class="button primary" type="button">
+              <img src="../src/assets/orchard-vale/icons/icon-action-publish-32.svg" alt="">
+              Dispatch
+            </button>
+            <button class="button secondary" type="button">
+              <img src="../src/assets/orchard-vale/icons/icon-action-edit-32.svg" alt="">
+              Edit Plan
+            </button>
+          </div>
+        </section>
+
+        <section class="panel dependency-panel" aria-labelledby="dependency-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Hidden coupling</p>
+              <h2 id="dependency-title">Dependency Threads</h2>
+            </div>
+            <img class="heading-icon" src="../src/assets/orchard-vale/motifs/project/motif-project-dependency-chain-96.svg" alt="">
+          </div>
+          <div class="thread-grid">
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-workflow-dependency-32.svg" alt="">
+              <strong>Market cart</strong>
+              <span>Blocks west path until 15:40</span>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="">
+              <strong>Notice copy</strong>
+              <span>Needs archive wording approval</span>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="">
+              <strong>Supply purse</strong>
+              <span>Approved for oil and screws</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel roster-panel" aria-labelledby="roster-title">
+          <div class="panel-heading compact">
+            <div>
+              <p class="kicker">On watch</p>
+              <h2 id="roster-title">Steward Roster</h2>
+            </div>
+            <img src="../src/assets/orchard-vale/heraldry/frame-laurel-gold-green-512.png" alt="">
+          </div>
+          <div class="roster-list">
+            <article>
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.png" alt="Deer governance steward portrait">
+              <div><strong>Elder Fen</strong><span>Decision desk</span></div>
+              <mark class="status good">Ready</mark>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.png" alt="Squirrel resource manager portrait">
+              <div><strong>Pip</strong><span>Supply room</span></div>
+              <mark class="status warn">Busy</mark>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.png" alt="Otter facilitator portrait">
+              <div><strong>Marrow</strong><span>Welcome table</span></div>
+              <mark class="status good">Ready</mark>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel ledger-panel" id="ledger" aria-labelledby="ledger-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Live ledger</p>
+              <h2 id="ledger-title">Command Event Log</h2>
+            </div>
+            <button class="button secondary" type="button">
+              <img src="../src/assets/orchard-vale/icons/icon-action-export-32.svg" alt="">
+              Export
+            </button>
+          </div>
+          <div class="event-ledger" role="table" aria-label="Command event log">
+            <div class="ledger-head" role="row">
+              <span role="columnheader">Time</span>
+              <span role="columnheader">Signal</span>
+              <span role="columnheader">Owner</span>
+              <span role="columnheader">State</span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Time">15:10</span>
+              <span role="cell" data-label="Signal">Oil crate still at west depot</span>
+              <span role="cell" data-label="Owner">Robin</span>
+              <span role="cell" data-label="State"><mark class="status warn">In transit</mark></span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Time">14:45</span>
+              <span role="cell" data-label="Signal">Fountain queue widening</span>
+              <span role="cell" data-label="Owner">Marrow</span>
+              <span role="cell" data-label="State"><mark class="status good">Handled</mark></span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Time">14:20</span>
+              <span role="cell" data-label="Signal">Archive labels ready for review</span>
+              <span role="cell" data-label="Owner">Alder</span>
+              <span role="cell" data-label="State"><mark class="status blue">Review</mark></span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Time">13:55</span>
+              <span role="cell" data-label="Signal">North gate route confirmed clear</span>
+              <span role="cell" data-label="Owner">Bramble</span>
+              <span role="cell" data-label="State"><mark class="status good">Closed</mark></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

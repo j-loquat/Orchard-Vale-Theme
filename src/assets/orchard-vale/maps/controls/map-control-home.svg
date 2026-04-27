@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-labelledby="title desc">
+  <title id="title">Map Control Home</title>
+  <desc id="desc">Orchard Vale map control asset: Map Control Home.</desc>
+  <g><rect x="5" y="5" width="38" height="38" rx="6" fill="#f2e1b8" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M14 25 L24 15 L34 25 V35 H17 V25" fill="#e7c66a" stroke="#2f2417" stroke-width="2.8" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M21 35 V27 H27 V35" fill="#f8edcf" stroke="#2f2417" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

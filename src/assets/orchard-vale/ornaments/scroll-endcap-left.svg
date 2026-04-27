@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="112" viewBox="0 0 128 112" fill="none">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1d178"/>
+      <stop offset="0.42" stop-color="#c89531"/>
+      <stop offset="0.72" stop-color="#7a4b18"/>
+      <stop offset="1" stop-color="#e0b95b"/>
+    </linearGradient>
+    <linearGradient id="darkWood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b3515"/>
+      <stop offset="0.45" stop-color="#2b190b"/>
+      <stop offset="1" stop-color="#100904"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8cad4e"/>
+      <stop offset="0.55" stop-color="#3f7629"/>
+      <stop offset="1" stop-color="#183b16"/>
+    </linearGradient>
+    <filter id="inkShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="0.7" flood-color="#160d05" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <g filter="url(#inkShadow)">
+    <path d="M92 13 C61 7 30 10 13 25 C1 37 5 57 22 61 C8 70 7 89 22 99 C39 111 67 113 93 106 C78 90 78 30 92 13 Z" fill="#ead2a3" stroke="#3b2714" stroke-width="3"/>
+    <path d="M93 13 C112 20 116 36 102 45 C116 53 117 72 101 82 C112 91 108 104 93 106" stroke="#8b6530" stroke-width="4" stroke-linecap="round"/>
+    <path d="M25 31 C41 24 59 22 78 25" stroke="#c89531" stroke-width="2" opacity="0.7"/>
+    <path d="M24 94 C43 100 62 100 80 96" stroke="#c89531" stroke-width="2" opacity="0.7"/>
+  </g>
+</svg>

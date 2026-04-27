@@ -1,0 +1,836 @@
+:root {
+  --ink: #2f2417;
+  --ink-soft: #60462b;
+  --forest: #173820;
+  --forest-2: #0f2818;
+  --green: #2f6b3f;
+  --paper: #f8edcf;
+  --paper-2: #efd9a7;
+  --parchment: #e2c37e;
+  --walnut: #704826;
+  --brass: #c9962e;
+  --blue: #49759a;
+  --red: #9a4337;
+  --purple: #73508b;
+  --shadow: rgba(29, 18, 7, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    linear-gradient(rgba(16, 38, 24, 0.9), rgba(16, 38, 24, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
+  background-size: auto, 540px 540px;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin-top: 0;
+}
+
+.library-shell {
+  min-height: 100vh;
+  display: grid;
+  gap: 12px;
+  padding: 10px;
+  background:
+    linear-gradient(rgba(57, 36, 17, 0.48), rgba(57, 36, 17, 0.55)),
+    url("../src/assets/orchard-vale/textures/texture-wood-walnut-panel-1024.png");
+  border: 5px solid #1d1208;
+}
+
+.library-header,
+.tab-rail,
+.hero-specimen,
+.tab-panels {
+  min-width: 0;
+  border: 3px solid var(--walnut);
+  box-shadow: inset 0 0 0 3px rgba(201, 150, 46, 0.42), 0 8px 18px var(--shadow);
+}
+
+.library-header {
+  display: grid;
+  grid-template-columns: minmax(560px, 1fr) minmax(450px, 0.55fr);
+  gap: 12px;
+  padding: 12px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(23, 56, 32, 0.92), rgba(15, 40, 24, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+}
+
+.title-card {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-width: 0;
+  padding: 12px;
+}
+
+.title-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.28));
+}
+
+.title-card p,
+.section-heading p,
+.hero-specimen p {
+  margin-bottom: 6px;
+  color: var(--brass);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.title-card h1 {
+  margin-bottom: 8px;
+  font-size: clamp(42px, 4vw, 72px);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.title-card span {
+  display: block;
+  color: var(--paper);
+  font-size: 22px;
+  line-height: 1.22;
+}
+
+.summary-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.summary-card article {
+  display: grid;
+  place-items: center;
+  min-height: 116px;
+  padding: 10px;
+  text-align: center;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+  border: 2px solid var(--walnut);
+}
+
+.summary-card strong {
+  color: var(--forest);
+  font-size: 44px;
+  line-height: 0.92;
+}
+
+.summary-card span {
+  font-weight: 700;
+}
+
+.tab-rail {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 9px;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+}
+
+.tab-button {
+  flex: 1 0 max-content;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(23, 56, 32, 0.96), rgba(15, 40, 24, 0.98)),
+    url("../src/assets/orchard-vale/backplates/backplate-header-green-signboard.svg");
+  border: 2px solid var(--walnut);
+  font-weight: 700;
+}
+
+.tab-button[aria-selected="true"] {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(226, 195, 126, 0.92), rgba(201, 150, 46, 0.82)),
+    url("../src/assets/orchard-vale/textures/texture-brass-hammered-1024.png");
+  box-shadow: inset 0 0 0 2px rgba(248, 237, 207, 0.45);
+}
+
+.hero-specimen {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.42fr) minmax(580px, 1fr);
+  gap: 12px;
+  padding: 12px;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+}
+
+.hero-specimen > div {
+  min-width: 0;
+  padding: 18px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(23, 56, 32, 0.94), rgba(15, 40, 24, 0.98)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+  border: 2px solid var(--walnut);
+}
+
+.hero-specimen h2 {
+  margin-bottom: 10px;
+  color: var(--paper);
+  font-size: clamp(32px, 3vw, 52px);
+  line-height: 0.96;
+}
+
+.hero-specimen span {
+  display: block;
+  color: var(--paper);
+  font-size: 20px;
+  line-height: 1.32;
+}
+
+.specimen-viewer {
+  height: 330px;
+  overflow: auto;
+  background: var(--paper);
+  border: 2px solid var(--walnut);
+}
+
+.specimen-viewer img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  background: rgba(248, 237, 207, 0.72);
+}
+
+.zoomable-image {
+  cursor: zoom-in;
+}
+
+.tab-panels {
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.88), rgba(248, 237, 207, 0.95)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+}
+
+.tab-panel {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+.section-heading {
+  padding: 16px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(23, 56, 32, 0.96), rgba(15, 40, 24, 0.98)),
+    url("../src/assets/orchard-vale/backplates/backplate-header-green-signboard.svg");
+  border: 2px solid var(--walnut);
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+  color: var(--paper);
+  font-size: clamp(28px, 2.4vw, 44px);
+  line-height: 1;
+}
+
+.wide-grid,
+.asset-row,
+.component-grid,
+.recipe-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.wide-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.asset-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.specimen-card,
+.sheet-card,
+.panel-sample,
+.heraldry-feature,
+.chart-demo,
+.texture-note,
+.notice-recipe,
+.metric-recipe,
+.task-recipe,
+.empty-recipe {
+  min-width: 0;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.84), rgba(248, 237, 207, 0.97)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+  border: 2px solid color-mix(in srgb, var(--walnut) 76%, var(--brass) 24%);
+  box-shadow: inset 0 0 0 2px rgba(201, 150, 46, 0.2), 0 8px 15px rgba(51, 31, 12, 0.14);
+}
+
+.specimen-card img,
+.sheet-card img {
+  width: 100%;
+  object-fit: contain;
+  background: rgba(248, 237, 207, 0.72);
+  border-bottom: 1px solid rgba(112, 72, 38, 0.38);
+}
+
+.specimen-card.wide img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.sheet-card img {
+  height: 430px;
+  padding: 12px;
+}
+
+.specimen-card h3,
+.sheet-card h3,
+.panel-sample h3,
+.heraldry-feature h3,
+.chart-demo h3,
+.texture-note h3,
+.notice-recipe h3,
+.task-recipe h3,
+.empty-recipe h3 {
+  margin: 12px 12px 6px;
+  color: var(--forest);
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.specimen-card p,
+.texture-note p,
+.notice-recipe p,
+.task-recipe p,
+.empty-recipe p {
+  margin: 0 12px 14px;
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.icon-strip,
+.ornament-grid,
+.crest-grid,
+.small-asset-grid,
+.texture-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.icon-strip {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 12px;
+  background: rgba(23, 56, 32, 0.92);
+  border: 2px solid var(--walnut);
+}
+
+.icon-strip img {
+  width: 100%;
+  height: 84px;
+  object-fit: contain;
+  padding: 10px;
+  background: var(--paper);
+  border: 1px solid rgba(112, 72, 38, 0.45);
+}
+
+.component-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.panel-sample {
+  min-height: 190px;
+  padding: 16px;
+}
+
+.green-board {
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(23, 56, 32, 0.94), rgba(15, 40, 24, 0.98)),
+    url("../src/assets/orchard-vale/backplates/backplate-header-green-signboard.svg");
+}
+
+.green-board h3,
+.green-board p {
+  color: var(--paper);
+}
+
+.parchment-card {
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.98)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+}
+
+.sample-lines {
+  display: grid;
+  gap: 8px;
+  margin: 18px 12px 0;
+}
+
+.sample-lines span {
+  display: block;
+  height: 13px;
+  background: rgba(112, 72, 38, 0.18);
+  border: 1px solid rgba(112, 72, 38, 0.18);
+}
+
+.sample-lines span:nth-child(1) {
+  width: 88%;
+}
+
+.sample-lines span:nth-child(2) {
+  width: 74%;
+}
+
+.sample-lines span:nth-child(3) {
+  width: 52%;
+}
+
+.ribbon-card {
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.98)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+}
+
+.ribbon-sample {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  margin: 18px 12px 0;
+  padding: 0 20px;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(47, 107, 63, 0.94), rgba(23, 56, 32, 0.98));
+  border: 2px solid var(--walnut);
+  box-shadow: inset 0 0 0 2px rgba(201, 150, 46, 0.3);
+  font-weight: 700;
+}
+
+.button-card div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px;
+}
+
+.button-card button {
+  min-height: 38px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: var(--parchment);
+  border: 2px solid var(--walnut);
+  font-weight: 700;
+}
+
+.button-card .secondary {
+  color: var(--paper);
+  background: var(--green);
+}
+
+.ornament-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.ornament-grid img,
+.crest-grid img,
+.small-asset-grid figure {
+  min-width: 0;
+  padding: 12px;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.86), rgba(248, 237, 207, 0.96)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+  border: 2px solid rgba(112, 72, 38, 0.58);
+}
+
+.ornament-grid img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.heraldry-feature {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+}
+
+.heraldry-feature img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.heraldry-feature p {
+  margin-bottom: 6px;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.heraldry-feature h3 {
+  margin: 0 0 6px;
+}
+
+.heraldry-feature span {
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+
+.crest-grid {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.crest-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.small-asset-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.small-asset-grid figure {
+  display: grid;
+  place-items: center;
+  min-height: 142px;
+  margin: 0;
+}
+
+.small-asset-grid img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.small-asset-grid figcaption {
+  margin-top: 8px;
+  text-align: center;
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.chart-demo {
+  padding: 16px;
+}
+
+.meter {
+  height: 22px;
+  margin: 16px 12px;
+  padding: 4px;
+  background: var(--paper);
+  border: 2px solid var(--walnut);
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), #93aa5d);
+}
+
+.bars {
+  height: 170px;
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  margin: 16px 12px;
+  padding: 12px;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.72), rgba(248, 237, 207, 0.9)),
+    url("../src/assets/orchard-vale/data-viz/chart-plot-background-parchment.svg");
+  border: 2px solid var(--walnut);
+}
+
+.bars i {
+  flex: 1;
+  background: linear-gradient(var(--green), var(--brass));
+  border: 1px solid var(--walnut);
+}
+
+.texture-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.texture-grid figure {
+  min-height: 190px;
+  display: flex;
+  align-items: end;
+  margin: 0;
+  background-image: var(--texture);
+  background-size: cover;
+  border: 2px solid var(--walnut);
+}
+
+.texture-grid figcaption {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 10px;
+  color: var(--paper);
+  background: rgba(15, 40, 24, 0.88);
+  font-weight: 700;
+}
+
+.texture-note {
+  padding: 16px;
+}
+
+.recipe-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.notice-recipe,
+.metric-recipe,
+.task-recipe,
+.empty-recipe {
+  padding: 14px;
+}
+
+.notice-recipe header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -14px -14px 12px;
+  padding: 9px 12px;
+  color: var(--paper);
+  background: var(--forest);
+  border-bottom: 2px solid var(--walnut);
+  font-weight: 700;
+}
+
+.notice-recipe header img,
+.task-recipe p img {
+  width: 24px;
+  height: 24px;
+}
+
+.metric-recipe {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.metric-recipe img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+
+.metric-recipe strong {
+  display: block;
+  color: var(--forest);
+  font-size: 54px;
+  line-height: 0.9;
+}
+
+.metric-recipe span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+
+.task-recipe small,
+.task-recipe span {
+  display: block;
+  width: max-content;
+}
+
+.task-recipe small {
+  color: var(--ink-soft);
+}
+
+.task-recipe > span {
+  margin-top: 4px;
+  padding: 2px 8px;
+  color: var(--paper);
+  background: var(--purple);
+  border: 1px solid var(--walnut);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.task-recipe p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.empty-recipe img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 18px;
+  background: rgba(15, 26, 17, 0.86);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-close {
+  justify-self: end;
+  min-height: 40px;
+  padding: 0 18px;
+  color: var(--paper);
+  background: var(--forest);
+  border: 2px solid var(--brass);
+  font-weight: 700;
+}
+
+.lightbox-frame {
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  place-items: start center;
+  padding: 16px;
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.94), rgba(248, 237, 207, 0.98)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+  border: 3px solid var(--walnut);
+  box-shadow: inset 0 0 0 3px rgba(201, 150, 46, 0.35);
+}
+
+.lightbox-frame img {
+  width: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin: 0;
+}
+
+#lightbox-caption {
+  margin: 0;
+  color: var(--paper);
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 1500px) {
+  .library-header,
+  .hero-specimen {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-grid,
+  .component-grid,
+  .recipe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crest-grid,
+  .small-asset-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .library-shell {
+    padding: 0;
+    border-width: 0;
+  }
+
+  .library-header,
+  .tab-rail,
+  .hero-specimen,
+  .tab-panels {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .title-card {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+
+  .title-card img {
+    width: 78px;
+    height: 78px;
+  }
+
+  .title-card h1 {
+    font-size: 38px;
+  }
+
+  .title-card span,
+  .hero-specimen span {
+    font-size: 18px;
+  }
+
+  .summary-card,
+  .wide-grid,
+  .asset-row,
+  .component-grid,
+  .recipe-grid,
+  .texture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specimen-viewer {
+    height: 230px;
+  }
+
+  .crest-grid,
+  .small-asset-grid,
+  .ornament-grid,
+  .icon-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heraldry-feature,
+  .metric-recipe {
+    grid-template-columns: 1fr;
+  }
+}

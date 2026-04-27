@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Vale Guildhall Planner</title>
+  <link rel="stylesheet" href="guildhall-planner.css">
+</head>
+<body>
+  <div class="planner-shell">
+    <aside class="guild-sidebar" aria-label="Guildhall navigation">
+      <a class="brand" href="friendly-town.html" aria-label="Back to Orchard Vale article">
+        <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.png" alt="">
+        <span>Guildhall Planner</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Planner sections">
+        <a class="active" href="#board">
+          <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="">
+          Work Board
+        </a>
+        <a href="#dossier">
+          <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="">
+          Dossier
+        </a>
+        <a href="#timeline">
+          <img src="../src/assets/orchard-vale/icons/icon-data-timeline-32.svg" alt="">
+          Roadmap
+        </a>
+        <a href="#map">
+          <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="">
+          District Map
+        </a>
+        <a href="#ledger">
+          <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="">
+          Supplies
+        </a>
+      </nav>
+
+      <section class="stewards" aria-labelledby="stewards-title">
+        <h2 id="stewards-title">Stewards</h2>
+        <div class="steward-row">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger steward portrait">
+          <div>
+            <strong>Bramble</strong>
+            <span>Board marshal</span>
+          </div>
+        </div>
+        <div class="steward-row">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox implementer portrait">
+          <div>
+            <strong>Rowan</strong>
+            <span>Build lead</span>
+          </div>
+        </div>
+        <div class="steward-row">
+          <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl scholar portrait">
+          <div>
+            <strong>Alder</strong>
+            <span>Review keeper</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="guild-health" aria-labelledby="health-title">
+        <h2 id="health-title">Sprint Health</h2>
+        <div class="ring" aria-label="Sprint health at eighty two percent">
+          <span>82%</span>
+        </div>
+        <p>Strong pace, two dependencies need gentle attention.</p>
+      </section>
+    </aside>
+
+    <main class="planner-main">
+      <header class="command-header">
+        <div>
+          <p class="kicker">Spring works council</p>
+          <h1>Orchard Vale Guildhall Planner</h1>
+          <p class="header-copy">Coordinate public work, steward reviews, and market-day dependencies without losing the human thread.</p>
+        </div>
+        <div class="header-actions" aria-label="Planner actions">
+          <button class="button secondary" type="button">
+            <img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="">
+            Filters
+          </button>
+          <button class="button primary" type="button">
+            <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="">
+            New Task
+          </button>
+        </div>
+      </header>
+
+      <section class="metric-strip" aria-label="Planner summary">
+        <article class="metric-card">
+          <img src="../src/assets/orchard-vale/motifs/project/motif-project-sprint-banner-96.svg" alt="">
+          <div>
+            <span>Open Work</span>
+            <strong>24</strong>
+          </div>
+          <small>6 ready for pickup</small>
+        </article>
+        <article class="metric-card">
+          <img src="../src/assets/orchard-vale/motifs/ai/motif-ai-risk-shield-96.svg" alt="">
+          <div>
+            <span>Blocked</span>
+            <strong>2</strong>
+          </div>
+          <small>Both have named owners</small>
+        </article>
+        <article class="metric-card">
+          <img src="../src/assets/orchard-vale/motifs/operations/motif-operations-crate-96.svg" alt="">
+          <div>
+            <span>Supplies</span>
+            <strong>91%</strong>
+          </div>
+          <small>Lantern oil arrives today</small>
+        </article>
+        <article class="metric-card">
+          <img src="../src/assets/orchard-vale/motion/static/motion-gear-spin-static.png" alt="">
+          <div>
+            <span>Automation</span>
+            <strong>7</strong>
+          </div>
+          <small>Routines running cleanly</small>
+        </article>
+      </section>
+
+      <div class="planner-grid">
+        <section class="board-panel" id="board" aria-labelledby="board-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Work by status</p>
+              <h2 id="board-title">Guild Work Board</h2>
+            </div>
+            <div class="tabs" aria-label="Board views">
+              <button class="active" type="button">Town</button>
+              <button type="button">Market</button>
+              <button type="button">Bridge</button>
+            </div>
+          </div>
+
+          <div class="task-board">
+            <section class="lane backlog" aria-labelledby="lane-backlog">
+              <header>
+                <h3 id="lane-backlog">Backlog</h3>
+                <span>5</span>
+              </header>
+              <article class="task-card">
+                <div class="task-topline">
+                  <span class="badge amber">Survey</span>
+                  <small>Mill lane</small>
+                </div>
+                <h4>Mark repair stones before rain</h4>
+                <p>Walk the lane with stakes and mark the three worst edges for the mason crew.</p>
+                <div class="task-footer">
+                  <img src="../src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.png" alt="Mole engineer assignee">
+                  <span class="pill">Low risk</span>
+                </div>
+              </article>
+              <article class="task-card compact">
+                <div class="task-topline">
+                  <span class="badge green">Ready</span>
+                  <small>Notices</small>
+                </div>
+                <h4>Refresh visitor route cards</h4>
+              </article>
+            </section>
+
+            <section class="lane in-motion" aria-labelledby="lane-motion">
+              <header>
+                <h3 id="lane-motion">In Motion</h3>
+                <span>8</span>
+              </header>
+              <article class="task-card featured">
+                <div class="task-topline">
+                  <span class="badge blue">Active</span>
+                  <small>Bridge lamps</small>
+                </div>
+                <h4>Install west bridge lantern brackets</h4>
+                <p>Bracket spacing is approved. Rowan needs two runners after the market cart clears.</p>
+                <div class="progress-line" aria-label="Task progress at sixty four percent">
+                  <span style="width: 64%"></span>
+                </div>
+                <div class="task-footer">
+                  <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox assignee">
+                  <img src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.png" alt="Robin helper">
+                  <span class="pill warning">Dependency</span>
+                </div>
+              </article>
+              <article class="task-card compact">
+                <div class="task-topline">
+                  <span class="badge amber">Today</span>
+                  <small>Kitchen hall</small>
+                </div>
+                <h4>Confirm supper bench count</h4>
+              </article>
+            </section>
+
+            <section class="lane review" aria-labelledby="lane-review">
+              <header>
+                <h3 id="lane-review">Review</h3>
+                <span>4</span>
+              </header>
+              <article class="task-card">
+                <div class="task-topline">
+                  <span class="badge purple">Review</span>
+                  <small>Archive</small>
+                </div>
+                <h4>Question desk intake labels</h4>
+                <p>Alder is checking the wording for clarity before the forms are copied.</p>
+                <div class="task-footer">
+                  <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl reviewer">
+                  <span class="pill">Copy pass</span>
+                </div>
+              </article>
+              <article class="task-card compact">
+                <div class="task-topline">
+                  <span class="badge blue">Map</span>
+                  <small>Green</small>
+                </div>
+                <h4>Check fountain marker placement</h4>
+              </article>
+            </section>
+
+            <section class="lane done" aria-labelledby="lane-done">
+              <header>
+                <h3 id="lane-done">Ready</h3>
+                <span>7</span>
+              </header>
+              <article class="task-card">
+                <div class="task-topline">
+                  <span class="badge green">Done</span>
+                  <small>Market</small>
+                </div>
+                <h4>Vendor welcome table packet</h4>
+                <p>Stamped, bundled, and waiting beside the north gate ledger.</p>
+                <div class="task-footer">
+                  <img src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.png" alt="Mouse clerk assignee">
+                  <span class="pill success">Filed</span>
+                </div>
+              </article>
+              <article class="task-card compact">
+                <div class="task-topline">
+                  <span class="badge green">Done</span>
+                  <small>Tools</small>
+                </div>
+                <h4>Sharpen east-shed shears</h4>
+              </article>
+            </section>
+          </div>
+        </section>
+
+        <aside class="detail-stack">
+          <section class="dossier-panel" id="dossier" aria-labelledby="dossier-title">
+            <div class="panel-heading compact-heading">
+              <div>
+                <p class="kicker">Selected work</p>
+                <h2 id="dossier-title">Lantern Brackets</h2>
+              </div>
+              <img src="../src/assets/orchard-vale/heraldry/seal-review-blue-512.png" alt="">
+            </div>
+            <dl class="dossier-list">
+              <div>
+                <dt>Owner</dt>
+                <dd>Rowan, bridge crew</dd>
+              </div>
+              <div>
+                <dt>Need</dt>
+                <dd>Two runners, oil crate, brass screws</dd>
+              </div>
+              <div>
+                <dt>Risk</dt>
+                <dd>Market cart blocks west path until 3:40</dd>
+              </div>
+            </dl>
+            <button class="button primary wide" type="button">
+              <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="">
+              Send Runner Note
+            </button>
+          </section>
+
+          <section class="timeline-panel" id="timeline" aria-labelledby="timeline-title">
+            <div class="panel-heading compact-heading">
+              <div>
+                <p class="kicker">Next markers</p>
+                <h2 id="timeline-title">Roadmap</h2>
+              </div>
+              <img src="../src/assets/orchard-vale/motifs/project/motif-project-milestone-flag-96.svg" alt="">
+            </div>
+            <ol class="timeline">
+              <li>
+                <time>10:00</time>
+                <span>Route card copy closes</span>
+              </li>
+              <li class="current">
+                <time>12:30</time>
+                <span>Welcome table opens</span>
+              </li>
+              <li>
+                <time>15:40</time>
+                <span>Bridge path clears</span>
+              </li>
+              <li>
+                <time>Dusk</time>
+                <span>Lantern test begins</span>
+              </li>
+            </ol>
+          </section>
+        </aside>
+
+        <section class="map-panel" id="map" aria-labelledby="district-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Work locations</p>
+              <h2 id="district-title">Guildhall District</h2>
+            </div>
+            <img class="heading-mark" src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg" alt="">
+          </div>
+          <div class="map-frame">
+            <img class="map-art" src="../src/assets/orchard-vale/maps/backgrounds/map-district-guildhall-unlabeled-16x9.webp" alt="Illustrated guildhall district map">
+            <img class="marker guildhall" src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="Guildhall marker">
+            <img class="marker bridge" src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Bridge marker">
+            <img class="marker depot" src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="Supply depot marker">
+            <img class="route" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="">
+          </div>
+          <ul class="map-notes" aria-label="District map notes">
+            <li>
+              <img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="">
+              <span>Guildhall review desk</span>
+            </li>
+            <li>
+              <img src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="">
+              <span>West bridge lantern crew</span>
+            </li>
+            <li>
+              <img src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="">
+              <span>Supply depot pickup</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="ledger-panel" id="ledger" aria-labelledby="ledger-title">
+          <div class="panel-heading">
+            <div>
+              <p class="kicker">Supply ledger</p>
+              <h2 id="ledger-title">Ready For Pickup</h2>
+            </div>
+            <button class="button secondary" type="button">
+              <img src="../src/assets/orchard-vale/icons/icon-action-export-32.svg" alt="">
+              Export
+            </button>
+          </div>
+          <div class="ledger-table" role="table" aria-label="Supply ledger">
+            <div role="row" class="ledger-head">
+              <span role="columnheader">Item</span>
+              <span role="columnheader">Owner</span>
+              <span role="columnheader">Status</span>
+              <span role="columnheader">Due</span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Item">Brass screws, size four</span>
+              <span role="cell" data-label="Owner">Squirrel storekeeper</span>
+              <span role="cell" data-label="Status"><mark class="status good">Packed</mark></span>
+              <span role="cell" data-label="Due">14:00</span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Item">Lantern oil crate</span>
+              <span role="cell" data-label="Owner">Robin courier</span>
+              <span role="cell" data-label="Status"><mark class="status warn">In transit</mark></span>
+              <span role="cell" data-label="Due">15:15</span>
+            </div>
+            <div role="row">
+              <span role="cell" data-label="Item">Blank route cards</span>
+              <span role="cell" data-label="Owner">Mouse clerk</span>
+              <span role="cell" data-label="Status"><mark class="status good">Filed</mark></span>
+              <span role="cell" data-label="Due">Ready</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Vale Town Notice Board</title>
+  <link rel="stylesheet" href="town-notice-board.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="friendly-town.html" aria-label="Back to Orchard Vale article">
+      <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="">
+      <span>Orchard Vale</span>
+    </a>
+    <nav class="header-nav" aria-label="Town board sections">
+      <a href="#notices">Notices</a>
+      <a href="#market">Market</a>
+      <a href="#requests">Requests</a>
+      <a href="#map">Map</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="board-hero" aria-labelledby="page-title">
+      <div class="hero-panel">
+        <p class="kicker">Town Green Bulletin</p>
+        <h1 id="page-title">Today In Orchard Vale</h1>
+        <p>Announcements, gatherings, neighborly requests, and useful directions from the village notice board.</p>
+      </div>
+      <div class="lantern" aria-hidden="true"></div>
+    </section>
+
+    <section class="dashboard" aria-label="Orchard Vale notice board">
+      <aside class="status-column" aria-label="Town status">
+        <section class="status-card">
+          <img class="status-crest" src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="">
+          <h2>Vale Mood</h2>
+          <p class="mood">Open gates, clear paths, warm kitchens.</p>
+          <div class="meter" aria-label="Friendliness meter at ninety percent">
+            <span style="width: 90%"></span>
+          </div>
+        </section>
+
+        <section class="watch-card">
+          <h2>Helpful Stewards</h2>
+          <div class="steward">
+            <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit planner portrait">
+            <div>
+              <strong>Elowen</strong>
+              <span>Market schedule</span>
+            </div>
+          </div>
+          <div class="steward">
+            <img src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.png" alt="Otter facilitator portrait">
+            <div>
+              <strong>Marrow</strong>
+              <span>Visitor welcome</span>
+            </div>
+          </div>
+          <div class="steward">
+            <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger steward portrait">
+            <div>
+              <strong>Bramble</strong>
+              <span>Work party lead</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+      <section class="notice-board" id="notices" aria-labelledby="notice-title">
+        <div class="section-heading">
+          <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-notification-bell-96.svg" alt="">
+          <div>
+            <p class="kicker">Pinned this morning</p>
+            <h2 id="notice-title">Public Notices</h2>
+          </div>
+        </div>
+
+        <div class="notice-grid">
+          <article class="notice-card priority">
+            <div class="notice-meta">
+              <span class="badge green">New</span>
+              <span>Bridge lamps</span>
+            </div>
+            <h3>Lantern lighting begins at dusk</h3>
+            <p>The bridge crew will light the west path first so visitors leaving the market can cross before the evening mist settles.</p>
+            <footer>
+              <img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="">
+              <span>Path clear</span>
+            </footer>
+          </article>
+
+          <article class="notice-card">
+            <div class="notice-meta">
+              <span class="badge amber">Today</span>
+              <span>Library steps</span>
+            </div>
+            <h3>Question desk open after lunch</h3>
+            <p>Bring difficult forms, confusing letters, half-finished plans, or anything that would benefit from another careful reader.</p>
+            <footer>
+              <img src="../src/assets/orchard-vale/icons/icon-data-citation-32.svg" alt="">
+              <span>Archivist present</span>
+            </footer>
+          </article>
+
+          <article class="notice-card">
+            <div class="notice-meta">
+              <span class="badge blue">Gathering</span>
+              <span>South green</span>
+            </div>
+            <h3>Shared supper table needs chairs</h3>
+            <p>Three extra chairs and one long bench would help the supper table stay flexible for late arrivals.</p>
+            <footer>
+              <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="">
+              <span>Contributions welcome</span>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="events-panel" id="market" aria-labelledby="market-title">
+        <div class="section-heading compact">
+          <img src="../src/assets/orchard-vale/motifs/finance/motif-finance-coins-96.svg" alt="">
+          <div>
+            <p class="kicker">Market green</p>
+            <h2 id="market-title">Today’s Gatherings</h2>
+          </div>
+        </div>
+
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-04-26T09:00">9:00</time>
+            <div>
+              <strong>Orchard cart opens</strong>
+              <span>Pears, early greens, and jam jars near the fountain.</span>
+            </div>
+            <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="">
+          </li>
+          <li>
+            <time datetime="2026-04-26T12:30">12:30</time>
+            <div>
+              <strong>Welcome table</strong>
+              <span>Newcomers can collect a blank route card and ask for directions.</span>
+            </div>
+            <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="">
+          </li>
+          <li>
+            <time datetime="2026-04-26T16:00">4:00</time>
+            <div>
+              <strong>Garden tools return</strong>
+              <span>Borrowed trowels and pruning shears go back to the east shed.</span>
+            </div>
+            <img src="../src/assets/orchard-vale/icons/icon-workflow-release-32.svg" alt="">
+          </li>
+        </ol>
+      </section>
+
+      <section class="map-panel" id="map" aria-labelledby="map-title">
+        <div class="map-header">
+          <div>
+            <p class="kicker">Where to go</p>
+            <h2 id="map-title">Market District Map</h2>
+          </div>
+          <img src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg" alt="">
+        </div>
+        <div class="map-frame">
+          <img class="map-art" src="../src/assets/orchard-vale/maps/backgrounds/map-district-market-unlabeled-16x9.webp" alt="Unlabeled illustrated market district map">
+          <img class="marker fountain" src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Fountain marker">
+          <img class="marker library" src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="Library marker">
+          <img class="marker supper" src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="Shared supper marker">
+          <img class="route" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="">
+        </div>
+        <ul class="map-legend" aria-label="Map legend">
+          <li><img src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt=""> Fountain welcome table</li>
+          <li><img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt=""> Library question desk</li>
+          <li><img src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt=""> Shared supper table</li>
+        </ul>
+      </section>
+
+      <section class="requests-panel" id="requests" aria-labelledby="request-title">
+        <div class="section-heading compact">
+          <img src="../src/assets/orchard-vale/motifs/crm/motif-crm-handshake-seal-96.svg" alt="">
+          <div>
+            <p class="kicker">Neighborly asks</p>
+            <h2 id="request-title">Could Use A Hand</h2>
+          </div>
+        </div>
+
+        <div class="request-list">
+          <article>
+            <span class="badge red">Urgent</span>
+            <h3>Two dry blankets for the mill porch</h3>
+            <p>The afternoon rain reached the bench cushions before anyone noticed.</p>
+          </article>
+          <article>
+            <span class="badge green">Easy</span>
+            <h3>Someone to read a route card aloud</h3>
+            <p>A visiting aunt prefers spoken directions to map marks.</p>
+          </article>
+          <article>
+            <span class="badge amber">Before dusk</span>
+            <h3>Help carrying lantern oil</h3>
+            <p>One small crate needs to move from the west shed to the bridge.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="spot-panel" aria-label="Notice board illustration">
+        <img src="../src/assets/orchard-vale/empty-states/spot-notice-board-quiet-512.png" alt="Ornate notice board with blank notes">
+        <div>
+          <h2>Leave A Note</h2>
+          <p>Use clear names, useful times, and enough context that the next person can help without guessing.</p>
+          <button type="button">
+            <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="">
+            Pin a notice
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

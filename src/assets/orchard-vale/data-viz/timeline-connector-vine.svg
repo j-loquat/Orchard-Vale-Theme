@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 32" width="320" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Timeline Connector Vine</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Timeline Connector Vine.</desc>
+  <g><line x1="12" y1="16" x2="308" y2="16" stroke="#6f4728" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M36 16 C70 0 106 32 140 16 C174 0 210 32 244 16 C264 7 286 10 304 16" fill="none" stroke="#2f6b3f" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="80" cy="16" r="2.5" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="160" cy="16" r="2.5" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="240" cy="16" r="2.5" fill="#e7c66a" stroke="#2f2417" stroke-width="1.4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

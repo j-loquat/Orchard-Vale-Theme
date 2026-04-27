@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchard Vale Mini-Maps And Location Art</title>
+  <style>
+    :root { --ink:#2f2417; --green:#2f6b3f; --paper:#f8edcf; --parchment:#f2e1b8; --wood:#6f4728; --brass:#c9962e; }
+    body { margin:0; background:#2f3f2d; color:var(--ink); font-family:Georgia,"Times New Roman",serif; }
+    main { max-width:1240px; margin:0 auto; padding:32px; }
+    header { background:var(--green); color:#f8edcf; border:3px solid #1f2b1d; box-shadow:0 0 0 4px var(--brass),0 16px 32px rgba(0,0,0,.25); padding:18px 22px; margin-bottom:24px; }
+    h1 { margin:0; font-size:30px; letter-spacing:0; }
+    h2 { margin:0; font-size:16px; }
+    h3 { color:#f8edcf; margin:26px 0 12px; font-size:20px; }
+    p { margin:8px 0 0; max-width:840px; line-height:1.45; }
+    .map-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px; }
+    .map-card, .control-card { margin:0; background:var(--paper); border:2px solid var(--wood); box-shadow:inset 0 0 0 3px #dec58e,0 3px 0 rgba(0,0,0,.18); padding:12px; display:grid; gap:10px; }
+    .map-frame { aspect-ratio:16/9; background:var(--parchment); border:1px solid #c59d52; overflow:hidden; }
+    .map-frame img { width:100%; height:100%; object-fit:cover; display:block; }
+    .control-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:12px; }
+    .control-frame { height:92px; display:grid; place-items:center; background:var(--parchment); border:1px solid #c59d52; }
+    .control-frame img { max-width:76px; max-height:76px; }
+    code { font:11px/1.25 Consolas,monospace; overflow-wrap:anywhere; color:#5a3d24; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Orchard Vale Mini-Maps And Location Art</h1>
+      <p>Category 10 map backgrounds plus SVG marker and control assets for dynamic HTML dashboards and workflow maps.</p>
+    </header>
+    <h3>Map Backgrounds</h3>
+    <section class="map-grid"><article class="map-card">
+  <h2>Base Parchment Blank</h2>
+  <div class="map-frame"><img src="backgrounds/map-base-parchment-blank-16x9.webp" alt="Base Parchment Blank"></div>
+  <code>backgrounds/map-base-parchment-blank-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Forge</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-forge-unlabeled-16x9.webp" alt="District Forge"></div>
+  <code>backgrounds/map-district-forge-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Guildhall</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-guildhall-unlabeled-16x9.webp" alt="District Guildhall"></div>
+  <code>backgrounds/map-district-guildhall-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Library</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-library-unlabeled-16x9.webp" alt="District Library"></div>
+  <code>backgrounds/map-district-library-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Market</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-market-unlabeled-16x9.webp" alt="District Market"></div>
+  <code>backgrounds/map-district-market-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Stables</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-stables-unlabeled-16x9.webp" alt="District Stables"></div>
+  <code>backgrounds/map-district-stables-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>District Watermill</h2>
+  <div class="map-frame"><img src="backgrounds/map-district-watermill-unlabeled-16x9.webp" alt="District Watermill"></div>
+  <code>backgrounds/map-district-watermill-unlabeled-16x9.webp</code>
+</article><article class="map-card">
+  <h2>Route Countryside Empty</h2>
+  <div class="map-frame"><img src="backgrounds/map-route-countryside-empty-16x9.webp" alt="Route Countryside Empty"></div>
+  <code>backgrounds/map-route-countryside-empty-16x9.webp</code>
+</article><article class="map-card">
+  <h2>Village Overview</h2>
+  <div class="map-frame"><img src="backgrounds/map-village-overview-unlabeled-16x9.webp" alt="Village Overview"></div>
+  <code>backgrounds/map-village-overview-unlabeled-16x9.webp</code>
+</article></section>
+    <h3>Markers And Controls</h3>
+    <section class="control-grid"><figure class="control-card">
+  <div class="control-frame"><img src="controls/compass-rose-brass.svg" alt="Compass Rose Brass"></div>
+  <figcaption><code>controls/compass-rose-brass.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-control-home.svg" alt="Home"></div>
+  <figcaption><code>controls/map-control-home.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-control-layers.svg" alt="Layers"></div>
+  <figcaption><code>controls/map-control-layers.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-control-locate.svg" alt="Locate"></div>
+  <figcaption><code>controls/map-control-locate.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-control-zoom-in.svg" alt="Zoom In"></div>
+  <figcaption><code>controls/map-control-zoom-in.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-control-zoom-out.svg" alt="Zoom Out"></div>
+  <figcaption><code>controls/map-control-zoom-out.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-label-ribbon-blank.svg" alt="Label Ribbon Blank"></div>
+  <figcaption><code>controls/map-label-ribbon-blank.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/map-scale-plaque.svg" alt="Scale Plaque"></div>
+  <figcaption><code>controls/map-scale-plaque.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-current-location-brass.svg" alt="Current Location Brass"></div>
+  <figcaption><code>controls/marker-current-location-brass.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-amber.svg" alt="Pin Amber"></div>
+  <figcaption><code>controls/marker-pin-amber.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-blue.svg" alt="Pin Blue"></div>
+  <figcaption><code>controls/marker-pin-blue.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-gray.svg" alt="Pin Gray"></div>
+  <figcaption><code>controls/marker-pin-gray.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-green.svg" alt="Pin Green"></div>
+  <figcaption><code>controls/marker-pin-green.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-purple.svg" alt="Pin Purple"></div>
+  <figcaption><code>controls/marker-pin-purple.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-pin-red.svg" alt="Pin Red"></div>
+  <figcaption><code>controls/marker-pin-red.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-route-node-empty.svg" alt="Route Node Empty"></div>
+  <figcaption><code>controls/marker-route-node-empty.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-amber.svg" alt="Shield Amber"></div>
+  <figcaption><code>controls/marker-shield-amber.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-blue.svg" alt="Shield Blue"></div>
+  <figcaption><code>controls/marker-shield-blue.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-gray.svg" alt="Shield Gray"></div>
+  <figcaption><code>controls/marker-shield-gray.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-green.svg" alt="Shield Green"></div>
+  <figcaption><code>controls/marker-shield-green.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-purple.svg" alt="Shield Purple"></div>
+  <figcaption><code>controls/marker-shield-purple.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/marker-shield-red.svg" alt="Shield Red"></div>
+  <figcaption><code>controls/marker-shield-red.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/route-line-dashed-brass.svg" alt="Route Line Dashed Brass"></div>
+  <figcaption><code>controls/route-line-dashed-brass.svg</code></figcaption>
+</figure><figure class="control-card">
+  <div class="control-frame"><img src="controls/route-line-solid-green.svg" alt="Route Line Solid Green"></div>
+  <figcaption><code>controls/route-line-solid-green.svg</code></figcaption>
+</figure></section>
+  </main>
+</body>
+</html>

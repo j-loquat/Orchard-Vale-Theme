@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Test Flask</title>
+  <desc id="desc">Orchard Vale infrastructure icon: Test Flask.</desc>
+  <g><path d="M25 10 H39 M29 10 V27 L17 50 C15 54 18 57 23 57 H41 C46 57 49 54 47 50 L35 27 V10" fill="#f2e1b8" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M23 45 H41" fill="none" stroke="#49759a" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="28" cy="50" r="2" fill="#49759a" stroke="#49759a" stroke-width="1" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="38" cy="49" r="2" fill="#49759a" stroke="#49759a" stroke-width="1" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

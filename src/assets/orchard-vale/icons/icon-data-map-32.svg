@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Map</title>
+  <desc id="desc">Orchard Vale data icon: Map.</desc>
+  <g><path d="M10 18 L24 12 L40 18 L54 12 V46 L40 52 L24 46 L10 52 Z" fill="#f2e1b8" stroke="#2f2417" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="24" y1="12" x2="24" y2="46" stroke="#6f4728" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="40" y1="18" x2="40" y2="52" stroke="#6f4728" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M18 36 C27 24 36 43 47 26" fill="none" stroke="#2f6b3f" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

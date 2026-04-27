@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Chart</title>
+  <desc id="desc">Orchard Vale data icon: Chart.</desc>
+  <g><line x1="14" y1="50" x2="52" y2="50" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="14" y1="50" x2="14" y2="15" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="20" y="36" width="7" height="14" rx="1" fill="#77a567" stroke="#2f2417" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="31" y="27" width="7" height="23" rx="1" fill="#d18a2e" stroke="#2f2417" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="42" y="20" width="7" height="30" rx="1" fill="#49759a" stroke="#2f2417" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

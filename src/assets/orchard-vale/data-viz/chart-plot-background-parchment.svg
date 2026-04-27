@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-labelledby="title desc">
+  <title id="title">Parchment Plot Background</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Parchment Plot Background.</desc>
+  <g><rect x="4" y="4" width="312" height="192" rx="4" fill="#f8edcf" stroke="#d9bd83" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M24 48 H296 M24 88 H296 M24 128 H296 M24 168 H296" fill="none" stroke="#d8c28d" stroke-width="1.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M72 24 V176 M128 24 V176 M184 24 V176 M240 24 V176" fill="none" stroke="#e3cd99" stroke-width="1" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

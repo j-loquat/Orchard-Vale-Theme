@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 32" width="240" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Route Line Solid Green</title>
+  <desc id="desc">Orchard Vale map control asset: Route Line Solid Green.</desc>
+  <g><path d="M12 16 C58 2 84 30 126 16 C166 2 190 30 228 16" fill="none" stroke="#2f6b3f" stroke-width="4" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="12" cy="16" r="3" fill="#e7c66a" stroke="#6f4728" stroke-width="1.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="228" cy="16" r="3" fill="#e7c66a" stroke="#6f4728" stroke-width="1.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

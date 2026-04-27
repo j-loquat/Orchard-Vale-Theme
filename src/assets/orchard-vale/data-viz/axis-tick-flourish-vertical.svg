@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 80" width="24" height="80" role="img" aria-labelledby="title desc">
+  <title id="title">Vertical Axis Tick Flourish</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Vertical Axis Tick Flourish.</desc>
+  <g><line x1="12" y1="8" x2="12" y2="72" stroke="#6f4728" stroke-width="3" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M12 36 C5 28 7 20 12 16 C17 20 19 28 12 36 Z" fill="#77a567" stroke="#2f2417" stroke-width="1.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M12 44 C5 52 7 60 12 64 C17 60 19 52 12 44 Z" fill="#77a567" stroke="#2f2417" stroke-width="1.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 12" width="240" height="12" role="img" aria-labelledby="title desc">
+  <title id="title">Minor Gridline</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Minor Gridline.</desc>
+  <g><path d="M8 6 H232" fill="none" stroke="#dcc892" stroke-width="1.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

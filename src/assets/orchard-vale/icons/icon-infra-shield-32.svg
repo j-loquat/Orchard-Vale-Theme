@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Shield</title>
+  <desc id="desc">Orchard Vale infrastructure icon: Shield.</desc>
+  <g><path d="M32 8 C39 13 45 14 51 15 V28 C51 43 42 52 32 57 C22 52 13 43 13 28 V15 C20 14 25 13 32 8 Z" fill="#49759a" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><path d="M24 32 L30 39 L43 24" fill="none" stroke="#f2e1b8" stroke-width="4.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

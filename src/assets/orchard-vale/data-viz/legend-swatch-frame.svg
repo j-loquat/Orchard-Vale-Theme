@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32" width="48" height="32" role="img" aria-labelledby="title desc">
+  <title id="title">Legend Swatch Frame</title>
+  <desc id="desc">Orchard Vale data visualization ornament: Legend Swatch Frame.</desc>
+  <g><rect x="5" y="6" width="38" height="20" rx="4" fill="#f2e1b8" stroke="#6f4728" stroke-width="2.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><rect x="11" y="11" width="10" height="10" rx="2" fill="#77a567" stroke="#2f2417" stroke-width="1.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><line x1="25" y1="16" x2="37" y2="16" stroke="#6f4728" stroke-width="2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>

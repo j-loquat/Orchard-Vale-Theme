@@ -1,0 +1,648 @@
+:root {
+  --ink: #2f2417;
+  --ink-soft: #5a3d24;
+  --forest: #243f2b;
+  --green: #2f6b3f;
+  --green-deep: #214a2c;
+  --parchment: #f2e1b8;
+  --paper: #f8edcf;
+  --paper-deep: #dec58e;
+  --walnut: #6f4728;
+  --wood: #3f2718;
+  --brass: #c9962e;
+  --blue: #49759a;
+  --burgundy: #8b3f3b;
+  --amber: #d18a2e;
+  --red: #a94436;
+  --shadow: rgba(37, 24, 12, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    linear-gradient(rgba(36, 63, 43, 0.84), rgba(36, 63, 43, 0.9)),
+    url("../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
+  background-size: auto, 520px 520px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 66px;
+  padding: 10px clamp(16px, 4vw, 44px);
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(36, 63, 43, 0.94), rgba(36, 63, 43, 0.94)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+  border-bottom: 3px solid var(--brass);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: flex;
+  gap: clamp(10px, 2vw, 22px);
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.header-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+  border-bottom-color: var(--brass);
+  outline: none;
+}
+
+.board-hero {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: minmax(0, 720px) 128px;
+  gap: 20px;
+  align-items: end;
+  padding: clamp(58px, 9vw, 110px) clamp(18px, 6vw, 80px) clamp(34px, 6vw, 64px);
+  background-image:
+    linear-gradient(90deg, rgba(28, 39, 23, 0.76), rgba(28, 39, 23, 0.36)),
+    url("../src/assets/orchard-vale/scenes/wide-16x9/scene-hearthside-mailroom-wide-16x9.webp");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px solid var(--brass);
+  color: var(--paper);
+}
+
+.hero-panel {
+  max-width: 720px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.42);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: clamp(48px, 8vw, 94px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-panel p:last-child {
+  max-width: 690px;
+  margin-bottom: 0;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.35;
+}
+
+.lantern {
+  width: 128px;
+  height: 128px;
+  background-image: url("../src/assets/orchard-vale/motion/spritesheets/motion-lantern-flicker-spritesheet.png");
+  background-size: 1024px 128px;
+  animation: lantern-play 1.1s steps(8) infinite;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes lantern-play {
+  to {
+    background-position: -1024px 0;
+  }
+}
+
+.dashboard {
+  width: min(1260px, calc(100% - 32px));
+  margin: clamp(24px, 5vw, 56px) auto clamp(44px, 8vw, 90px);
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1.4fr) minmax(300px, 0.9fr);
+  grid-template-areas:
+    "status notices events"
+    "status notices map"
+    "status requests map"
+    "status spot spot";
+  gap: 18px;
+}
+
+.status-column {
+  grid-area: status;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.status-card,
+.watch-card,
+.notice-board,
+.events-panel,
+.map-panel,
+.requests-panel,
+.spot-panel {
+  background:
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.92)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+  background-size: auto, 460px 460px;
+  border: 3px solid var(--walnut);
+  box-shadow: inset 0 0 0 4px var(--paper-deep), 0 12px 26px var(--shadow);
+}
+
+.status-card,
+.watch-card,
+.events-panel,
+.map-panel,
+.requests-panel,
+.spot-panel {
+  padding: 18px;
+}
+
+.status-card {
+  text-align: center;
+}
+
+.status-crest {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+}
+
+.status-card h2,
+.watch-card h2,
+.section-heading h2,
+.map-header h2,
+.spot-panel h2 {
+  margin: 0;
+  color: var(--forest);
+  font-size: 26px;
+  line-height: 1.05;
+}
+
+.mood {
+  margin: 10px 0 16px;
+  line-height: 1.45;
+}
+
+.meter {
+  height: 22px;
+  padding: 4px;
+  background: var(--parchment);
+  border: 2px solid var(--walnut);
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), #8daa56);
+  border-right: 3px solid var(--brass);
+}
+
+.watch-card {
+  display: grid;
+  gap: 13px;
+}
+
+.steward {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.steward img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.steward strong,
+.steward span {
+  display: block;
+}
+
+.steward span {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.notice-board {
+  grid-area: notices;
+  padding: 20px;
+}
+
+.section-heading,
+.map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  justify-content: flex-start;
+}
+
+.section-heading img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.section-heading.compact img {
+  width: 48px;
+  height: 48px;
+}
+
+.notice-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.notice-card,
+.request-list article {
+  padding: 16px;
+  background: color-mix(in srgb, var(--paper) 86%, white 14%);
+  border: 2px solid color-mix(in srgb, var(--walnut) 76%, var(--brass) 24%);
+}
+
+.notice-card.priority {
+  background:
+    linear-gradient(90deg, rgba(248, 237, 207, 0.98), rgba(242, 225, 184, 0.9));
+  box-shadow: inset 5px 0 0 color-mix(in srgb, var(--green) 74%, var(--brass) 26%);
+}
+
+.notice-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 10px;
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 700;
+  border: 2px solid var(--ink);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+.badge.green {
+  background: var(--green);
+}
+
+.badge.amber {
+  background: var(--amber);
+}
+
+.badge.blue {
+  background: var(--blue);
+}
+
+.badge.red {
+  background: var(--red);
+}
+
+.notice-card h3,
+.request-list h3 {
+  margin: 12px 0 8px;
+  color: var(--forest);
+  font-size: 22px;
+  line-height: 1.12;
+}
+
+.notice-card p,
+.request-list p,
+.spot-panel p {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.notice-card footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.notice-card footer img {
+  width: 24px;
+  height: 24px;
+}
+
+.events-panel {
+  grid-area: events;
+}
+
+.event-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-list li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 28px;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--walnut) 45%, transparent);
+}
+
+.event-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.event-list time {
+  color: var(--burgundy);
+  font-weight: 700;
+}
+
+.event-list strong,
+.event-list span {
+  display: block;
+}
+
+.event-list span {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.event-list img {
+  width: 28px;
+  height: 28px;
+}
+
+.map-panel {
+  grid-area: map;
+}
+
+.map-header img {
+  width: 58px;
+  height: 58px;
+}
+
+.map-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 3px solid var(--walnut);
+  background: var(--parchment);
+}
+
+.map-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marker,
+.route {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.24));
+}
+
+.marker {
+  width: 42px;
+  height: 42px;
+}
+
+.marker.fountain {
+  left: 47%;
+  top: 38%;
+}
+
+.marker.library {
+  left: 67%;
+  top: 22%;
+}
+
+.marker.supper {
+  left: 28%;
+  top: 58%;
+}
+
+.route {
+  left: 30%;
+  top: 48%;
+  width: 45%;
+  transform: rotate(-7deg);
+  opacity: 0.9;
+}
+
+.map-legend {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.map-legend img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.requests-panel {
+  grid-area: requests;
+}
+
+.request-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.spot-panel {
+  grid-area: spot;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  color: var(--paper);
+  background:
+    linear-gradient(rgba(47, 107, 63, 0.94), rgba(47, 107, 63, 0.92)),
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+}
+
+.spot-panel > img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.spot-panel h2 {
+  color: var(--paper);
+}
+
+.spot-panel p {
+  margin: 10px 0 16px;
+  color: color-mix(in srgb, var(--paper) 90%, white 10%);
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--ink);
+  font: 700 15px Georgia, "Times New Roman", serif;
+  background:
+    linear-gradient(rgba(231, 198, 106, 0.9), rgba(201, 150, 46, 0.9)),
+    url("../src/assets/orchard-vale/backplates/backplate-button-brass-primary.svg");
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+
+button img {
+  width: 22px;
+  height: 22px;
+}
+
+button:hover,
+button:focus-visible {
+  filter: brightness(1.06);
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1120px) {
+  .dashboard {
+    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-areas:
+      "status notices"
+      "status events"
+      "map map"
+      "requests requests"
+      "spot spot";
+  }
+
+  .request-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .app-header {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .board-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .lantern {
+    width: 96px;
+    height: 96px;
+    background-size: 768px 96px;
+  }
+
+  @keyframes lantern-play {
+    to {
+      background-position: -768px 0;
+    }
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "status"
+      "notices"
+      "events"
+      "map"
+      "requests"
+      "spot";
+  }
+
+  .status-column {
+    grid-template-columns: 1fr;
+  }
+
+  .spot-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .lantern {
+    animation: none;
+    background-image: url("../src/assets/orchard-vale/motion/static/motion-lantern-flicker-static.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

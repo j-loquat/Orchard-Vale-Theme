@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc">
+  <title id="title">Shield Marker Amber</title>
+  <desc id="desc">Orchard Vale map control asset: Shield Marker Amber.</desc>
+  <g><path d="M32 7 C40 12 47 13 53 14 V28 C53 44 43 54 32 60 C21 54 11 44 11 28 V14 C18 13 24 12 32 7 Z" fill="#d18a2e" stroke="#2f2417" stroke-width="3.5" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="29" r="10" fill="#f8edcf" stroke="#6f4728" stroke-width="2.2" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/><circle cx="32" cy="29" r="4" fill="#e7c66a" stroke="#6f4728" stroke-width="1.6" style="stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke"/></g>
+</svg>
