@@ -110,6 +110,16 @@ For a new page:
 
 The files in [src/theme](src/theme) contain early foundation tokens and placeholders. The demos currently show the most complete application of the theme.
 
+## Optional Codex Pet
+
+The kit includes an Orchard Badger pet for Codex in [pets/orchard-badger](pets/orchard-badger). To make it available on your computer, copy the entire `orchard-badger` folder into your personal Codex pets directory:
+
+```text
+~/.codex/pets/orchard-badger/
+```
+
+On Windows, the equivalent location is `%USERPROFILE%\.codex\pets\orchard-badger\`. After copying it, refresh the pet list in **Codex Settings > Pets** and select **Orchard Badger**. In an interactive Codex CLI session, you can also open the pet picker with `/pets`. See the [official Codex pets documentation](https://learn.chatgpt.com/docs/pets) for current interface and terminal support details.
+
 ## Suggested GitHub Pages Setup
 
 After publishing the repository, enable GitHub Pages for the repo and point it at the root of the default branch. The main entry point is:
@@ -129,6 +139,8 @@ docs/
   asset-inventory.md
 references/
   Original reference mock-ups used to develop the visual language.
+pets/
+  Optional Codex pets that users can copy into their personal .codex directory.
 src/
   assets/orchard-vale/
     Reusable image, SVG, texture, map, character, and UI assets.
