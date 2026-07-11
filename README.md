@@ -6,9 +6,9 @@ Orchard Vale is a richly illustrated storybook-village UI theme for HTML front-e
 
 The goal is not to make a generic fantasy skin. The goal is to make serious interfaces feel handcrafted, warm, readable, and distinctive.
 
-[Open the demo index locally](demo/index.html) to tour the full set.
+[Explore the complete Orchard Vale demo collection live](https://j-loquat.github.io/Orchard-Vale-Theme/), or [browse the demo source](demo/index.html) in this repository.
 
-![Orchard Vale demo index](demo/screenshots/index-desktop.png)
+[![Orchard Vale demo index](demo/screenshots/index-desktop.png)](https://j-loquat.github.io/Orchard-Vale-Theme/)
 
 ## Highlights
 
@@ -22,21 +22,21 @@ The goal is not to make a generic fantasy skin. The goal is to make serious inte
 
 ## Demo Tour
 
-Start with [demo/index.html](demo/index.html). It explains every demo and links to each page.
+Start with the [live demo directory](https://j-loquat.github.io/Orchard-Vale-Theme/). It explains every demo and links to each page.
 
-| Demo | Purpose |
-| --- | --- |
-| [Friendly Town Article](demo/friendly-town.html) | A simple editorial proof page for tone, scenery, parchment rhythm, and warm storybook styling. |
-| [Town Notice Board](demo/town-notice-board.html) | A medium-density public information board with notices, events, map cards, steward avatars, and badges. |
-| [Guildhall Planner](demo/guildhall-planner.html) | A complex workflow dashboard with navigation, metrics, Kanban lanes, selected-work details, timeline, roster, and map. |
-| [Command Center](demo/command-center.html) | A flagship operations dashboard with situation map, alerts, system health, response workflow, dependencies, and event ledger. |
-| [Scholar's Hollow Workbench](demo/scholars-hollow-workbench.html) | A research-and-writing mock-up imitation with document editing, evidence cards, citations, fact-check status, and export controls. |
-| [Guildhall Project Board](demo/guildhall-project-board.html) | A project-board mock-up imitation with five-lane Kanban, dense task cards, character helpers, details, milestones, and activity feed. |
-| [Morning Briefing](demo/orchard-morning-briefing.html) | A generic mixed-information daily brief with priorities, consulting watch, schedule, lookahead, email triage, news, replies, and source health. |
-| [Scholar's Field Report](demo/orchard-research-report.html) | A generic sourced-research template with takeaways, evidence status, comparison tables, implications, confidence gaps, and sources. |
-| [Prosperity Grove Ledger](demo/prosperity-grove-ledger.html) | A finance and household-ledger dashboard with balances, charts, transactions, goals, bills, and working controls. |
-| [Character Registry](demo/character-gallery.html) | A large-format gallery of every final full-body character and matching avatar. |
-| [Asset Pattern Library](demo/asset-pattern-library.html) | A tabbed specimen book for all non-character asset families and composed UI recipes. |
+| Demo source | Purpose | Live page |
+| --- | --- | --- |
+| [Friendly Town Article](demo/friendly-town.html) | A simple editorial proof page for tone, scenery, parchment rhythm, and warm storybook styling. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/friendly-town.html) |
+| [Town Notice Board](demo/town-notice-board.html) | A medium-density public information board with notices, events, map cards, steward avatars, and badges. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/town-notice-board.html) |
+| [Guildhall Planner](demo/guildhall-planner.html) | A complex workflow dashboard with navigation, metrics, Kanban lanes, selected-work details, timeline, roster, and map. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/guildhall-planner.html) |
+| [Command Center](demo/command-center.html) | A flagship operations dashboard with situation map, alerts, system health, response workflow, dependencies, and event ledger. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/command-center.html) |
+| [Scholar's Hollow Workbench](demo/scholars-hollow-workbench.html) | A research-and-writing mock-up imitation with document editing, evidence cards, citations, fact-check status, and export controls. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/scholars-hollow-workbench.html) |
+| [Guildhall Project Board](demo/guildhall-project-board.html) | A project-board mock-up imitation with five-lane Kanban, dense task cards, character helpers, details, milestones, and activity feed. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/guildhall-project-board.html) |
+| [Morning Briefing](demo/orchard-morning-briefing.html) | A generic mixed-information daily brief with priorities, consulting watch, schedule, lookahead, email triage, news, replies, and source health. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/orchard-morning-briefing.html) |
+| [Scholar's Field Report](demo/orchard-research-report.html) | A generic sourced-research template with takeaways, evidence status, comparison tables, implications, confidence gaps, and sources. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/orchard-research-report.html) |
+| [Prosperity Grove Ledger](demo/prosperity-grove-ledger.html) | A finance and household-ledger dashboard with balances, charts, transactions, goals, bills, and working controls. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/prosperity-grove-ledger.html) |
+| [Character Registry](demo/character-gallery.html) | A large-format gallery of every final full-body character and matching avatar. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/character-gallery.html) |
+| [Asset Pattern Library](demo/asset-pattern-library.html) | A tabbed specimen book for all non-character asset families and composed UI recipes. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/asset-pattern-library.html) |
 
 ## Screenshots
 
@@ -145,14 +145,6 @@ The kit includes an Orchard Badger pet for Codex in [pets/orchard-badger](pets/o
 ```
 
 On Windows, the equivalent location is `%USERPROFILE%\.codex\pets\orchard-badger\`. After copying it, refresh the pet list in **Codex Settings > Pets** and select **Orchard Badger**. In an interactive Codex CLI session, you can also open the pet picker with `/pets`. See the [official Codex pets documentation](https://learn.chatgpt.com/docs/pets) for current interface and terminal support details.
-
-## Suggested GitHub Pages Setup
-
-After publishing the repository, enable GitHub Pages for the repo and point it at the root of the default branch. The root `index.html` redirects to:
-
-```text
-demo/index.html
-```
 
 ## Repository Structure
 
