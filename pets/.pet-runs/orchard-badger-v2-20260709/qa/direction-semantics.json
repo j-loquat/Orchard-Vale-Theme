@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "reviewed_by": "independent final visual QA worker",
+  "directions": [
+    {"degree":"000","expected":"up","observed":"up","verdict":"pass","reason":"Raised pupils and lifted muzzle read clearly upward."},
+    {"degree":"022.5","expected":"up-right","observed":"up-right","verdict":"pass","reason":"H=muzzle and pupils shift screen-right; V=eye line and muzzle lift."},
+    {"degree":"045","expected":"up-right","observed":"up-right","verdict":"warning","reason":"H=muzzle and pupils shift screen-right; V=raised eye line reads up despite blind vertical uncertainty."},
+    {"degree":"067.5","expected":"up-right","observed":"up-right","verdict":"warning","reason":"H=strong rightward muzzle and pupil placement; V=lifted eye line reads up despite blind vertical uncertainty."},
+    {"degree":"090","expected":"right","observed":"right","verdict":"pass","reason":"Side muzzle and visible pupil unmistakably face screen-right."},
+    {"degree":"112.5","expected":"down-right","observed":"down-right","verdict":"pass","reason":"H=muzzle and pupil are screen-right; V=lowered eye line and muzzle read down."},
+    {"degree":"135","expected":"down-right","observed":"down-right","verdict":"pass","reason":"H=rightward side face; V=lowered muzzle and eyes."},
+    {"degree":"157.5","expected":"down-right","observed":"down-right","verdict":"pass","reason":"H=rightward side face; V=downward eye and muzzle angle."},
+    {"degree":"180","expected":"down","observed":"down","verdict":"pass","reason":"Lowered pupils and muzzle clearly face down."},
+    {"degree":"202.5","expected":"down-left","observed":"down-left","verdict":"warning","reason":"H=muzzle and pupil shift screen-left despite blind horizontal uncertainty; V=lowered eye line reads down."},
+    {"degree":"225","expected":"down-left","observed":"down-left","verdict":"warning","reason":"H=leftward muzzle and pupil; V=lowered eye line reads down despite blind vertical uncertainty."},
+    {"degree":"247.5","expected":"down-left","observed":"down-left","verdict":"warning","reason":"H=leftward side face; V=downward muzzle and eye angle read down despite blind vertical uncertainty."},
+    {"degree":"270","expected":"left","observed":"left","verdict":"pass","reason":"Side muzzle and visible pupil unmistakably face screen-left."},
+    {"degree":"292.5","expected":"up-left","observed":"up-left","verdict":"warning","reason":"H=muzzle and pupil shift screen-left; V=lifted eye line reads up despite blind vertical uncertainty."},
+    {"degree":"315","expected":"up-left","observed":"up-left","verdict":"warning","reason":"H=leftward muzzle and pupil; V=raised eye line reads up despite blind vertical uncertainty."},
+    {"degree":"337.5","expected":"up-left","observed":"up-left","verdict":"pass","reason":"H=leftward muzzle and pupils; V=lifted eye line reads up into 000."}
+  ],
+  "accepted_warnings": "Intermediate blind ambiguity at 045, 067.5, 202.5, 225, 247.5, 292.5, and 315 is accepted because the normal-size labeled loop retains each intended quadrant without reversal."
+}

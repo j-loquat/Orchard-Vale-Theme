@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "registration_scale": 0.678082191780822,
+  "directions": [
+    {"degree": "000", "expected": "up", "verdict": "pass", "observed": "up", "reason": "Pupils, brow, and muzzle clearly aim toward the top edge while the face stays frontal."},
+    {"degree": "022.5", "expected": "up-right", "verdict": "pass", "observed": "up-right", "reason": "The high gaze begins a small, continuous screen-right head and muzzle turn."},
+    {"degree": "045", "expected": "up-right", "verdict": "pass", "observed": "up-right", "reason": "The screen-right face plane and raised gaze are both visible."},
+    {"degree": "067.5", "expected": "up-right", "verdict": "pass", "observed": "up-right", "reason": "Head turn advances smoothly toward the right cardinal while retaining an upward eye cue."},
+    {"degree": "090", "expected": "right", "verdict": "pass", "observed": "right", "reason": "Nose tip, eyes, and face plane unmistakably point to screen-right."},
+    {"degree": "112.5", "expected": "down-right", "verdict": "pass", "observed": "down-right", "reason": "The right-facing head begins a controlled lower-eye and muzzle transition."},
+    {"degree": "135", "expected": "down-right", "verdict": "pass", "observed": "down-right", "reason": "Right face plane remains visible while the brows, pupils, and muzzle read lower."},
+    {"degree": "157.5", "expected": "down-right", "verdict": "pass", "observed": "down-right", "reason": "The lower-right pose continues evenly toward the down cardinal without a baseline or identity jump."}
+  ],
+  "continuity": "The registered row progresses smoothly with planted feet, attached baton and board, stable apparent scale, and no edge clipping or silhouette reversal."
+}

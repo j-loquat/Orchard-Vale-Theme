@@ -1,0 +1,5 @@
+visual_qa=pass
+qa_note=All eleven rows retain the same compact pixel-art Orchard Badger, and the revised running row is a planted clipboard-and-baton task-focus loop.
+review_warnings=Intermediate blind ambiguity at 045, 067.5, 202.5, 225, 247.5, 292.5, and 315 is accepted because the labeled loop retains each intended quadrant without reversal; continuity alpha-hole and boundary-diff candidates are intended limb/cape negative space with no visible seam, snap, or size pop.
+repair_rows=none
+repair_notes=none
