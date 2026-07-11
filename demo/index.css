@@ -174,7 +174,7 @@ p {
 .path-panel ol {
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 8px;
   margin: 0;
   padding: 0;
@@ -298,6 +298,14 @@ p {
   background: var(--purple);
 }
 
+.content .demo-meta span {
+  background: var(--blue);
+}
+
+.finance .demo-meta span {
+  background: var(--green);
+}
+
 .demo-card h2 {
   margin-bottom: 8px;
   color: var(--forest);
@@ -385,5 +393,19 @@ p {
 
   .thumb-link img {
     aspect-ratio: 16 / 11;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

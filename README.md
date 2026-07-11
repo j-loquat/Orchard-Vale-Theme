@@ -13,6 +13,8 @@ The goal is not to make a generic fantasy skin. The goal is to make serious inte
 ## Highlights
 
 - Static HTML/CSS demos with no build step.
+- Reusable CSS layers for tokens, components, controls, content patterns, and responsive layout recipes.
+- Generic content templates for daily briefings and sourced research reports.
 - Complete asset pack for scenes, maps, characters, crests, seals, icons, motifs, ornaments, textures, data-viz accents, empty states, and motion stills.
 - Design documentation explaining the Orchard Vale visual language and how to apply it to front-end layouts.
 - Progressive demos ranging from a simple editorial page to dense dashboards and mock-up imitations.
@@ -30,6 +32,9 @@ Start with [demo/index.html](demo/index.html). It explains every demo and links 
 | [Command Center](demo/command-center.html) | A flagship operations dashboard with situation map, alerts, system health, response workflow, dependencies, and event ledger. |
 | [Scholar's Hollow Workbench](demo/scholars-hollow-workbench.html) | A research-and-writing mock-up imitation with document editing, evidence cards, citations, fact-check status, and export controls. |
 | [Guildhall Project Board](demo/guildhall-project-board.html) | A project-board mock-up imitation with five-lane Kanban, dense task cards, character helpers, details, milestones, and activity feed. |
+| [Morning Briefing](demo/orchard-morning-briefing.html) | A generic mixed-information daily brief with priorities, consulting watch, schedule, lookahead, email triage, news, replies, and source health. |
+| [Scholar's Field Report](demo/orchard-research-report.html) | A generic sourced-research template with takeaways, evidence status, comparison tables, implications, confidence gaps, and sources. |
+| [Prosperity Grove Ledger](demo/prosperity-grove-ledger.html) | A finance and household-ledger dashboard with balances, charts, transactions, goals, bills, and working controls. |
 | [Character Registry](demo/character-gallery.html) | A large-format gallery of every final full-body character and matching avatar. |
 | [Asset Pattern Library](demo/asset-pattern-library.html) | A tabbed specimen book for all non-character asset families and composed UI recipes. |
 
@@ -46,6 +51,18 @@ Start with [demo/index.html](demo/index.html). It explains every demo and links 
 ### Research Workbench
 
 ![Scholar's Hollow Workbench](demo/screenshots/scholars-hollow-workbench-desktop.png)
+
+### Morning Briefing Template
+
+![Orchard Vale Morning Briefing](demo/screenshots/orchard-morning-briefing-desktop.png)
+
+### Sourced Research Report Template
+
+![Orchard Vale Scholar's Field Report](demo/screenshots/orchard-research-report-desktop.png)
+
+### Finance And Ledger Dashboard
+
+![Prosperity Grove Ledger](demo/screenshots/prosperity-grove-ledger-desktop.png)
 
 ### Character Registry
 
@@ -103,12 +120,21 @@ demo/index.html
 
 For a new page:
 
-1. Start with one of the demo pages closest to your target layout.
-2. Reuse assets from [src/assets/orchard-vale](src/assets/orchard-vale).
-3. Use the design guide as the visual contract.
-4. Keep real interface controls as HTML/CSS. Use images for atmosphere, identity, ornament, maps, helpers, and empty states.
+1. Start with the [minimal starter](starter/index.html) or the demo closest to your target layout.
+2. Import the three CSS files in [src/theme](src/theme): foundation, components, then layouts.
+3. Reuse assets from [src/assets/orchard-vale](src/assets/orchard-vale).
+4. Use the design guide as the visual contract.
+5. Keep real interface controls as HTML/CSS. Use images for atmosphere, identity, ornament, maps, helpers, and empty states.
 
-The files in [src/theme](src/theme) contain early foundation tokens and placeholders. The demos currently show the most complete application of the theme.
+The reusable CSS layer now includes scoped `ov-*` tokens and classes for panels, ribbons, buttons, forms, chips, events, callouts, tables, source lists, responsive dashboards, formal reports, finance views, and app starters. Older showcase demos remain intentionally self-contained; the starter and newer content/data demos demonstrate the shared layer.
+
+Most original app demos are static interface studies: their controls demonstrate visual states and layout rather than changing application data. The Asset Pattern Library and Prosperity Grove Ledger include working interactions, while the newer content templates use semantic links and disclosure controls.
+
+Run the dependency-free validation suite with:
+
+```text
+npm run validate
+```
 
 ## Optional Codex Pet
 
@@ -122,13 +148,11 @@ On Windows, the equivalent location is `%USERPROFILE%\.codex\pets\orchard-badger
 
 ## Suggested GitHub Pages Setup
 
-After publishing the repository, enable GitHub Pages for the repo and point it at the root of the default branch. The main entry point is:
+After publishing the repository, enable GitHub Pages for the repo and point it at the root of the default branch. The root `index.html` redirects to:
 
 ```text
 demo/index.html
 ```
-
-If you prefer the demo index to appear at the root URL, you can later copy or redirect `demo/index.html` to a root-level `index.html`.
 
 ## Repository Structure
 
@@ -145,11 +169,15 @@ src/
   assets/orchard-vale/
     Reusable image, SVG, texture, map, character, and UI assets.
   theme/
-    Starter CSS tokens and theme foundations.
+    Reusable foundation, component, and layout CSS.
 demo/
   index.html
   *.html
   screenshots/
+starter/
+  Minimal page composed from the reusable theme CSS.
+scripts/
+  Dependency-free validation and HTML image-optimization helpers.
 ```
 
 ## Contributing
@@ -160,6 +188,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the design principles and validation 
 
 This kit was built as an original Orchard Vale theme exploration with AI-assisted image generation and hand-authored HTML/CSS composition. The assets are intended to be used as a cohesive visual system rather than copied one-off decorations.
 
+See [Licensing And Asset Provenance](docs/licensing-and-provenance.md) for the code, artwork, reference, and reuse notes.
+
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE) and [Licensing And Asset Provenance](docs/licensing-and-provenance.md).

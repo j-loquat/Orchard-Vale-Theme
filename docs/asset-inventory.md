@@ -1,6 +1,6 @@
 # Orchard Vale Asset Inventory
 
-Last updated: April 26, 2026.
+Last updated: July 11, 2026.
 
 The Orchard Vale kit now has a complete first pass across all planned asset categories. The main implementation principle still holds: text, controls, layout, charts, maps, and interaction should stay in HTML/CSS/SVG; raster art supplies atmosphere, characters, scenes, and large visual context.
 
@@ -28,6 +28,16 @@ The Orchard Vale kit now has a complete first pass across all planned asset cate
 3. Small product page: show themed controls, buttons, badges, and forms.
 4. Dashboard page: combine panels, charts, tables, avatars, statuses, and maps.
 5. Full app shell: test navigation, responsive layout, data density, and state changes.
+
+## Reusable Theme And Content Coverage
+
+The shared CSS implementation lives in `src/theme/`:
+
+- `orchard-vale.css` - scoped tokens, typography, focus behavior, reduced motion, and print safeguards.
+- `orchard-components.css` - panels, ribbons, controls, chips, events, callouts, tables, source rows, meters, and chart primitives.
+- `orchard-layouts.css` - responsive app, dashboard, report, finance, and starter recipes.
+
+Generic content coverage now includes a daily Morning Briefing, a sourced Scholar's Field Report, and the Prosperity Grove finance ledger. These complement the original editorial, Kanban, research-workbench, public-board, and operations-dashboard demonstrations.
 
 ## First Design Risk To Watch
 

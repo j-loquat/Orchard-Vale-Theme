@@ -30,6 +30,11 @@ body {
   background-size: auto, 520px 520px;
 }
 
+:where(button, select, a):focus-visible {
+  outline: 3px solid #3f84bd;
+  outline-offset: 3px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -601,7 +606,7 @@ th:first-child {
   margin-top: 26px;
   border-top: 1px solid rgba(112, 72, 38, 0.35);
   color: var(--ink-soft);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .report-footnotes ol {
@@ -1035,5 +1040,15 @@ mark.amber {
 
   table {
     min-width: 560px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orchard Vale daily briefing demo with priorities, consulting watch, schedule, email triage, news, lookahead, and source health.">
+  <meta name="theme-color" content="#173820">
+  <title>Orchard Vale Morning Briefing</title>
+  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
+  <link rel="stylesheet" href="../src/theme/orchard-components.css">
+  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <link rel="stylesheet" href="orchard-morning-briefing.css">
+</head>
+<body class="ov-theme briefing-page">
+  <a class="ov-skip-link" href="#main-content">Skip to briefing</a>
+  <div class="ov-page">
+    <main class="ov-shell ov-frame" id="main-content">
+      <header class="ov-header">
+        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
+          <img src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.png" alt="Mail and calendar crest" width="96" height="96" fetchpriority="high" decoding="async">
+          <div>
+            <p class="ov-kicker">The Daily Steward</p>
+            <h1 id="page-title">Good morning.</h1>
+            <p>Thursday, July 16 · Orchard Vale · Updated 7:35 AM</p>
+          </div>
+        </section>
+        <section class="ov-panel ov-header__stats" aria-label="Briefing source summary">
+          <article class="ov-panel ov-stat"><strong>3</strong><span>Priorities</span></article>
+          <article class="ov-panel ov-stat"><strong>4h</strong><span>Open focus time</span></article>
+          <article class="ov-panel ov-stat"><strong>Fresh</strong><span>All sources checked</span></article>
+        </section>
+      </header>
+
+      <p class="ov-inline-note briefing-note"><strong>Content template:</strong> fictional sample data demonstrates a source-aware personal briefing. Replace the records without changing the layout contract.</p>
+
+      <div class="ov-dashboard-grid">
+        <div class="ov-main-column">
+          <section class="ov-panel ov-panel--aged" aria-labelledby="focus-title">
+            <h2 class="ov-panel-title" id="focus-title">Today's Focus</h2>
+            <div class="ov-panel__body">
+              <article class="ov-priority">
+                <div class="ov-priority__number ov-priority__number--urgent">1</div>
+                <div><h3>Send the revised workshop outline before 10:00</h3><p>The client needs the agenda before inviting department leads.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--red">Time-sensitive</span></div></div>
+              </article>
+              <article class="ov-priority">
+                <div class="ov-priority__number ov-priority__number--good">2</div>
+                <div><h3>Protect the long afternoon focus block</h3><p>Use 1:00–4:00 for the implementation notes while the calendar is clear.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span><span class="ov-chip ov-chip--green">Focus</span></div></div>
+              </article>
+              <article class="ov-priority">
+                <div class="ov-priority__number">3</div>
+                <div><h3>Confirm Saturday family logistics</h3><p>A shared-calendar event still has an uncertain departure time.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--purple">Family</span></div></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="schedule-title">
+            <h2 class="ov-panel-title" id="schedule-title">Schedule</h2>
+            <div class="ov-panel__body">
+              <article class="ov-event"><div class="ov-time">8:30–9:00</div><div><h3>Plan the day</h3><p class="ov-muted">Review the outline and send the workshop update.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">10:30–11:15</div><div><h3>Client workflow review</h3><p class="ov-muted">Decision needed: pilot scope and review owner.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">11:15–1:00</div><div><h3>Open work block</h3><p class="ov-muted">Best use: meeting notes, lunch, and short follow-ups.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">1:00–4:00</div><div><h3>Protected focus block</h3><p class="ov-muted">No opaque calendar events overlap this window.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span><span class="ov-chip ov-chip--blue">Focus</span></div></div></article>
+            </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="lookahead-title">
+            <h2 class="ov-panel-title" id="lookahead-title">Next 7 Days</h2>
+            <div class="ov-panel__body">
+              <article class="ov-day-group"><div class="ov-date-plaque">Fri · Jul 17</div><div class="ov-stack compact-stack"><div><h3>Proposal review</h3><p class="ov-muted">9:30 AM · final scope check</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span></div></div><div><h3>Community supper</h3><p class="ov-muted">6:00 PM · context marker</p><div class="ov-chip-row"><span class="ov-chip ov-chip--purple">Family</span></div></div></div></article>
+              <article class="ov-day-group"><div class="ov-date-plaque">Sat · Jul 18</div><div><h3>Regional market visit</h3><p class="ov-muted">Departure time still needs confirmation.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--purple">Family</span><span class="ov-chip ov-chip--amber">Check time</span></div></div></article>
+              <article class="ov-day-group"><div class="ov-date-plaque">Mon · Jul 20</div><div><h3>Implementation workshop</h3><p class="ov-muted">10:00 AM · bring the revised workflow map.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span></div></div></article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="ov-side-column" aria-label="Briefing context">
+          <section class="ov-panel" aria-labelledby="consulting-title">
+            <h2 class="ov-panel-title" id="consulting-title">Consulting Watch</h2>
+            <div class="ov-panel__body">
+              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span><div><h3>Workshop approval path</h3><p>The sponsor replied, but the pilot owner is still unnamed. Ask for one accountable reviewer during the 10:30 call.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--amber">Decision</span></div><ul><li>Confirm the pilot group.</li><li>Agree on one acceptance measure.</li><li>Send the action note after the call.</li></ul></div></article>
+              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><h3>Platform release worth scanning</h3><p>A new connector option may simplify the proposed document workflow. Read the primary release note before changing the recommendation.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--blue">News</span></div><p><a href="https://example.com/release-note">Primary release note</a></p></div></article>
+            </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="email-title">
+            <h2 class="ov-panel-title" id="email-title">Email</h2>
+            <div class="ov-panel__body">
+              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--bad" aria-hidden="true"></span><div><p class="ov-kicker email-kicker">Urgent</p><h3>Workshop outline approval</h3><p>A direct question is waiting: can department leads be invited today?</p><div class="ov-chip-row"><span class="ov-chip ov-chip--red">Needs response</span><span class="ov-chip ov-chip--green">Consulting</span></div><details class="ov-details"><summary>Show suggested reply</summary><div class="ov-details__content">Yes—the revised outline is ready. Please invite the department leads, and I will send the final agenda before 10:00.</div></details></div></article>
+              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><p class="ov-kicker email-kicker">Waiting on others</p><h3>Venue confirmation</h3><p>The coordinator owns the next action and expects to reply Friday.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Waiting</span></div></div></article>
+            </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="news-title">
+            <h2 class="ov-panel-title" id="news-title">News</h2>
+            <div class="ov-panel__body">
+              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><h3><a href="https://example.com/ontario-business">Ontario business update</a></h3><p>A new small-business guidance page is available; scan it before the next client planning call.</p><p class="ov-muted">Example Business Journal · July 16</p></div></article>
+              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span><div><h3><a href="https://example.com/local-economy">Regional economy brief</a></h3><p>The latest summary signals steady local hiring with continued cost pressure.</p><p class="ov-muted">Example Economic Office · July 15</p></div></article>
+            </div>
+          </section>
+
+          <details class="ov-panel source-health">
+            <summary class="ov-panel-title">Data Status</summary>
+            <div class="ov-panel__body">
+              <div class="ov-source-row"><strong>Calendar</strong><span class="ov-chip ov-chip--green">Healthy</span><span>7:29 AM · 5 shared calendars</span></div>
+              <div class="ov-source-row"><strong>Email</strong><span class="ov-chip ov-chip--green">Healthy</span><span>7:31 AM · 8 threads inspected</span></div>
+              <div class="ov-source-row"><strong>News</strong><span class="ov-chip ov-chip--green">Healthy</span><span>7:35 AM · primary sources checked</span></div>
+            </div>
+          </details>
+        </aside>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

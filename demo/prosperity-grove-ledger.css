@@ -1,0 +1,114 @@
+.ledger-page .ledger-hero {
+  background:
+    linear-gradient(90deg, rgba(15, 40, 24, 0.98), rgba(23, 56, 32, 0.76)),
+    url("../src/assets/orchard-vale/scenes/wide-16x9/scene-prosperity-grove-finance-wide-16x9.webp") center 45% / cover;
+}
+
+.ledger-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+.ledger-controls label {
+  display: grid;
+  gap: 4px;
+  font: 800 13px/1.2 var(--ov-ui);
+}
+
+.ledger-controls p {
+  margin: 0 0 10px;
+  color: var(--ov-ink-muted);
+}
+
+.chart-layout {
+  align-items: end;
+}
+
+.chart-labels {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
+  padding: 5px 14px 0;
+  text-align: center;
+  font: 12px/1.2 var(--ov-ui);
+}
+
+.budget-row {
+  padding: 11px;
+  background: rgba(239, 217, 167, 0.35);
+  border: 1px solid rgba(112, 72, 38, 0.35);
+}
+
+.budget-row > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 7px;
+  font-family: var(--ov-ui);
+}
+
+.goal-grid article {
+  min-width: 0;
+  padding: 13px;
+  text-align: center;
+  background: rgba(239, 217, 167, 0.36);
+  border: 1px solid rgba(112, 72, 38, 0.36);
+}
+
+.goal-grid img {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 8px;
+}
+
+.advisor-panel .ov-panel__body > img {
+  width: 220px;
+  height: 220px;
+  margin: -18px auto -8px;
+  object-fit: contain;
+}
+
+.account-list {
+  display: grid;
+  gap: 10px;
+}
+
+.account-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 9px;
+  font-family: var(--ov-ui);
+  border-bottom: 1px solid rgba(112, 72, 38, 0.3);
+}
+
+.ledger-dialog {
+  width: min(92vw, 520px);
+  padding: 0;
+  color: var(--ov-ink);
+}
+
+.ledger-dialog::backdrop {
+  background: rgba(15, 24, 12, 0.72);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+@media (max-width: 760px) {
+  .ledger-controls {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .ledger-controls p {
+    margin-bottom: 0;
+  }
+}

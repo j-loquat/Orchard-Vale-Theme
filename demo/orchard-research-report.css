@@ -1,0 +1,70 @@
+.research-page .takeaways {
+  background:
+    linear-gradient(rgba(225, 235, 215, 0.93), rgba(248, 237, 207, 0.97)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
+  border-color: var(--ov-green);
+}
+
+.research-page .takeaway-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
+.research-page .report-lede {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.research-page blockquote {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  color: var(--ov-ink-soft);
+  font-size: 19px;
+  font-style: italic;
+  background: rgba(239, 217, 167, 0.42);
+  border-left: 6px solid var(--ov-brass-dark);
+}
+
+.research-page .implication-card {
+  min-width: 0;
+  padding: 16px;
+  background: rgba(239, 217, 167, 0.38);
+  border: 1px solid rgba(112, 72, 38, 0.4);
+}
+
+.research-page .implication-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.research-page .confidence-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.research-page .confidence-grid article {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  background: rgba(239, 217, 167, 0.32);
+  border: 1px solid rgba(112, 72, 38, 0.35);
+}
+
+.research-page .confidence-grid p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 620px) {
+  .research-page .report-lede {
+    font-size: 18px;
+  }
+
+  .research-page .confidence-grid article {
+    grid-template-columns: 1fr;
+  }
+}

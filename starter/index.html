@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Minimal Orchard Vale theme starter with reusable panels, controls, status chips, and responsive layout.">
+  <meta name="theme-color" content="#173820">
+  <title>Orchard Vale Starter</title>
+  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
+  <link rel="stylesheet" href="../src/theme/orchard-components.css">
+  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+</head>
+<body class="ov-theme">
+  <a class="ov-skip-link" href="#main-content">Skip to content</a>
+  <div class="ov-page">
+    <main class="ov-shell ov-frame" id="main-content">
+      <header class="ov-header">
+        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
+          <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="Orchard tree crest" width="96" height="96">
+          <div>
+            <p class="ov-kicker">Starter App</p>
+            <h1 id="page-title">Orchard Vale Workspace</h1>
+            <p>Replace this sample content with your application structure.</p>
+          </div>
+        </section>
+        <section class="ov-panel ov-header__stats" aria-label="Workspace summary">
+          <article class="ov-panel ov-stat"><strong>12</strong><span>Open records</span></article>
+          <article class="ov-panel ov-stat"><strong>4</strong><span>In review</span></article>
+          <article class="ov-panel ov-stat"><strong>8</strong><span>Complete</span></article>
+        </section>
+      </header>
+
+      <div class="ov-starter-grid">
+        <aside class="ov-panel" aria-labelledby="nav-title">
+          <h2 class="ov-panel-title" id="nav-title">Workspace</h2>
+          <div class="ov-panel__body ov-stack">
+            <a href="#overview">Overview</a>
+            <a href="#records">Records</a>
+            <a href="#create">Create</a>
+          </div>
+        </aside>
+
+        <div class="ov-stack">
+          <section class="ov-panel" id="overview" aria-labelledby="overview-title">
+            <h2 class="ov-panel-title" id="overview-title">Overview</h2>
+            <div class="ov-panel__body">
+              <div class="ov-priority">
+                <div class="ov-priority__number">1</div>
+                <div>
+                  <h3>Use real interface structure first</h3>
+                  <p>Keep controls, tables, text, and status semantics in HTML. Add themed artwork as supporting context.</p>
+                  <div class="ov-chip-row"><span class="ov-chip ov-chip--green">Healthy</span><span class="ov-chip ov-chip--blue">Starter</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="ov-panel" id="records" aria-labelledby="records-title">
+            <h2 class="ov-panel-title" id="records-title">Records</h2>
+            <div class="ov-panel__body">
+              <div class="ov-table-wrap">
+                <table class="ov-table">
+                  <thead><tr><th>Record</th><th>Owner</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Village welcome guide</td><td>Planning guild</td><td><span class="ov-chip ov-chip--green">Ready</span></td></tr>
+                    <tr><td>Market route notes</td><td>Courier desk</td><td><span class="ov-chip ov-chip--amber">Review</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="ov-panel" id="create" aria-labelledby="create-title">
+            <h2 class="ov-panel-title" id="create-title">Create A Record</h2>
+            <form class="ov-panel__body ov-stack">
+              <label><strong>Title</strong><input class="ov-field" name="title" autocomplete="off"></label>
+              <label><strong>Category</strong><select class="ov-select" name="category"><option>Planning</option><option>Research</option><option>Operations</option></select></label>
+              <label><strong>Notes</strong><textarea class="ov-textarea" name="notes"></textarea></label>
+              <div><button class="ov-button" type="submit">Save Sample Record</button></div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

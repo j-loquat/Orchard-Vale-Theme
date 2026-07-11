@@ -1,12 +1,12 @@
 # Orchard Vale Design Guide
 
-This guide describes the `agent-dashboard-orchard-vale.png` dashboard as a reproducible interface system. The goal is a pixel-faithful recreation of the screenshot: a dense fantasy village operations dashboard where modern AI orchestration concepts are expressed as quests, guild members, village buildings, chronicles, and pipelines.
+This guide describes the `orchard-vale-dashboard.png` reference as a reproducible interface system. It supports both a pixel-faithful recreation of that dense village operations dashboard and adaptive Orchard Vale applications for other content and workflows.
 
 ![Orchard Vale reference](../references/orchard-vale-dashboard.png)
 
 ## Source Frame
 
-- Source image: `agent-dashboard-orchard-vale.png`
+- Source image: `orchard-vale-dashboard.png`
 - Native canvas: `1672 x 941`
 - Aspect ratio: `1.777`, close to 16:9
 - Composition model: framed dashboard over an illustrated village scene
@@ -91,7 +91,7 @@ Orchard Vale has two valid modes. Choose one before designing a screen.
 
 ### Pixel-Faithful Dashboard Mode
 
-Use this when recreating `agent-dashboard-orchard-vale.png`.
+Use this when recreating `orchard-vale-dashboard.png`.
 
 - Preserve the 16:9 dashboard shell.
 - Keep the top metrics, left quest rail, center village, right roster, and bottom chronicle/pipeline band.

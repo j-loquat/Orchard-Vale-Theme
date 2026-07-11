@@ -1,0 +1,26 @@
+name: Validate theme kit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate HTML, CSS, and local references
+        run: node scripts/validate-theme.mjs
+      - name: Check JavaScript syntax
+        run: |
+          node --check demo/asset-pattern-library.js
+          node --check demo/prosperity-grove-ledger.js
+          node --check scripts/optimize-html-images.mjs
+          node --check scripts/validate-theme.mjs

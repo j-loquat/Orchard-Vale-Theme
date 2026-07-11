@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orchard Vale research report demo with takeaways, evidence status, comparison tables, implications, confidence gaps, and sources.">
+  <meta name="theme-color" content="#173820">
+  <title>Orchard Vale Scholar's Field Report</title>
+  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
+  <link rel="stylesheet" href="../src/theme/orchard-components.css">
+  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <link rel="stylesheet" href="orchard-research-report.css">
+</head>
+<body class="ov-theme research-page">
+  <a class="ov-skip-link" href="#main-content">Skip to report</a>
+  <div class="ov-page">
+    <main class="ov-report ov-frame" id="main-content">
+      <header class="ov-title-banner ov-report-header" aria-labelledby="page-title">
+        <div>
+          <p class="ov-kicker">Scholar's Field Report · Sample Content</p>
+          <h1 id="page-title">Choosing a durable format for a small research team</h1>
+          <p>Generated July 16 · Quick research · Decision support</p>
+          <div class="ov-chip-row"><span class="ov-chip ov-chip--green">5 sources</span><span class="ov-chip ov-chip--blue">High confidence</span><span class="ov-chip ov-chip--purple">Reusable report</span></div>
+        </div>
+        <img class="ov-report-header__art" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl scholar reviewing a report" width="170" height="170" fetchpriority="high" decoding="async">
+      </header>
+
+      <nav class="ov-top-nav" aria-label="Report sections">
+        <a href="#takeaways">Key Takeaways</a>
+        <a href="#answer">Short Answer</a>
+        <a href="#findings">Findings</a>
+        <a href="#implications">Implications</a>
+        <a href="#confidence">Confidence</a>
+        <a href="#sources">Sources</a>
+      </nav>
+
+      <div class="ov-report-content">
+        <section class="ov-panel ov-report-section takeaways" id="takeaways" aria-labelledby="takeaways-title">
+          <p class="ov-kicker">Key Takeaways</p>
+          <h2 id="takeaways-title">What the reader needs to know first</h2>
+          <ul class="takeaway-list">
+            <li><strong>HTML is the strongest working format</strong> when the report needs responsive tables, navigation, callouts, and accessible interaction.</li>
+            <li><strong>PDF remains the dependable handoff format</strong> when page fidelity, printing, or fixed review records matter.</li>
+            <li><strong>Markdown is the best source format</strong> for drafting, version control, and reuse across publishing systems.</li>
+            <li><strong>The practical default is a paired workflow:</strong> write in Markdown, publish to HTML, and export PDF only when needed.</li>
+          </ul>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="answer" aria-labelledby="answer-title">
+          <h2 id="answer-title">Short Answer</h2>
+          <p class="report-lede">Use Markdown as the editable source and HTML as the primary reading experience. Add PDF as an export rather than treating it as the only report format. This keeps the work portable while giving readers better navigation, responsive tables, and evidence callouts.</p>
+          <div class="ov-callout ov-callout--confirmed"><strong>Confirmed:</strong> HTML provides native semantic structures for headings, sections, tables, links, and disclosure controls.</div>
+          <div class="ov-callout ov-callout--inferred"><strong>Inferred:</strong> A small team will usually maintain one Markdown source more reliably than parallel hand-edited HTML and PDF copies.</div>
+          <div class="ov-callout ov-callout--watch"><strong>Watch item:</strong> Client archival, accessibility, and document-management requirements may still make tagged PDF mandatory.</div>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="findings" aria-labelledby="findings-title">
+          <h2 id="findings-title">What I Found</h2>
+          <p>The three formats solve different parts of the reporting workflow. The useful comparison is not which format wins universally, but where each belongs between authoring, reading, review, and archival.</p>
+          <div class="ov-table-wrap">
+            <table class="ov-table">
+              <thead><tr><th>Format</th><th>Best role</th><th>Strength</th><th>Tradeoff</th><th>Recommendation</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Markdown</strong></td><td>Authoring source</td><td>Simple, diffable, portable</td><td>Limited presentation by itself</td><td><span class="ov-chip ov-chip--green">Use by default</span></td></tr>
+                <tr><td><strong>HTML</strong></td><td>Primary reader experience</td><td>Responsive, semantic, interactive</td><td>Needs a maintained style layer</td><td><span class="ov-chip ov-chip--green">Publish first</span></td></tr>
+                <tr><td><strong>PDF</strong></td><td>Fixed handoff and archive</td><td>Stable pages and printing</td><td>Less adaptable on small screens</td><td><span class="ov-chip ov-chip--amber">Export when needed</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Why the paired workflow is stronger</h3>
+          <p>Keeping Markdown as the source reduces friction for revision and review. A styled HTML renderer can then create the reader-facing hierarchy—takeaways, status callouts, comparison tables, sources, and navigation—without embedding those presentation decisions into every draft.</p>
+          <blockquote>The format decision should protect both sides of the work: easy maintenance for the author and fast comprehension for the reader.</blockquote>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="implications" aria-labelledby="implications-title">
+          <h2 id="implications-title">Practical Implications</h2>
+          <div class="ov-two-up">
+            <article class="implication-card"><img src="../src/assets/orchard-vale/motifs/research/motif-research-quill-96.svg" alt="" width="64" height="64" loading="lazy" decoding="async"><h3>For authors</h3><p>Keep headings, claims, source links, and table data in a clean Markdown file. Generate presentation formats from that source.</p></article>
+            <article class="implication-card"><img src="../src/assets/orchard-vale/motifs/research/motif-research-evidence-card-96.svg" alt="" width="64" height="64" loading="lazy" decoding="async"><h3>For readers</h3><p>Lead with takeaways, distinguish evidence from inference, and keep the complete source trail at the end.</p></article>
+          </div>
+          <h3>Recommended next step</h3>
+          <p>Choose one recurring report, keep its source in Markdown, and test a single renderer that produces responsive HTML plus an optional PDF export. Review maintenance time and reader feedback after three cycles.</p>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="confidence" aria-labelledby="confidence-title">
+          <h2 id="confidence-title">Confidence and Gaps</h2>
+          <div class="confidence-grid">
+            <article><span class="ov-chip ov-chip--green">High confidence</span><p>Semantic HTML, Markdown portability, responsive layout behavior, and the value of one maintained source.</p></article>
+            <article><span class="ov-chip ov-chip--amber">Context dependent</span><p>Whether PDF is required for contracts, regulated records, accessibility workflows, or a client's document system.</p></article>
+            <article><span class="ov-chip ov-chip--red">Could not verify</span><p>No specific client archive policy or publishing constraint was supplied for this sample report.</p></article>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol class="ov-source-list">
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN: HTML</a> — semantic document and interface structures.</li>
+            <li><a href="https://html.spec.whatwg.org/">WHATWG HTML Living Standard</a> — authoritative HTML behavior and elements.</li>
+            <li><a href="https://spec.commonmark.org/">CommonMark Specification</a> — portable Markdown syntax baseline.</li>
+            <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C Web Content Accessibility Guidelines</a> — accessible web content considerations.</li>
+            <li><a href="https://www.pdfa.org/resource/iso-32000-pdf/">PDF Association: ISO 32000</a> — PDF standard and document-format context.</li>
+          </ol>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

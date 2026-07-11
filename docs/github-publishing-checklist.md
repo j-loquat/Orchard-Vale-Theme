@@ -13,8 +13,12 @@ Use this checklist before publishing Orchard Vale as a public GitHub repository.
   - `demo/screenshots/scholars-hollow-workbench-desktop.png`
   - `demo/screenshots/character-gallery-desktop.png`
   - `demo/screenshots/asset-pattern-library-desktop.png`
+  - `demo/screenshots/orchard-morning-briefing-desktop.png`
+  - `demo/screenshots/orchard-research-report-desktop.png`
+  - `demo/screenshots/prosperity-grove-ledger-desktop.png`
 - Confirm the debug screenshots ignored by `.gitignore` are not staged.
 - Confirm `LICENSE` is staged.
+- Run `npm run validate` and confirm the GitHub Actions validation workflow passes.
 
 ## License
 
@@ -33,7 +37,7 @@ After the repo is public:
 demo/index.html
 ```
 
-Optional later improvement: add a root-level `index.html` redirect to `demo/index.html` so the GitHub Pages root opens the demo index immediately.
+The root-level `index.html` redirects to `demo/index.html`, so the GitHub Pages root opens the demo directory immediately.
 
 ## Suggested Repository Description
 

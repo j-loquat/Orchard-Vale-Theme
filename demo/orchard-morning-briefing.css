@@ -1,0 +1,42 @@
+.briefing-page .briefing-note {
+  margin: 12px 0 0;
+}
+
+.briefing-page .compact-stack {
+  gap: 10px;
+}
+
+.briefing-page .compact-stack > div + div {
+  padding-top: 10px;
+  border-top: 1px solid rgba(112, 72, 38, 0.25);
+}
+
+.briefing-page .email-kicker {
+  margin-bottom: 4px;
+  color: var(--ov-red);
+}
+
+.briefing-page .source-health > summary {
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.briefing-page .source-health > summary::marker {
+  color: var(--ov-brass-light);
+}
+
+.briefing-page .ov-list-item ul {
+  margin: 9px 0 0;
+  padding-left: 20px;
+}
+
+.briefing-page .ov-list-item li + li {
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .briefing-page .briefing-note {
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+}

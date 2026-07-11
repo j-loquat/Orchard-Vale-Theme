@@ -26,7 +26,7 @@ Orchard Vale is a visual theme kit, so contributions should preserve both usabil
 
 ## Validation
 
-Before publishing changes, open the affected demo pages at desktop and mobile widths and check:
+Before publishing changes, run `npm run validate`, then open the affected demo pages at desktop and mobile widths and check:
 
 - No broken images.
 - No horizontal page overflow.

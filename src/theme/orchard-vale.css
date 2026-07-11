@@ -1,31 +1,164 @@
-/*
-  Orchard Vale theme foundation.
-  Tokens and base styles will land here before the demo page is built.
-*/
+/* Orchard Vale theme foundation: tokens, base typography, and global safeguards. */
 
 :root {
-  --ov-ink: #1b1208;
-  --ov-ink-soft: #3b2714;
-  --ov-parchment: #f4e6c5;
-  --ov-parchment-warm: #ead2a3;
-  --ov-parchment-aged: #c9a866;
+  color-scheme: light;
+  --ov-ink: #24180d;
+  --ov-ink-soft: #594025;
+  --ov-ink-muted: #775d3d;
+  --ov-paper: #f8edcf;
+  --ov-paper-warm: #efd9a7;
+  --ov-parchment: #e2c37e;
+  --ov-parchment-deep: #c9a866;
   --ov-wood-dark: #181006;
   --ov-wood: #2b1a0b;
-  --ov-wood-light: #563316;
-  --ov-brass: #c7942f;
-  --ov-brass-light: #e0bd62;
+  --ov-walnut: #704826;
+  --ov-brass: #c9962e;
+  --ov-brass-light: #e5bd58;
   --ov-brass-dark: #6c4215;
-  --ov-green-black: #102812;
-  --ov-green: #204f1d;
-  --ov-green-light: #69a646;
-  --ov-blue: #245f99;
-  --ov-red: #b12d22;
-  --ov-orange: #d97a24;
-  --ov-gold: #d7a927;
-  --ov-purple: #7d4fa6;
-  --ov-display: "IM Fell English SC", "Cinzel Decorative", Georgia, serif;
-  --ov-serif: "IM Fell English", Georgia, serif;
-  --ov-ui: "Arial Narrow", "Trebuchet MS", Arial, sans-serif;
-  --ov-mono: "IBM Plex Mono", Consolas, monospace;
+  --ov-forest-black: #0f2818;
+  --ov-forest: #173820;
+  --ov-green: #2f6b3f;
+  --ov-green-soft: #dcebd7;
+  --ov-blue: #49759a;
+  --ov-blue-soft: #dbe7f0;
+  --ov-red: #9a4337;
+  --ov-red-soft: #f1d9d2;
+  --ov-amber: #b86f28;
+  --ov-amber-soft: #f4e2bf;
+  --ov-purple: #73508b;
+  --ov-purple-soft: #e8dff0;
+  --ov-gray-soft: #e8e1d2;
+  --ov-shadow: rgba(29, 18, 7, 0.28);
+  --ov-shadow-deep: rgba(20, 12, 4, 0.5);
+  --ov-display: Georgia, "Times New Roman", serif;
+  --ov-body: Georgia, "Times New Roman", serif;
+  --ov-ui: "Trebuchet MS", Arial, sans-serif;
+  --ov-mono: Consolas, "Courier New", monospace;
+  --ov-radius-sm: 3px;
+  --ov-radius-md: 6px;
+  --ov-content: 1480px;
+  --ov-report: 1040px;
+  --ov-focus: #2f78b5;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body.ov-theme {
+  min-width: 0;
+  margin: 0;
+  color: var(--ov-ink);
+  font-family: var(--ov-body);
+  font-size: 16px;
+  line-height: 1.45;
+  background:
+    linear-gradient(rgba(16, 38, 24, 0.9), rgba(16, 38, 24, 0.96)),
+    url("../assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
+  background-size: auto, 540px 540px;
+}
+
+.ov-theme *,
+.ov-theme *::before,
+.ov-theme *::after {
+  box-sizing: border-box;
+}
+
+.ov-theme :where(h1, h2, h3, h4, p, ul, ol, blockquote, figure) {
+  margin-top: 0;
+}
+
+.ov-theme :where(h1, h2, h3, h4) {
+  color: var(--ov-forest);
+  font-family: var(--ov-display);
+  line-height: 1.06;
+}
+
+.ov-theme img {
+  display: block;
+  max-width: 100%;
+}
+
+.ov-theme a {
+  color: #235f91;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.ov-theme a:hover {
+  color: #163f64;
+}
+
+.ov-theme :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--ov-focus);
+  outline-offset: 3px;
+}
+
+.ov-theme ::selection {
+  color: var(--ov-paper);
+  background: var(--ov-green);
+}
+
+.ov-skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  padding: 9px 12px;
+  color: var(--ov-paper) !important;
+  background: var(--ov-forest);
+  border: 2px solid var(--ov-brass);
+  transform: translateY(-160%);
+}
+
+.ov-skip-link:focus {
+  transform: translateY(0);
+}
+
+.ov-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ov-ui-text {
+  font-family: var(--ov-ui);
+}
+
+.ov-mono {
+  font-family: var(--ov-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ov-theme *,
+  .ov-theme *::before,
+  .ov-theme *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body.ov-theme {
+    color: #111;
+    background: #fff;
+  }
+
+  .ov-theme :where(.ov-skip-link, .ov-screen-only) {
+    display: none !important;
+  }
+}

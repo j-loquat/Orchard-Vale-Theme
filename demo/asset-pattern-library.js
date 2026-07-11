@@ -55,6 +55,7 @@ const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
 const placeholderImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+let lightboxTrigger = null;
 
 function selectTab(tabId) {
   const data = specimenData[tabId];
@@ -107,6 +108,7 @@ function getImageCaption(image) {
 }
 
 function openLightbox(image) {
+  lightboxTrigger = image;
   lightboxImage.src = image.currentSrc || image.src;
   lightboxImage.alt = image.alt || "";
   lightboxCaption.textContent = getImageCaption(image);
@@ -120,6 +122,8 @@ function closeLightbox() {
   lightboxImage.src = placeholderImage;
   lightboxImage.alt = "";
   document.body.classList.remove("lightbox-open");
+  lightboxTrigger?.focus();
+  lightboxTrigger = null;
 }
 
 document.querySelectorAll(".tab-panels img, #specimen-image").forEach((image) => {
@@ -143,4 +147,8 @@ lightbox.addEventListener("click", (event) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+  if (event.key === "Tab" && !lightbox.hidden) {
+    event.preventDefault();
+    lightboxClose.focus();
+  }
 });
