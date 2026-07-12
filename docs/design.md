@@ -4,6 +4,24 @@ This guide describes the `orchard-vale-dashboard.png` reference as a reproducibl
 
 ![Orchard Vale reference](../references/orchard-vale-dashboard.png)
 
+## Using This Guide
+
+This document serves two related purposes:
+
+1. It records the visual and structural analysis needed to recreate the original Orchard Vale dashboard reference.
+2. It defines the reusable design system implemented by the theme kit for adaptive applications, reports, briefings, boards, ledgers, and other HTML frontends.
+
+For implementation work, treat the shipped files as canonical:
+
+- [`orchard-vale.css`](../src/theme/orchard-vale.css) contains production color, typography, sizing, focus, and motion tokens.
+- [`orchard-components.css`](../src/theme/orchard-components.css) contains reusable panels, ribbons, controls, chips, events, callouts, tables, source lists, meters, charts, and content patterns.
+- [`orchard-layouts.css`](../src/theme/orchard-layouts.css) contains responsive shell, dashboard, report, finance, and starter layouts.
+- The [minimal starter](../starter/index.html) demonstrates the import order and basic composition.
+- The [Asset Pattern Library](../demo/asset-pattern-library.html) is the visual specimen book for the reusable asset families.
+- The [live demo directory](https://j-loquat.github.io/Orchard-Vale-Theme/) shows the current reference implementations in a browser.
+
+The measured sections below remain authoritative for pixel-faithful recreation. The adaptive sections and shipped CSS are authoritative when building a new Orchard Vale interface.
+
 ## Source Frame
 
 - Source image: `orchard-vale-dashboard.png`
@@ -141,6 +159,21 @@ Reusable cues:
 
 Frontend implication: use Orchard Vale for editor chrome and support panels, but keep the actual writing surface calm, spacious, and highly legible.
 
+### Scholar's Field Report: Sourced Research Output
+
+The [Scholar's Field Report demo](../demo/orchard-research-report.html) shows how to present a finished research deliverable rather than an editing workspace.
+
+Reusable cues:
+
+- Lead with key takeaways and a short answer before the detailed findings.
+- Distinguish confirmed evidence, inference, watch items, and warnings with consistent callout treatments.
+- Keep comparison data in real responsive tables rather than illustrated substitutes.
+- Follow findings with practical implications, confidence assessments, known gaps, and a complete source trail.
+- Use a restrained character or motif in the report header; the content should carry the page.
+- Keep section navigation conventional and make long reports printable.
+
+Frontend implication: sourced reports need editorial rhythm and evidence clarity first. Orchard Vale should strengthen hierarchy and memorability without making serious analysis feel theatrical.
+
 ### Prosperity Grove: Household Finance Ledger
 
 This reference shows the theme working as a chart-heavy financial dashboard.
@@ -170,6 +203,22 @@ Reusable cues:
 - Bottom activity logs can become horizontal chronicle cards.
 
 Frontend implication: do not rename everything into fantasy language if the standard product noun is clearer. Mail can still be mail; the theme comes through surfaces, avatars, crests, and crafted controls.
+
+### Daily Steward: Mixed-Information Briefing
+
+The [Morning Briefing demo](../demo/orchard-morning-briefing.html) shows how Orchard Vale handles a source-aware daily start page containing several kinds of information at once.
+
+Reusable cues:
+
+- Open with a strictly limited priority list rather than an undifferentiated activity feed.
+- Keep schedule items, free blocks, and the multi-day lookahead visually distinct.
+- Group email by action state such as urgent, needs response, waiting, scheduled, and informational.
+- Use disclosure controls for optional details such as suggested replies.
+- Separate watch items and domain-specific signals from general news.
+- Show freshness or source-health information so readers understand how current the briefing is.
+- Use compact status chips and time plaques to make mixed records scannable.
+
+Frontend implication: briefing layouts should optimize for rapid orientation. The theme can unite heterogeneous information, but clear labels and stable content contracts must prevent it from becoming a decorative notice board.
 
 ### Guildhall Planner: Projects And Team Workflow
 
@@ -205,44 +254,49 @@ The most important transferable cue is hierarchy: ornate shell, readable work su
 
 ## Palette
 
-The image uses warm parchment and dark wood as the base, forest green for headers, brass/gold for trim, and small saturated accents for state.
+The image uses warm parchment and dark wood as the base, forest green for headers, brass/gold for trim, and small saturated accents for state. The production tokens below match [`src/theme/orchard-vale.css`](../src/theme/orchard-vale.css); use that file rather than copying values from an old demo.
 
 ```css
 :root {
-  --ov-ink: #1b1208;
-  --ov-ink-soft: #3b2714;
-  --ov-parchment: #f4e6c5;
-  --ov-parchment-warm: #ead2a3;
-  --ov-parchment-aged: #c9a866;
-  --ov-paper-shadow: #8b6530;
+  --ov-ink: #24180d;
+  --ov-ink-soft: #594025;
+  --ov-ink-muted: #775d3d;
+  --ov-paper: #f8edcf;
+  --ov-paper-warm: #efd9a7;
+  --ov-parchment: #e2c37e;
+  --ov-parchment-deep: #c9a866;
 
   --ov-wood-dark: #181006;
   --ov-wood: #2b1a0b;
-  --ov-wood-light: #563316;
-  --ov-brass: #c7942f;
-  --ov-brass-light: #e0bd62;
+  --ov-walnut: #704826;
+  --ov-brass: #c9962e;
+  --ov-brass-light: #e5bd58;
   --ov-brass-dark: #6c4215;
 
-  --ov-green-black: #102812;
-  --ov-green: #204f1d;
-  --ov-green-light: #69a646;
-  --ov-blue: #245f99;
-  --ov-sky: #8fc2d9;
-  --ov-red: #b12d22;
-  --ov-orange: #d97a24;
-  --ov-gold: #d7a927;
-  --ov-purple: #7d4fa6;
-  --ov-gray-blue: #7891a0;
+  --ov-forest-black: #0f2818;
+  --ov-forest: #173820;
+  --ov-green: #2f6b3f;
+  --ov-green-soft: #dcebd7;
+  --ov-blue: #49759a;
+  --ov-blue-soft: #dbe7f0;
+  --ov-red: #9a4337;
+  --ov-red-soft: #f1d9d2;
+  --ov-amber: #b86f28;
+  --ov-amber-soft: #f4e2bf;
+  --ov-purple: #73508b;
+  --ov-purple-soft: #e8dff0;
+  --ov-gray-soft: #e8e1d2;
+  --ov-focus: #2f78b5;
 }
 ```
 
 Approximate usage:
 
-- Parchment panels: `--ov-parchment`, shaded with `--ov-parchment-aged`
+- Readable panel surfaces: `--ov-paper`, `--ov-paper-warm`, and restrained parchment textures
 - Outer frame: `--ov-wood-dark`, `--ov-wood`, `--ov-brass`
-- Section headers: `--ov-green-black` to `--ov-green`
-- Progress success: `--ov-green-light`
-- Warning/busy: `--ov-gold` or `--ov-orange`
+- Section headers: `--ov-forest-black` to `--ov-forest`
+- Progress success: `--ov-green`
+- Warning/busy: `--ov-amber`
 - Error/high risk: `--ov-red`
 - Informational/checkpoint: `--ov-blue`
 - Decorative role accents: `--ov-purple`
@@ -251,18 +305,20 @@ Avoid modern gradients, glass effects, neon, and large flat fills. Color should 
 
 ## Typography
 
-The screenshot uses a storybook serif for major headings and compact readable text for operational content.
+The screenshot uses a storybook serif for major headings and compact readable text for operational content. The kit deliberately defaults to offline-safe system fonts so every demo can open directly from the filesystem without a font request.
 
-Recommended stacks:
+Production stacks:
 
 ```css
 :root {
-  --ov-display: "IM Fell English SC", "Cinzel Decorative", Georgia, serif;
-  --ov-serif: "IM Fell English", Georgia, serif;
-  --ov-ui: "Arial Narrow", "Trebuchet MS", Arial, sans-serif;
-  --ov-mono: "IBM Plex Mono", Consolas, monospace;
+  --ov-display: Georgia, "Times New Roman", serif;
+  --ov-body: Georgia, "Times New Roman", serif;
+  --ov-ui: "Trebuchet MS", Arial, sans-serif;
+  --ov-mono: Consolas, "Courier New", monospace;
 }
 ```
+
+Projects may add a locally hosted storybook serif such as IM Fell English or a restrained display face, but must preserve the fallback stacks and test text metrics before shipping.
 
 Type scale at native resolution:
 
@@ -273,8 +329,8 @@ Type scale at native resolution:
 | Metric value | `24-30px` | bold serif or UI | Large enough to scan |
 | Metric label | `14-16px` | uppercase serif | Centered above value |
 | Quest title | `13-15px` | bold UI | Dense but readable |
-| Body labels | `11-13px` | UI | Use short lines |
-| Log rows | `11-12px` | UI/mono | Compact table rhythm |
+| Body labels | `13-16px` | UI | Use short lines; `16px` is the shared-theme default |
+| Log rows | `13-14px` | UI/mono | Compact table rhythm without sacrificing readability |
 
 Use dark ink on parchment. Use pale cream text on dark green headers. Do not set long paragraphs in display type.
 
@@ -692,20 +748,18 @@ Icons should use dark ink outlines and two or three flat fills. Shadows should b
 Progress bars:
 
 ```css
-.ov-progress {
-  height: 8px;
+.ov-meter {
+  height: 12px;
+  overflow: hidden;
   background: #d5c5a3;
-  border: 1px solid #8a6c3a;
-  border-radius: 8px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,.28);
+  border: 2px solid var(--ov-walnut);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.28);
 }
 
-.ov-progress > span {
+.ov-meter > span {
   display: block;
   height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(#7fbd5b, #3f8b34);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+  background: linear-gradient(90deg, var(--ov-green), #73a85b);
 }
 ```
 
@@ -814,46 +868,58 @@ Use the image prompt as art direction, then translate it into a frontend system 
 
 The core rule: do not generate a full app screenshot and use it as the UI. Generate supporting art assets, then build the working interface in HTML/CSS so text, controls, accessibility, responsiveness, and state changes remain real.
 
-### Recommended Frontend Architecture
+### Shipped Frontend Architecture
 
-Create a small theme package before building one-off screens:
+The repository already provides the portable theme package. Import the three CSS layers in this order, then compose the closest layout recipe instead of duplicating ornamental CSS in each page:
 
 ```text
 src/
   theme/
     orchard-vale.css        # tokens, base surfaces, type, global utilities
-    orchard-components.css  # panels, ribbons, buttons, forms, tables, badges
+    orchard-components.css  # panels, ribbons, controls, content and data patterns
     orchard-layouts.css     # shell recipes and responsive layout rules
   assets/orchard-vale/
-    parchment-noise.png
-    wood-grain.png
-    brass-corner.svg
-    leaf-flourish.svg
-    crest-default.svg
-    avatars/
+    backplates/
+    characters/
+    data-viz/
+    empty-states/
+    heraldry/
     icons/
+    maps/
+    motifs/
+    motion/
+    ornaments/
     scenes/
+    textures/
+starter/
+  index.html                # minimal composition using the three CSS layers
 ```
 
 Keep the theme portable. Product screens should import the theme and compose real app components; they should not duplicate ornamental CSS in every page.
 
 ### Component Translation
 
-| Product UI Need | Orchard Vale Treatment | HTML Component |
+| Product UI Need | Orchard Vale Treatment | Shipped Class Or Pattern |
 |---|---|---|
-| App shell | Carved wood frame or restrained wood top/side chrome | `.ov-app-shell` |
-| Page heading | Parchment banner with small crest or leaf mark | `.ov-page-title` |
-| Section header | Dark moss-green ribbon with brass inset border | `.ov-ribbon` |
-| Card/panel | Aged parchment surface with ink border | `.ov-panel` |
-| Table/log | Ledger or chronicle with ruled rows | `.ov-ledger-table` |
-| Sidebar nav | Quest ledger, guild directory, or archive tabs | `.ov-side-rail` |
-| Status badge | Wax seal, shield chip, or small parchment pill | `.ov-badge` |
-| Progress | Brass-edged meter with painted fill | `.ov-progress` |
+| App shell | Carved wood frame or restrained wood chrome | `.ov-page`, `.ov-shell`, `.ov-frame` |
+| Page heading | Green identity banner with crest and supporting copy | `.ov-title-banner`, `.ov-header__identity`, `.ov-report-header` |
+| Section header | Dark moss-green ribbon with brass inset border | `.ov-panel-title`, `.ov-ribbon` |
+| Card/panel | Parchment surface with ink and brass structure | `.ov-panel`, `.ov-panel--aged`, `.ov-panel--green` |
+| Table/log | Responsive ledger or chronicle with ruled rows | `.ov-table-wrap`, `.ov-table` |
+| Sidebar or secondary column | Stacked guild, watch, or archive panels | `.ov-side-column`, `.ov-stack`, `.ov-starter-grid` |
+| Status badge | Small parchment or color-coded status pill | `.ov-chip` and its color modifiers |
+| Status signal | Compact state marker beside a record | `.ov-status-dot` and state modifiers |
+| Progress | Brass-edged meter with painted fill | `.ov-meter` |
 | User/avatar | Small heraldic portrait medallion | `.ov-avatar` |
-| Primary button | Brass or green signboard button | `.ov-button--primary` |
-| Secondary button | Parchment button with dark ink border | `.ov-button--secondary` |
-| Empty state | Small illustrated helper beside a parchment note | `.ov-empty-state` |
-| Modal/dialog | Posted notice or guild charter panel | `.ov-dialog` |
+| Primary button | Green signboard button | `.ov-button` |
+| Emphasized button | Brass action surface | `.ov-button--brass` |
+| Secondary button | Parchment button with dark ink border | `.ov-button--paper` |
+| Briefing record | Priority, event, time, or day-group structure | `.ov-priority`, `.ov-event`, `.ov-time`, `.ov-day-group` |
+| Evidence state | Confirmed, inferred, watch, or warning callout | `.ov-callout` and state modifiers |
+| Sources | Compact source rows or a long-form source list | `.ov-source-row`, `.ov-source-list` |
+| Optional detail | Native disclosure styled as a parchment record | `.ov-details` |
+| Empty state | Illustration from `empty-states/` inside a real panel | `.ov-panel` plus semantic empty-state copy |
+| Modal/dialog | Semantic `<dialog>` styled with panel and button classes | Native `<dialog>` plus `.ov-panel` |
 
 ### Layout Recipes
 
@@ -873,6 +939,25 @@ Use the layout that fits the product. The theme should be recognizable through m
 - Right rail is review notes, approvals, citations, or helper avatars.
 - Use subtle flourishes at panel edges, not inside the editable document body.
 
+#### Sourced Research Report
+
+- Use `.ov-report`, `.ov-report-header`, `.ov-report-content`, and `.ov-report-section` for a readable long-form column.
+- Lead with takeaways and the short answer; place methodology and exhaustive sources later.
+- Use `.ov-callout--confirmed`, `.ov-callout--inferred`, `.ov-callout--watch`, and `.ov-callout--warning` consistently.
+- Keep comparisons in `.ov-table`; do not turn evidence into decorative cards when rows and columns are clearer.
+- Include practical implications, confidence, gaps, and source provenance as first-class sections.
+- Provide print behavior for reports intended to be saved or shared.
+
+#### Daily Briefing Or Start Page
+
+- Use `.ov-dashboard-grid` with a primary reading column and a narrower watch/context column.
+- Keep the priority count deliberately small and ordered.
+- Render appointments and free blocks as `.ov-event` records with explicit `.ov-time` labels.
+- Group lookahead items with `.ov-day-group` rather than flattening the week into one list.
+- Separate email states, news, watch items, and source health with clear headings and chips.
+- Put optional reply text or secondary detail inside `.ov-details` disclosures.
+- Label fictional sample data clearly when publishing a generic template.
+
 #### Kanban Or Project Board
 
 - Columns become guild boards or workshop benches.
@@ -889,6 +974,7 @@ Use the layout that fits the product. The theme should be recognizable through m
 
 #### Financial Or Inventory Dashboard
 
+- Use `.ov-finance-grid` for a data-first main column and contextual side rail.
 - Metrics become ledgers, coin/resource counters, and stockroom shelves.
 - Tables should be dense and highly readable.
 - Charts can sit in framed parchment but should remain normal charts.
@@ -925,27 +1011,34 @@ Requirements: transparent background where appropriate, no text, no UI labels, n
 
 ### Implementation Priorities
 
-Build the theme in this order:
+The shared foundation already exists. When extending it or building a new screen, work in this order:
 
-1. Tokens: colors, type stacks, spacing, radii, shadows, z-index, and motion.
-2. Surfaces: app background, wood frame, parchment panel, green ribbon, brass divider.
-3. Controls: buttons, inputs, tabs, checkboxes, selects, filters, focus states.
-4. Data display: progress bars, badges, metrics, tables, timelines, list rows.
-5. Layout recipes: dashboard, editor, board, roster, ledger, timeline.
-6. Art layer: textures, crests, avatars, icons, scene backgrounds.
-7. Responsive behavior: container queries, rail stacking, scrollable dense regions.
+1. Choose the closest existing demo and shared layout recipe.
+2. Build the semantic content structure and real controls without decoration.
+3. Apply the existing tokens, surfaces, controls, and data-display components.
+4. Add only the new component patterns the workflow genuinely requires.
+5. Add textures, crests, avatars, icons, or scene backgrounds as a supporting art layer.
+6. Define responsive stacking, wrapping, and scroll behavior with media or container queries as appropriate.
+7. Add reduced-motion, print, and loading behavior where the content type requires it.
+8. Run `npm run validate`, then test desktop and mobile layouts in a browser.
 
 Do not start with a beautiful background. Start with a plain working app, apply the surfaces, then add illustration last.
 
 ### Interaction And Accessibility
 
 - Use real semantic controls for all buttons, links, inputs, menus, and tables.
-- Keep body text at `13px` or larger in dense desktop UIs.
-- Use visible focus rings in gold or blue.
+- Give every page exactly one `main` landmark and one descriptive `h1`.
+- Use `16px` body text by default and keep dense supporting text at `13px` or larger.
+- Use the visible `--ov-focus` treatment for keyboard focus; do not rely on color or hover alone.
+- Test interactive controls with both pointer and keyboard input.
+- For dialogs and lightboxes, provide an accessible name, contain focus while open, support Escape, and restore focus to the trigger when closed.
 - Keep contrast high on green ribbons and parchment panels.
 - Add hover states through border, fill, or 1px lift; avoid bouncing or playful motion.
 - Respect `prefers-reduced-motion`.
-- Make decorative images `aria-hidden="true"` unless they carry information.
+- Give meaningful images useful `alt` text. Use `alt=""` for decorative images so assistive technology ignores them.
+- Reserve stable image dimensions or aspect ratios, decode images asynchronously, and lazy-load below-the-fold artwork.
+- Wrap wide tables in an overflow container rather than forcing page-level horizontal scrolling.
+- Verify there is no horizontal page overflow at supported widths.
 - Never put required text directly over busy illustration without a parchment backing.
 
 ### Frontend Quality Bar
@@ -954,7 +1047,9 @@ An Orchard Vale frontend is successful when it feels themed before any illustrat
 
 ## Responsive Translation
 
-For smaller screens, do not shrink the whole dashboard until text becomes unreadable. Instead:
+For smaller screens, do not shrink a desktop composition until text becomes unreadable.
+
+For a pixel-faithful dashboard translation:
 
 1. Top metrics become a horizontally scrollable strip.
 2. Village tableau remains first and uses an aspect-ratio container.
@@ -962,14 +1057,27 @@ For smaller screens, do not shrink the whole dashboard until text becomes unread
 4. Chronicle and pipeline become separate sections.
 5. Mini-map and wisdom card move below the main operational modules.
 
+For adaptive applications:
+
+1. Collapse `.ov-header`, `.ov-dashboard-grid`, `.ov-finance-grid`, and `.ov-starter-grid` to one column before their content becomes cramped.
+2. Let metric groups, navigation, chips, and action rows wrap intentionally.
+3. Stack multi-column card groups while keeping each card's internal dimensions stable.
+4. Keep tables and dense visualizations locally scrollable; the page itself must not overflow horizontally.
+5. Hide or reduce secondary header art when it competes with the title or primary task.
+6. Preserve conventional reading order when side rails move below the main content.
+
 Minimum practical sizes:
 
-- Body text: `12px`
+- Default body text: `16px`
+- Dense supporting text: `13px`
+- Buttons and form controls: approximately `40px` minimum height
 - Quest/roster rows: `72px`
 - Building callouts: `120px` wide
 - Central village: keep at least `640px` wide before switching to a simplified map.
 
 ## Quality Checklist
+
+### Pixel-Faithful Dashboard
 
 - The page reads immediately as `Orchard Vale`, not a generic fantasy dashboard.
 - The first viewport contains the full command dashboard, not a landing-page hero.
@@ -981,3 +1089,18 @@ Minimum practical sizes:
 - Progress bars and status chips use the same state colors throughout.
 - Text remains readable over illustrated regions because labels sit on opaque parchment or plaques.
 - The result feels hand-painted, operational, and dense.
+
+### Adaptive Orchard Vale Application
+
+- The page uses the layout that best serves its content rather than forcing the original village dashboard shell.
+- The interface remains recognizably Orchard Vale before optional illustrations load.
+- Functional text, controls, tables, charts, and state remain real HTML, CSS, JavaScript, or live SVG.
+- Existing `ov-*` tokens and components are reused before introducing a new pattern.
+- Parchment surfaces, forest-green hierarchy, walnut framing, brass accents, and status colors are applied consistently.
+- Illustration supports identity or context without displacing useful information.
+- Conventional product nouns and controls remain conventional where metaphor would reduce clarity.
+- The page has exactly one `main` and one `h1`, meaningful landmark labels, and appropriate image alternatives.
+- Pointer, keyboard, focus, dialog, disclosure, and reduced-motion behavior work as expected.
+- Desktop and mobile layouts have no page-level horizontal overflow, overlapping text, broken images, or console errors.
+- Dense text remains at least `13px`, while normal reading text remains closer to the `16px` default.
+- Important content remains readable in print or simplified presentation when the output is a report or briefing.
