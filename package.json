@@ -4,15 +4,19 @@
   "description": "A storybook-village HTML theme with reusable CSS, assets, starters, content templates, and dashboard demos.",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    "./css": "./src/theme/index.css",
+    "./tokens": "./src/theme/orchard-vale.css",
+    "./components": "./src/theme/orchard-components.css",
+    "./layouts": "./src/theme/orchard-layouts.css",
+    "./js": "./src/theme/orchard-vale.js"
+  },
   "scripts": {
     "validate": "node scripts/validate-theme.mjs",
-    "optimize:html": "node scripts/optimize-html-images.mjs"
-  },
-  "files": [
-    "src/theme",
-    "src/assets/orchard-vale",
-    "starter",
-    "demo",
-    "docs"
-  ]
+    "optimize:images": "node scripts/optimize-html-images.mjs",
+    "optimize:images:check": "node scripts/optimize-html-images.mjs --check"
+  }
 }
