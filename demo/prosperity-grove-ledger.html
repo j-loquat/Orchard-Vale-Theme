@@ -3,132 +3,269 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Orchard Vale finance and ledger dashboard demo with balances, charts, transactions, goals, bills, and an interactive record form.">
+  <meta name="description" content="Orchard Vale household finance and ledger dashboard with live period switching, grouped Income vs. Expense SVG chart, Spending Breakdown donut, budget meters, and interactive record entry.">
   <meta name="theme-color" content="#173820">
   <title>Prosperity Grove Ledger</title>
-  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
-  <link rel="stylesheet" href="../src/theme/orchard-components.css">
-  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="prosperity-grove-ledger.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="prosperity-grove-ledger.js" defer></script>
 </head>
 <body class="ov-theme ledger-page">
   <a class="ov-skip-link" href="#main-content">Skip to ledger</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Prosperity Grove Ledger" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Prosperity Grove Ledger</span>
+  </nav>
+
   <div class="ov-page">
     <main class="ov-shell ov-frame" id="main-content">
-      <header class="ov-header">
+      <header class="ledger-header">
         <section class="ov-title-banner ov-header__identity ledger-hero" aria-labelledby="page-title">
-          <img src="../src/assets/orchard-vale/heraldry/crest-finance-coin-tree-fullcolor-512.png" alt="Prosperity tree and coin crest" width="96" height="96" fetchpriority="high" decoding="async">
+          <img src="../src/assets/orchard-vale/heraldry/crest-finance-coin-tree-fullcolor-512.webp" alt="Prosperity Grove coin and tree crest" width="96" height="96" fetchpriority="high" decoding="async">
           <div>
             <p class="ov-kicker">Prosperity Grove</p>
             <h1 id="page-title">Household Ledger</h1>
-            <p>A sample financial dashboard built around real tables, controls, goals, and charts.</p>
+            <p>Plan wisely, prosper together &mdash; single-source household balances, budgets, cash flow, and transactions.</p>
           </div>
         </section>
-        <section class="ov-panel ov-header__stats" aria-label="Ledger summary">
-          <article class="ov-panel ov-stat"><strong>$8,420</strong><span>Available balance</span></article>
-          <article class="ov-panel ov-stat"><strong>68%</strong><span>Monthly plan used</span></article>
-          <article class="ov-panel ov-stat"><strong>$1,900</strong><span>Goals funded</span></article>
+
+        <section class="ov-panel ledger-kpi-strip" aria-label="Monthly financial summary">
+          <article class="ov-card ov-stat ledger-kpi">
+            <strong id="kpi-balance">$17,840</strong>
+            <span>Total Balance</span>
+            <small class="kpi-sub" id="kpi-balance-sub">3 active accounts</small>
+          </article>
+          <article class="ov-card ov-stat ledger-kpi">
+            <strong id="kpi-income">$5,950</strong>
+            <span>Monthly Income</span>
+            <small class="kpi-sub" id="kpi-income-sub">3 deposits</small>
+          </article>
+          <article class="ov-card ov-stat ledger-kpi">
+            <strong id="kpi-spending">$3,365</strong>
+            <span>Monthly Spending</span>
+            <small class="kpi-sub" id="kpi-spending-sub">9 expenses</small>
+          </article>
+          <article class="ov-card ov-stat ledger-kpi">
+            <strong id="kpi-net">+$2,585</strong>
+            <span>Net Cash Flow</span>
+            <small class="kpi-sub" id="kpi-net-sub">43% saved</small>
+          </article>
+          <article class="ov-card ov-stat ledger-kpi">
+            <strong id="kpi-plan">70%</strong>
+            <span>Monthly Plan Used</span>
+            <small class="kpi-sub" id="kpi-plan-sub">$3,365 of $4,800</small>
+          </article>
         </section>
       </header>
 
-      <section class="ledger-controls ov-panel" aria-label="Ledger controls">
-        <label><span>Reporting period</span><select class="ov-select" id="period-select"><option value="July 2026">July 2026</option><option value="June 2026">June 2026</option><option value="May 2026">May 2026</option></select></label>
-        <p id="period-status" aria-live="polite">Showing the July 2026 sample ledger.</p>
-        <button class="ov-button ov-button--brass" id="open-entry" type="button"><img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="24" height="24" decoding="async">Add record</button>
+      <section class="ledger-controls ov-panel" aria-label="Ledger reporting controls">
+        <label class="ov-field-group" for="period-select">
+          <span class="ov-label">Reporting period</span>
+          <select class="ov-select" id="period-select">
+            <option value="July 2026" selected>July 2026</option>
+            <option value="June 2026">June 2026</option>
+            <option value="May 2026">May 2026</option>
+          </select>
+        </label>
+        <p class="ledger-controls__status" id="period-status" aria-live="polite">Showing July 2026 &mdash; all KPIs, charts, meters, and balances computed live from ledger entries.</p>
+        <button class="ov-button ov-button--brass" id="open-entry" type="button">
+          <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="20" height="20" decoding="async">
+          <span>Add record</span>
+        </button>
       </section>
 
       <div class="ov-finance-grid">
         <div class="ov-main-column">
           <section class="ov-panel" aria-labelledby="cashflow-title">
-            <h2 class="ov-panel-title" id="cashflow-title">Monthly Cash Flow</h2>
-            <div class="ov-panel__body ov-two-up chart-layout">
-              <div>
-                <p class="ov-kicker">Income and spending</p>
-                <div class="ov-chart-bars" role="img" aria-label="Six month cash flow chart; income remains above spending in five of six months">
-                  <span style="height:72%" title="February"></span><span style="height:60%" title="March"></span><span style="height:82%" title="April"></span><span style="height:67%" title="May"></span><span style="height:88%" title="June"></span><span style="height:76%" title="July"></span>
+            <h2 class="ov-panel-title" id="cashflow-title">
+              <span>Cash Flow &amp; Spending Breakdown</span>
+              <span class="ov-chip" id="cashflow-period-badge">July 2026</span>
+            </h2>
+            <div class="ov-panel__body ov-stack">
+              <div class="viz-split">
+                <div class="ov-chart-frame cashflow-chart-card">
+                  <div class="chart-head">
+                    <div>
+                      <h3 class="ov-chart-frame__title">Cash Flow Over Time (6 Months)</h3>
+                      <p class="chart-readout" id="cashflow-hover-readout">Hover or focus any month for Income, Expenses &amp; Net Cash Flow</p>
+                    </div>
+                    <ul class="chart-legend" aria-label="Cash flow chart legend">
+                      <li><span class="chart-swatch chart-swatch--income"></span>Income</li>
+                      <li><span class="chart-swatch chart-swatch--expense"></span>Expenses</li>
+                      <li><span class="chart-swatch chart-swatch--net"></span>Net Cash Flow</li>
+                    </ul>
+                  </div>
+                  <div class="cashflow-svg-wrap" id="cashflow-chart-host"></div>
                 </div>
-                <div class="chart-labels" aria-hidden="true"><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+
+                <div class="ov-chart-frame spending-donut-card">
+                  <div class="chart-head">
+                    <h3 class="ov-chart-frame__title">Spending Breakdown</h3>
+                    <small class="ov-muted">Click a category to filter ledger</small>
+                  </div>
+                  <div class="spending-donut-wrap">
+                    <div class="spending-donut-figure" id="spending-donut-host"></div>
+                    <ul class="spending-donut-legend" id="spending-donut-legend" aria-label="Spending breakdown by category"></ul>
+                  </div>
+                </div>
               </div>
-              <div class="ov-stack">
-                <article class="budget-row"><div><strong>Home</strong><span>$1,760 of $2,200</span></div><div class="ov-meter"><span style="width:80%"></span></div></article>
-                <article class="budget-row"><div><strong>Food</strong><span>$610 of $850</span></div><div class="ov-meter"><span style="width:72%"></span></div></article>
-                <article class="budget-row"><div><strong>Transport</strong><span>$290 of $520</span></div><div class="ov-meter"><span style="width:56%"></span></div></article>
-                <article class="budget-row"><div><strong>Flexible</strong><span>$330 of $700</span></div><div class="ov-meter"><span style="width:47%"></span></div></article>
+
+              <hr class="ov-divider">
+
+              <div>
+                <div class="section-subhead">
+                  <h3 class="subhead-title">Monthly Budget Tracker</h3>
+                  <span class="ov-muted ov-ui-text" id="budget-summary-text">$3,365 spent of $4,800 plan ($1,435 remaining)</span>
+                </div>
+                <div class="budget-grid" id="budget-meters-host"></div>
               </div>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="transactions-title">
-            <h2 class="ov-panel-title" id="transactions-title">Recent Ledger Entries</h2>
-            <div class="ov-panel__body">
-              <div class="ov-table-wrap">
+            <h2 class="ov-panel-title" id="transactions-title">
+              <span>Ledger Transactions</span>
+              <span class="ov-chip" id="tx-count-chip">12 entries</span>
+            </h2>
+            <div class="ov-panel__body ov-stack">
+              <div class="tx-toolbar">
+                <div class="tx-search-box">
+                  <label class="ov-sr-only" for="tx-search">Search ledger transactions</label>
+                  <input class="ov-field" id="tx-search" type="search" placeholder="Search descriptions, categories, or status..." autocomplete="off">
+                </div>
+                <div class="tx-chip-bar" id="tx-category-chips" role="group" aria-label="Filter transactions by category">
+                  <button class="tx-filter-chip is-active" type="button" data-cat="All" aria-pressed="true">All</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Home" aria-pressed="false">Home</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Food" aria-pressed="false">Food</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Transport" aria-pressed="false">Transport</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Utilities" aria-pressed="false">Utilities</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Flexible" aria-pressed="false">Flexible</button>
+                  <button class="tx-filter-chip" type="button" data-cat="Income" aria-pressed="false">Income</button>
+                </div>
+              </div>
+
+              <div class="ov-table-wrap" id="tx-table-wrap">
                 <table class="ov-table" id="ledger-table">
-                  <thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th><th>Status</th></tr></thead>
-                  <tbody>
-                    <tr><td>Jul 15</td><td>Market groceries</td><td>Food</td><td>−$84.20</td><td><span class="ov-chip ov-chip--green">Posted</span></td></tr>
-                    <tr><td>Jul 14</td><td>Consulting invoice</td><td>Income</td><td>+$1,250.00</td><td><span class="ov-chip ov-chip--green">Cleared</span></td></tr>
-                    <tr><td>Jul 12</td><td>Hydro estimate</td><td>Home</td><td>−$146.00</td><td><span class="ov-chip ov-chip--amber">Pending</span></td></tr>
-                    <tr><td>Jul 10</td><td>Vehicle fuel</td><td>Transport</td><td>−$72.35</td><td><span class="ov-chip ov-chip--green">Posted</span></td></tr>
-                  </tbody>
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Category</th>
+                      <th scope="col" class="num-col">Amount</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ledger-tbody"></tbody>
                 </table>
+              </div>
+
+              <div class="ov-empty-state ov-empty-state--compact" id="tx-empty-state" hidden>
+                <img class="ov-empty-state__art" src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.webp" alt="Owl reviewing a quiet ledger book" width="168" height="126" loading="lazy" decoding="async">
+                <h3 class="ov-empty-state__title">No matching transactions</h3>
+                <p id="tx-empty-msg">No ledger entries match the current search or category filter.</p>
+                <div class="ov-empty-state__actions">
+                  <button class="ov-button ov-button--paper ov-button--sm" id="reset-tx-filters" type="button">Reset filters</button>
+                </div>
               </div>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="goals-title">
-            <h2 class="ov-panel-title" id="goals-title">Savings Goals</h2>
-            <div class="ov-panel__body ov-three-up goal-grid">
-              <article><img src="../src/assets/orchard-vale/motifs/finance/motif-finance-savings-jar-96.svg" alt="" width="72" height="72" loading="lazy" decoding="async"><h3>Emergency reserve</h3><p>$6,400 of $10,000</p><div class="ov-meter"><span style="width:64%"></span></div></article>
-              <article><img src="../src/assets/orchard-vale/motifs/finance/motif-finance-investment-tree-96.svg" alt="" width="72" height="72" loading="lazy" decoding="async"><h3>Long-term fund</h3><p>$12,800 of $20,000</p><div class="ov-meter"><span style="width:64%"></span></div></article>
-              <article><img src="../src/assets/orchard-vale/motifs/finance/motif-finance-purse-96.svg" alt="" width="72" height="72" loading="lazy" decoding="async"><h3>Autumn travel</h3><p>$1,020 of $1,500</p><div class="ov-meter"><span style="width:68%"></span></div></article>
-            </div>
+            <h2 class="ov-panel-title" id="goals-title">
+              <span>Savings Goals</span>
+              <span class="ov-chip ov-chip--green" id="goals-total-chip">$11,420 of $19,500 funded</span>
+            </h2>
+            <div class="ov-panel__body ov-three-up goal-grid" id="goals-host"></div>
           </section>
         </div>
 
-        <aside class="ov-side-column" aria-label="Financial context">
-          <section class="ov-panel advisor-panel" aria-labelledby="advisor-title">
+        <aside class="ov-side-column" aria-label="Financial context and accounts">
+          <section class="ov-panel ov-panel--ornate ov-panel--ornate-sm advisor-panel" aria-labelledby="advisor-title">
             <h2 class="ov-panel-title" id="advisor-title">Steward's Note</h2>
             <div class="ov-panel__body">
-              <img src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.png" alt="Squirrel resource steward holding a ledger" width="220" height="220" loading="lazy" decoding="async">
-              <div class="ov-callout ov-callout--confirmed"><strong>On track:</strong> Flexible spending remains below half of the monthly plan.</div>
-              <div class="ov-callout ov-callout--watch"><strong>Watch item:</strong> The hydro estimate is still pending and may move the Home category above 80%.</div>
-            </div>
-          </section>
-
-          <section class="ov-panel" aria-labelledby="bills-title">
-            <h2 class="ov-panel-title" id="bills-title">Upcoming Bills</h2>
-            <div class="ov-panel__body">
-              <article class="ov-event"><div class="ov-time">Jul 18</div><div><h3>Internet</h3><p class="ov-muted">$92 · automatic</p></div></article>
-              <article class="ov-event"><div class="ov-time">Jul 21</div><div><h3>Insurance</h3><p class="ov-muted">$184 · scheduled</p></div></article>
-              <article class="ov-event"><div class="ov-time">Jul 25</div><div><h3>Property services</h3><p class="ov-muted">$120 · needs review</p></div></article>
+              <img src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.webp" alt="Squirrel financial steward holding a household ledger" width="200" height="200">
+              <div class="ov-stack" id="advisor-callouts"></div>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="accounts-title">
             <h2 class="ov-panel-title" id="accounts-title">Account Ledger</h2>
-            <div class="ov-panel__body account-list">
-              <div><span>Everyday account</span><strong>$4,280</strong></div>
-              <div><span>Savings</span><strong>$11,420</strong></div>
-              <div><span>Reserved bills</span><strong>$2,140</strong></div>
+            <div class="ov-panel__body">
+              <div class="account-list" id="accounts-host"></div>
+              <hr class="ov-divider ov-divider--plain">
+              <div class="account-total-row">
+                <span>Total Account Balances</span>
+                <strong id="accounts-total-value">$17,840</strong>
+              </div>
             </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="bills-title">
+            <h2 class="ov-panel-title" id="bills-title">Upcoming Bills</h2>
+            <div class="ov-panel__body bills-list" id="bills-host"></div>
           </section>
         </aside>
       </div>
     </main>
   </div>
 
-  <dialog class="ledger-dialog ov-panel" id="entry-dialog" aria-labelledby="entry-title">
-    <form method="dialog" id="entry-form">
-      <h2 class="ov-panel-title" id="entry-title">Add Sample Ledger Record</h2>
-      <div class="ov-panel__body ov-stack">
-        <label><strong>Description</strong><input class="ov-field" id="entry-description" name="description" required autocomplete="off"></label>
-        <label><strong>Category</strong><select class="ov-select" name="category"><option>Food</option><option>Home</option><option>Transport</option><option>Flexible</option><option>Income</option></select></label>
-        <label><strong>Amount</strong><input class="ov-field" name="amount" type="number" step="0.01" required></label>
-        <div class="dialog-actions"><button class="ov-button ov-button--paper" id="cancel-entry" type="button">Cancel</button><button class="ov-button" type="submit">Add to sample</button></div>
+  <dialog class="ov-dialog" id="entry-dialog" aria-labelledby="entry-title">
+    <form id="entry-form" method="dialog">
+      <header class="ov-dialog__header">
+        <h2 id="entry-title">Add Ledger Record</h2>
+        <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close record dialog">&times;</button>
+      </header>
+      <div class="ov-dialog__body ov-stack">
+        <fieldset class="ov-fieldset">
+          <legend>Transaction Type</legend>
+          <div class="ov-check-row">
+            <label class="ov-check">
+              <input type="radio" name="type" value="expense" id="entry-type-expense" checked>
+              <span>Expense (&minus;$)</span>
+            </label>
+            <label class="ov-check">
+              <input type="radio" name="type" value="income" id="entry-type-income">
+              <span>Income (+$)</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="entry-description">Description <span class="ov-required">*</span></label>
+          <input class="ov-field" id="entry-description" name="description" required autocomplete="off" placeholder="e.g., Farmers market produce">
+        </div>
+
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="entry-date">Date <span class="ov-required">*</span></label>
+            <input class="ov-field" id="entry-date" name="date" type="date" required value="2026-07-16">
+          </div>
+          <div class="ov-field-group">
+            <label class="ov-label" for="entry-category">Category <span class="ov-required">*</span></label>
+            <select class="ov-select" id="entry-category" name="category">
+              <option value="Food">Food</option>
+              <option value="Home">Home</option>
+              <option value="Transport">Transport</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Flexible">Flexible</option>
+              <option value="Income">Income</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="entry-amount">Amount (CAD) <span class="ov-required">*</span></label>
+          <input class="ov-field" id="entry-amount" name="amount" type="number" min="0.01" step="0.01" required placeholder="0.00">
+          <p class="ov-field-hint">Enter a positive dollar figure; sign (&minus; or +) is applied automatically from the type above.</p>
+        </div>
       </div>
+      <footer class="ov-dialog__footer">
+        <button class="ov-button ov-button--paper" id="cancel-entry" type="button" data-ov-dialog-close>Cancel</button>
+        <button class="ov-button ov-button--brass" type="submit">Add to ledger</button>
+      </footer>
     </form>
   </dialog>
-  <div class="ov-sr-only" id="ledger-live" aria-live="polite"></div>
-  <script src="prosperity-grove-ledger.js?v=1.1.0"></script>
 </body>
 </html>
