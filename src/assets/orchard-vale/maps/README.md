@@ -57,4 +57,4 @@ This pack contains unlabeled map backgrounds plus SVG controls and markers. Labe
 - `maps-contact-sheet.png` reviews the raster map backgrounds.
 - `map-controls-contact-sheet.png` reviews the SVG overlay assets.
 - `maps-and-controls-contact-sheet.png` combines both sheets.
-- `source-originals/` preserves the original generated PNG map sources.
+- Original generated PNG map sources are archived in `art-sources/maps/source-originals/`.

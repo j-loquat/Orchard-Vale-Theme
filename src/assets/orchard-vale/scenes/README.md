@@ -46,4 +46,4 @@ This pack contains wide environmental backgrounds for dashboards, empty states, 
 - `scenes-contact-sheet-16x9.png` reviews the 16:9 set.
 - `scenes-contact-sheet-21x9.png` reviews the ultrawide set.
 - `scenes-contact-sheet.png` combines both review sheets.
-- `source-originals/` preserves the original generated PNG sources.
+- Original generated PNG sources are archived in `art-sources/scenes/source-originals/`.
