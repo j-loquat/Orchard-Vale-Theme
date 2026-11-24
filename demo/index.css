@@ -49,7 +49,7 @@
   text-decoration: none;
   background:
     linear-gradient(rgba(255, 250, 240, 0.78), rgba(248, 237, 207, 0.94)),
-    var(--ov-tex-parchment);
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.webp");
   background-color: var(--ov-paper);
   border: 2px solid rgba(112, 72, 38, 0.65);
   border-radius: var(--ov-radius-sm);
@@ -198,7 +198,7 @@
 .starter-banner {
   background:
     linear-gradient(125deg, rgba(23, 56, 32, 0.96), rgba(15, 40, 24, 0.98)),
-    var(--ov-tex-signboard);
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.webp");
   color: var(--ov-paper);
   border-color: var(--ov-brass-dark);
   --ov-link: var(--ov-link-dark);
@@ -300,6 +300,7 @@
 
 .thumb-link img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top center;

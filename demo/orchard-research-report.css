@@ -26,7 +26,7 @@
 .research-page .takeaways {
   background:
     linear-gradient(rgba(225, 235, 215, 0.93), rgba(248, 237, 207, 0.97)),
-    var(--ov-tex-parchment);
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.webp");
   background-color: var(--ov-paper);
   border-color: var(--ov-green);
 }

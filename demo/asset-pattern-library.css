@@ -126,7 +126,7 @@
   color: var(--ov-paper);
   background:
     linear-gradient(95deg, rgba(15, 40, 24, 0.98), rgba(23, 56, 32, 0.92)),
-    var(--ov-tex-signboard);
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.webp");
   border: 2px solid var(--ov-walnut);
   border-radius: var(--ov-radius-sm);
   --ov-kicker: var(--ov-brass-light);
