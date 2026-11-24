@@ -3,177 +3,353 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Visual directory for the Orchard Vale storybook-village HTML theme demos, content templates, dashboards, galleries, and reusable assets.">
+  <meta name="description" content="Visual showcase hub for the Orchard Vale storybook-village HTML theme demos, flagship apps, content templates, specimen workbench, character registry, and starter kit.">
   <meta name="theme-color" content="#173820">
-  <title>Orchard Vale Demo Index</title>
+  <title>Orchard Vale Showcase Hub</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="index.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="index.js" defer></script>
 </head>
-<body>
-  <main class="index-shell">
-    <header class="index-header">
-      <section class="title-panel" aria-labelledby="page-title">
-        <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="Orchard Vale crest" decoding="async">
-        <div>
-          <p>Demo Directory</p>
-          <h1 id="page-title">Orchard Vale Theme Demos</h1>
-          <span>Start here to explore the full set of HTML front-end experiments, from a simple article through dense dashboards, mock-up imitations, and asset galleries.</span>
+<body class="ov-theme">
+  <a class="ov-skip-link" href="#main-content">Skip to showcase directory</a>
+
+  <div class="ov-page">
+    <main class="ov-shell ov-frame hub-shell" id="main-content">
+      <header class="ov-header">
+        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
+          <img
+            src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+            alt="Orchard Vale tree crest"
+            width="96"
+            height="96"
+            decoding="async">
+          <div>
+            <p class="ov-kicker">Showcase Hub &middot; Theme Kit v2.0</p>
+            <h1 id="page-title">Orchard Vale Theme Demos</h1>
+            <p class="hub-subtitle">Explore every live HTML front-end built on the Orchard Vale system &mdash; from editorial pages and briefings to full flagship apps, specimen galleries, and the minimal starter kit.</p>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-header__stats" aria-label="Theme kit summary">
+          <article class="ov-panel ov-stat">
+            <strong>11</strong>
+            <span>Live showcase pages</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>321</strong>
+            <span>Illustrated assets</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>1</strong>
+            <span>Minimal starter kit</span>
+          </article>
+        </section>
+      </header>
+
+      <section class="ov-panel ov-panel--ornate tour-panel" aria-labelledby="tour-title">
+        <h2 class="ov-panel-title" id="tour-title">Recommended Tour &mdash; From Tone to Production Vocabulary</h2>
+        <div class="ov-panel__body">
+          <p class="tour-intro">Follow these six stops in order to see how Orchard Vale scales from warm editorial reading up to dense dashboards and reusable developer specimens.</p>
+          <ol class="tour-grid">
+            <li>
+              <a class="tour-step" href="friendly-town.html">
+                <span class="tour-step__badge">01</span>
+                <img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Friendly Town</strong>
+                  <span>Feel the tone &amp; parchment rhythm</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tour-step" href="orchard-morning-briefing.html">
+                <span class="tour-step__badge">02</span>
+                <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-calendar-tile-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Morning Briefing</strong>
+                  <span>Scan mixed daily signals &amp; triage</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tour-step" href="orchard-research-report.html">
+                <span class="tour-step__badge">03</span>
+                <img src="../src/assets/orchard-vale/motifs/research/motif-research-quill-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Scholar's Field Report</strong>
+                  <span>Read sourced analysis &amp; tables</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tour-step" href="prosperity-grove-ledger.html">
+                <span class="tour-step__badge">04</span>
+                <img src="../src/assets/orchard-vale/motifs/finance/motif-finance-budget-ledger-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Prosperity Grove Ledger</strong>
+                  <span>Inspect charts, meters &amp; dialogs</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tour-step" href="command-center.html">
+                <span class="tour-step__badge">05</span>
+                <img src="../src/assets/orchard-vale/motifs/operations/motif-operations-route-marker-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Command Center</strong>
+                  <span>Push dense operations complexity</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="tour-step" href="asset-pattern-library.html">
+                <span class="tour-step__badge">06</span>
+                <img src="../src/assets/orchard-vale/motifs/project/motif-project-work-board-96.svg" alt="" width="44" height="44" decoding="async">
+                <span class="tour-step__text">
+                  <strong>Asset Pattern Library</strong>
+                  <span>Inspect all 301 assets &amp; v2.0 recipes</span>
+                </span>
+              </a>
+            </li>
+          </ol>
         </div>
       </section>
-      <section class="index-stats" aria-label="Demo summary">
-        <article><strong>11</strong><span>Demo pages</span></article>
-        <article><strong>12</strong><span>Asset families</span></article>
-        <article><strong>1</strong><span>Storybook village UI system</span></article>
+
+      <hr class="ov-divider" aria-hidden="true">
+
+      <section class="ov-panel showcase-panel" aria-labelledby="directory-title">
+        <div class="ov-panel-title showcase-panel__head">
+          <h2 id="directory-title" class="showcase-panel__heading">All Destinations</h2>
+          <p class="showcase-count" id="filter-status" aria-live="polite">Showing 12 of 12 destinations</p>
+        </div>
+
+        <div class="ov-panel__body ov-stack">
+          <div class="filter-bar" role="group" aria-label="Filter destinations by category">
+            <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">
+              All <span class="filter-chip__count" data-count-for="all">12</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="flagship" aria-pressed="false">
+              Flagship Apps <span class="filter-chip__count" data-count-for="flagship">5</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="templates" aria-pressed="false">
+              Content Templates <span class="filter-chip__count" data-count-for="templates">2</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="civic" aria-pressed="false">
+              Civic &amp; Editorial <span class="filter-chip__count" data-count-for="civic">2</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="galleries" aria-pressed="false">
+              Specimen Galleries <span class="filter-chip__count" data-count-for="galleries">2</span>
+            </button>
+            <button type="button" class="filter-chip" data-filter="starter" aria-pressed="false">
+              Starter Kit <span class="filter-chip__count" data-count-for="starter">1</span>
+            </button>
+          </div>
+
+          <section class="ov-panel ov-panel--ornate starter-banner" data-showcase-item data-category="starter" aria-labelledby="starter-banner-title">
+            <div class="starter-banner__inner">
+              <div class="starter-banner__media">
+                <img
+                  src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+                  alt="Orchard Vale starter kit emblem"
+                  width="88"
+                  height="88"
+                  decoding="async">
+              </div>
+              <div class="starter-banner__copy">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Starter Kit</span>
+                  <span class="ov-chip ov-chip--amber">Single-Import v2.0</span>
+                  <span class="ov-chip ov-chip--blue">~400 KB Texture Core</span>
+                </div>
+                <h3 id="starter-banner-title">Minimal Starter Kit</h3>
+                <p>Start a new Orchard Vale app in two lines: drop in <code>src/theme/index.css</code> and <code>src/theme/orchard-vale.js</code> for cascade-layered tokens, ornate panels, accessible tabs, dialogs, toasts, and interactive form patterns.</p>
+              </div>
+              <div class="starter-banner__actions">
+                <a class="ov-button" href="../starter/index.html">Open Starter Kit</a>
+                <button
+                  type="button"
+                  class="ov-button ov-button--paper ov-button--sm"
+                  id="copy-starter-snippet">Copy Import Snippet</button>
+              </div>
+            </div>
+          </section>
+
+          <div class="demo-grid" id="demo-grid">
+            <article class="demo-card ov-card ov-card--interactive ov-card--red" data-showcase-item data-category="flagship">
+              <a class="thumb-link" href="hearthside-commons.html" aria-label="Open Hearthside Commons flagship demo">
+                <img
+                  src="screenshots/hearthside-commons-desktop.png"
+                  alt="Hearthside Commons mail, calendar, and tasks flagship screenshot"
+                  data-fallback-src="../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp"
+                  decoding="async"
+                  loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">New</span>
+                  <span class="ov-chip ov-chip--red">Flagship App</span>
+                  <span class="ov-chip ov-chip--amber">Mail &amp; Calendar</span>
+                </div>
+                <h3>Hearthside Commons</h3>
+                <p>Mail, calendar, and personal task workspace uniting inbox triage, weekly time blocks, focus timers, and quick composer dialogs in one calm village hub.</p>
+                <a class="ov-button ov-button--sm open-link" href="hearthside-commons.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--red" data-showcase-item data-category="flagship">
+              <a class="thumb-link" href="command-center.html" aria-label="Open Command Center flagship demo">
+                <img src="screenshots/command-center-desktop.png" alt="Command Center operations dashboard screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--red">Flagship App</span>
+                  <span class="ov-chip ov-chip--blue">Operations</span>
+                </div>
+                <h3>Command Center</h3>
+                <p>The dense operations showcase: live situation map, alert queue, system health charts, response workflow, dependencies, roster, and event ledger.</p>
+                <a class="ov-button ov-button--sm open-link" href="command-center.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--purple" data-showcase-item data-category="flagship">
+              <a class="thumb-link" href="guildhall-project-board.html" aria-label="Open Guildhall Project Board flagship demo">
+                <img src="screenshots/guildhall-project-board-desktop.png" alt="Guildhall Project Board Kanban flagship screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--purple">Flagship App</span>
+                  <span class="ov-chip ov-chip--amber">Kanban &amp; Planning</span>
+                </div>
+                <h3>Guildhall Project Board</h3>
+                <p>Consolidated Kanban and planning flagship with top controls, five lanes, dense task cards, selected-card details, milestones, helper roster, and activity feed.</p>
+                <a class="ov-button ov-button--sm open-link" href="guildhall-project-board.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--purple" data-showcase-item data-category="flagship">
+              <a class="thumb-link" href="scholars-hollow-workbench.html" aria-label="Open Scholar's Hollow Workbench demo">
+                <img src="screenshots/scholars-hollow-workbench-desktop.png" alt="Scholar's Hollow Workbench research demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--purple">Flagship App</span>
+                  <span class="ov-chip ov-chip--blue">Research Workbench</span>
+                </div>
+                <h3>Scholar's Hollow Workbench</h3>
+                <p>Research-and-writing workspace with report metrics, study library, document editor, evidence cards, citations, fact-checking, and export controls.</p>
+                <a class="ov-button ov-button--sm open-link" href="scholars-hollow-workbench.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--green" data-showcase-item data-category="flagship">
+              <a class="thumb-link" href="prosperity-grove-ledger.html" aria-label="Open Prosperity Grove Ledger demo">
+                <img src="screenshots/prosperity-grove-ledger-desktop.png" alt="Prosperity Grove Ledger finance demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Flagship App</span>
+                  <span class="ov-chip ov-chip--amber">Finance &amp; Data</span>
+                </div>
+                <h3>Prosperity Grove Ledger</h3>
+                <p>Data-heavy household ledger with account balances, cash-flow bars, budget meters, transactions, goals, upcoming bills, period controls, and record dialogs.</p>
+                <a class="ov-button ov-button--sm open-link" href="prosperity-grove-ledger.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--blue" data-showcase-item data-category="templates">
+              <a class="thumb-link" href="orchard-morning-briefing.html" aria-label="Open Morning Briefing template demo">
+                <img src="screenshots/orchard-morning-briefing-desktop.png" alt="Orchard Vale Morning Briefing demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--blue">Content Template</span>
+                  <span class="ov-chip ov-chip--amber">Daily Briefing</span>
+                </div>
+                <h3>Morning Briefing</h3>
+                <p>Source-aware daily dashboard for priorities, consulting signals, schedule and free blocks, seven-day outlook, email triage, news, and suggested replies.</p>
+                <a class="ov-button ov-button--sm open-link" href="orchard-morning-briefing.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--blue" data-showcase-item data-category="templates">
+              <a class="thumb-link" href="orchard-research-report.html" aria-label="Open Scholar's Field Report template demo">
+                <img src="screenshots/orchard-research-report-desktop.png" alt="Orchard Vale Scholar's Field Report demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--blue">Content Template</span>
+                  <span class="ov-chip ov-chip--purple">Sourced Report</span>
+                </div>
+                <h3>Scholar's Field Report</h3>
+                <p>Formal sourced-report pattern with key takeaways, short answer, evidence status, comparison tables, practical implications, confidence gaps, and sources.</p>
+                <a class="ov-button ov-button--sm open-link" href="orchard-research-report.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--green" data-showcase-item data-category="civic">
+              <a class="thumb-link" href="friendly-town.html" aria-label="Open Friendly Town article demo">
+                <img src="screenshots/friendly-town-desktop.png" alt="Friendly Town editorial article demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Civic &amp; Editorial</span>
+                  <span class="ov-chip">Editorial Proof</span>
+                </div>
+                <h3>Friendly Town</h3>
+                <p>A readable editorial proof page about Orchard Vale as a welcoming place. Best first stop for tone, scenery, parchment rhythm, and warm storybook styling.</p>
+                <a class="ov-button ov-button--sm open-link" href="friendly-town.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--green" data-showcase-item data-category="civic">
+              <a class="thumb-link" href="town-notice-board.html" aria-label="Open Town Notice Board demo">
+                <img src="screenshots/town-notice-board-desktop.png" alt="Town Notice Board civic demo screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Civic &amp; Editorial</span>
+                  <span class="ov-chip ov-chip--blue">Public Info</span>
+                </div>
+                <h3>Town Notice Board</h3>
+                <p>A public dashboard with notices, community events, steward avatars, district map cards, civic requests, badges, and neighborhood information patterns.</p>
+                <a class="ov-button ov-button--sm open-link" href="town-notice-board.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--amber" data-showcase-item data-category="galleries">
+              <a class="thumb-link" href="character-gallery.html" aria-label="Open Character Registry demo">
+                <img src="screenshots/character-gallery-desktop.png" alt="Character Registry showcase screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--amber">Specimen Gallery</span>
+                  <span class="ov-chip ov-chip--purple">20 Character Assets</span>
+                </div>
+                <h3>Character Registry</h3>
+                <p>Full cast showcase for every Orchard Vale full-body helper and matching avatar, with role filtering, one-click path copy, and an accessible lightbox.</p>
+                <a class="ov-button ov-button--sm open-link" href="character-gallery.html">Open Demo</a>
+              </div>
+            </article>
+
+            <article class="demo-card ov-card ov-card--interactive ov-card--amber" data-showcase-item data-category="galleries">
+              <a class="thumb-link" href="asset-pattern-library.html" aria-label="Open Asset Pattern Library demo">
+                <img src="screenshots/asset-pattern-library-desktop.png" alt="Asset Pattern Library workbench screenshot" decoding="async" loading="lazy">
+              </a>
+              <div class="demo-body">
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--amber">Specimen Gallery</span>
+                  <span class="ov-chip ov-chip--green">301 Kit Assets</span>
+                </div>
+                <h3>Asset Pattern Library</h3>
+                <p>Developer specimen workbench exposing all 301 non-character assets individually with live search, surface toggles, snippet copy, and v2.0 motion recipes.</p>
+                <a class="ov-button ov-button--sm open-link" href="asset-pattern-library.html">Open Demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
-    </header>
-
-    <section class="path-panel" aria-labelledby="path-title">
-      <div>
-        <p>Recommended Tour</p>
-        <h2 id="path-title">Move from theme feel to production vocabulary</h2>
-      </div>
-      <ol>
-        <li><a href="friendly-town.html">Article</a><span>feel the tone</span></li>
-        <li><a href="orchard-morning-briefing.html">Daily Brief</a><span>scan mixed information</span></li>
-        <li><a href="orchard-research-report.html">Research</a><span>read sourced analysis</span></li>
-        <li><a href="prosperity-grove-ledger.html">Ledger</a><span>inspect data and controls</span></li>
-        <li><a href="command-center.html">Command</a><span>push dashboard complexity</span></li>
-        <li><a href="asset-pattern-library.html">Pattern Library</a><span>inspect the kit</span></li>
-      </ol>
-    </section>
-
-    <section class="demo-grid" aria-label="Available Orchard Vale demos">
-      <article class="demo-card simple">
-        <a class="thumb-link" href="friendly-town.html" aria-label="Open Friendly Town article demo">
-          <img src="screenshots/friendly-town-desktop.png" alt="Friendly Town article demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Simple</span><span>Editorial</span></div>
-          <h2>Friendly Town Article</h2>
-          <p>A readable editorial proof page about Orchard Vale as a welcoming place. Best first stop for tone, scenery, parchment rhythm, and warm storybook styling.</p>
-          <a class="open-link" href="friendly-town.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card medium">
-        <a class="thumb-link" href="town-notice-board.html" aria-label="Open Town Notice Board demo">
-          <img src="screenshots/town-notice-board-desktop.png" alt="Town Notice Board demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Medium</span><span>Public Info</span></div>
-          <h2>Town Notice Board</h2>
-          <p>A public dashboard with notices, events, steward avatars, map cards, requests, badges, and civic information layout patterns.</p>
-          <a class="open-link" href="town-notice-board.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card complex">
-        <a class="thumb-link" href="guildhall-planner.html" aria-label="Open Guildhall Planner demo">
-          <img src="screenshots/guildhall-planner-desktop.png" alt="Guildhall Planner demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Complex</span><span>Workflow</span></div>
-          <h2>Guildhall Planner</h2>
-          <p>A productivity cockpit with app navigation, metrics, Kanban lanes, selected-work details, timeline, district map, roster, and supply ledger.</p>
-          <a class="open-link" href="guildhall-planner.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card flagship">
-        <a class="thumb-link" href="command-center.html" aria-label="Open Command Center demo">
-          <img src="screenshots/command-center-desktop.png" alt="Command Center demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Flagship</span><span>Operations</span></div>
-          <h2>Command Center</h2>
-          <p>The dense operations showcase: live situation map, alert queue, system health charts, response workflow, dependencies, roster, and event ledger.</p>
-          <a class="open-link" href="command-center.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card imitation">
-        <a class="thumb-link" href="scholars-hollow-workbench.html" aria-label="Open Scholar's Hollow Workbench demo">
-          <img src="screenshots/scholars-hollow-workbench-desktop.png" alt="Scholar's Hollow Workbench demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Mock-up Study</span><span>Research</span></div>
-          <h2>Scholar's Hollow Workbench</h2>
-          <p>A close research-and-writing mock-up imitation with report metrics, study library, document editor, evidence cards, citations, fact-checking, and export controls.</p>
-          <a class="open-link" href="scholars-hollow-workbench.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card imitation">
-        <a class="thumb-link" href="guildhall-project-board.html" aria-label="Open Guildhall Project Board demo">
-          <img src="screenshots/guildhall-project-board-desktop.png" alt="Guildhall Project Board demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Mock-up Study</span><span>Projects</span></div>
-          <h2>Guildhall Project Board</h2>
-          <p>A board-first Kanban imitation for projects, with top controls, five lanes, dense task cards, character helpers, selected-card details, milestones, and activity feed.</p>
-          <a class="open-link" href="guildhall-project-board.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card content">
-        <a class="thumb-link" href="orchard-morning-briefing.html" aria-label="Open Orchard Vale Morning Briefing demo">
-          <img src="screenshots/orchard-morning-briefing-desktop.png" alt="Orchard Vale Morning Briefing demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Content Template</span><span>Daily Briefing</span></div>
-          <h2>Morning Briefing</h2>
-          <p>A source-aware daily dashboard for priorities, consulting signals, schedule and free blocks, seven-day outlook, email triage, news, suggested replies, and data health.</p>
-          <a class="open-link" href="orchard-morning-briefing.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card content">
-        <a class="thumb-link" href="orchard-research-report.html" aria-label="Open Orchard Vale Research Report demo">
-          <img src="screenshots/orchard-research-report-desktop.png" alt="Orchard Vale Research Report demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Content Template</span><span>Research</span></div>
-          <h2>Scholar's Field Report</h2>
-          <p>A formal sourced-report pattern with key takeaways, short answer, evidence status, comparison tables, practical implications, confidence gaps, and long-form sources.</p>
-          <a class="open-link" href="orchard-research-report.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card finance">
-        <a class="thumb-link" href="prosperity-grove-ledger.html" aria-label="Open Prosperity Grove Ledger demo">
-          <img src="screenshots/prosperity-grove-ledger-desktop.png" alt="Prosperity Grove Ledger demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Data Template</span><span>Finance</span></div>
-          <h2>Prosperity Grove Ledger</h2>
-          <p>A data-heavy household ledger with balances, cash-flow bars, budget meters, transactions, goals, upcoming bills, period controls, and an interactive record dialog.</p>
-          <a class="open-link" href="prosperity-grove-ledger.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card gallery">
-        <a class="thumb-link" href="character-gallery.html" aria-label="Open Character Gallery demo">
-          <img src="screenshots/character-gallery-desktop.png" alt="Character Gallery demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Gallery</span><span>Characters</span></div>
-          <h2>Character Registry</h2>
-          <p>A full cast showcase for every final Orchard Vale full-body helper and matching avatar, shown at generous sizes with role guidance.</p>
-          <a class="open-link" href="character-gallery.html">Open Demo</a>
-        </div>
-      </article>
-
-      <article class="demo-card gallery">
-        <a class="thumb-link" href="asset-pattern-library.html" aria-label="Open Asset Pattern Library demo">
-          <img src="screenshots/asset-pattern-library-desktop.png" alt="Asset Pattern Library demo screenshot" decoding="async" loading="lazy">
-        </a>
-        <div class="demo-body">
-          <div class="demo-meta"><span>Gallery</span><span>Pattern Library</span></div>
-          <h2>Asset Pattern Library</h2>
-          <p>A tabbed specimen book for scenes, maps, frames, panels, heraldry, icons, motifs, data visualization pieces, textures, empty states, motion, and UI recipes.</p>
-          <a class="open-link" href="asset-pattern-library.html">Open Demo</a>
-        </div>
-      </article>
-    </section>
-  </main>
+    </main>
+  </div>
 </body>
 </html>

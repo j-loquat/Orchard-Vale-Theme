@@ -3,301 +3,380 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orchard Vale Pattern Library</title>
+  <meta name="description" content="Developer specimen workbench for all 301 non-character Orchard Vale assets, Theme v2.0 interactive recipes, and live motion spritesheet playback.">
+  <meta name="theme-color" content="#173820">
+  <title>Orchard Vale Asset Pattern Library</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="asset-pattern-library.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="../src/assets/orchard-vale/asset-manifest.js" defer></script>
+  <script src="asset-pattern-library.js" defer></script>
 </head>
-<body>
-  <main class="library-shell">
-    <header class="library-header">
-      <section class="title-card" aria-labelledby="page-title">
-        <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="Orchard Vale crest" decoding="async">
-        <div>
-          <p>Theme Specimen Book</p>
-          <h1 id="page-title">Orchard Vale Pattern Library</h1>
-          <span>A tabbed field guide to the reusable scenery, panels, heraldry, icons, data pieces, textures, empty states, motion stills, and UI recipes.</span>
-        </div>
-      </section>
-      <section class="summary-card" aria-label="Asset library summary">
-        <article><strong>12</strong><span>Asset families</span></article>
-        <article><strong>7</strong><span>Gallery tabs</span></article>
-        <article><strong>1</strong><span>Reusable visual system</span></article>
-      </section>
-    </header>
+<body class="ov-theme">
+  <a class="ov-skip-link" href="#main-content">Skip to specimen workbench</a>
 
-    <nav class="tab-rail" aria-label="Pattern library sections">
-      <button type="button" class="tab-button" id="tab-scenes" role="tab" aria-selected="true" aria-controls="panel-scenes" data-tab="scenes">Scenes & Maps</button>
-      <button type="button" class="tab-button" id="tab-frames" role="tab" aria-selected="false" aria-controls="panel-frames" data-tab="frames">Frames & Panels</button>
-      <button type="button" class="tab-button" id="tab-heraldry" role="tab" aria-selected="false" aria-controls="panel-heraldry" data-tab="heraldry">Heraldry</button>
-      <button type="button" class="tab-button" id="tab-icons" role="tab" aria-selected="false" aria-controls="panel-icons" data-tab="icons">Icons & Motifs</button>
-      <button type="button" class="tab-button" id="tab-data" role="tab" aria-selected="false" aria-controls="panel-data" data-tab="data">Data Viz</button>
-      <button type="button" class="tab-button" id="tab-textures" role="tab" aria-selected="false" aria-controls="panel-textures" data-tab="textures">Textures</button>
-      <button type="button" class="tab-button" id="tab-recipes" role="tab" aria-selected="false" aria-controls="panel-recipes" data-tab="recipes">UI Recipes</button>
-    </nav>
-
-    <section class="hero-specimen" aria-live="polite">
-      <div>
-        <p id="specimen-kicker">Scenes & Maps</p>
-        <h2 id="specimen-title">Backdrops for village-scale interfaces</h2>
-        <span id="specimen-copy">Use wide scenes for first-viewport atmosphere, map backgrounds for operational dashboards, and controls or markers for location-aware panels.</span>
-      </div>
-      <div class="specimen-viewer" aria-label="Selected asset preview">
-        <img id="specimen-image" src="../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp" alt="Selected Orchard Vale asset preview" decoding="async">
-      </div>
-    </section>
-
-    <section class="tab-panels">
-      <section class="tab-panel is-active" id="panel-scenes" role="tabpanel" aria-labelledby="tab-scenes" data-panel="scenes">
-        <div class="section-heading">
-          <p>Scenes & Maps</p>
-          <h2>Large scenic anchors and navigable places</h2>
-        </div>
-        <div class="wide-grid">
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp" alt="Orchard Vale village scene" decoding="async" loading="lazy">
-            <h3>Village Overview Scene</h3>
-            <p>Use for home screens, friendly editorial pages, and first-run onboarding.</p>
-          </article>
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-guildhall-planner-wide-16x9.webp" alt="Guildhall planner scene" decoding="async" loading="lazy">
-            <h3>Guildhall Planner Scene</h3>
-            <p>Use for project management, work planning, and team coordination demos.</p>
-          </article>
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-library-studyhall-wide-16x9.webp" alt="Library studyhall scene" decoding="async" loading="lazy">
-            <h3>Library Studyhall Scene</h3>
-            <p>Use for research, writing, documents, citations, and knowledge-base screens.</p>
-          </article>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/scenes/scenes-contact-sheet-16x9.png" alt="Scene contact sheet" decoding="async" loading="lazy">
-            <h3>Scene Contact Sheet</h3>
-          </article>
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/maps/maps-and-controls-contact-sheet.png" alt="Maps and controls contact sheet" decoding="async" loading="lazy">
-            <h3>Maps & Controls Contact Sheet</h3>
-          </article>
-        </div>
-        <div class="wide-grid maps">
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp" alt="Village overview map" decoding="async" loading="lazy">
-            <h3>Village Map</h3>
-          </article>
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/maps/backgrounds/map-district-guildhall-unlabeled-16x9.webp" alt="Guildhall district map" decoding="async" loading="lazy">
-            <h3>Guildhall District</h3>
-          </article>
-          <article class="specimen-card wide">
-            <img src="../src/assets/orchard-vale/maps/backgrounds/map-route-countryside-empty-16x9.webp" alt="Countryside route map" decoding="async" loading="lazy">
-            <h3>Route Map</h3>
-          </article>
-        </div>
-        <div class="icon-strip">
-          <img src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg" alt="Compass rose" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="Map layers control" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Blue map pin" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="Green shield marker" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="Dashed route line" decoding="async" loading="lazy">
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-frames" role="tabpanel" aria-labelledby="tab-frames" data-panel="frames" hidden>
-        <div class="section-heading">
-          <p>Frames & Panels</p>
-          <h2>The layout vocabulary</h2>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/backplates/backplates-contact-sheet.png" alt="Backplates contact sheet" decoding="async" loading="lazy">
-            <h3>Backplates</h3>
-          </article>
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/ornaments/ornaments-contact-sheet.png" alt="Ornaments contact sheet" decoding="async" loading="lazy">
-            <h3>Ornaments</h3>
-          </article>
-        </div>
-        <div class="component-grid">
-          <article class="panel-sample green-board"><h3>Green Signboard Header</h3><p>Use for major app sections, lane titles, command rails, and selected panels.</p></article>
-          <article class="panel-sample parchment-card"><h3>Parchment Card</h3><p>Use for repeated cards, notes, metrics, detail panels, and readable content blocks.</p><div class="sample-lines"><span></span><span></span><span></span></div></article>
-          <article class="panel-sample ribbon-card"><h3>Ribbon Label</h3><p>Use for active tabs, saved views, category labels, and banner affordances.</p><span class="ribbon-sample">Selected View</span></article>
-          <article class="panel-sample button-card"><h3>Button States</h3><div><button type="button">Primary</button><button type="button" class="secondary">Secondary</button></div></article>
-        </div>
-        <div class="ornament-grid">
-          <img src="../src/assets/orchard-vale/ornaments/corner-brass-ivy-top-left.svg" alt="Brass ivy corner" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/ornaments/divider-leaf-horizontal-gold.svg" alt="Gold leaf divider" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/ornaments/frame-overlay-wood-brass-panel.svg" alt="Wood brass frame overlay" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/ornaments/hinge-brass-vertical.svg" alt="Brass hinge" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/ornaments/rivet-brass-small.svg" alt="Brass rivet" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/ornaments/scroll-endcap-left.svg" alt="Scroll endcap" decoding="async" loading="lazy">
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-heraldry" role="tabpanel" aria-labelledby="tab-heraldry" data-panel="heraldry" hidden>
-        <div class="section-heading">
-          <p>Crests, Seals & Heraldry</p>
-          <h2>Identity, trust, status, and ritual</h2>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/heraldry/heraldry-contact-sheet.png" alt="Heraldry contact sheet" decoding="async" loading="lazy">
-            <h3>Heraldry Contact Sheet</h3>
-          </article>
-          <article class="heraldry-feature">
-            <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.png" alt="Guildhall board crest" decoding="async" loading="lazy">
-            <div><p>Application crest</p><h3>Guildhall Board</h3><span>Use as page identity or a major workspace mark.</span></div>
-          </article>
-        </div>
-        <div class="crest-grid">
-          <img src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.png" alt="Book quill crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/crest-crossed-tools-fullcolor-512.png" alt="Crossed tools crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/crest-finance-coin-tree-fullcolor-512.png" alt="Finance coin tree crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/crest-gear-shield-fullcolor-512.png" alt="Gear shield crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.png" alt="Mail calendar crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.png" alt="Shield check crest" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="Approved seal" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/seal-review-blue-512.png" alt="Review seal" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/seal-blocked-red-512.png" alt="Blocked seal" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/heraldry/seal-urgent-orange-512.png" alt="Urgent seal" decoding="async" loading="lazy">
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-icons" role="tabpanel" aria-labelledby="tab-icons" data-panel="icons" hidden>
-        <div class="section-heading">
-          <p>Icons & Motifs</p>
-          <h2>Functional controls and domain symbols</h2>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/icons/icons-contact-sheet.png" alt="Icons contact sheet" decoding="async" loading="lazy">
-            <h3>Icon Contact Sheet</h3>
-          </article>
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/motifs/motifs-contact-sheet.png" alt="Motifs contact sheet" decoding="async" loading="lazy">
-            <h3>Motif Contact Sheet</h3>
-          </article>
-        </div>
-        <div class="small-asset-grid">
-          <figure><img src="../src/assets/orchard-vale/icons/icon-nav-search-32.svg" alt="Search icon" decoding="async" loading="lazy"><figcaption>Search</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="Filter icon" decoding="async" loading="lazy"><figcaption>Filters</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="Healthy icon" decoding="async" loading="lazy"><figcaption>Healthy</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="Warning icon" decoding="async" loading="lazy"><figcaption>Warning</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/icons/icon-workflow-bug-32.svg" alt="Bug icon" decoding="async" loading="lazy"><figcaption>Bug</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/icons/icon-export-pdf-32.svg" alt="PDF export icon" decoding="async" loading="lazy"><figcaption>Export PDF</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/project/motif-project-work-board-96.svg" alt="Project work board motif" decoding="async" loading="lazy"><figcaption>Project Board</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/research/motif-research-quill-96.svg" alt="Research quill motif" decoding="async" loading="lazy"><figcaption>Research</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/finance/motif-finance-coins-96.svg" alt="Finance coins motif" decoding="async" loading="lazy"><figcaption>Finance</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/ai/motif-ai-agent-medallion-96.svg" alt="AI agent motif" decoding="async" loading="lazy"><figcaption>Agent</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/operations/motif-operations-wagon-96.svg" alt="Operations wagon motif" decoding="async" loading="lazy"><figcaption>Operations</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-calendar-tile-96.svg" alt="Calendar motif" decoding="async" loading="lazy"><figcaption>Calendar</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-data" role="tabpanel" aria-labelledby="tab-data" data-panel="data" hidden>
-        <div class="section-heading">
-          <p>Data Visualization</p>
-          <h2>Charts that still feel like Orchard Vale</h2>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/data-viz/data-viz-contact-sheet.png" alt="Data visualization contact sheet" decoding="async" loading="lazy">
-            <h3>Data Viz Contact Sheet</h3>
-          </article>
-          <article class="chart-demo">
-            <h3>Ledger Health</h3>
-            <div class="meter"><span style="width: 78%"></span></div>
-            <div class="bars"><i style="height: 42%"></i><i style="height: 74%"></i><i style="height: 58%"></i><i style="height: 86%"></i><i style="height: 65%"></i></div>
-            <p>Use the SVG pieces as frames, ticks, labels, meters, and callouts around CSS or canvas data.</p>
-          </article>
-        </div>
-        <div class="small-asset-grid">
-          <figure><img src="../src/assets/orchard-vale/data-viz/chart-frame-ornate-rect.svg" alt="Chart frame" decoding="async" loading="lazy"><figcaption>Chart Frame</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/data-viz/meter-track-parchment.svg" alt="Meter track" decoding="async" loading="lazy"><figcaption>Meter Track</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/data-viz/meter-fill-green.svg" alt="Green meter fill" decoding="async" loading="lazy"><figcaption>Green Fill</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/data-viz/timeline-now-marker-banner.svg" alt="Now marker" decoding="async" loading="lazy"><figcaption>Now Marker</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/data-viz/callout-pin-medallion.svg" alt="Callout pin" decoding="async" loading="lazy"><figcaption>Callout</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/data-viz/tooltip-parchment-shell.svg" alt="Tooltip shell" decoding="async" loading="lazy"><figcaption>Tooltip</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-textures" role="tabpanel" aria-labelledby="tab-textures" data-panel="textures" hidden>
-        <div class="section-heading">
-          <p>Textures & Materials</p>
-          <h2>The surface system underneath everything</h2>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/textures/texture-contact-sheet.png" alt="Texture contact sheet" decoding="async" loading="lazy">
-            <h3>Texture Contact Sheet</h3>
-          </article>
-          <article class="texture-note">
-            <h3>CSS Surface Tokens</h3>
-            <p>Use these as background layers under regular CSS color overlays. That keeps the interface readable while preserving the handcrafted paper, signboard, brass, and carved-wood feel.</p>
-          </article>
-        </div>
-        <div class="texture-grid">
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png')"><figcaption>Aged Parchment</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png')"><figcaption>Seamless Parchment</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-green-signboard-1024.png')"><figcaption>Green Signboard</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-wood-walnut-panel-1024.png')"><figcaption>Walnut Panel</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png')"><figcaption>Dark Carved Wood</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-brass-hammered-1024.png')"><figcaption>Hammered Brass</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/texture-watercolor-countryside-wash-1024.png')"><figcaption>Watercolor Wash</figcaption></figure>
-          <figure style="--texture: url('../src/assets/orchard-vale/textures/overlay-ink-speckle-subtle-1024.png')"><figcaption>Ink Speckle Overlay</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="tab-panel" id="panel-recipes" role="tabpanel" aria-labelledby="tab-recipes" data-panel="recipes" hidden>
-        <div class="section-heading">
-          <p>UI Recipes</p>
-          <h2>Composed patterns ready to adapt</h2>
-        </div>
-        <div class="recipe-grid">
-          <article class="notice-recipe">
-            <header><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" decoding="async" loading="lazy"><span>Priority Notice</span></header>
-            <h3>Bridge crew review</h3>
-            <p>Use a parchment body, green header, brass border, and one status icon for readable notices.</p>
-          </article>
-          <article class="metric-recipe">
-            <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="Approved seal" decoding="async" loading="lazy">
-            <div><strong>94%</strong><span>Healthy Systems</span></div>
-          </article>
-          <article class="task-recipe">
-            <small>PLAT-1082</small><span>Enhancement</span>
-            <h3>Prepare release notes</h3>
-            <p><img src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt="" decoding="async" loading="lazy"> 3 subtasks open</p>
-          </article>
-          <article class="empty-recipe">
-            <img src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.png" alt="Owl no results empty state" decoding="async" loading="lazy">
-            <h3>No matching records</h3>
-            <p>Pair larger empty-state art with concise action text.</p>
-          </article>
-        </div>
-        <div class="asset-row">
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/empty-states/empty-states-contact-sheet.png" alt="Empty states contact sheet" decoding="async" loading="lazy">
-            <h3>Empty States</h3>
-          </article>
-          <article class="sheet-card">
-            <img src="../src/assets/orchard-vale/motion/motion-contact-sheet.png" alt="Motion contact sheet" decoding="async" loading="lazy">
-            <h3>Motion Stills & Sprites</h3>
-          </article>
-        </div>
-        <div class="small-asset-grid">
-          <figure><img src="../src/assets/orchard-vale/empty-states/empty-rabbit-calendar-clear-800.png" alt="Rabbit calendar empty state" decoding="async" loading="lazy"><figcaption>Calendar Clear</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/empty-states/empty-mole-gears-inspection-800.png" alt="Mole gear empty state" decoding="async" loading="lazy"><figcaption>Inspection</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motion/static/motion-lantern-flicker-static.png" alt="Lantern motion still" decoding="async" loading="lazy"><figcaption>Lantern</figcaption></figure>
-          <figure><img src="../src/assets/orchard-vale/motion/static/motion-quill-writing-static.png" alt="Quill motion still" decoding="async" loading="lazy"><figcaption>Quill</figcaption></figure>
-        </div>
-      </section>
-    </section>
-  </main>
-  <div class="lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Asset image preview" aria-describedby="lightbox-caption" hidden>
-    <button type="button" class="lightbox-close" aria-label="Close image preview">Close</button>
-    <div class="lightbox-frame">
-      <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" decoding="async">
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Asset Pattern Library" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Asset Pattern Library</span>
+    <div data-ov-demo-actions>
+      <a class="ov-button ov-button--brass ov-button--sm" href="character-gallery.html">Character Registry</a>
     </div>
-    <p id="lightbox-caption"></p>
+  </nav>
+
+  <div class="ov-page">
+    <main class="ov-shell ov-frame workbench-shell" id="main-content" data-surface="parchment">
+      <header class="ov-header">
+        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
+          <img
+            src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+            alt="Orchard Vale tree crest"
+            width="96"
+            height="96"
+            decoding="async">
+          <div>
+            <p class="ov-kicker">Developer Specimen Workbench &middot; Theme v2.0</p>
+            <h1 id="page-title">Orchard Vale Pattern Library</h1>
+            <p class="workbench-subtitle">Inspect all 301 non-character kit deliverables individually with live search, surface contrast toggles, one-click path &amp; snippet copy, and interactive v2.0 recipes.</p>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-header__stats" aria-label="Asset library counts">
+          <article class="ov-panel ov-stat">
+            <strong id="stat-total-assets">301</strong>
+            <span>Kit deliverables</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>11</strong>
+            <span>Asset families</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>6</strong>
+            <span>Live motion sprites</span>
+          </article>
+        </section>
+      </header>
+
+      <section class="ov-panel workbench-toolbar" aria-label="Developer workbench controls">
+        <div class="workbench-toolbar__search">
+          <label class="ov-label" for="asset-search">Search all 301 assets</label>
+          <div class="search-input-row">
+            <input
+              id="asset-search"
+              class="ov-input"
+              type="search"
+              placeholder="Filter by title, family, subpack, format, or filename (e.g. brass, calendar, seal, webp)..."
+              autocomplete="off">
+            <button type="button" class="ov-button ov-button--paper ov-button--sm" id="search-clear" hidden>Clear</button>
+          </div>
+        </div>
+
+        <div class="workbench-toolbar__surface">
+          <span class="ov-label" id="surface-label">Preview surface</span>
+          <div class="surface-toggle" role="group" aria-labelledby="surface-label">
+            <button type="button" class="surface-btn" data-surface-choice="parchment" aria-pressed="true">Parchment</button>
+            <button type="button" class="surface-btn" data-surface-choice="forest" aria-pressed="false">Dark Forest</button>
+            <button type="button" class="surface-btn" data-surface-choice="checkerboard" aria-pressed="false">Checkerboard</button>
+          </div>
+        </div>
+
+        <p class="workbench-status" id="workbench-status" aria-live="polite">Loaded 301 non-character deliverables across 11 families.</p>
+      </section>
+
+      <section class="ov-panel search-results-panel" id="search-results-panel" aria-labelledby="search-results-heading" hidden>
+        <div class="ov-panel-title search-results__head">
+          <h2 id="search-results-heading" class="panel-heading-inline">Search Results</h2>
+          <button type="button" class="ov-button ov-button--brass ov-button--sm" id="search-results-reset">Back to Tabs</button>
+        </div>
+        <div class="ov-panel__body">
+          <div class="asset-grid" id="search-results-grid"></div>
+          <div class="ov-empty-state" id="search-empty-state" hidden>
+            <img
+              class="ov-empty-state__art"
+              src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.webp"
+              alt="Owl scholar reviewing an empty ledger"
+              width="280"
+              height="210"
+              decoding="async">
+            <h3 class="ov-empty-state__title">No matching assets in the ledger</h3>
+            <p id="search-empty-copy">Try searching by a broader family name such as icons, motifs, ornaments, heraldry, maps, or textures.</p>
+            <div class="ov-empty-state__actions">
+              <button type="button" class="ov-button" id="search-empty-reset">Reset Search</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ov-panel workbench-tabs-panel" id="workbench-tabs-panel" aria-label="Asset families and UI recipes">
+        <div class="ov-tabs" id="workbench-tabs" data-ov-tabs data-ov-tabs-hash>
+          <div class="ov-tablist workbench-tablist" role="tablist" aria-label="Pattern library sections">
+            <button type="button" class="ov-tab" id="tab-scenes" role="tab" aria-selected="true" aria-controls="panel-scenes" data-ov-tab-key="scenes" data-family-tab="scenes">
+              Scenes <span class="ov-chip" data-tab-count="scenes">20</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-maps" role="tab" aria-selected="false" aria-controls="panel-maps" data-ov-tab-key="maps" data-family-tab="maps">
+              Maps <span class="ov-chip" data-tab-count="maps">33</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-backplates" role="tab" aria-selected="false" aria-controls="panel-backplates" data-ov-tab-key="backplates" data-family-tab="backplates">
+              Backplates <span class="ov-chip" data-tab-count="backplates">20</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-ornaments" role="tab" aria-selected="false" aria-controls="panel-ornaments" data-ov-tab-key="ornaments" data-family-tab="ornaments">
+              Ornaments <span class="ov-chip" data-tab-count="ornaments">24</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-heraldry" role="tab" aria-selected="false" aria-controls="panel-heraldry" data-ov-tab-key="heraldry" data-family-tab="heraldry">
+              Heraldry <span class="ov-chip" data-tab-count="heraldry">17</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-icons" role="tab" aria-selected="false" aria-controls="panel-icons" data-ov-tab-key="icons" data-family-tab="icons">
+              Icons <span class="ov-chip" data-tab-count="icons">58</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-motifs" role="tab" aria-selected="false" aria-controls="panel-motifs" data-ov-tab-key="motifs" data-family-tab="motifs">
+              Motifs <span class="ov-chip" data-tab-count="motifs">49</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-data-viz" role="tab" aria-selected="false" aria-controls="panel-data-viz" data-ov-tab-key="data-viz" data-family-tab="data-viz">
+              Data Viz <span class="ov-chip" data-tab-count="data-viz">50</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-textures" role="tab" aria-selected="false" aria-controls="panel-textures" data-ov-tab-key="textures" data-family-tab="textures">
+              Textures <span class="ov-chip" data-tab-count="textures">8</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-empty-states" role="tab" aria-selected="false" aria-controls="panel-empty-states" data-ov-tab-key="empty-states" data-family-tab="empty-states">
+              Empty States <span class="ov-chip" data-tab-count="empty-states">10</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-motion" role="tab" aria-selected="false" aria-controls="panel-motion" data-ov-tab-key="motion" data-family-tab="motion">
+              Motion <span class="ov-chip" data-tab-count="motion">12</span>
+            </button>
+            <button type="button" class="ov-tab" id="tab-recipes" role="tab" aria-selected="false" aria-controls="panel-recipes" data-ov-tab-key="recipes">
+              Theme v2.0 Recipes &amp; Motion
+            </button>
+          </div>
+
+          <section class="ov-tabpanel family-panel" id="panel-scenes" role="tabpanel" aria-labelledby="tab-scenes" data-family-panel="scenes"></section>
+          <section class="ov-tabpanel family-panel" id="panel-maps" role="tabpanel" aria-labelledby="tab-maps" data-family-panel="maps" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-backplates" role="tabpanel" aria-labelledby="tab-backplates" data-family-panel="backplates" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-ornaments" role="tabpanel" aria-labelledby="tab-ornaments" data-family-panel="ornaments" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-heraldry" role="tabpanel" aria-labelledby="tab-heraldry" data-family-panel="heraldry" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-icons" role="tabpanel" aria-labelledby="tab-icons" data-family-panel="icons" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-motifs" role="tabpanel" aria-labelledby="tab-motifs" data-family-panel="motifs" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-data-viz" role="tabpanel" aria-labelledby="tab-data-viz" data-family-panel="data-viz" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-textures" role="tabpanel" aria-labelledby="tab-textures" data-family-panel="textures" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-empty-states" role="tabpanel" aria-labelledby="tab-empty-states" data-family-panel="empty-states" hidden></section>
+          <section class="ov-tabpanel family-panel" id="panel-motion" role="tabpanel" aria-labelledby="tab-motion" data-family-panel="motion" hidden></section>
+
+          <section class="ov-tabpanel recipes-panel" id="panel-recipes" role="tabpanel" aria-labelledby="tab-recipes" hidden>
+            <div class="family-banner">
+              <div>
+                <p class="ov-kicker">Theme v2.0 Living Recipes</p>
+                <h2>Interactive Primitives, Ornate Surfaces &amp; Live Motion Sprites</h2>
+                <p>Live examples built directly from <code>src/theme/index.css</code> and <code>src/theme/orchard-vale.js</code>. Icons inside recipes are decorative and never hijack clicks.</p>
+              </div>
+            </div>
+
+            <div class="recipes-stack">
+              <section class="ov-panel ov-panel--ornate" aria-labelledby="recipe-sprites-title">
+                <div class="ov-panel-title recipe-head-split">
+                  <h3 id="recipe-sprites-title" class="recipe-panel-heading">Live Motion Spritesheet Playback</h3>
+                  <button type="button" class="ov-button ov-button--brass ov-button--sm" id="sprites-toggle" aria-pressed="false">Pause All Sprites</button>
+                </div>
+                <div class="ov-panel__body">
+                  <p class="recipe-lead">All six 8-frame horizontal spritesheets animate via CSS <code>steps(8)</code> and automatically switch to their static frame when <code>prefers-reduced-motion: reduce</code> is enabled.</p>
+                  <div class="sprite-showcase-grid" id="sprite-showcase-grid">
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--gear" role="img" aria-label="Spinning brass gear sprite"></span>
+                      <h4>Gear Spin</h4>
+                      <code>.ov-sprite--gear</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--gear" role="img" aria-label="Working"></span>' data-ov-copy-toast="Copied .ov-sprite--gear snippet.">Copy HTML</button>
+                    </article>
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--quill" role="img" aria-label="Writing quill sprite"></span>
+                      <h4>Quill Writing</h4>
+                      <code>.ov-sprite--quill</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--quill" role="img" aria-label="Drafting"></span>' data-ov-copy-toast="Copied .ov-sprite--quill snippet.">Copy HTML</button>
+                    </article>
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--shield" role="img" aria-label="Shield check complete sprite"></span>
+                      <h4>Shield Check</h4>
+                      <code>.ov-sprite--shield</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--shield" role="img" aria-label="Verified"></span>' data-ov-copy-toast="Copied .ov-sprite--shield snippet.">Copy HTML</button>
+                    </article>
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--page" role="img" aria-label="Turning parchment page sprite"></span>
+                      <h4>Page Turn</h4>
+                      <code>.ov-sprite--page</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--page" role="img" aria-label="Loading page"></span>' data-ov-copy-toast="Copied .ov-sprite--page snippet.">Copy HTML</button>
+                    </article>
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--courier" role="img" aria-label="Courier delivery bird sprite"></span>
+                      <h4>Courier Delivery</h4>
+                      <code>.ov-sprite--courier</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--courier" role="img" aria-label="Sending message"></span>' data-ov-copy-toast="Copied .ov-sprite--courier snippet.">Copy HTML</button>
+                    </article>
+                    <article class="ov-card sprite-tile">
+                      <span class="ov-sprite ov-sprite--lantern" role="img" aria-label="Warm flickering lantern sprite"></span>
+                      <h4>Lantern Flicker</h4>
+                      <code>.ov-sprite--lantern</code>
+                      <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy='<span class="ov-sprite ov-sprite--lantern" role="img" aria-label="Active watch"></span>' data-ov-copy-toast="Copied .ov-sprite--lantern snippet.">Copy HTML</button>
+                    </article>
+                  </div>
+                </div>
+              </section>
+
+              <hr class="ov-divider" aria-hidden="true">
+
+              <div class="ov-two-up">
+                <section class="ov-panel" aria-labelledby="recipe-buttons-title">
+                  <h3 class="ov-panel-title" id="recipe-buttons-title">Interactive Button States &amp; Chips</h3>
+                  <div class="ov-panel__body ov-stack">
+                    <div class="recipe-button-row">
+                      <button type="button" class="ov-button" id="recipe-toast-trigger">Primary Forest</button>
+                      <button type="button" class="ov-button ov-button--paper">Parchment</button>
+                      <button type="button" class="ov-button ov-button--brass">Brass Accent</button>
+                      <button type="button" class="ov-button ov-button--danger">Danger</button>
+                      <button type="button" class="ov-button ov-button--sm">Small</button>
+                      <button type="button" class="ov-button ov-button--paper" id="recipe-toggle-btn" aria-pressed="false">Toggle Pressed</button>
+                      <button type="button" class="ov-button" disabled>Disabled</button>
+                    </div>
+                    <hr class="ov-divider ov-divider--vine" aria-hidden="true">
+                    <div class="ov-chip-row">
+                      <span class="ov-chip">Neutral Chip</span>
+                      <span class="ov-chip ov-chip--green">Confirmed</span>
+                      <span class="ov-chip ov-chip--blue">In Review</span>
+                      <span class="ov-chip ov-chip--amber">Watch</span>
+                      <span class="ov-chip ov-chip--red">Blocked</span>
+                      <span class="ov-chip ov-chip--purple">Inferred</span>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="ov-panel ov-panel--wood-corners" aria-labelledby="recipe-callouts-title">
+                  <h3 class="ov-panel-title" id="recipe-callouts-title">Callouts &amp; Heraldry Feature</h3>
+                  <div class="ov-panel__body ov-stack">
+                    <div class="ov-callout ov-callout--confirmed">
+                      <strong>Confirmed &mdash;</strong> All surface pairs meet WCAG AA contrast across light parchment and dark forest green.
+                    </div>
+                    <div class="ov-callout ov-callout--watch">
+                      <strong>Watch &mdash;</strong> Keep ornate corner frames clear of interactive close buttons with balanced padding.
+                    </div>
+                    <div class="ov-callout ov-callout--warning">
+                      <strong>Warning &mdash;</strong> Never attach click-to-zoom handlers to small decorative status icons inside composed UI.
+                    </div>
+                    <article class="heraldry-feature">
+                      <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.webp" alt="Guildhall board crest" width="96" height="96" decoding="async">
+                      <div>
+                        <p>Application Crest</p>
+                        <h4>Guildhall Board</h4>
+                        <span>High-contrast kicker text (7.42:1) paired with a crisp WebP crest for workspace headers.</span>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+              </div>
+
+              <div class="ov-two-up">
+                <section class="ov-panel" aria-labelledby="recipe-chart-title">
+                  <h3 class="ov-panel-title" id="recipe-chart-title">Data Viz Frame, Meter &amp; Timeline</h3>
+                  <div class="ov-panel__body ov-stack">
+                    <div class="ov-chart-frame">
+                      <p class="ov-chart-frame__title">Harvest Ledger Velocity (Q4)</p>
+                      <div class="recipe-bars" aria-label="Sample bar chart showing five quarterly velocity bars">
+                        <div class="recipe-bar" style="--bar-h: 48%;"><span>Wk 1</span></div>
+                        <div class="recipe-bar" style="--bar-h: 72%;"><span>Wk 2</span></div>
+                        <div class="recipe-bar" style="--bar-h: 61%;"><span>Wk 3</span></div>
+                        <div class="recipe-bar" style="--bar-h: 88%;"><span>Wk 4</span></div>
+                        <div class="recipe-bar" style="--bar-h: 79%;"><span>Wk 5</span></div>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="ov-label" style="margin-bottom: 6px;">Accessibility Verification &mdash; 94%</p>
+                      <div class="ov-meter" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Accessibility verification progress">
+                        <span style="width: 94%;"></span>
+                      </div>
+                    </div>
+                    <ol class="ov-timeline" aria-label="Sample milestone plaques">
+                      <li><span class="ov-timeline-plaque ov-timeline-plaque--green">Wave 1</span><span class="ov-timeline__label">Tokens</span></li>
+                      <li><span class="ov-timeline-plaque ov-timeline-plaque--blue">Wave 2</span><span class="ov-timeline__label">Workbench</span></li>
+                      <li><span class="ov-timeline-plaque ov-timeline-plaque--amber">Wave 3</span><span class="ov-timeline__label">Polish</span></li>
+                    </ol>
+                  </div>
+                </section>
+
+                <section class="ov-panel" aria-labelledby="recipe-empty-title">
+                  <h3 class="ov-panel-title" id="recipe-empty-title">Empty State &amp; Composed Cards</h3>
+                  <div class="ov-panel__body ov-stack">
+                    <div class="ov-empty-state ov-empty-state--compact">
+                      <img
+                        class="ov-empty-state__art"
+                        src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.webp"
+                        alt="Owl scholar with an empty ledger"
+                        width="168"
+                        height="126"
+                        decoding="async">
+                      <h4 class="ov-empty-state__title">No matching records</h4>
+                      <p>Pair <code>.ov-empty-state</code> with a concise recovery button and an 800px WebP spot illustration.</p>
+                    </div>
+                    <div class="recipe-mini-row">
+                      <article class="ov-card ov-card--amber recipe-notice-card">
+                        <div class="ov-card__header">
+                          <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                            <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" width="16" height="16" decoding="async">
+                          </span>
+                          <h4 class="ov-card__title">Bridge Crew Review</h4>
+                        </div>
+                        <p class="ov-card__meta">Decorative icon wrapped in <code>.ov-icon-badge</code>.</p>
+                      </article>
+                      <article class="ov-card ov-card--green recipe-seal-card">
+                        <img class="ov-seal ov-seal--sm" src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.webp" alt="Approved green wax seal" width="40" height="40" decoding="async">
+                        <div>
+                          <h4 class="ov-card__title">94% Healthy</h4>
+                          <p class="ov-card__meta"><img class="inline-mini-icon" src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt="" width="16" height="16" decoding="async"> 3 release notes verified</p>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
   </div>
-  <script src="asset-pattern-library.js?v=1.1.0"></script>
+
+  <dialog class="ov-dialog ov-dialog--wide asset-lightbox" id="asset-lightbox" aria-labelledby="lightbox-title" data-surface="parchment">
+    <div class="ov-dialog__header">
+      <div class="lightbox-title-wrap">
+        <h2 id="lightbox-title">Asset Inspector</h2>
+        <span class="lightbox-counter" id="lightbox-counter">1 / 1</span>
+      </div>
+      <button type="button" class="ov-dialog__close" data-ov-dialog-close aria-label="Close asset lightbox">&times;</button>
+    </div>
+
+    <div class="lightbox-toolbar">
+      <div class="lightbox-nav-group">
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="lightbox-prev">&larr; Prev</button>
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="lightbox-next">Next &rarr;</button>
+      </div>
+
+      <div class="lightbox-view-group">
+        <button type="button" class="ov-button ov-button--brass ov-button--sm" id="lightbox-zoom-toggle" aria-pressed="false">100% Actual Size</button>
+        <div class="surface-toggle surface-toggle--sm" role="group" aria-label="Lightbox backdrop surface">
+          <button type="button" class="surface-btn" data-lb-surface="parchment" aria-pressed="true">Parchment</button>
+          <button type="button" class="surface-btn" data-lb-surface="forest" aria-pressed="false">Forest</button>
+          <button type="button" class="surface-btn" data-lb-surface="checkerboard" aria-pressed="false">Alpha</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ov-dialog__body lightbox-stage" id="lightbox-stage">
+      <img id="lightbox-image" src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp" alt="Selected Orchard Vale asset" decoding="async">
+    </div>
+
+    <div class="ov-dialog__footer lightbox-footer">
+      <div class="lightbox-meta">
+        <div class="ov-chip-row" id="lightbox-chips"></div>
+        <code class="lightbox-path" id="lightbox-path"></code>
+      </div>
+      <div class="lightbox-copy-actions">
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="lightbox-copy-path">Copy Path</button>
+        <button type="button" class="ov-button ov-button--sm" id="lightbox-copy-snippet">Copy Snippet</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>

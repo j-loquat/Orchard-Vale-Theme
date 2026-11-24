@@ -7,11 +7,128 @@
   <meta name="theme-color" content="#173820">
   <meta http-equiv="refresh" content="0; url=demo/index.html">
   <title>Orchard Vale Theme Kit</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: #24180d;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 50% 25%, rgba(47, 107, 63, 0.35), transparent 62%),
+        linear-gradient(180deg, #173820 0%, #0f2818 100%);
+    }
+
+    .redirect-card {
+      width: min(520px, 100%);
+      padding: 28px 26px;
+      text-align: center;
+      background: linear-gradient(180deg, #fffaf0 0%, #f8edcf 48%, #efd9a7 100%);
+      border: 3px solid #704826;
+      border-radius: 6px;
+      box-shadow:
+        inset 0 0 0 2px rgba(201, 150, 46, 0.42),
+        0 18px 42px rgba(10, 6, 2, 0.48);
+    }
+
+    .redirect-crest {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 14px;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 5px 8px rgba(36, 24, 13, 0.25));
+    }
+
+    .redirect-kicker {
+      margin: 0 0 6px;
+      color: #6c4215;
+      font: 800 0.8125rem/1.2 "Trebuchet MS", Arial, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: #173820;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      line-height: 1.08;
+    }
+
+    .redirect-copy {
+      margin: 0 0 20px;
+      color: #594025;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .redirect-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .redirect-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 18px;
+      color: #f8edcf;
+      font: 800 0.9375rem/1.1 "Trebuchet MS", Arial, sans-serif;
+      text-decoration: none;
+      background: linear-gradient(180deg, #1c4a2a 0%, #173820 100%);
+      border: 2px solid #704826;
+      border-radius: 3px;
+      box-shadow: inset 0 0 0 2px rgba(229, 189, 88, 0.28), 0 3px 0 #181006;
+    }
+
+    .redirect-btn:hover,
+    .redirect-btn:focus-visible {
+      color: #ffffff;
+      background: linear-gradient(180deg, #245a33 0%, #1a3f24 100%);
+    }
+
+    .redirect-btn--secondary {
+      color: #24180d;
+      background: linear-gradient(180deg, #f8edcf 0%, #efd9a7 100%);
+    }
+
+    .redirect-btn--secondary:hover,
+    .redirect-btn--secondary:focus-visible {
+      color: #24180d;
+      background: linear-gradient(180deg, #fffaf0 0%, #f8edcf 100%);
+    }
+
+    a:focus-visible {
+      outline: 3px solid #235f91;
+      outline-offset: 3px;
+    }
+  </style>
 </head>
 <body>
-  <main>
+  <main class="redirect-card">
+    <img
+      class="redirect-crest"
+      src="src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+      alt="Orchard Vale tree crest"
+      width="92"
+      height="92"
+      decoding="async">
+    <p class="redirect-kicker">Storybook-Village UI Theme Kit v2.0</p>
     <h1>Orchard Vale Theme Kit</h1>
-    <p>Continue to the <a href="demo/index.html">Orchard Vale demo directory</a>.</p>
+    <p class="redirect-copy">Opening the Showcase Hub automatically. If your browser does not redirect right away, choose a destination below.</p>
+    <div class="redirect-actions">
+      <a class="redirect-btn" href="demo/index.html">Enter Showcase Hub</a>
+      <a class="redirect-btn redirect-btn--secondary" href="starter/index.html">Open Starter Kit</a>
+    </div>
   </main>
 </body>
 </html>
