@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is the Orchard Vale Theme Kit. Treat this file as the working brief for coding agents modifying the project.
+This repository is the Orchard Vale Theme Kit (v2.0). Treat this file as the working brief for coding agents modifying the project.
 
 ## Project Identity
 
@@ -13,122 +13,157 @@ The theme should feel handcrafted, premium, cozy, organized, and useful. It shou
 Before making design or code changes, inspect these files:
 
 - `README.md` for the public repo overview.
-- `docs/design.md` for the canonical design guide.
+- `DESIGN.md` for the quick design-system entry point.
+- `docs/design.md` for the canonical Orchard Vale v2.0 adaptive design guide.
+- `docs/design-reference-dashboard.md` when recreating the original 1672×941 reference artboard.
+- `src/theme/index.css` and `src/theme/orchard-vale.js` for the shipped v2.0 CSS layers and JS helpers.
+- `starter/index.html` for the minimal adoption template.
 - `demo/index.html` for the full demo directory.
-- `demo/asset-pattern-library.html` for the reusable asset families and UI recipes.
+- `demo/asset-pattern-library.html` for the Developer Specimen Workbench exposing all 301 non-character assets.
 - `demo/character-gallery.html` for the full character set.
-- `docs/asset-inventory.md` for a compact asset overview.
+- `docs/asset-inventory.md` for asset counts, formats, and manifest details.
 
-When you need an example layout, start from the closest existing demo instead of inventing a new visual system.
+When you need an example layout, start from `starter/index.html` or the closest existing demo instead of inventing a new visual system.
 
 ## Repository Map
 
 ```text
 docs/
-  design.md                         Canonical Orchard Vale design guide.
+  design.md                         Canonical Orchard Vale v2.0 adaptive design guide.
+  design-reference-dashboard.md     Legacy 1672x941 pixel-faithful reference dashboard spec.
   asset-generation-plan.md          Asset category plan and progress record.
-  asset-inventory.md                Compact inventory of generated assets.
-  github-publishing-checklist.md    Publishing checklist.
+  asset-inventory.md                Runtime & archived asset inventory and manifest guide.
+  github-publishing-checklist.md    Publishing checklist for GitHub and GitHub Pages.
+  licensing-and-provenance.md       Licensing and asset-provenance notes.
+
+art-sources/
+  Archived raw PNG masters (~170 MB) separated from the runtime asset tree. Not referenced by demos or theme.
 
 references/
   Original reference mock-ups used to define the visual language.
 
+pets/
+  Optional Codex pets (orchard-badger). Temporary .pet-runs/ directories are gitignored.
+
 src/assets/orchard-vale/
-  backplates/       Button, field, ribbon, badge, tab, and label surfaces.
-  characters/       Full-body helpers, avatars, contact sheets, source-keyed assets.
-  data-viz/         Chart frames, meters, ledger rules, timeline plaques, tooltips.
-  empty-states/     Larger empty-state illustrations and spot art.
-  heraldry/         Crests, seals, shields, laurel frames, status marks.
-  icons/            32px product icons for actions, navigation, status, data, workflow.
-  maps/             Map backgrounds, route maps, markers, pins, controls.
-  motifs/           96px domain motifs for AI, CRM, finance, operations, productivity, project, research.
-  motion/           Static previews and spritesheets for small animations.
-  ornaments/        Corners, dividers, hinges, rivets, frames, scroll caps, flourishes.
-  scenes/           Wide and ultrawide illustrated backdrops.
-  textures/         Parchment, signboard, wood, brass, watercolor, ink overlays.
+  asset-manifest.json / .js         Machine-readable index of all 321 runtime deliverables.
+  backplates/       20 SVG button, field, ribbon, badge, tab, and label surfaces.
+  characters/       20 WebP full-body helpers and avatars (+ contact sheets).
+  data-viz/         50 SVG chart frames, meters, ledger rules, timeline plaques, tooltips.
+  empty-states/     10 WebP horizontally centered empty-state and spot illustrations.
+  heraldry/         17 WebP crests, seals, shields, laurel frames, status marks.
+  icons/            58 SVG product icons for actions, navigation, status, data, workflow.
+  maps/             9 WebP map backgrounds + 24 SVG markers, pins, and controls.
+  motifs/           49 SVG domain motifs across AI, CRM, finance, operations, productivity, project, research.
+  motion/           12 PNG assets (6 spritesheets + 6 static previews) for small animations.
+  ornaments/        24 SVG corners, dividers, hinges, rivets, frames, scroll caps, flourishes.
+  scenes/           20 WebP wide and ultrawide illustrated backdrops.
+  textures/         7 WebP seamless surfaces + 1 PNG ink-speckle overlay.
 
 src/theme/
-  Early CSS token and theme foundation files.
+  index.css                         Single-import entry point for v2.0 CSS layers.
+  orchard-vale.css                  @layer ov.tokens & ov.base: tokens, subtree-safe .ov-theme, surface context, focus, motion, print.
+  orchard-components.css            @layer ov.components: reusable controls, dialogs, tabs, toasts, and asset-backed craft utilities.
+  orchard-layouts.css               @layer ov.layouts: responsive shells and layout recipes.
+  orchard-vale.js                   Zero-dependency file://-safe helpers exposing window.OrchardVale.
 
 demo/
-  Static HTML/CSS demos. These are currently the most complete implementations of the theme.
+  12 interactive static HTML/CSS/JS demos built on src/theme/index.css + orchard-vale.js.
+
+starter/
+  Minimal adoption page composed from src/theme/index.css + orchard-vale.js.
+
+scripts/
+  validate-theme.mjs                Validates HTML, CSS, JS syntax/paths, IDs, ARIA, image magic bytes, WCAG AA contrast, and links.
+  optimize-html-images.mjs          Injects loading, decoding, and width/height dimensions on HTML <img> tags.
 ```
 
 ## Demo Purposes
 
+All 12 demos and `starter/index.html` run on `src/theme/index.css` + `src/theme/orchard-vale.js` with `.ov-demo-bar` navigation and real vanilla JS interactivity:
+
+- `demo/index.html`: visual directory linking to every demo with purpose notes and recommended tour order.
 - `demo/friendly-town.html`: simple editorial article and tone proof.
-- `demo/town-notice-board.html`: medium-density civic/public information board.
-- `demo/guildhall-planner.html`: complex workflow/productivity dashboard.
-- `demo/command-center.html`: flagship operations dashboard.
-- `demo/scholars-hollow-workbench.html`: research-and-writing mock-up imitation.
-- `demo/guildhall-project-board.html`: project/Kanban mock-up imitation.
-- `demo/character-gallery.html`: full character and avatar showcase.
-- `demo/asset-pattern-library.html`: tabbed specimen book for non-character assets and UI recipes.
-- `demo/index.html`: visual directory linking to every demo.
+- `demo/town-notice-board.html`: medium-density civic/public information board with interactive filtering and detail views.
+- `demo/orchard-morning-briefing.html`: generic mixed-information daily briefing template.
+- `demo/orchard-research-report.html`: generic sourced-research report template with print-safe layout.
+- `demo/hearthside-commons.html`: productivity suite for mail, calendar, and tasks.
+- `demo/command-center.html`: flagship operations dashboard with interactive Village Tableau and 6 switchable district maps.
+- `demo/guildhall-project-board.html`: flagship 3-column interactive Kanban project board (consolidating the retired `guildhall-planner.html`).
+- `demo/scholars-hollow-workbench.html`: research-and-writing workbench with document editor, evidence cards, inline donut/report charts, and fact-check controls.
+- `demo/prosperity-grove-ledger.html`: finance and household-ledger dashboard with real multi-month math, SVG income/expense & donut charts, and add-record dialog.
+- `demo/character-gallery.html`: full character and avatar registry showcase.
+- `demo/asset-pattern-library.html`: Developer Specimen Workbench exposing all 301 non-character assets with search, copy snippet, live motion playback, and UI recipes.
+- `starter/index.html`: clean minimal starting template for new Orchard Vale pages.
 
 ## Design Rules
 
 - Build real interface structure first. Use assets to support content, not replace it.
-- Keep text readable. Do not place body text directly over busy artwork unless the artwork is faded or isolated.
+- Keep text readable and preserve the 44-pair WCAG AA contrast contract. Do not place body text directly over busy artwork unless the artwork is faded or isolated behind parchment.
 - Use parchment surfaces for content, dark green signboards for major headers, brass/wood frames for structure, and restrained red/amber/green/blue/purple for status.
 - Use characters intentionally. One or two characters can enrich a panel; too many can clutter a serious product workflow.
-- Prefer existing Orchard Vale assets over new decorative SVG or CSS-only flourishes.
+- Prefer existing Orchard Vale assets and `ov-*` craft utilities over new decorative SVG or CSS-only flourishes.
 - Do not create a generic landing page when the request is for an app, tool, dashboard, or demo. Show the usable interface first.
 - Avoid one-note palettes. The theme is forest green plus parchment, brass, walnut, soft sky, muted burgundy, and countryside greens.
-- Use stable layout dimensions for cards, boards, maps, icon grids, tabs, and toolbars so text and imagery do not shift awkwardly.
+- Use stable layout dimensions (`width`/`height` or `aspect-ratio`) for cards, boards, maps, icon grids, tabs, and toolbars so text and imagery do not shift awkwardly.
 - Do not let images or decorative backgrounds obscure text.
 - Do not use sci-fi neon, glassmorphism, generic corporate stock-photo styling, plastic cartoon UI, or copied game UI.
 
 ## Asset Usage Guidance
 
-- Use `scenes/` for wide atmospheric bands, workbench backdrops, and app context.
-- Use `maps/` for operational dashboards, route planning, district views, and location/status panels.
-- Use `characters/fullbody/` for large helpers, selected task panels, onboarding, empty states, and editorial moments.
-- Use `characters/avatars/` for comments, rosters, assignees, compact helpers, and team selectors.
-- Use `heraldry/` for app identity, trust marks, status seals, approval/review/blocked states, and section identity.
-- Use `icons/` for practical controls and status indicators at small sizes.
-- Use `motifs/` for larger domain category cards and richer feature panels.
-- Use `backplates/` and `ornaments/` for reusable UI surfaces and framing.
-- Use `data-viz/` around real chart/data structures. Do not fake data with decoration alone.
-- Use `textures/` as layered backgrounds under readable color overlays.
-- Use `empty-states/` when no data, no results, completed work, or clear calendars need visual support.
-- Use `motion/` sparingly for small feedback or loading moments.
+- Use `scenes/` (`.webp`) for wide atmospheric bands, workbench backdrops, and app context.
+- Use `maps/` (`.webp` + `.svg`) for operational dashboards, route planning, district views, and location/status panels.
+- Use `characters/fullbody/` (`.webp`) for large helpers, selected task panels, onboarding, empty states, and editorial moments.
+- Use `characters/avatars/` (`.webp`) for comments, rosters, assignees, compact helpers, and team selectors.
+- Use `heraldry/` (`.webp`) for app identity, trust marks, status seals, approval/review/blocked states, and section identity.
+- Use `icons/` (`.svg`) for practical controls and status indicators at small sizes.
+- Use `motifs/` (`.svg`) for larger domain category cards and richer feature panels.
+- Use `backplates/` and `ornaments/` (`.svg`) for reusable UI surfaces and framing (or use `.ov-panel--ornate`, `.ov-divider`, `.ov-icon-badge`).
+- Use `data-viz/` (`.svg`) around real chart/data structures (or `.ov-chart-frame`). Do not fake data with decoration alone.
+- Use `textures/` (`.webp` + ink speckle `.png`, wired via `--ov-tex-*` tokens) as layered backgrounds under readable color overlays.
+- Use `empty-states/` (`.webp`, horizontally centered) with `.ov-empty-state` when no data, no results, completed work, or clear calendars need visual support.
+- Use `motion/` (`.png` spritesheets + `.ov-sprite--*`) sparingly for small feedback or loading moments.
+- Never reference `art-sources/` from HTML, CSS, or JS; those are archived raw masters only.
 
 ## Implementation Patterns
 
 - Prefer plain static HTML/CSS/JS unless the user explicitly asks for a framework.
-- Keep demos directly openable from the filesystem where possible.
-- Keep CSS scoped per demo unless intentionally extracting shared theme CSS.
-- Use semantic HTML and accessible controls, especially for tabs, buttons, modals, and lightboxes.
-- Add alt text for meaningful images. Decorative images can use empty alt text.
-- When creating new pages, link them from `demo/index.html` and document them in `demo/README.md`.
+- Keep demos directly openable from the filesystem (`file://`) with zero build steps or external network dependencies.
+- Import `src/theme/index.css` and `src/theme/orchard-vale.js` on every new page, and apply `class="ov-theme"` on `<body>` (full canvas) or on a host container (subtree-safe embedding).
+- Keep page-specific CSS unlayered and minimal; because `src/theme/` uses `@layer ov.tokens, ov.base, ov.components, ov.layouts`, unlayered page styles override theme defaults cleanly without `!important`.
+- Include `<nav data-ov-demo-bar></nav>` on demo pages so `orchard-vale.js` injects consistent cross-demo navigation.
+- Use `window.OrchardVale` declarative hooks (`[data-ov-tabs]`, `[data-ov-dialog-open]`, `[data-ov-dialog-close]`, `[data-ov-copy]`) and JS helpers (`toast`, `announce`, `openDialog`, `closeDialog`, `copyText`) instead of re-implementing boilerplate.
+- Use semantic HTML and accessible controls, especially for tabs, buttons, dialogs (`dialog.ov-dialog`), and disclosures.
+- Add meaningful `alt` text for informative images; use `alt=""` for decorative images. Run `npm run optimize:images` when adding new `<img>` tags so `loading`, `decoding`, and `width`/`height` stay consistent.
+- When creating new demo pages, link them from `demo/index.html`, add them to `DEMO_CATALOG` in `src/theme/orchard-vale.js`, and document them in `demo/README.md` and `README.md`.
 - When adding major showcase screenshots, place polished captures in `demo/screenshots/`.
 
 ## Validation Checklist
 
-Before finishing changes to demos or assets:
+Before finishing changes to demos, theme files, assets, or docs:
 
+- Run `npm run validate` (checks HTML structure, CSS, JS syntax, JS asset paths, duplicate IDs, anchors/ARIA, image magic bytes, WCAG AA contrast pairs, and local Markdown/HTML references).
+- Run `npm run optimize:images:check` to verify `<img>` dimensions and loading attributes.
 - Open the affected page at desktop and mobile widths.
-- Check that there are no broken images.
-- Check browser console for errors.
-- Check that the page has exactly one main `h1`.
+- Check that there are no broken images or browser console errors.
+- Check that the page has exactly one `main` landmark and one `h1`.
 - Check that there is no page-level horizontal overflow.
 - Check that text does not overlap or sit on busy artwork.
-- Check interactive controls with pointer and keyboard where relevant.
-- Capture or update screenshots if the public README or demo index depends on them.
+- Check interactive controls with pointer and keyboard input (including Escape/focus restoration on dialogs and arrow keys on tabs).
+- Capture or update screenshots if `README.md` or `demo/index.html` depends on them.
 
 ## Git And Publishing Notes
 
 - The root `README.md` is the public GitHub landing page.
 - `LICENSE` is MIT.
-- `.gitignore` intentionally ignores temporary validation screenshots while keeping polished `*-desktop.png` and `*-mobile.png` captures.
+- `.gitignore` intentionally ignores temporary validation screenshots and `pets/.pet-runs/` while keeping polished `*-desktop.png` and `*-mobile.png` captures.
 - Do not remove generated assets or screenshots unless replacing them with better versions and updating links.
-- If adding a new asset family, update `docs/asset-inventory.md` and consider adding it to `demo/asset-pattern-library.html`.
+- If adding or updating runtime assets, update `src/assets/orchard-vale/asset-manifest.json` and `asset-manifest.js`, update `docs/asset-inventory.md`, and verify `demo/asset-pattern-library.html`.
 
 ## Good Agent Behavior In This Repo
 
-- Read the design guide before making visual changes.
-- Reuse the closest existing demo as a model.
+- Read `docs/design.md` before making visual changes.
+- Reuse `src/theme/index.css`, `src/theme/orchard-vale.js`, and the closest existing demo as a model.
 - Make small, coherent edits rather than broad refactors.
-- Preserve the handcrafted theme while protecting readability and product utility.
-- Verify the result visually and technically before reporting completion.
+- Preserve the handcrafted theme while protecting readability, WCAG AA contrast, and product utility.
+- Verify the result visually and technically (`npm run validate`) before reporting completion.
