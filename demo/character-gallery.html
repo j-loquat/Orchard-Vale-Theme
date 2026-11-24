@@ -3,235 +3,646 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orchard Vale Character Registry showcasing all 10 full-body helpers and 10 matching avatar portraits in WebP format with role filters, copyable paths, and an accessible lightbox.">
+  <meta name="theme-color" content="#173820">
   <title>Orchard Vale Character Registry</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="character-gallery.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="character-gallery.js" defer></script>
 </head>
-<body>
-  <main class="registry-shell">
-    <header class="registry-header">
-      <section class="title-panel" aria-labelledby="page-title">
-        <img src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.png" alt="Orchard Vale guild crest" decoding="async">
-        <div>
-          <p>Guild Asset Registry</p>
-          <h1 id="page-title">Orchard Vale Character Registry</h1>
-          <span>Transparent helpers, avatars, advisors, clerks, stewards, and specialists for front-end screens.</span>
+<body class="ov-theme">
+  <a class="ov-skip-link" href="#main-content">Skip to character registry</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Character Registry" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Character Registry</span>
+    <div data-ov-demo-actions>
+      <a class="ov-button ov-button--brass ov-button--sm" href="asset-pattern-library.html">Pattern Library</a>
+    </div>
+  </nav>
+
+  <div class="ov-page">
+    <main class="ov-shell ov-frame registry-shell" id="main-content">
+      <header class="ov-header">
+        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
+          <img
+            src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.webp"
+            alt="Orchard Vale guild crest"
+            width="96"
+            height="96"
+            decoding="async">
+          <div>
+            <p class="ov-kicker">Guild Asset Registry &middot; Theme v2.0</p>
+            <h1 id="page-title">Orchard Vale Character Registry</h1>
+            <p class="registry-subtitle">Transparent WebP woodland helpers and matching avatar portraits for task cards, advisors, empty states, assignees, and onboarding stewards.</p>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-header__stats" aria-label="Character asset counts">
+          <article class="ov-panel ov-stat">
+            <strong>10</strong>
+            <span>Full-body helpers</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>10</strong>
+            <span>Avatar portraits</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong>20</strong>
+            <span>WebP assets</span>
+          </article>
+        </section>
+      </header>
+
+      <section class="ov-panel ov-panel--ornate stage-panel" aria-labelledby="stage-title">
+        <div class="stage-panel__grid">
+          <div class="stage-copy">
+            <p class="ov-kicker">Cast Overview</p>
+            <h2 id="stage-title">A working guild of specialists</h2>
+            <p>Select any featured steward on the stage to jump directly to their registry card, inspect full-resolution artwork, or copy their WebP paths.</p>
+          </div>
+
+          <div class="character-stage" aria-label="Featured Orchard Vale characters">
+            <a class="stage-actor" href="#char-deer" data-jump-target="char-deer">
+              <img src="../src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.webp" alt="Deer Governance Steward" width="220" height="220" decoding="async">
+              <span class="stage-label"><strong>Deer</strong><span>Governance</span></span>
+            </a>
+            <a class="stage-actor" href="#char-fox" data-jump-target="char-fox">
+              <img src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp" alt="Fox Implementer" width="220" height="220" decoding="async">
+              <span class="stage-label"><strong>Fox</strong><span>Implementer</span></span>
+            </a>
+            <a class="stage-actor" href="#char-owl" data-jump-target="char-owl">
+              <img src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" alt="Owl Scholar" width="220" height="220" decoding="async">
+              <span class="stage-label"><strong>Owl</strong><span>Scholar</span></span>
+            </a>
+            <a class="stage-actor" href="#char-rabbit" data-jump-target="char-rabbit">
+              <img src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.webp" alt="Rabbit Planner" width="220" height="220" decoding="async">
+              <span class="stage-label"><strong>Rabbit</strong><span>Planner</span></span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="registry-stats" aria-label="Character asset counts">
-        <article>
-          <strong>10</strong>
-          <span>Full-body helpers</span>
-        </article>
-        <article>
-          <strong>10</strong>
-          <span>Avatar portraits</span>
-        </article>
-        <article>
-          <strong>20</strong>
-          <span>Final PNG assets</span>
-        </article>
+      <hr class="ov-divider" aria-hidden="true">
+
+      <section class="ov-panel roster-panel" aria-labelledby="roster-title">
+        <div class="ov-panel-title roster-panel__head">
+          <h2 id="roster-title" class="roster-panel__heading">Complete Guild Cast</h2>
+          <p class="roster-count" id="role-status" aria-live="polite">Showing 10 of 10 guild characters</p>
+        </div>
+
+        <div class="ov-panel__body ov-stack">
+          <div class="role-filter-bar" role="group" aria-label="Filter characters by guild role">
+            <button type="button" class="role-chip" data-role-filter="all" aria-pressed="true">
+              All <span class="role-chip__count" data-role-count="all">10</span>
+            </button>
+            <button type="button" class="role-chip" data-role-filter="leadership" aria-pressed="false">
+              Leadership &amp; Strategy <span class="role-chip__count" data-role-count="leadership">3</span>
+            </button>
+            <button type="button" class="role-chip" data-role-filter="engineering" aria-pressed="false">
+              Build &amp; Engineering <span class="role-chip__count" data-role-count="engineering">2</span>
+            </button>
+            <button type="button" class="role-chip" data-role-filter="research" aria-pressed="false">
+              Research &amp; Records <span class="role-chip__count" data-role-count="research">2</span>
+            </button>
+            <button type="button" class="role-chip" data-role-filter="operations" aria-pressed="false">
+              Operations &amp; Delivery <span class="role-chip__count" data-role-count="operations">3</span>
+            </button>
+          </div>
+
+          <div class="character-grid" id="character-grid">
+            <article class="character-card ov-card" id="char-fox" data-role="engineering" data-name="Fox Implementer">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Build &amp; Engineering</p>
+                  <h3>Fox Implementer</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Fox Implementer — Avatar Portrait"
+                  data-lb-role="Build &amp; Engineering"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp"
+                  aria-label="Inspect Fox Implementer avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp" alt="Fox implementer avatar" width="60" height="60" decoding="async">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Fox Implementer — Full-Body Helper"
+                data-lb-role="Build &amp; Engineering"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp"
+                aria-label="Inspect Fox Implementer full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp" alt="Fox implementer full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Focused, practical, ready to ship. Strong fit for active work cards, selected tasks, implementation notes, and review queues.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--purple">Builder</span>
+                  <span class="ov-chip ov-chip--blue">Reviewer</span>
+                  <span class="ov-chip">Focus</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp" data-ov-copy-toast="Copied Fox Implementer avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp" data-ov-copy-toast="Copied Fox Implementer full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-badger" data-role="leadership" data-name="Badger Orchestrator">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Leadership &amp; Strategy</p>
+                  <h3>Badger Orchestrator</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Badger Orchestrator — Avatar Portrait"
+                  data-lb-role="Leadership &amp; Strategy"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp"
+                  aria-label="Inspect Badger Orchestrator avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp" alt="Badger orchestrator avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Badger Orchestrator — Full-Body Helper"
+                data-lb-role="Leadership &amp; Strategy"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.webp"
+                aria-label="Inspect Badger Orchestrator full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.webp" alt="Badger orchestrator full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Steady command presence for dashboards, planning panels, status escalations, and command-center moments.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--blue">Lead</span>
+                  <span class="ov-chip ov-chip--green">Ops</span>
+                  <span class="ov-chip ov-chip--amber">Priority</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp" data-ov-copy-toast="Copied Badger Orchestrator avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.webp" data-ov-copy-toast="Copied Badger Orchestrator full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-owl" data-role="research" data-name="Owl Scholar">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Research &amp; Records</p>
+                  <h3>Owl Scholar</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Owl Scholar — Avatar Portrait"
+                  data-lb-role="Research &amp; Records"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp"
+                  aria-label="Inspect Owl Scholar avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp" alt="Owl scholar avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Owl Scholar — Full-Body Helper"
+                data-lb-role="Research &amp; Records"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp"
+                aria-label="Inspect Owl Scholar full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" alt="Owl scholar full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Best for research, writing, citations, audits, knowledge bases, and thoughtful recommendation panels.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--purple">Research</span>
+                  <span class="ov-chip ov-chip--blue">Audit</span>
+                  <span class="ov-chip">Wisdom</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp" data-ov-copy-toast="Copied Owl Scholar avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" data-ov-copy-toast="Copied Owl Scholar full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-rabbit" data-role="leadership" data-name="Rabbit Planner">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Leadership &amp; Strategy</p>
+                  <h3>Rabbit Planner</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Rabbit Planner — Avatar Portrait"
+                  data-lb-role="Leadership &amp; Strategy"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp"
+                  aria-label="Inspect Rabbit Planner avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp" alt="Rabbit planner avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Rabbit Planner — Full-Body Helper"
+                data-lb-role="Leadership &amp; Strategy"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.webp"
+                aria-label="Inspect Rabbit Planner full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.webp" alt="Rabbit planner full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Helpful for project setup, roadmaps, schedule cards, onboarding steps, and friendly guide moments.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Schedule</span>
+                  <span class="ov-chip ov-chip--blue">Guide</span>
+                  <span class="ov-chip">Welcome</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp" data-ov-copy-toast="Copied Rabbit Planner avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.webp" data-ov-copy-toast="Copied Rabbit Planner full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-mouse" data-role="research" data-name="Mouse Clerk">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Research &amp; Records</p>
+                  <h3>Mouse Clerk</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Mouse Clerk — Avatar Portrait"
+                  data-lb-role="Research &amp; Records"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.webp"
+                  aria-label="Inspect Mouse Clerk avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.webp" alt="Mouse clerk avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Mouse Clerk — Full-Body Helper"
+                data-lb-role="Research &amp; Records"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.webp"
+                aria-label="Inspect Mouse Clerk full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.webp" alt="Mouse clerk full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Suited to forms, notes, comments, saved drafts, small task states, and tidy data-entry surfaces.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Notes</span>
+                  <span class="ov-chip ov-chip--amber">Forms</span>
+                  <span class="ov-chip">Drafts</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.webp" data-ov-copy-toast="Copied Mouse Clerk avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.webp" data-ov-copy-toast="Copied Mouse Clerk full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-mole" data-role="engineering" data-name="Mole Engineer">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Build &amp; Engineering</p>
+                  <h3>Mole Engineer</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Mole Engineer — Avatar Portrait"
+                  data-lb-role="Build &amp; Engineering"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.webp"
+                  aria-label="Inspect Mole Engineer avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.webp" alt="Mole engineer avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Mole Engineer — Full-Body Helper"
+                data-lb-role="Build &amp; Engineering"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.webp"
+                aria-label="Inspect Mole Engineer full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.webp" alt="Mole engineer full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Grounded technical character for infrastructure, repairs, debugging, dependency work, and maintenance states.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--blue">Infra</span>
+                  <span class="ov-chip ov-chip--amber">Repair</span>
+                  <span class="ov-chip">Debug</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.webp" data-ov-copy-toast="Copied Mole Engineer avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.webp" data-ov-copy-toast="Copied Mole Engineer full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-robin" data-role="operations" data-name="Robin Courier">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Operations &amp; Delivery</p>
+                  <h3>Robin Courier</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Robin Courier — Avatar Portrait"
+                  data-lb-role="Operations &amp; Delivery"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.webp"
+                  aria-label="Inspect Robin Courier avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.webp" alt="Robin courier avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Robin Courier — Full-Body Helper"
+                data-lb-role="Operations &amp; Delivery"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.webp"
+                aria-label="Inspect Robin Courier full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.webp" alt="Robin courier full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Lightweight messenger for notifications, updates, announcements, reminders, and delivery status.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--amber">News</span>
+                  <span class="ov-chip ov-chip--red">Alerts</span>
+                  <span class="ov-chip">Delivery</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.webp" data-ov-copy-toast="Copied Robin Courier avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.webp" data-ov-copy-toast="Copied Robin Courier full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-otter" data-role="operations" data-name="Otter Success Steward">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Operations &amp; Delivery</p>
+                  <h3>Otter Success Steward</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Otter Success Steward — Avatar Portrait"
+                  data-lb-role="Operations &amp; Delivery"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.webp"
+                  aria-label="Inspect Otter Success Steward avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.webp" alt="Otter success steward avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Otter Success Steward — Full-Body Helper"
+                data-lb-role="Operations &amp; Delivery"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.webp"
+                aria-label="Inspect Otter Success Steward full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.webp" alt="Otter success steward full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Warm support presence for help centers, account health, customer success, resolution, and follow-up panels.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Support</span>
+                  <span class="ov-chip ov-chip--blue">Care</span>
+                  <span class="ov-chip">Resolve</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.webp" data-ov-copy-toast="Copied Otter Success Steward avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.webp" data-ov-copy-toast="Copied Otter Success Steward full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-squirrel" data-role="operations" data-name="Squirrel Resource Keeper">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Operations &amp; Delivery</p>
+                  <h3>Squirrel Resource Keeper</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Squirrel Resource Keeper — Avatar Portrait"
+                  data-lb-role="Operations &amp; Delivery"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.webp"
+                  aria-label="Inspect Squirrel Resource Keeper avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.webp" alt="Squirrel resource keeper avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Squirrel Resource Keeper — Full-Body Helper"
+                data-lb-role="Operations &amp; Delivery"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.webp"
+                aria-label="Inspect Squirrel Resource Keeper full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.webp" alt="Squirrel resource keeper full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Busy, inventory-minded character for assets, budgets, supplies, queues, allocation, and capacity planning.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--amber">Inventory</span>
+                  <span class="ov-chip ov-chip--green">Budget</span>
+                  <span class="ov-chip">Capacity</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.webp" data-ov-copy-toast="Copied Squirrel Resource Keeper avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.webp" data-ov-copy-toast="Copied Squirrel Resource Keeper full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+
+            <article class="character-card ov-card" id="char-deer" data-role="leadership" data-name="Deer Governance Steward">
+              <header class="character-card__head">
+                <div>
+                  <p class="character-card__role">Leadership &amp; Strategy</p>
+                  <h3>Deer Governance Steward</h3>
+                </div>
+                <button
+                  type="button"
+                  class="avatar-btn"
+                  data-lightbox-trigger
+                  data-lb-title="Deer Governance Steward — Avatar Portrait"
+                  data-lb-role="Leadership &amp; Strategy"
+                  data-lb-variant="Avatar 512×512 WebP"
+                  data-lb-path="src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.webp"
+                  data-lb-src="../src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.webp"
+                  aria-label="Inspect Deer Governance Steward avatar portrait in lightbox">
+                  <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.webp" alt="Deer governance steward avatar" width="60" height="60" decoding="async" loading="lazy">
+                </button>
+              </header>
+              <button
+                type="button"
+                class="character-stage-btn"
+                data-lightbox-trigger
+                data-lb-title="Deer Governance Steward — Full-Body Helper"
+                data-lb-role="Leadership &amp; Strategy"
+                data-lb-variant="Full-Body 1024×1024 WebP"
+                data-lb-path="src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.webp"
+                data-lb-src="../src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.webp"
+                aria-label="Inspect Deer Governance Steward full-body artwork in lightbox">
+                <img src="../src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.webp" alt="Deer governance steward full-body character" width="240" height="240" decoding="async" loading="lazy">
+              </button>
+              <div class="card-body">
+                <p>Calm authority for approvals, policies, board reviews, compliance states, permissions, and executive summaries.</p>
+                <div class="ov-chip-row">
+                  <span class="ov-chip ov-chip--green">Policy</span>
+                  <span class="ov-chip ov-chip--blue">Approval</span>
+                  <span class="ov-chip">Trust</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="ov-button ov-button--paper ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.webp" data-ov-copy-toast="Copied Deer Governance Steward avatar path.">Copy Avatar Path</button>
+                <button type="button" class="ov-button ov-button--sm" data-ov-copy="src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.webp" data-ov-copy-toast="Copied Deer Governance Steward full-body path.">Copy Full-Body Path</button>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
-    </header>
 
-    <section class="stage-panel" aria-labelledby="stage-title">
-      <div class="stage-copy">
-        <p>Cast Overview</p>
-        <h2 id="stage-title">A working guild of specialists</h2>
-        <span>Use these characters as assistant figures, card illustrations, empty-state guides, assignees, comment authors, onboarding stewards, and status companions.</span>
+      <section class="ov-panel ov-panel--green contact-sheets" aria-labelledby="sheet-title">
+        <div class="contact-sheets__copy">
+          <p class="ov-kicker">Reference Sheets</p>
+          <h2 id="sheet-title">Complete set at a glance</h2>
+          <p class="ov-muted">Click either contact sheet to inspect the full cast lineup in the zoomable lightbox.</p>
+        </div>
+
+        <button
+          type="button"
+          class="sheet-preview-btn"
+          data-lightbox-trigger
+          data-lb-group="sheets"
+          data-lb-title="Full-Body Characters Contact Sheet"
+          data-lb-role="Reference Sheet"
+          data-lb-variant="Contact Sheet PNG"
+          data-lb-path="src/assets/orchard-vale/characters/characters-fullbody-contact-sheet.png"
+          data-lb-src="../src/assets/orchard-vale/characters/characters-fullbody-contact-sheet.png"
+          aria-label="Inspect full-body character contact sheet in lightbox">
+          <img src="../src/assets/orchard-vale/characters/characters-fullbody-contact-sheet.png" alt="Full-body Orchard Vale character contact sheet" decoding="async" loading="lazy">
+          <span>Full-Body Contact Sheet</span>
+        </button>
+
+        <button
+          type="button"
+          class="sheet-preview-btn"
+          data-lightbox-trigger
+          data-lb-group="sheets"
+          data-lb-title="Avatar Portraits Contact Sheet"
+          data-lb-role="Reference Sheet"
+          data-lb-variant="Contact Sheet PNG"
+          data-lb-path="src/assets/orchard-vale/characters/characters-avatar-contact-sheet.png"
+          data-lb-src="../src/assets/orchard-vale/characters/characters-avatar-contact-sheet.png"
+          aria-label="Inspect avatar portraits contact sheet in lightbox">
+          <img src="../src/assets/orchard-vale/characters/characters-avatar-contact-sheet.png" alt="Avatar Orchard Vale character contact sheet" decoding="async" loading="lazy">
+          <span>Avatar Contact Sheet</span>
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="ov-dialog ov-dialog--wide char-lightbox" id="character-lightbox" aria-labelledby="char-lb-title" data-surface="parchment">
+    <div class="ov-dialog__header">
+      <div class="char-lb-title-wrap">
+        <h2 id="char-lb-title">Character Artwork</h2>
+        <span class="char-lb-counter" id="char-lb-counter">1 / 1</span>
       </div>
-      <div class="character-stage" aria-label="Featured Orchard Vale characters">
-        <img class="stage-deer" src="../src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.png" alt="Deer governance steward" decoding="async">
-        <img class="stage-fox" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox implementer" decoding="async">
-        <img class="stage-owl" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl scholar" decoding="async">
-        <img class="stage-rabbit" src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.png" alt="Rabbit planner" decoding="async">
+      <button type="button" class="ov-dialog__close" data-ov-dialog-close aria-label="Close character lightbox">&times;</button>
+    </div>
+
+    <div class="char-lb-toolbar">
+      <div class="char-lb-group">
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="char-lb-prev">&larr; Prev</button>
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="char-lb-next">Next &rarr;</button>
       </div>
-    </section>
-
-    <section class="character-grid" aria-label="Full character asset set">
-      <article class="character-card fox">
-        <header>
-          <div>
-            <small>Implementation</small>
-            <h2>Fox Implementer</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox implementer avatar" decoding="async">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox implementer full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Focused, practical, ready to ship. Strong fit for active work cards, selected tasks, implementation notes, and review queues.</p>
-          <div class="chips"><span>Builder</span><span>Reviewer</span><span>Focus</span></div>
+      <div class="char-lb-group">
+        <button type="button" class="ov-button ov-button--brass ov-button--sm" id="char-lb-zoom" aria-pressed="false">100% Actual Size</button>
+        <div class="surface-toggle" role="group" aria-label="Lightbox backdrop surface">
+          <button type="button" class="surface-btn" data-lb-surface="parchment" aria-pressed="true">Parchment</button>
+          <button type="button" class="surface-btn" data-lb-surface="forest" aria-pressed="false">Forest</button>
+          <button type="button" class="surface-btn" data-lb-surface="checkerboard" aria-pressed="false">Alpha</button>
         </div>
-      </article>
-
-      <article class="character-card badger">
-        <header>
-          <div>
-            <small>Orchestration</small>
-            <h2>Badger Orchestrator</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger orchestrator avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger orchestrator full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Steady command presence for dashboards, planning panels, status escalations, and command-center moments.</p>
-          <div class="chips"><span>Lead</span><span>Ops</span><span>Priority</span></div>
-        </div>
-      </article>
-
-      <article class="character-card owl">
-        <header>
-          <div>
-            <small>Scholarship</small>
-            <h2>Owl Scholar</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl scholar avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl scholar full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Best for research, writing, citations, audits, knowledge bases, and thoughtful recommendation panels.</p>
-          <div class="chips"><span>Research</span><span>Audit</span><span>Wisdom</span></div>
-        </div>
-      </article>
-
-      <article class="character-card rabbit">
-        <header>
-          <div>
-            <small>Planning</small>
-            <h2>Rabbit Planner</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit planner avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.png" alt="Rabbit planner full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Helpful for project setup, roadmaps, schedule cards, onboarding steps, and friendly guide moments.</p>
-          <div class="chips"><span>Schedule</span><span>Guide</span><span>Welcome</span></div>
-        </div>
-      </article>
-
-      <article class="character-card mouse">
-        <header>
-          <div>
-            <small>Clerical</small>
-            <h2>Mouse Clerk</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.png" alt="Mouse clerk avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse clerk full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Suited to forms, notes, comments, saved drafts, small task states, and data-entry surfaces.</p>
-          <div class="chips"><span>Notes</span><span>Forms</span><span>Drafts</span></div>
-        </div>
-      </article>
-
-      <article class="character-card mole">
-        <header>
-          <div>
-            <small>Engineering</small>
-            <h2>Mole Engineer</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-mole-engineer-focused-512.png" alt="Mole engineer avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.png" alt="Mole engineer full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Grounded technical character for infrastructure, repairs, debugging, dependency work, and maintenance states.</p>
-          <div class="chips"><span>Infra</span><span>Repair</span><span>Debug</span></div>
-        </div>
-      </article>
-
-      <article class="character-card robin">
-        <header>
-          <div>
-            <small>Delivery</small>
-            <h2>Robin Courier</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.png" alt="Robin courier avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.png" alt="Robin courier full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Lightweight messenger for notifications, updates, announcements, reminders, and delivery status.</p>
-          <div class="chips"><span>News</span><span>Alerts</span><span>Delivery</span></div>
-        </div>
-      </article>
-
-      <article class="character-card otter">
-        <header>
-          <div>
-            <small>Success</small>
-            <h2>Otter Success Steward</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.png" alt="Otter success steward avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.png" alt="Otter success steward full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Warm support presence for help centers, account health, customer success, resolution, and follow-up panels.</p>
-          <div class="chips"><span>Support</span><span>Care</span><span>Resolve</span></div>
-        </div>
-      </article>
-
-      <article class="character-card squirrel">
-        <header>
-          <div>
-            <small>Resources</small>
-            <h2>Squirrel Resource Keeper</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.png" alt="Squirrel resource keeper avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.png" alt="Squirrel resource keeper full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Busy, inventory-minded character for assets, budgets, supplies, queues, allocation, and capacity planning.</p>
-          <div class="chips"><span>Inventory</span><span>Budget</span><span>Capacity</span></div>
-        </div>
-      </article>
-
-      <article class="character-card deer">
-        <header>
-          <div>
-            <small>Governance</small>
-            <h2>Deer Governance Steward</h2>
-          </div>
-          <img class="avatar" src="../src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.png" alt="Deer governance steward avatar" decoding="async" loading="lazy">
-        </header>
-        <figure>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-deer-governance-standing-1024.png" alt="Deer governance steward full-body character" decoding="async" loading="lazy">
-        </figure>
-        <div class="card-body">
-          <p>Calm authority for approvals, policies, board reviews, compliance states, permissions, and executive summaries.</p>
-          <div class="chips"><span>Policy</span><span>Approval</span><span>Trust</span></div>
-        </div>
-      </article>
-    </section>
-
-    <section class="contact-sheets" aria-labelledby="sheet-title">
-      <div>
-        <p>Reference Sheets</p>
-        <h2 id="sheet-title">Complete set at a glance</h2>
       </div>
-      <article>
-        <img src="../src/assets/orchard-vale/characters/characters-fullbody-contact-sheet.png" alt="Full-body Orchard Vale character contact sheet" decoding="async" loading="lazy">
-      </article>
-      <article>
-        <img src="../src/assets/orchard-vale/characters/characters-avatar-contact-sheet.png" alt="Avatar Orchard Vale character contact sheet" decoding="async" loading="lazy">
-      </article>
-    </section>
-  </main>
+    </div>
+
+    <div class="ov-dialog__body char-lb-stage" id="char-lb-stage">
+      <img id="char-lb-image" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp" alt="Selected Orchard Vale character artwork" decoding="async">
+    </div>
+
+    <div class="ov-dialog__footer char-lb-footer">
+      <div class="char-lb-meta">
+        <div class="ov-chip-row" id="char-lb-chips"></div>
+        <code class="char-lb-path" id="char-lb-path"></code>
+      </div>
+      <div class="char-lb-actions">
+        <button type="button" class="ov-button ov-button--paper ov-button--sm" id="char-lb-copy-path">Copy Path</button>
+        <button type="button" class="ov-button ov-button--sm" id="char-lb-copy-snippet">Copy &lt;img&gt;</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>
