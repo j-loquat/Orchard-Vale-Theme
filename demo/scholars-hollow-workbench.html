@@ -3,264 +3,518 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orchard Vale research report workbench demo with editable prose, interactive evidence search, accurate SVG road-condition donut, live fact-checking, and formatted export preview.">
+  <meta name="theme-color" content="#173820">
   <title>Scholar's Hollow Research Report Workbench</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="scholars-hollow-workbench.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="scholars-hollow-workbench.js" defer></script>
 </head>
-<body>
-  <main class="workbench-shell" aria-label="Scholar's Hollow research report workbench">
-    <header class="top-rail">
-      <section class="title-scroll" aria-labelledby="page-title">
-        <img class="crest" src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.png" alt="" decoding="async">
-        <div>
-          <h1 id="page-title">Scholar's Hollow</h1>
-          <p>Research Report Workbench</p>
-        </div>
-      </section>
+<body class="ov-theme workbench-page">
+  <a class="ov-skip-link" href="#main-content">Skip to research workbench</a>
 
-      <section class="metrics" aria-label="Report metrics">
-        <article><span>Words</span><strong>3,842</strong><small>+412 today</small></article>
-        <article><span>Sources</span><strong>28</strong><small>3 new</small></article>
-        <article><span>Citations</span><strong>56</strong><small>2 verified</small></article>
-        <article><span>Claims</span><strong>14</strong><small>12 supported</small></article>
-        <article><span>Readability</span><strong>Good</strong><small>Grade 9.2</small></article>
-      </section>
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Scholar's Hollow Workbench" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Scholar's Hollow Workbench</span>
+  </nav>
 
-      <section class="top-controls" aria-label="Workbench controls">
-        <label>Filters <select><option>All Evidence</option></select></label>
-        <label>Time Range <select><option>All Time</option></select></label>
-        <div class="collaborators" aria-label="Collaborators">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox collaborator" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl collaborator" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger collaborator" decoding="async">
-          <span>+2</span>
-        </div>
-        <div class="weather">
-          <img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="" decoding="async">
-          <strong>10:42 AM</strong>
-          <span>Orchard Vale, 18C</span>
-        </div>
-      </section>
-    </header>
+  <div class="workbench-wrap">
+    <main class="workbench-shell ov-frame" id="main-content" aria-label="Scholar's Hollow research report workbench">
+      <header class="top-rail ov-panel ov-panel--aged">
+        <section class="title-scroll" aria-labelledby="page-title">
+          <img class="crest" src="../src/assets/orchard-vale/heraldry/crest-book-quill-fullcolor-512.webp" alt="Scholar's Hollow book and quill crest" width="84" height="84" fetchpriority="high" decoding="async">
+          <div>
+            <h1 id="page-title">Scholar's Hollow</h1>
+            <p class="ov-muted">Research Report Workbench</p>
+          </div>
+        </section>
 
-    <aside class="left-rail" aria-label="Study library">
-      <section class="rail-panel">
-        <h2>Study Library</h2>
-        <ul class="library-list">
-          <li><img src="../src/assets/orchard-vale/motifs/research/motif-research-scroll-96.svg" alt="" decoding="async"> Orchard Vale History</li>
-          <li><img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="" decoding="async"> Local Ecology & Wildlife</li>
-          <li class="active"><img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="" decoding="async"> Village Infrastructure</li>
-          <li><img src="../src/assets/orchard-vale/icons/icon-finance-investment-tree-32.svg" alt="" decoding="async" loading="lazy"> Agrarian Economies</li>
-          <li><img src="../src/assets/orchard-vale/icons/icon-infra-crown-32.svg" alt="" decoding="async" loading="lazy"> Folklore & Traditions</li>
-        </ul>
-      </section>
+        <section class="metrics" aria-label="Report metrics">
+          <article class="metric-cell">
+            <span>Words</span>
+            <strong id="metric-words">3,842</strong>
+            <small id="metric-words-delta">+412 today</small>
+          </article>
+          <article class="metric-cell">
+            <span>Sources</span>
+            <strong id="metric-sources">28</strong>
+            <small>3 new</small>
+          </article>
+          <article class="metric-cell">
+            <span>Citations</span>
+            <strong id="metric-citations">56</strong>
+            <small id="metric-citations-verified">12 verified</small>
+          </article>
+          <article class="metric-cell">
+            <span>Claims</span>
+            <strong id="metric-claims">14</strong>
+            <small id="metric-claims-supported">12 supported</small>
+          </article>
+          <article class="metric-cell">
+            <span>Readability</span>
+            <strong id="metric-readability">Good</strong>
+            <small id="metric-grade">Grade 9.2</small>
+          </article>
+        </section>
 
-      <section class="rail-panel">
-        <h2>Source Collections</h2>
-        <dl class="source-list">
-          <div><dt>Government Records</dt><dd>12</dd></div>
-          <div><dt>Guild Archives</dt><dd>9</dd></div>
-          <div><dt>Field Studies</dt><dd>7</dd></div>
-          <div><dt>Maps & Plans</dt><dd>5</dd></div>
-          <div><dt>Oral Histories</dt><dd>6</dd></div>
-        </dl>
-      </section>
-
-      <section class="rail-panel">
-        <h2>Saved Searches</h2>
-        <ul class="plain-list">
-          <li>Watermill efficiency</li>
-          <li>Road maintenance costs</li>
-          <li>Population growth</li>
-          <li>Timber imports 5y</li>
-        </ul>
-      </section>
-
-      <section class="rail-panel report-sections">
-        <h2>Report Sections</h2>
-        <ol>
-          <li>Executive Summary <span></span></li>
-          <li>Introduction <span></span></li>
-          <li class="open">Infrastructure Overview <span></span></li>
-          <li class="selected">A. Roads & Bridges <span></span></li>
-          <li>B. Water Systems</li>
-          <li>C. Public Buildings</li>
-          <li>Economic Impact</li>
-          <li>Recommendations</li>
-        </ol>
-      </section>
-
-      <img class="rail-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger researcher reading a ledger" decoding="async" loading="lazy">
-      <button class="new-report" type="button">+ New Report</button>
-    </aside>
-
-    <section class="editor-shell" aria-label="Research editor">
-      <nav class="toolbar" aria-label="Formatting toolbar">
-        <button type="button" aria-label="Undo">↶</button>
-        <button type="button" aria-label="Redo">↷</button>
-        <select aria-label="Paragraph style"><option>Paragraph</option></select>
-        <button type="button" aria-label="Bold"><strong>B</strong></button>
-        <button type="button" aria-label="Italic"><em>I</em></button>
-        <button type="button" aria-label="Underline"><u>U</u></button>
-        <button type="button" aria-label="Strikethrough">S</button>
-        <button type="button" aria-label="Bulleted list">•</button>
-        <button type="button" aria-label="Numbered list">1.</button>
-        <button type="button" aria-label="Text alignment">☰</button>
-        <button type="button" aria-label="Block quote">"</button>
-        <button type="button" aria-label="Insert table">▦</button>
-        <button type="button" aria-label="Insert image">▧</button>
-        <button type="button" aria-label="Insert link">🔗</button>
-        <select aria-label="Style"><option>Style</option></select>
-      </nav>
-
-      <article class="report-page">
-        <img class="report-scene" src="../src/assets/orchard-vale/scenes/wide-16x9/scene-countryside-route-map-wide-16x9.webp" alt="Illustrated bridge and country road" decoding="async" loading="lazy">
-        <img class="fox-helper" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox field researcher holding notes" decoding="async" loading="lazy">
-        <h2>III. Infrastructure Overview</h2>
-        <h3>A. Roads & Bridges</h3>
-        <p class="lead"><span class="dropcap">T</span>he road network of Orchard Vale is the lifeline of our rural economy, connecting farms, forges, and markets across a diverse landscape. Over the past decade, steady investments in maintenance and bridge restoration have improved reliability, though seasonal wear and funding gaps remain persistent challenges.</p>
-
-        <div class="report-widgets">
-          <aside class="quote-card">
-            <strong>"</strong>
-            <p>A well-kept road does more than move goods, it moves opportunity.</p>
-            <span>Master Tamsin Fieldwarden</span>
-          </aside>
-
-          <section class="donut-card" aria-label="Road condition chart">
-            <h4>Road Condition By Length</h4>
-            <div class="donut-wrap">
-              <div class="donut"><span>124<br>km total</span></div>
-              <ul>
-                <li><span class="swatch excellent"></span> Excellent <b>28%</b></li>
-                <li><span class="swatch good"></span> Good <b>38%</b></li>
-                <li><span class="swatch fair"></span> Fair <b>24%</b></li>
-                <li><span class="swatch poor"></span> Poor <b>10%</b></li>
-              </ul>
+        <section class="top-controls" aria-label="Workbench controls">
+          <label class="control-field" for="evidence-relevance-filter">
+            <span>Filters</span>
+            <select class="ov-select" id="evidence-relevance-filter">
+              <option value="all">All Evidence</option>
+              <option value="high">High Relevance</option>
+              <option value="medium">Medium Relevance</option>
+            </select>
+          </label>
+          <label class="control-field" for="evidence-time-filter">
+            <span>Time Range</span>
+            <select class="ov-select" id="evidence-time-filter">
+              <option value="all">All Time</option>
+              <option value="2024-2026">2024–2026</option>
+              <option value="2022-2023">2022–2023</option>
+              <option value="2018-2021">2018–2021</option>
+            </select>
+          </label>
+          <div class="collaborators" aria-label="Active collaborators">
+            <img class="ov-avatar ov-avatar--sm" src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp" alt="Tamsin Fieldwarden, fox researcher" width="32" height="32" decoding="async">
+            <img class="ov-avatar ov-avatar--sm" src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp" alt="Archivist Aldous, owl scholar" width="32" height="32" decoding="async">
+            <img class="ov-avatar ov-avatar--sm" src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp" alt="Beatrice Badger, lead editor" width="32" height="32" decoding="async">
+            <span class="collaborators__more" title="Two additional reviewers online">+2</span>
+          </div>
+          <div class="weather">
+            <img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="" width="36" height="36" decoding="async">
+            <div>
+              <strong>10:42 AM</strong>
+              <span>May 18, 2025 · 18°C</span>
             </div>
-            <small>Source: Public Works Survey, Spring 18,025</small>
-          </section>
+          </div>
+        </section>
+      </header>
 
-          <aside class="takeaway-card">
-            <h4><img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.png" alt="" decoding="async" loading="lazy"> Key Takeaway</h4>
-            <p>Bridge restorations deliver the highest reliability impact per gold invested.</p>
-            <img class="owl-helper" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl analyst reading evidence" decoding="async" loading="lazy">
-          </aside>
-        </div>
+      <aside class="left-rail ov-panel ov-panel--green" aria-label="Study library and outline">
+        <section class="ov-panel rail-panel">
+          <h2 class="ov-panel-title rail-title">Study Library</h2>
+          <ul class="library-list" id="study-library-list">
+            <li>
+              <button class="rail-btn" type="button" data-topic="history" aria-pressed="false">
+                <img src="../src/assets/orchard-vale/motifs/research/motif-research-scroll-96.svg" alt="" width="20" height="20" decoding="async">
+                <span>Orchard Vale History</span>
+              </button>
+            </li>
+            <li>
+              <button class="rail-btn" type="button" data-topic="ecology" aria-pressed="false">
+                <img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="" width="20" height="20" decoding="async">
+                <span>Local Ecology &amp; Wildlife</span>
+              </button>
+            </li>
+            <li>
+              <button class="rail-btn is-active" type="button" data-topic="infrastructure" aria-pressed="true">
+                <img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="" width="20" height="20" decoding="async">
+                <span>Village Infrastructure</span>
+              </button>
+            </li>
+            <li>
+              <button class="rail-btn" type="button" data-topic="economy" aria-pressed="false">
+                <img src="../src/assets/orchard-vale/icons/icon-finance-investment-tree-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+                <span>Agrarian Economies</span>
+              </button>
+            </li>
+            <li>
+              <button class="rail-btn" type="button" data-topic="folklore" aria-pressed="false">
+                <img src="../src/assets/orchard-vale/icons/icon-infra-crown-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+                <span>Folklore &amp; Traditions</span>
+              </button>
+            </li>
+          </ul>
+        </section>
 
-        <div class="report-lower">
-          <p>Bridges remain the costliest assets to maintain, yet their failure risk has decreased notably since the 18,020 flood season. Preventative upkeep proves far less costly than emergency reconstruction.</p>
-          <table>
-            <caption>Maintenance Costs (Gold)</caption>
-            <thead><tr><th>Category</th><th>18,022</th><th>18,023</th><th>18,024</th><th>18,025*</th></tr></thead>
-            <tbody>
-              <tr><td>Roads</td><td>2,450</td><td>2,615</td><td>2,710</td><td>2,980</td></tr>
-              <tr><td>Bridges</td><td>1,820</td><td>2,140</td><td>1,965</td><td>2,280</td></tr>
-              <tr><td>Total</td><td>4,270</td><td>4,755</td><td>4,675</td><td>5,260</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <section class="ov-panel rail-panel">
+          <h2 class="ov-panel-title rail-title">Source Collections</h2>
+          <dl class="source-list">
+            <div><dt>Government Records</dt><dd>9</dd></div>
+            <div><dt>Guild Archives</dt><dd>6</dd></div>
+            <div><dt>Field Studies</dt><dd>6</dd></div>
+            <div><dt>Maps &amp; Plans</dt><dd>3</dd></div>
+            <div><dt>Oral Histories</dt><dd>4</dd></div>
+            <div class="source-list__total"><dt>Total Indexed</dt><dd>28</dd></div>
+          </dl>
+        </section>
 
-        <footer class="report-footnotes">
-          <ol>
-            <li>Public Works Annual Report, 18,025, p. 14.</li>
-            <li>Field Survey Notes, Master Tamsin Fieldwarden, 18,024.</li>
+        <section class="ov-panel rail-panel">
+          <h2 class="ov-panel-title rail-title">Saved Searches</h2>
+          <ul class="plain-list" id="saved-searches-list">
+            <li><button class="saved-search-btn" type="button" data-query="watermill" aria-pressed="false">Watermill efficiency</button></li>
+            <li><button class="saved-search-btn" type="button" data-query="road" aria-pressed="false">Road maintenance costs</button></li>
+            <li><button class="saved-search-btn" type="button" data-query="bridge" aria-pressed="false">Bridge restoration</button></li>
+            <li><button class="saved-search-btn" type="button" data-query="timber imports" aria-pressed="false">Timber imports 5y</button></li>
+          </ul>
+        </section>
+
+        <section class="ov-panel rail-panel report-sections">
+          <h2 class="ov-panel-title rail-title">Report Sections</h2>
+          <ol id="report-sections-list">
+            <li><button class="section-btn" type="button" data-section="exec"><span>I. Executive Summary</span><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn" type="button" data-section="intro"><span>II. Introduction</span><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn is-open" type="button" data-section="roads"><span>III. Infrastructure Overview</span><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn is-selected section-btn--sub" type="button" data-section="roads" aria-current="true"><span>A. Roads &amp; Bridges</span><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn section-btn--sub" type="button" data-section="water"><span>B. Water Systems</span><span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn section-btn--sub" type="button" data-section="buildings"><span>C. Public Buildings</span><span class="ov-status-dot" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn" type="button" data-section="impact"><span>IV. Economic Impact</span><span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span></button></li>
+            <li><button class="section-btn" type="button" data-section="recs"><span>V. Recommendations</span><span class="ov-status-dot" aria-hidden="true"></span></button></li>
           </ol>
-          <span>12</span>
-        </footer>
+        </section>
 
-        <img class="mouse-helper" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse clerk writing at a desk" decoding="async" loading="lazy">
-      </article>
-    </section>
-
-    <aside class="right-rail" aria-label="Evidence and verification">
-      <section class="rail-panel evidence-panel">
-        <h2>Evidence Cards</h2>
-        <article>
-          <img src="../src/assets/orchard-vale/motifs/research/motif-research-evidence-card-96.svg" alt="" decoding="async" loading="lazy">
-          <div><strong>Public Works Annual Report</strong><span>18,025 - Government Records</span><mark>High Relevance</mark></div>
-          <small>p. 14</small>
-        </article>
-        <article>
-          <img src="../src/assets/orchard-vale/motifs/research/motif-research-scroll-96.svg" alt="" decoding="async" loading="lazy">
-          <div><strong>Field Survey: North Road</strong><span>18,024 - Field Studies</span><mark class="amber">Medium Relevance</mark></div>
-          <small>pp. 7-9</small>
-        </article>
-        <article>
-          <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="" decoding="async" loading="lazy">
-          <div><strong>Bridge Restoration Ledger</strong><span>18,023 - Government Records</span><mark>High Relevance</mark></div>
-          <small>p. 3</small>
-        </article>
-        <article>
-          <img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="" decoding="async" loading="lazy">
-          <div><strong>Travellers' Diary</strong><span>18,022 - Oral Histories</span><mark class="amber">Medium Relevance</mark></div>
-          <small>p. 11</small>
-        </article>
-        <button type="button">+ Add Evidence</button>
-      </section>
-
-      <section class="rail-panel citations-panel" id="citations">
-        <h2>Citations (56)</h2>
-        <ol>
-          <li>Public Works Annual Report, 18,025, p. 14.</li>
-          <li>Field Survey Notes, Master Tamsin Fieldwarden, 18,024.</li>
-          <li>Bridge Restoration Ledger, 18,023, p. 3.</li>
-        </ol>
-        <a href="#citations">View All Citations -&gt;</a>
-      </section>
-
-      <section class="rail-panel notes-panel">
-        <h2>Analyst Notes</h2>
-        <p>Consider adding seasonal path impassability data from Winter 18,024 surveys. Correlates with trade dips.</p>
-        <span>Nara Quickquill - 9:15 AM</span>
-        <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit analyst portrait" decoding="async" loading="lazy">
-      </section>
-
-      <section class="rail-panel fact-panel">
-        <h2>Fact-Check Status</h2>
-        <div class="fact-grid">
-          <article><img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" decoding="async" loading="lazy"><strong>12</strong><span>All Good</span></article>
-          <article><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" decoding="async" loading="lazy"><strong>2</strong><span>Needs Review</span></article>
-          <article><img src="../src/assets/orchard-vale/icons/icon-status-error-32.svg" alt="" decoding="async" loading="lazy"><strong>0</strong><span>Not Supported</span></article>
+        <div class="rail-footer">
+          <img class="rail-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.webp" alt="Badger researcher reviewing the report outline" width="116" height="116" decoding="async" loading="lazy">
+          <button class="ov-button rail-new-btn" id="new-report-btn" type="button">+ New Draft Note</button>
         </div>
-        <button type="button">Run Full Fact-Check</button>
-      </section>
-    </aside>
+      </aside>
 
-    <footer class="bottom-tray">
-      <section class="timeline-tray" aria-labelledby="timeline-title">
-        <h2 id="timeline-title">Source Timeline</h2>
-        <div class="timeline-line" aria-hidden="true">
-          <span style="left: 4%"></span><span style="left: 24%"></span><span style="left: 39%"></span><span style="left: 58%"></span><span style="left: 72%"></span><span style="left: 93%"></span>
+      <section class="editor-shell ov-panel" aria-label="Research report editor">
+        <div class="toolbar" role="toolbar" aria-label="Rich-text formatting toolbar">
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="undo" aria-label="Undo" title="Undo">&#8630;</button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="redo" aria-label="Redo" title="Redo">&#8631;</button>
+          <select class="ov-select toolbar-select" id="block-style" aria-label="Paragraph style">
+            <option value="p">Paragraph</option>
+            <option value="h4">Subheading</option>
+            <option value="blockquote">Pull Quote</option>
+          </select>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="bold" aria-pressed="false" aria-label="Bold" title="Bold"><strong>B</strong></button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="italic" aria-pressed="false" aria-label="Italic" title="Italic"><em>I</em></button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="underline" aria-pressed="false" aria-label="Underline" title="Underline"><u>U</u></button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="highlight" aria-pressed="false" aria-label="Highlight selection" title="Highlight / Callout">Highlight</button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="quote" aria-pressed="false" aria-label="Insert quote" title="Insert or toggle quote">&ldquo; Quote</button>
+          <button class="ov-button ov-button--paper ov-button--sm tool-btn" type="button" data-cmd="callout" aria-label="Insert research callout" title="Insert research callout">+ Callout</button>
+          <span class="ov-chip ov-chip--green toolbar-status" id="editor-word-badge" aria-live="polite">Live draft</span>
         </div>
-        <div class="timeline-years"><span>18,018</span><span>18,020</span><span>18,022</span><span>18,024</span><span>18,026</span></div>
-        <p><b>Reports (8)</b> <b>Surveys (9)</b> <b>Records (7)</b> <b>Interviews (4)</b></p>
+
+        <article class="report-page">
+          <div class="report-masthead">
+            <div class="report-masthead__headings">
+              <p class="ov-kicker" id="report-topic-kicker">Village Infrastructure · Verified Field Draft</p>
+              <h2 id="report-chapter-title">III. Infrastructure Overview</h2>
+              <h3 id="report-section-title">A. Roads &amp; Bridges</h3>
+            </div>
+            <figure class="report-scene-box">
+              <img class="report-scene" src="../src/assets/orchard-vale/scenes/wide-16x9/scene-library-studyhall-wide-16x9.webp" alt="Warm illustrated Orchard Vale library study hall with bookshelves and reading tables" width="320" height="180">
+              <img class="fox-helper" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.webp" alt="Fox field researcher holding survey notes" width="112" height="112">
+            </figure>
+          </div>
+
+          <div class="report-prose" id="report-prose" contenteditable="true" spellcheck="true" aria-label="Editable report body text">
+            <p class="lead">The road network of Orchard Vale is the lifeline of our rural economy, connecting farms, forges, and markets across a diverse landscape. Over the past decade, steady investments in maintenance and bridge restoration have improved reliability, though seasonal wear and funding gaps remain persistent challenges.</p>
+            <p>Field inspections completed in Spring 2025 confirm that timber-and-stone crossings along the North Road carry 62% of peak harvest freight. Targeted drainage upgrades completed since 2022 have cut spring washout delays nearly in half.</p>
+          </div>
+
+          <div class="report-widgets">
+            <aside class="ov-card quote-card" aria-label="Field quotation">
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <blockquote id="section-quote">A well-kept road does more than move goods&mdash;it moves opportunity.</blockquote>
+              <cite id="section-quote-cite">&mdash; Master Tamsin Fieldwarden</cite>
+            </aside>
+
+            <section class="ov-chart-frame donut-card" aria-labelledby="donut-card-title">
+              <h4 class="ov-chart-frame__title" id="donut-card-title">Road Condition by Length</h4>
+              <div class="donut-wrap">
+                <div class="donut-figure">
+                  <svg class="donut-svg" viewBox="0 0 180 180" role="img" aria-labelledby="road-donut-svg-title road-donut-svg-desc">
+                    <title id="road-donut-svg-title">Road Condition by Length (124 km total)</title>
+                    <desc id="road-donut-svg-desc">Donut chart showing 124 kilometers of surveyed roads: Excellent 28% (35 km), Good 38% (47 km), Fair 24% (30 km), and Needs Repair 10% (12 km).</desc>
+                    <circle class="donut-track" cx="90" cy="90" r="62" fill="none" stroke-width="26"></circle>
+                    <g transform="rotate(-90 90 90)">
+                      <circle class="donut-slice" data-slice="excellent" cx="90" cy="90" r="62" fill="none" stroke="var(--ov-green)" stroke-width="26" pathLength="100" stroke-dasharray="28 72" stroke-dashoffset="0" tabindex="0" aria-label="Excellent: 28 percent, 35 kilometers"></circle>
+                      <circle class="donut-slice" data-slice="good" cx="90" cy="90" r="62" fill="none" stroke="#7b9d4c" stroke-width="26" pathLength="100" stroke-dasharray="38 62" stroke-dashoffset="-28" tabindex="0" aria-label="Good: 38 percent, 47 kilometers"></circle>
+                      <circle class="donut-slice" data-slice="fair" cx="90" cy="90" r="62" fill="none" stroke="var(--ov-amber)" stroke-width="26" pathLength="100" stroke-dasharray="24 76" stroke-dashoffset="-66" tabindex="0" aria-label="Fair: 24 percent, 30 kilometers"></circle>
+                      <circle class="donut-slice" data-slice="repair" cx="90" cy="90" r="62" fill="none" stroke="var(--ov-red)" stroke-width="26" pathLength="100" stroke-dasharray="10 90" stroke-dashoffset="-90" tabindex="0" aria-label="Needs Repair: 10 percent, 12 kilometers"></circle>
+                    </g>
+                    <image href="../src/assets/orchard-vale/data-viz/donut-center-medallion-parchment.svg" x="42" y="42" width="96" height="96" aria-hidden="true"></image>
+                    <circle cx="90" cy="90" r="30.5" fill="#f8edcf" aria-hidden="true"></circle>
+                    <text class="donut-center-value" id="road-donut-value" x="90" y="88" text-anchor="middle">124</text>
+                    <text class="donut-center-label" id="road-donut-label" x="90" y="105" text-anchor="middle">km total</text>
+                  </svg>
+                </div>
+                <ul class="donut-legend" aria-label="Road condition breakdown">
+                  <li data-slice="excellent" tabindex="0"><span class="swatch swatch--excellent"></span><span class="legend-name">Excellent</span><b class="legend-pct">28%</b></li>
+                  <li data-slice="good" tabindex="0"><span class="swatch swatch--good"></span><span class="legend-name">Good</span><b class="legend-pct">38%</b></li>
+                  <li data-slice="fair" tabindex="0"><span class="swatch swatch--fair"></span><span class="legend-name">Fair</span><b class="legend-pct">24%</b></li>
+                  <li data-slice="repair" tabindex="0"><span class="swatch swatch--repair"></span><span class="legend-name">Needs Repair</span><b class="legend-pct">10%</b></li>
+                </ul>
+              </div>
+              <small class="donut-caption">Source: Public Works Survey, Spring 2025</small>
+            </section>
+
+            <aside class="ov-card takeaway-card" aria-label="Key research takeaway">
+              <h4>
+                <img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.webp" alt="" width="28" height="28" decoding="async" loading="lazy">
+                <span>Key Takeaway</span>
+              </h4>
+              <div class="takeaway-body">
+                <p id="section-takeaway">Bridge restorations deliver the highest reliability impact per gold invested.</p>
+                <img class="owl-helper" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" alt="Owl scholar reviewing ledger citations" width="96" height="96">
+              </div>
+            </aside>
+          </div>
+
+          <hr class="ov-divider">
+
+          <div class="report-lower">
+            <div class="report-lower__copy">
+              <p>Bridges remain the costliest assets to maintain, yet their failure risk has decreased notably since the 2020 flood season. Preventative upkeep proves far less costly than emergency reconstruction.<sup>1,2</sup></p>
+              <div class="ov-inline-note desk-accent-note">
+                <img src="../src/assets/orchard-vale/empty-states/spot-desk-quill-lantern-512.webp" alt="" width="56" height="56" decoding="async" loading="lazy">
+                <div>
+                  <strong>Editorial Desk Note:</strong> Click anywhere in the report prose above to edit directly, highlight passages, or insert citations. Word count updates in real time.
+                </div>
+              </div>
+            </div>
+
+            <div class="report-lower__table">
+              <p class="table-caption-heading" id="maintenance-table-title">Maintenance Costs (Gold)</p>
+              <div class="ov-table-wrap">
+                <table class="ov-table maintenance-table" aria-labelledby="maintenance-table-title">
+                  <thead>
+                    <tr>
+                      <th scope="col">Category</th>
+                      <th scope="col">2022</th>
+                      <th scope="col">2023</th>
+                      <th scope="col">2024</th>
+                      <th scope="col">2025*</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Roads</td><td>2,450</td><td>2,615</td><td>2,710</td><td>2,980</td></tr>
+                    <tr><td>Bridges</td><td>1,820</td><td>2,140</td><td>1,965</td><td>2,280</td></tr>
+                    <tr class="table-total-row"><td><strong>Total</strong></td><td><strong>4,270</strong></td><td><strong>4,755</strong></td><td><strong>4,675</strong></td><td><strong>5,260</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <small class="table-note">* YTD through Spring 2025 &middot; Source: Public Works Ledger</small>
+            </div>
+          </div>
+
+          <footer class="report-footnotes">
+            <ol>
+              <li>Public Works Annual Report, 2025, p. 14.</li>
+              <li>Field Survey Notes, Master Tamsin Fieldwarden, 2024.</li>
+            </ol>
+            <span class="report-page-num" aria-label="Page 12">&mdash; 12 &mdash;</span>
+            <img class="mouse-helper" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.webp" alt="Mouse clerk transcribing footnotes at a desk" width="112" height="112" decoding="async" loading="lazy">
+          </footer>
+        </article>
       </section>
 
-      <section class="updates-tray" aria-labelledby="updates-title">
-        <h2 id="updates-title">Recent Updates</h2>
-        <dl>
-          <div><dt>10:32 AM</dt><dd>Added evidence: Bridge Restoration Ledger, 18,023</dd></div>
-          <div><dt>10:15 AM</dt><dd>Updated table: Maintenance Costs (Gold)</dd></div>
-          <div><dt>9:58 AM</dt><dd>Added note to Roads & Bridges section</dd></div>
-          <div><dt>9:41 AM</dt><dd>Fact-check run completed</dd></div>
-        </dl>
-      </section>
+      <aside class="right-rail ov-panel ov-panel--green" aria-label="Evidence, citations, and verification">
+        <section class="ov-panel rail-panel evidence-panel">
+          <h2 class="ov-panel-title rail-title">
+            <span>Evidence Cards</span>
+            <span class="ov-chip" id="evidence-count">5 shown</span>
+          </h2>
+          <div class="evidence-search-wrap">
+            <label class="ov-sr-only" for="evidence-search">Search evidence and citations</label>
+            <input class="ov-field evidence-search" id="evidence-search" type="search" placeholder="Search evidence &amp; citations..." autocomplete="off">
+          </div>
+          <div class="evidence-list" id="evidence-list"></div>
+          <div class="ov-empty-state ov-empty-state--compact evidence-empty" id="evidence-empty" hidden>
+            <img class="ov-empty-state__art" src="../src/assets/orchard-vale/empty-states/empty-owl-ledger-no-results-800.webp" alt="Owl inspecting an empty archive ledger" width="168" height="126" decoding="async" loading="lazy">
+            <h3 class="ov-empty-state__title">No matching records</h3>
+            <p id="evidence-empty-msg">No evidence cards or citations match the active filter.</p>
+            <div class="ov-empty-state__actions">
+              <button class="ov-button ov-button--paper ov-button--sm" id="reset-evidence-filter" type="button">Reset filter</button>
+            </div>
+          </div>
+          <div class="rail-panel-actions">
+            <button class="ov-button ov-button--paper ov-button--sm rail-full-btn" id="add-evidence-btn" type="button">+ Add Evidence</button>
+          </div>
+        </section>
 
-      <section class="publish-tray" aria-labelledby="publish-title">
-        <h2 id="publish-title">Export & Publish</h2>
-        <div class="export-buttons">
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-pdf-32.svg" alt="" decoding="async" loading="lazy">Export PDF</button>
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-docx-32.svg" alt="" decoding="async" loading="lazy">Export DOCX</button>
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-markdown-32.svg" alt="" decoding="async" loading="lazy">Export Markdown</button>
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-export-share-report-32.svg" alt="" decoding="async" loading="lazy">Share Report</button>
-        </div>
-        <div class="publish-row">
-          <span>Publish Status: DRAFT</span>
-          <small>Last saved: 10:42 AM</small>
-          <button type="button">Publish Report -></button>
-        </div>
-      </section>
+        <section class="ov-panel rail-panel citations-panel" id="citations">
+          <h2 class="ov-panel-title rail-title">
+            <span id="citations-heading">Citations (56)</span>
+          </h2>
+          <ol id="citations-list"></ol>
+          <div class="citations-footer">
+            <button class="ov-button ov-button--paper ov-button--sm" id="open-citations-dialog" type="button">Inspect All Citations &rarr;</button>
+          </div>
+        </section>
+
+        <section class="ov-panel rail-panel notes-panel">
+          <h2 class="ov-panel-title rail-title">Analyst Notes</h2>
+          <div class="notes-body">
+            <div>
+              <p>Consider adding seasonal path impassability data from Winter 2024 surveys. Correlates with trade dips.</p>
+              <span class="ov-muted notes-meta">Nara Quickquill &middot; 9:15 AM</span>
+            </div>
+            <img class="ov-avatar ov-avatar--lg" src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp" alt="Nara Quickquill, rabbit research analyst" width="60" height="60" decoding="async" loading="lazy">
+          </div>
+        </section>
+
+        <section class="ov-panel rail-panel fact-panel">
+          <h2 class="ov-panel-title rail-title">Fact-Check Status</h2>
+          <div class="fact-status-row">
+            <span class="ov-sprite ov-sprite--sm ov-sprite--shield ov-sprite--paused" id="fact-check-sprite" aria-hidden="true"></span>
+            <div>
+              <strong id="fact-check-label">Ready to verify</strong>
+              <small id="fact-check-time">Last checked: Today, 10:21 AM</small>
+            </div>
+          </div>
+          <div class="fact-grid">
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="26" height="26" decoding="async" loading="lazy">
+              <strong id="fact-good-count">12</strong>
+              <span>All Good</span>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" width="26" height="26" decoding="async" loading="lazy">
+              <strong id="fact-review-count">2</strong>
+              <span>Needs Review</span>
+            </article>
+            <article>
+              <img src="../src/assets/orchard-vale/icons/icon-status-error-32.svg" alt="" width="26" height="26" decoding="async" loading="lazy">
+              <strong id="fact-unsupported-count">0</strong>
+              <span>Not Supported</span>
+            </article>
+          </div>
+          <div class="rail-panel-actions">
+            <button class="ov-button ov-button--brass ov-button--sm rail-full-btn" id="run-fact-check" type="button">Run Fact-Check</button>
+          </div>
+        </section>
+      </aside>
+
+      <footer class="bottom-tray ov-panel ov-panel--aged">
+        <section class="timeline-tray" aria-labelledby="timeline-title">
+          <h2 id="timeline-title">Source Timeline (2018&ndash;2026)</h2>
+          <div class="timeline-line" aria-hidden="true">
+            <span style="left: 5%" title="2018 Archive Baseline"></span>
+            <span style="left: 25%" title="2020 Flood Season Records"></span>
+            <span style="left: 47%" title="2022 Oral Histories"></span>
+            <span style="left: 63%" title="2023 Bridge Restoration Ledger"></span>
+            <span style="left: 78%" title="2024 Field Survey"></span>
+            <span style="left: 93%" title="2025 Public Works Report"></span>
+          </div>
+          <div class="timeline-years">
+            <span>2018</span><span>2020</span><span>2022</span><span>2024</span><span>2026</span>
+          </div>
+          <p class="timeline-breakdown">
+            <span class="ov-chip ov-chip--blue">Reports (8)</span>
+            <span class="ov-chip ov-chip--green">Surveys (9)</span>
+            <span class="ov-chip ov-chip--purple">Records (7)</span>
+            <span class="ov-chip ov-chip--amber">Interviews (4)</span>
+          </p>
+        </section>
+
+        <section class="updates-tray" aria-labelledby="updates-title">
+          <h2 id="updates-title">Recent Updates</h2>
+          <dl id="recent-updates-list">
+            <div><dt>10:32 AM</dt><dd>Added evidence: Bridge Restoration Ledger, 2023</dd></div>
+            <div><dt>10:15 AM</dt><dd>Updated table: Maintenance Costs (Gold)</dd></div>
+            <div><dt>9:58 AM</dt><dd>Added note to Roads &amp; Bridges section</dd></div>
+            <div><dt>9:41 AM</dt><dd>Fact-check run completed (12 verified)</dd></div>
+          </dl>
+        </section>
+
+        <section class="publish-tray" aria-labelledby="publish-title">
+          <h2 id="publish-title">Export &amp; Publish</h2>
+          <div class="export-buttons">
+            <button class="ov-button ov-button--paper ov-button--sm" type="button" data-export-format="summary">
+              <img src="../src/assets/orchard-vale/icons/icon-export-pdf-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+              <span>Export PDF</span>
+            </button>
+            <button class="ov-button ov-button--paper ov-button--sm" type="button" data-export-format="markdown">
+              <img src="../src/assets/orchard-vale/icons/icon-export-docx-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+              <span>Export DOCX</span>
+            </button>
+            <button class="ov-button ov-button--paper ov-button--sm" type="button" data-export-format="markdown">
+              <img src="../src/assets/orchard-vale/icons/icon-export-markdown-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+              <span>Markdown</span>
+            </button>
+            <button class="ov-button ov-button--paper ov-button--sm" type="button" data-export-format="citations">
+              <img src="../src/assets/orchard-vale/icons/icon-export-share-report-32.svg" alt="" width="20" height="20" decoding="async" loading="lazy">
+              <span>Citations</span>
+            </button>
+          </div>
+          <div class="publish-row">
+            <span class="ov-chip ov-chip--amber" id="publish-status-chip">Status: DRAFT</span>
+            <small class="ov-muted" id="last-saved-time">Last saved: 10:42 AM</small>
+            <button class="ov-button ov-button--sm" id="open-publish-btn" type="button" data-export-format="markdown">Publish Report &rarr;</button>
+          </div>
+        </section>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="ov-dialog ov-dialog--wide" id="export-dialog" aria-labelledby="export-dialog-title">
+    <header class="ov-dialog__header">
+      <h2 id="export-dialog-title">Export &amp; Publish Report</h2>
+      <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close export dialog">&times;</button>
+    </header>
+    <div class="ov-dialog__body ov-stack">
+      <div class="export-mode-bar" role="group" aria-label="Export preview format">
+        <button class="ov-button ov-button--sm" type="button" data-preview-mode="markdown" aria-pressed="true">Markdown Draft</button>
+        <button class="ov-button ov-button--paper ov-button--sm" type="button" data-preview-mode="citations" aria-pressed="false">Citations List</button>
+        <button class="ov-button ov-button--paper ov-button--sm" type="button" data-preview-mode="summary" aria-pressed="false">Executive Brief</button>
+      </div>
+      <div class="ov-field-group">
+        <label class="ov-label" for="export-preview">Formatted output preview</label>
+        <textarea class="ov-textarea ov-mono export-preview" id="export-preview" readonly rows="13"></textarea>
+      </div>
+      <div class="ov-inline-note" id="export-publish-note">
+        Ready for archival publication. Copying preserves headings, inline edits, road-condition percentages, and numbered citations.
+      </div>
+    </div>
+    <footer class="ov-dialog__footer">
+      <button class="ov-button ov-button--paper" type="button" data-ov-dialog-close>Close</button>
+      <button class="ov-button ov-button--paper" type="button" data-ov-copy data-ov-copy-target="#export-preview" data-ov-copy-done="Copied!" data-ov-copy-toast="Formatted report copied to clipboard.">Copy Output</button>
+      <button class="ov-button ov-button--brass" id="confirm-publish-btn" type="button">Publish to Archive</button>
     </footer>
-  </main>
+  </dialog>
+
+  <dialog class="ov-dialog" id="add-evidence-dialog" aria-labelledby="add-evidence-title">
+    <form id="add-evidence-form" method="dialog">
+      <header class="ov-dialog__header">
+        <h2 id="add-evidence-title">Add Evidence Record</h2>
+        <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close dialog">&times;</button>
+      </header>
+      <div class="ov-dialog__body ov-stack">
+        <div class="ov-field-group">
+          <label class="ov-label" for="ev-title">Document Title <span class="ov-required">*</span></label>
+          <input class="ov-field" id="ev-title" name="title" required autocomplete="off" placeholder="e.g., Millstream Culvert Inspection">
+        </div>
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="ev-year">Year <span class="ov-required">*</span></label>
+            <input class="ov-field" id="ev-year" name="year" type="number" min="2018" max="2026" value="2025" required>
+          </div>
+          <div class="ov-field-group">
+            <label class="ov-label" for="ev-pages">Page Reference</label>
+            <input class="ov-field" id="ev-pages" name="pages" value="p. 4" autocomplete="off">
+          </div>
+        </div>
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="ev-collection">Source Collection</label>
+            <select class="ov-select" id="ev-collection" name="collection">
+              <option value="Government Records">Government Records</option>
+              <option value="Field Studies">Field Studies</option>
+              <option value="Guild Archives">Guild Archives</option>
+              <option value="Maps &amp; Plans">Maps &amp; Plans</option>
+              <option value="Oral Histories">Oral Histories</option>
+            </select>
+          </div>
+          <div class="ov-field-group">
+            <label class="ov-label" for="ev-relevance">Relevance</label>
+            <select class="ov-select" id="ev-relevance" name="relevance">
+              <option value="high">High Relevance</option>
+              <option value="medium">Medium Relevance</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <footer class="ov-dialog__footer">
+        <button class="ov-button ov-button--paper" type="button" data-ov-dialog-close>Cancel</button>
+        <button class="ov-button" type="submit">Add Evidence</button>
+      </footer>
+    </form>
+  </dialog>
 </body>
 </html>
