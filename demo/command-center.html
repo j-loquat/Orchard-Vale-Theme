@@ -3,394 +3,562 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orchard Vale Command Center — AI Orchestration Village with interactive district drill-down maps, quest queue, guild roster, village chronicle, and CI/CD pipeline overview.">
+  <meta name="theme-color" content="#173820">
   <title>Orchard Vale Command Center</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="command-center.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="command-center.js" defer></script>
 </head>
-<body>
-  <div class="command-shell">
-    <aside class="command-sidebar" aria-label="Command center navigation">
-      <a class="brand" href="friendly-town.html" aria-label="Back to Orchard Vale article">
-        <img src="../src/assets/orchard-vale/heraldry/crest-gear-shield-fullcolor-512.png" alt="" decoding="async">
-        <span>Orchard Vale Command Center</span>
-      </a>
+<body class="ov-theme cc-body">
+  <a class="ov-skip-link" href="#main-content">Skip to command center</a>
 
-      <section class="watch-seal" aria-labelledby="watch-title">
-        <img src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.png" alt="" decoding="async">
-        <div>
-          <p class="kicker">Village state</p>
-          <h2 id="watch-title">Steady Watch</h2>
-          <span>All public paths open</span>
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Command Center" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Command Center</span>
+    <div data-ov-demo-actions>
+      <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="new-quest-dialog">+ New Quest</button>
+    </div>
+  </nav>
+
+  <div class="ov-page cc-page">
+    <main class="ov-shell ov-frame cc-shell" id="main-content">
+
+      <!-- ================================================================ -->
+      <!-- Carved Wood Top Command Strip                                    -->
+      <!-- ================================================================ -->
+      <header class="cc-top-strip" aria-label="Command center summary">
+        <div class="cc-brand ov-panel ov-panel--aged">
+          <img
+            class="cc-brand__crest"
+            src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+            alt="Orchard Vale tree crest"
+            width="76"
+            height="76"
+            fetchpriority="high">
+          <div class="cc-brand__copy">
+            <p class="ov-kicker cc-brand__subtitle">AI Orchestration Village</p>
+            <h1 class="cc-brand__title">Orchard Vale Command Center</h1>
+            <p class="cc-brand__motto">Many Agents, One Quest.</p>
+          </div>
         </div>
-      </section>
 
-      <nav class="side-nav" aria-label="Command center sections">
-        <a class="active" href="#map">
-          <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="" decoding="async">
-          Situation Map
-        </a>
-        <a href="#alerts">
-          <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" decoding="async">
-          Alerts
-        </a>
-        <a href="#systems">
-          <img src="../src/assets/orchard-vale/icons/icon-infra-pipeline-32.svg" alt="" decoding="async">
-          Systems
-        </a>
-        <a href="#response">
-          <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="" decoding="async">
-          Response
-        </a>
-        <a href="#ledger">
-          <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="" decoding="async">
-          Event Ledger
-        </a>
-      </nav>
+        <div class="cc-kpi-strip" role="list" aria-label="Operational metrics">
+          <article class="ov-panel cc-kpi" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-token-scroll-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">Tokens</span>
+              <strong class="cc-kpi__value" id="kpi-tokens">12.4M</strong>
+              <span class="cc-kpi__detail cc-kpi__detail--good">&uarr; 8.3%</span>
+            </div>
+          </article>
 
-      <section class="routine-card" aria-labelledby="routine-title">
-        <div class="routine-motion" aria-hidden="true"></div>
-        <h2 id="routine-title">Active Routines</h2>
-        <ul>
-          <li><span></span> Courier sync every 8 min</li>
-          <li><span></span> Supply check every bell</li>
-          <li><span></span> Path watch until dusk</li>
-        </ul>
-      </section>
-    </aside>
+          <article class="ov-panel cc-kpi" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-context-book-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">Context</span>
+              <strong class="cc-kpi__value" id="kpi-context">78%</strong>
+              <span class="cc-kpi__detail">512K / 656K</span>
+            </div>
+          </article>
 
-    <main class="command-main">
-      <header class="command-hero">
-        <div class="hero-copy">
-          <p class="kicker">Watchtower operations</p>
-          <h1>Orchard Vale Command Center</h1>
-          <p>Live village coordination for alerts, stewards, dependencies, routes, public systems, and response actions.</p>
-        </div>
-        <div class="hero-actions" aria-label="Command actions">
-          <button class="button secondary" type="button">
-            <img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="" decoding="async">
-            Filter Watch
-          </button>
-          <button class="button primary" type="button">
-            <img src="../src/assets/orchard-vale/icons/icon-action-publish-32.svg" alt="" decoding="async" loading="lazy">
-            Send Dispatch
-          </button>
+          <article class="ov-panel cc-kpi" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-compute-gears-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">Compute</span>
+              <strong class="cc-kpi__value" id="kpi-compute">62%</strong>
+              <span class="cc-kpi__detail">24.8 / 40 vCPU</span>
+            </div>
+          </article>
+
+          <article class="ov-panel cc-kpi" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-risk-shield-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">Risk</span>
+              <strong class="cc-kpi__value cc-kpi__value--good" id="kpi-risk">Low</strong>
+              <span class="cc-kpi__detail" id="kpi-risk-score">Score 18/100</span>
+            </div>
+          </article>
+
+          <article class="ov-panel cc-kpi" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-agent-medallion-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">Active Agents</span>
+              <strong class="cc-kpi__value" id="kpi-agents">23 / 30</strong>
+              <span class="cc-kpi__detail cc-kpi__detail--good"><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span> Healthy</span>
+            </div>
+          </article>
+
+          <article class="ov-panel cc-kpi cc-kpi--weather" role="listitem">
+            <img class="cc-kpi__icon" src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-calendar-tile-96.svg" alt="" width="40" height="40" decoding="async">
+            <div class="cc-kpi__body">
+              <span class="cc-kpi__label">May 18, 2025</span>
+              <strong class="cc-kpi__value" id="kpi-clock">10:42 AM</strong>
+              <span class="cc-kpi__detail">18&deg;C &middot; Sun &amp; Showers</span>
+            </div>
+          </article>
         </div>
       </header>
 
-      <section class="status-strip" aria-label="Command summary">
-        <article class="status-card good">
-          <img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="" decoding="async" loading="lazy">
-          <span>Town Health</span>
-          <strong>94%</strong>
-          <small>Open, calm, well staffed</small>
-        </article>
-        <article class="status-card warn">
-          <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" decoding="async" loading="lazy">
-          <span>Active Alerts</span>
-          <strong>3</strong>
-          <small>One needs action before dusk</small>
-        </article>
-        <article class="status-card blue">
-          <img src="../src/assets/orchard-vale/icons/icon-infra-server-32.svg" alt="" decoding="async" loading="lazy">
-          <span>Guild Systems</span>
-          <strong>12</strong>
-          <small>11 green, 1 amber</small>
-        </article>
-        <article class="status-card amber">
-          <img src="../src/assets/orchard-vale/icons/icon-workflow-dependency-32.svg" alt="" decoding="async" loading="lazy">
-          <span>Dependencies</span>
-          <strong>5</strong>
-          <small>Two tied to market traffic</small>
-        </article>
-        <article class="status-card purple">
-          <img src="../src/assets/orchard-vale/icons/icon-data-timeline-32.svg" alt="" decoding="async" loading="lazy">
-          <span>Next Bell</span>
-          <strong>15:40</strong>
-          <small>West bridge path clears</small>
-        </article>
-      </section>
+      <!-- ================================================================ -->
+      <!-- 3-Column Operational Core                                        -->
+      <!-- ================================================================ -->
+      <div class="cc-core-grid">
 
-      <div class="command-grid">
-        <section class="panel situation-panel" id="map" aria-labelledby="map-title">
-          <div class="panel-heading">
-            <div>
-              <p class="kicker">Live overview</p>
-              <h2 id="map-title">Village Situation Map</h2>
-            </div>
-            <div class="map-tools" aria-label="Map controls">
-              <button type="button" aria-label="Zoom in"><img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-in.svg" alt="" decoding="async" loading="lazy"></button>
-              <button type="button" aria-label="Locate watch"><img src="../src/assets/orchard-vale/maps/controls/map-control-locate.svg" alt="" decoding="async" loading="lazy"></button>
-              <button type="button" aria-label="Map layers"><img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="" decoding="async" loading="lazy"></button>
-            </div>
+        <!-- Left Rail: Quest Queue -->
+        <section class="ov-panel cc-quest-rail" id="quest-queue-panel" aria-labelledby="quest-queue-title">
+          <div class="ov-panel-title">
+            <span class="cc-panel-title-group">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="quest-queue-title">Quest Queue</h2>
+            </span>
+            <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="new-quest-dialog">+ New</button>
           </div>
-          <div class="situation-map">
-            <img class="map-art" src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp" alt="Illustrated overview map of Orchard Vale" decoding="async" loading="lazy">
-            <img class="marker gate" src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="North gate clear" decoding="async" loading="lazy">
-            <img class="marker bridge" src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="Bridge watch amber" decoding="async" loading="lazy">
-            <img class="marker mill" src="../src/assets/orchard-vale/maps/controls/marker-pin-blue.svg" alt="Watermill automation healthy" decoding="async" loading="lazy">
-            <img class="marker forge" src="../src/assets/orchard-vale/maps/controls/marker-shield-red.svg" alt="Forge supply alert" decoding="async" loading="lazy">
-            <img class="route route-one" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="" decoding="async" loading="lazy">
-            <img class="route route-two" src="../src/assets/orchard-vale/maps/controls/route-line-solid-green.svg" alt="" decoding="async" loading="lazy">
-            <div class="map-label label-gate">North gate clear</div>
-            <div class="map-label label-bridge">Bridge delay</div>
-            <div class="map-label label-mill">Watermill sync</div>
-          </div>
-          <ul class="map-legend" aria-label="Map legend">
-            <li><img src="../src/assets/orchard-vale/maps/controls/marker-shield-green.svg" alt="" decoding="async" loading="lazy"> Clear post</li>
-            <li><img src="../src/assets/orchard-vale/maps/controls/marker-pin-amber.svg" alt="" decoding="async" loading="lazy"> Watch needed</li>
-            <li><img src="../src/assets/orchard-vale/maps/controls/marker-shield-red.svg" alt="" decoding="async" loading="lazy"> Action required</li>
-          </ul>
-          <div class="signal-row" aria-label="Map telemetry">
-            <article>
-              <img src="../src/assets/orchard-vale/data-viz/category-symbol-shield.svg" alt="" decoding="async" loading="lazy">
-              <span>Gate posts</span>
-              <strong>4/4 clear</strong>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/data-viz/category-symbol-map-pin.svg" alt="" decoding="async" loading="lazy">
-              <span>Watched routes</span>
-              <strong>7 active</strong>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/data-viz/category-symbol-bell.svg" alt="" decoding="async" loading="lazy">
-              <span>Next signal</span>
-              <strong>15:40</strong>
-            </article>
-          </div>
-        </section>
 
-        <section class="panel alert-panel" id="alerts" aria-labelledby="alerts-title">
-          <div class="panel-heading compact">
-            <div>
-              <p class="kicker">Attention queue</p>
-              <h2 id="alerts-title">Active Alerts</h2>
-            </div>
-            <img src="../src/assets/orchard-vale/heraldry/seal-urgent-orange-512.png" alt="" decoding="async" loading="lazy">
+          <div class="cc-filter-bar" role="group" aria-label="Filter quests by priority">
+            <button class="cc-filter-chip" type="button" data-quest-filter="all" aria-pressed="true">All</button>
+            <button class="cc-filter-chip" type="button" data-quest-filter="high" aria-pressed="false">High</button>
+            <button class="cc-filter-chip" type="button" data-quest-filter="medium" aria-pressed="false">Medium</button>
+            <button class="cc-filter-chip" type="button" data-quest-filter="low" aria-pressed="false">Low</button>
           </div>
-          <div class="alert-list">
-            <article class="alert-card urgent">
-              <div class="alert-top">
-                <span class="badge red">Urgent</span>
-                <time datetime="2026-04-27T15:10">15:10</time>
-              </div>
-              <h3>Bridge lantern oil delayed</h3>
-              <p>Courier route is clear, but the oil crate is still at the west depot.</p>
-              <footer>
-                <img src="../src/assets/orchard-vale/characters/avatars/avatar-robin-courier-alert-512.png" alt="Robin courier portrait" decoding="async" loading="lazy">
-                <span>Robin assigned</span>
-              </footer>
-            </article>
-            <article class="alert-card warning">
-              <div class="alert-top">
-                <span class="badge amber">Watch</span>
-                <time datetime="2026-04-27T14:45">14:45</time>
-              </div>
-              <h3>Market crowd near fountain</h3>
-              <p>Welcome table needs one extra steward to keep the path moving.</p>
-            </article>
-            <article class="alert-card review">
-              <div class="alert-top">
-                <span class="badge blue">Review</span>
-                <time datetime="2026-04-27T14:20">14:20</time>
-              </div>
-              <h3>Archive desk form update</h3>
-              <p>Question labels are ready for Alder's final wording pass.</p>
-            </article>
-          </div>
-        </section>
 
-        <section class="panel systems-panel" id="systems" aria-labelledby="systems-title">
-          <div class="panel-heading">
-            <div>
-              <p class="kicker">Service health</p>
-              <h2 id="systems-title">Guild Systems</h2>
-            </div>
-            <img class="heading-icon" src="../src/assets/orchard-vale/motifs/ai/motif-ai-pipeline-96.svg" alt="" decoding="async" loading="lazy">
-          </div>
-          <div class="systems-layout">
-            <div class="health-chart" aria-label="System health chart">
-              <div class="chart-bars">
-                <span style="height: 82%"></span>
-                <span style="height: 64%"></span>
-                <span style="height: 92%"></span>
-                <span style="height: 74%"></span>
-                <span style="height: 88%"></span>
-                <span style="height: 58%"></span>
-                <span style="height: 96%"></span>
-              </div>
-              <div class="chart-medallion">11/12</div>
-            </div>
-            <div class="system-list">
-              <article>
-                <img src="../src/assets/orchard-vale/icons/icon-infra-pipeline-32.svg" alt="" decoding="async" loading="lazy">
-                <div>
-                  <strong>Courier routing</strong>
-                  <span>Healthy, 8 minute cadence</span>
-                </div>
-                <mark class="status good">Green</mark>
-              </article>
-              <article>
-                <img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" decoding="async" loading="lazy">
-                <div>
-                  <strong>Watermill automation</strong>
-                  <span>One belt inspection pending</span>
-                </div>
-                <mark class="status warn">Amber</mark>
-              </article>
-              <article>
-                <img src="../src/assets/orchard-vale/icons/icon-infra-shield-32.svg" alt="" decoding="async" loading="lazy">
-                <div>
-                  <strong>Gate watch</strong>
-                  <span>North and south posts staffed</span>
-                </div>
-                <mark class="status good">Green</mark>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="panel response-panel" id="response" aria-labelledby="response-title">
-          <div class="panel-heading compact">
-            <div>
-              <p class="kicker">Coordinated response</p>
-              <h2 id="response-title">Bridge Oil Delay</h2>
-            </div>
-            <img src="../src/assets/orchard-vale/motion/static/motion-shield-check-complete-static.png" alt="" decoding="async" loading="lazy">
-          </div>
-          <ol class="response-steps">
-            <li class="done">
-              <span></span>
-              <div>
-                <strong>Confirm path</strong>
-                <p>West bridge route is clear.</p>
-              </div>
-            </li>
-            <li class="active">
-              <span></span>
-              <div>
-                <strong>Send runner</strong>
-                <p>Robin carries the depot note.</p>
-              </div>
-            </li>
-            <li>
-              <span></span>
-              <div>
-                <strong>Light first bracket</strong>
-                <p>Rowan starts from market side.</p>
-              </div>
+          <ol class="cc-quest-list" id="quest-list" aria-label="Ranked quest list">
+            <!-- Hydrated & managed by command-center.js (with static fallback) -->
+            <li class="cc-quest-item">
+              <button class="cc-quest-btn" type="button" data-quest-id="q-1">
+                <span class="ov-priority__number">1</span>
+                <span class="cc-quest-body">
+                  <span class="cc-quest-top">
+                    <strong class="cc-quest-name">Implement Payment Service</strong>
+                    <span class="cc-quest-eta">ETA 2h 15m</span>
+                  </span>
+                  <span class="cc-quest-mid">
+                    <span class="ov-chip ov-chip--red">High</span>
+                    <span class="ov-meter cc-quest-meter" aria-hidden="true"><span style="width: 68%"></span></span>
+                    <span class="cc-quest-pct ov-mono">68%</span>
+                  </span>
+                  <span class="cc-quest-guild">Implementer Team &middot; Blacksmith Forge</span>
+                </span>
+              </button>
             </li>
           </ol>
-          <div class="action-row">
-            <button class="button primary" type="button">
-              <img src="../src/assets/orchard-vale/icons/icon-action-publish-32.svg" alt="" decoding="async" loading="lazy">
-              Dispatch
-            </button>
-            <button class="button secondary" type="button">
-              <img src="../src/assets/orchard-vale/icons/icon-action-edit-32.svg" alt="" decoding="async" loading="lazy">
-              Edit Plan
-            </button>
+
+          <footer class="cc-rail-footer">
+            <span class="cc-rail-count" id="quest-count-label">6 Quests</span>
+            <button class="cc-rail-link" type="button" id="quest-clear-filter" hidden>Reset Filter</button>
+            <button class="cc-rail-link" type="button" data-ov-dialog-open="new-quest-dialog">Add Quest &rarr;</button>
+          </footer>
+        </section>
+
+        <!-- Center Stage: Interactive Village Tableau & District Drill-Down -->
+        <section class="ov-panel cc-tableau-panel" id="village-tableau" aria-labelledby="tableau-title">
+          <div class="ov-panel-title cc-tableau-header">
+            <span class="cc-panel-title-group">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="tableau-title">Village Overview</h2>
+              <span class="cc-view-badge" id="map-view-badge">8 Districts</span>
+            </span>
+            <div class="cc-tableau-header-actions">
+              <button class="ov-button ov-button--paper ov-button--sm" type="button" id="map-back-overview" hidden>&larr; Village Overview</button>
+            </div>
+          </div>
+
+          <!-- District Drill-Down Switcher -->
+          <div class="cc-district-bar" role="group" aria-label="Village and district maps">
+            <button class="cc-district-pill" type="button" data-map-view="overview" aria-pressed="true">Village Overview</button>
+            <button class="cc-district-pill" type="button" data-map-view="forge" aria-pressed="false">Blacksmith Forge</button>
+            <button class="cc-district-pill" type="button" data-map-view="guildhall" aria-pressed="false">Town Hall</button>
+            <button class="cc-district-pill" type="button" data-map-view="library" aria-pressed="false">Scribe House</button>
+            <button class="cc-district-pill" type="button" data-map-view="market" aria-pressed="false">General Store</button>
+            <button class="cc-district-pill" type="button" data-map-view="stables" aria-pressed="false">The Stables</button>
+            <button class="cc-district-pill" type="button" data-map-view="watermill" aria-pressed="false">Watermill</button>
+          </div>
+
+          <!-- Interactive Map Viewport -->
+          <div class="cc-map-viewport" id="map-viewport">
+            <div class="cc-map-canvas" id="map-canvas">
+              <img
+                class="cc-map-art"
+                id="map-art"
+                src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp"
+                alt="Illustrated overview map of Orchard Vale village showing Town Hall, Blacksmith Forge, Watchtower, Scribe House, General Store, Tavern, Watermill, and The Stables"
+                width="1280"
+                height="720"
+                fetchpriority="high">
+
+              <!-- Optional Route Overlay (toggled by Layers control) -->
+              <div class="cc-map-routes" id="map-routes" aria-hidden="true">
+                <img class="cc-route cc-route--forge" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="" decoding="async">
+                <img class="cc-route cc-route--mill" src="../src/assets/orchard-vale/maps/controls/route-line-solid-green.svg" alt="" decoding="async">
+              </div>
+
+              <!-- Current Location Brass Pulse Marker -->
+              <img
+                class="cc-current-marker"
+                id="map-current-marker"
+                src="../src/assets/orchard-vale/maps/controls/marker-current-location-brass.svg"
+                alt=""
+                width="44"
+                height="44"
+                decoding="async">
+
+              <!-- Interactive Pins / Callout Cards Layer (rendered by JS) -->
+              <div class="cc-map-pins" id="map-pins" role="group" aria-label="Interactive village buildings and stations"></div>
+            </div>
+
+            <!-- Decorative Compass Rose -->
+            <img
+              class="cc-map-compass"
+              src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg"
+              alt=""
+              width="54"
+              height="54"
+              aria-hidden="true"
+              decoding="async">
+
+            <!-- Working Map Controls (framed on parchment buttons) -->
+            <div class="cc-map-controls" role="group" aria-label="Map controls">
+              <button class="cc-map-ctrl" type="button" id="ctrl-zoom-in" aria-label="Zoom in map" title="Zoom in">
+                <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-in.svg" alt="" width="34" height="34" decoding="async">
+              </button>
+              <button class="cc-map-ctrl" type="button" id="ctrl-zoom-out" aria-label="Zoom out map" title="Zoom out">
+                <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-out.svg" alt="" width="34" height="34" decoding="async">
+              </button>
+              <button class="cc-map-ctrl" type="button" id="ctrl-home" aria-label="Return to Village Overview and reset zoom" title="Village Overview">
+                <img src="../src/assets/orchard-vale/maps/controls/map-control-home.svg" alt="" width="34" height="34" decoding="async">
+              </button>
+              <button class="cc-map-ctrl" type="button" id="ctrl-layers" aria-label="Toggle telemetry callouts and route lines" aria-pressed="true" title="Toggle callout telemetry">
+                <img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="" width="34" height="34" decoding="async">
+              </button>
+              <button class="cc-map-ctrl" type="button" id="ctrl-locate" aria-label="Locate focused building or station" title="Locate active node">
+                <img src="../src/assets/orchard-vale/maps/controls/map-control-locate.svg" alt="" width="34" height="34" decoding="async">
+              </button>
+            </div>
+
+            <!-- Map Scale Plaque -->
+            <div class="cc-map-scale" aria-live="polite">
+              <img src="../src/assets/orchard-vale/maps/controls/map-scale-plaque.svg" alt="" width="136" height="34" aria-hidden="true" decoding="async">
+              <span class="cc-map-scale__text" id="map-scale-label">1:2400 &middot; 100%</span>
+            </div>
+          </div>
+
+          <!-- Tappable Mobile/Desktop Building Selector & Active Inspector Drawer -->
+          <div class="cc-inspector" id="map-inspector" aria-live="polite">
+            <div class="cc-inspector__quick" id="inspector-quick-list" role="group" aria-label="Quick select building or district station"></div>
+            <div class="cc-inspector__detail">
+              <div class="cc-inspector__head">
+                <div>
+                  <p class="ov-kicker cc-inspector__role" id="inspector-role">Orchestrator HQ</p>
+                  <h3 class="cc-inspector__name" id="inspector-name">Town Hall</h3>
+                </div>
+                <span class="ov-chip ov-chip--green" id="inspector-health">Healthy</span>
+              </div>
+
+              <dl class="cc-inspector__metrics" id="inspector-metrics">
+                <div><dt>Active Agents</dt><dd>1</dd></div>
+                <div><dt>Orchestration Load</dt><dd>62%</dd></div>
+                <div><dt>Queue Depth</dt><dd>6</dd></div>
+                <div><dt>Stationed</dt><dd>Bramble Badger</dd></div>
+              </dl>
+
+              <p class="cc-inspector__summary" id="inspector-summary">Central council coordinating active quest routing, priority escalation, and guild load balancing.</p>
+
+              <div class="cc-inspector__actions">
+                <label class="ov-sr-only" for="dispatch-agent-select">Select guild agent to dispatch</label>
+                <select class="ov-select cc-dispatch-select" id="dispatch-agent-select">
+                  <option value="bramble">Bramble Badger (Orchestrator)</option>
+                  <option value="pippa">Pippa Planner (Planner)</option>
+                  <option value="forge-fox">Forge Fox (Implementer)</option>
+                  <option value="docu-deer">Docu Deer (Scribe)</option>
+                  <option value="millie">Millie Mole (CI Engineer)</option>
+                  <option value="stan">Stable Stan (Deployer)</option>
+                </select>
+                <button class="ov-button ov-button--brass ov-button--sm" type="button" id="dispatch-agent-btn">
+                  <img src="../src/assets/orchard-vale/icons/icon-action-publish-32.svg" alt="" width="18" height="18" decoding="async">
+                  Dispatch Agent
+                </button>
+                <button class="ov-button ov-button--paper ov-button--sm" type="button" id="inspector-drill-btn">Open District Map &rarr;</button>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="panel dependency-panel" aria-labelledby="dependency-title">
-          <div class="panel-heading">
-            <div>
-              <p class="kicker">Hidden coupling</p>
-              <h2 id="dependency-title">Dependency Threads</h2>
-            </div>
-            <img class="heading-icon" src="../src/assets/orchard-vale/motifs/project/motif-project-dependency-chain-96.svg" alt="" decoding="async" loading="lazy">
+        <!-- Right Rail: Guild Roster -->
+        <section class="ov-panel cc-roster-rail" id="guild-roster-panel" aria-labelledby="guild-roster-title">
+          <div class="ov-panel-title">
+            <span class="cc-panel-title-group">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-status-healthy-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="guild-roster-title">Guild Roster</h2>
+            </span>
+            <span class="ov-chip ov-chip--green cc-online-chip" id="roster-online-chip">6 Online</span>
           </div>
-          <div class="thread-grid">
-            <article>
-              <img src="../src/assets/orchard-vale/icons/icon-workflow-dependency-32.svg" alt="" decoding="async" loading="lazy">
-              <strong>Market cart</strong>
-              <span>Blocks west path until 15:40</span>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="" decoding="async" loading="lazy">
-              <strong>Notice copy</strong>
-              <span>Needs archive wording approval</span>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">
-              <strong>Supply purse</strong>
-              <span>Approved for oil and screws</span>
-            </article>
+
+          <div class="cc-roster-focus-bar" id="roster-focus-bar" hidden>
+            <span id="roster-focus-label">Focused: Forge Fox</span>
+            <button class="cc-rail-link" type="button" id="roster-clear-focus">Clear</button>
+          </div>
+
+          <ul class="cc-roster-list" id="guild-roster-list" aria-label="Active guild agents">
+            <!-- Populated by command-center.js -->
+          </ul>
+
+          <footer class="cc-rail-footer">
+            <span class="cc-rail-count" id="roster-status-summary">4 Healthy &middot; 2 Busy</span>
+            <button class="cc-rail-link" type="button" id="roster-dispatch-focus">Focus on Map &rarr;</button>
+          </footer>
+        </section>
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- Bottom Status Band                                               -->
+      <!-- ================================================================ -->
+      <div class="cc-bottom-band">
+
+        <!-- Village Chronicle -->
+        <section class="ov-panel cc-chronicle-panel" id="village-chronicle" aria-labelledby="chronicle-title">
+          <div class="ov-panel-title cc-chronicle-header">
+            <span class="cc-panel-title-group">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="chronicle-title">Village Chronicle</h2>
+            </span>
+            <div class="cc-chronicle-head-actions">
+              <span class="ov-chip ov-chip--red" id="chronicle-alert-count">1 Alert</span>
+              <button class="ov-button ov-button--paper ov-button--sm" type="button" id="ack-all-alerts-btn">Acknowledge Alerts</button>
+            </div>
+          </div>
+
+          <div class="cc-filter-bar cc-filter-bar--chronicle" role="group" aria-label="Filter chronicle by severity">
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="all" aria-pressed="true">All</button>
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="alert" aria-pressed="false">Alert</button>
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="warning" aria-pressed="false">Warning</button>
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="checkpoint" aria-pressed="false">Checkpoint</button>
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="success" aria-pressed="false">Success</button>
+            <button class="cc-filter-chip" type="button" data-chronicle-filter="info" aria-pressed="false">Info</button>
+          </div>
+
+          <div class="cc-chronicle-body">
+            <div class="ov-table-wrap cc-chronicle-table-wrap" id="chronicle-table-wrap">
+              <table class="ov-table cc-chronicle-table" aria-label="Village chronicle activity log">
+                <thead>
+                  <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Source</th>
+                  </tr>
+                </thead>
+                <tbody id="chronicle-tbody">
+                  <!-- Populated by command-center.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="ov-empty-state ov-empty-state--compact" id="chronicle-empty" hidden>
+              <img
+                class="ov-empty-state__art"
+                src="../src/assets/orchard-vale/empty-states/empty-mole-gears-inspection-800.webp"
+                alt="Mole engineer calmly inspecting gleaming brass gears with no alerts pending"
+                width="200"
+                height="150"
+                loading="lazy"
+                decoding="async">
+              <h3 class="ov-empty-state__title" id="chronicle-empty-title">All clear on the watch</h3>
+              <p id="chronicle-empty-copy">No active alerts remain in this filter. The watermill gears and watchtower lanterns are running steady.</p>
+              <div class="ov-empty-state__actions">
+                <button class="ov-button ov-button--paper ov-button--sm" type="button" id="chronicle-show-all">Show All Entries</button>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="panel roster-panel" aria-labelledby="roster-title">
-          <div class="panel-heading compact">
-            <div>
-              <p class="kicker">On watch</p>
-              <h2 id="roster-title">Steward Roster</h2>
-            </div>
-            <img src="../src/assets/orchard-vale/heraldry/frame-laurel-gold-green-512.png" alt="" decoding="async" loading="lazy">
-          </div>
-          <div class="roster-list">
-            <article>
-              <img src="../src/assets/orchard-vale/characters/avatars/avatar-deer-governance-calm-512.png" alt="Deer governance steward portrait" decoding="async" loading="lazy">
-              <div><strong>Elder Fen</strong><span>Decision desk</span></div>
-              <mark class="status good">Ready</mark>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/characters/avatars/avatar-squirrel-resource-manager-busy-512.png" alt="Squirrel resource manager portrait" decoding="async" loading="lazy">
-              <div><strong>Pip</strong><span>Supply room</span></div>
-              <mark class="status warn">Busy</mark>
-            </article>
-            <article>
-              <img src="../src/assets/orchard-vale/characters/avatars/avatar-otter-success-warm-512.png" alt="Otter facilitator portrait" decoding="async" loading="lazy">
-              <div><strong>Marrow</strong><span>Welcome table</span></div>
-              <mark class="status good">Ready</mark>
-            </article>
+        <!-- Today's Wisdom -->
+        <section class="ov-panel ov-panel--ornate ov-panel--ornate-sm cc-wisdom-panel" aria-labelledby="wisdom-title">
+          <h2 class="ov-panel-title" id="wisdom-title">Today's Wisdom</h2>
+          <div class="ov-panel__body cc-wisdom-body">
+            <blockquote class="cc-wisdom-quote" id="wisdom-quote">
+              &ldquo;A well-orchestrated village turns many hands toward one worthy quest.&rdquo;
+            </blockquote>
+            <img
+              class="cc-wisdom-art"
+              src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp"
+              alt="Owl scholar seated with an open parchment ledger"
+              width="144"
+              height="144"
+              loading="lazy"
+              decoding="async">
+            <button class="ov-button ov-button--paper ov-button--sm" type="button" id="next-proverb-btn">Next proverb</button>
           </div>
         </section>
 
-        <section class="panel ledger-panel" id="ledger" aria-labelledby="ledger-title">
-          <div class="panel-heading">
-            <div>
-              <p class="kicker">Live ledger</p>
-              <h2 id="ledger-title">Command Event Log</h2>
-            </div>
-            <button class="button secondary" type="button">
-              <img src="../src/assets/orchard-vale/icons/icon-action-export-32.svg" alt="" decoding="async" loading="lazy">
-              Export
-            </button>
+        <!-- Pipeline Overview -->
+        <section class="ov-panel cc-pipeline-panel" id="pipeline-overview" aria-labelledby="pipeline-title">
+          <div class="ov-panel-title">
+            <span class="cc-panel-title-group">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-infra-pipeline-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="pipeline-title">Pipeline Overview</h2>
+            </span>
+            <span class="ov-chip ov-chip--green" id="pipeline-overall-chip">Healthy</span>
           </div>
-          <div class="event-ledger" role="table" aria-label="Command event log">
-            <div class="ledger-head" role="row">
-              <span role="columnheader">Time</span>
-              <span role="columnheader">Signal</span>
-              <span role="columnheader">Owner</span>
-              <span role="columnheader">State</span>
-            </div>
-            <div role="row">
-              <span role="cell" data-label="Time">15:10</span>
-              <span role="cell" data-label="Signal">Oil crate still at west depot</span>
-              <span role="cell" data-label="Owner">Robin</span>
-              <span role="cell" data-label="State"><mark class="status warn">In transit</mark></span>
-            </div>
-            <div role="row">
-              <span role="cell" data-label="Time">14:45</span>
-              <span role="cell" data-label="Signal">Fountain queue widening</span>
-              <span role="cell" data-label="Owner">Marrow</span>
-              <span role="cell" data-label="State"><mark class="status good">Handled</mark></span>
-            </div>
-            <div role="row">
-              <span role="cell" data-label="Time">14:20</span>
-              <span role="cell" data-label="Signal">Archive labels ready for review</span>
-              <span role="cell" data-label="Owner">Alder</span>
-              <span role="cell" data-label="State"><mark class="status blue">Review</mark></span>
-            </div>
-            <div role="row">
-              <span role="cell" data-label="Time">13:55</span>
-              <span role="cell" data-label="Signal">North gate route confirmed clear</span>
-              <span role="cell" data-label="Owner">Bramble</span>
-              <span role="cell" data-label="State"><mark class="status good">Closed</mark></span>
-            </div>
+
+          <div class="ov-panel__body cc-pipeline-body">
+            <ol class="cc-pipeline-stages" id="pipeline-stages" aria-label="CI and deployment pipeline stages">
+              <li class="cc-stage is-done" data-stage="code">
+                <span class="cc-stage__label">Code</span>
+                <span class="cc-stage__tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-code-32.svg" alt="" width="28" height="28" decoding="async">
+                </span>
+                <span class="cc-stage__status">
+                  <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="Passed" width="16" height="16" decoding="async">
+                  <span>Ready</span>
+                </span>
+              </li>
+
+              <li class="cc-stage is-done" data-stage="build">
+                <span class="cc-stage__label">Build</span>
+                <span class="cc-stage__tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" width="28" height="28" decoding="async">
+                  <span class="ov-sprite ov-sprite--gear ov-sprite--sm cc-stage__sprite" aria-hidden="true"></span>
+                </span>
+                <span class="cc-stage__status ov-mono">5/5</span>
+              </li>
+
+              <li class="cc-stage is-done" data-stage="test">
+                <span class="cc-stage__label">Test</span>
+                <span class="cc-stage__tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-test-flask-32.svg" alt="" width="28" height="28" decoding="async">
+                </span>
+                <span class="cc-stage__status ov-mono">5/5</span>
+              </li>
+
+              <li class="cc-stage is-done" data-stage="scan">
+                <span class="cc-stage__label">Scan</span>
+                <span class="cc-stage__tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-shield-32.svg" alt="" width="28" height="28" decoding="async">
+                  <span class="ov-sprite ov-sprite--shield ov-sprite--sm ov-sprite--once cc-stage__sprite" aria-hidden="true"></span>
+                </span>
+                <span class="cc-stage__status ov-mono">5/5</span>
+              </li>
+
+              <li class="cc-stage is-done" data-stage="staging">
+                <span class="cc-stage__label">Deploy Staging</span>
+                <span class="cc-stage__tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-package-32.svg" alt="" width="28" height="28" decoding="async">
+                </span>
+                <span class="cc-stage__status ov-mono">2/2</span>
+              </li>
+
+              <li class="cc-stage is-pending" id="stage-deploy-prod" data-stage="prod">
+                <span class="cc-stage__label">Deploy Prod</span>
+                <span class="cc-stage__tile" id="stage-prod-tile">
+                  <img src="../src/assets/orchard-vale/icons/icon-infra-crown-32.svg" alt="" width="28" height="28" decoding="async">
+                  <span class="ov-sprite ov-sprite--gear ov-sprite--sm cc-stage__sprite" id="stage-prod-gear" hidden aria-hidden="true"></span>
+                  <span class="ov-sprite ov-sprite--shield ov-sprite--sm ov-sprite--once cc-stage__sprite" id="stage-prod-shield" hidden aria-hidden="true"></span>
+                </span>
+                <span class="cc-stage__status" id="stage-prod-status">Pending</span>
+              </li>
+            </ol>
+
+            <footer class="cc-pipeline-footer">
+              <div class="cc-pipeline-meta">
+                <span><strong>Overall Status:</strong> <span id="pipeline-status-text">Healthy</span></span>
+                <span class="ov-muted">Last run: <time id="pipeline-last-run">10:38 AM</time></span>
+              </div>
+              <button class="ov-button ov-button--brass ov-button--sm" type="button" id="run-deploy-prod-btn">
+                <img src="../src/assets/orchard-vale/icons/icon-workflow-release-32.svg" alt="" width="18" height="18" decoding="async">
+                Run Deploy Prod
+              </button>
+            </footer>
           </div>
         </section>
       </div>
     </main>
   </div>
+
+  <!-- ==================================================================== -->
+  <!-- New Quest Dialog                                                     -->
+  <!-- ==================================================================== -->
+  <dialog class="ov-dialog" id="new-quest-dialog" aria-labelledby="new-quest-title">
+    <header class="ov-dialog__header">
+      <h2 id="new-quest-title">Commission New Quest</h2>
+      <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close dialog">&times;</button>
+    </header>
+    <form id="new-quest-form" novalidate>
+      <div class="ov-dialog__body ov-stack">
+        <div class="ov-field-group">
+          <label class="ov-label" for="new-quest-name">Quest Title <span class="ov-required" aria-hidden="true">*</span></label>
+          <input
+            class="ov-input"
+            id="new-quest-name"
+            name="title"
+            type="text"
+            autocomplete="off"
+            placeholder="e.g., Audit webhook retry ledger"
+            aria-describedby="new-quest-name-error"
+            required>
+          <p class="ov-field-error" id="new-quest-name-error" hidden>Please enter a quest title before commissioning.</p>
+        </div>
+
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="new-quest-priority">Priority</label>
+            <select class="ov-select" id="new-quest-priority" name="priority">
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
+          <div class="ov-field-group">
+            <label class="ov-label" for="new-quest-eta">Estimated ETA</label>
+            <input class="ov-input" id="new-quest-eta" name="eta" type="text" value="1h 45m" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="new-quest-building">Target Building</label>
+            <select class="ov-select" id="new-quest-building" name="building">
+              <option value="forge">Blacksmith Forge (Implementer Team)</option>
+              <option value="watchtower">Watchtower (Watch Guild)</option>
+              <option value="library">Scribe House (Scribe Guild)</option>
+              <option value="market">General Store (Dependencies)</option>
+              <option value="guildhall">Town Hall (Orchestrator HQ)</option>
+              <option value="tavern">Tavern (Bug Squashers)</option>
+              <option value="watermill">Watermill (Quality Guild)</option>
+              <option value="stables">The Stables (Deployment)</option>
+            </select>
+          </div>
+
+          <div class="ov-field-group">
+            <label class="ov-label" for="new-quest-agent">Lead Agent</label>
+            <select class="ov-select" id="new-quest-agent" name="agent">
+              <option value="bramble">Bramble Badger</option>
+              <option value="pippa">Pippa Planner</option>
+              <option value="forge-fox" selected>Forge Fox</option>
+              <option value="docu-deer">Docu Deer</option>
+              <option value="millie">Millie Mole</option>
+              <option value="stan">Stable Stan</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <footer class="ov-dialog__footer">
+        <button class="ov-button ov-button--paper" type="button" data-ov-dialog-close>Cancel</button>
+        <button class="ov-button ov-button--brass" type="submit">Add to Quest Queue</button>
+      </footer>
+    </form>
+  </dialog>
 </body>
 </html>
