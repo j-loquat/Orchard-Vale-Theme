@@ -1,122 +1,102 @@
-:root {
-  --ink: #2f2417;
-  --ink-soft: #5a3d24;
-  --forest: #243f2b;
-  --green: #2f6b3f;
-  --parchment: #f2e1b8;
-  --paper: #f8edcf;
-  --paper-deep: #dec58e;
-  --walnut: #6f4728;
-  --wood: #3f2718;
-  --brass: #c9962e;
-  --blue: #49759a;
-  --burgundy: #8b3f3b;
-  --shadow: rgba(37, 24, 12, 0.22);
+/* Friendly Town editorial article — built on Orchard Vale Theme v2.0 tokens. */
+
+.friendly-page {
+  --ov-anchor-offset: 84px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  background-color: var(--forest);
-  background-image:
-    linear-gradient(rgba(36, 63, 43, 0.86), rgba(36, 63, 43, 0.9)),
-    url("../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
-  background-size: auto, 480px 480px;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.friendly-page .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  min-height: 66px;
+  gap: var(--ov-space-4);
+  min-height: 64px;
   padding: 10px clamp(16px, 4vw, 44px);
-  color: var(--paper);
+  color: var(--ov-paper);
   background:
-    linear-gradient(rgba(36, 63, 43, 0.92), rgba(36, 63, 43, 0.92)),
-    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
+    linear-gradient(rgba(23, 56, 32, 0.94), rgba(15, 40, 24, 0.96)),
+    var(--ov-tex-signboard);
+  background-color: var(--ov-forest);
   background-size: auto, 420px 420px;
-  border-bottom: 3px solid var(--brass);
+  border-bottom: 3px solid var(--ov-brass);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --ov-link: var(--ov-link-dark);
+  --ov-link-hover: var(--ov-link-dark-hover);
+  --ov-focus: var(--ov-focus-dark);
 }
 
-.brand {
+.friendly-page .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
+  color: var(--ov-paper);
+  font-family: var(--ov-display);
+  font-size: 19px;
   font-weight: 700;
-  font-size: 18px;
+  text-decoration: none;
 }
 
-.brand img {
+.friendly-page .brand:hover {
+  color: var(--ov-link-dark-hover);
+}
+
+.friendly-page .brand img {
   width: 42px;
   height: 42px;
   object-fit: contain;
 }
 
-.top-nav {
+.friendly-page .top-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: clamp(10px, 2vw, 22px);
+  font-family: var(--ov-ui);
   font-size: 14px;
+  font-weight: 700;
 }
 
-.top-nav a {
+.friendly-page .top-nav a {
+  padding: 4px 6px;
+  color: var(--ov-paper);
   text-decoration: none;
-  color: color-mix(in srgb, var(--paper) 88%, white 12%);
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--ov-radius-sm);
 }
 
-.top-nav a:hover,
-.top-nav a:focus-visible {
-  border-bottom-color: var(--brass);
-  outline: none;
+.friendly-page .top-nav a:hover,
+.friendly-page .top-nav a:focus-visible {
+  color: var(--ov-link-dark-hover);
+  border-bottom-color: var(--ov-brass-light);
 }
 
-.hero {
+/* Hero banner using the 21x9 ultrawide Orchard Vale village scene */
+.friendly-page .hero {
   position: relative;
-  min-height: 86svh;
+  min-height: clamp(460px, 76svh, 760px);
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ov-space-6);
   align-items: end;
-  padding: clamp(88px, 12vh, 140px) clamp(20px, 7vw, 96px) clamp(46px, 8vh, 72px);
+  padding: clamp(64px, 10vh, 128px) clamp(20px, 6vw, 88px) clamp(48px, 7vh, 72px);
   overflow: hidden;
-  color: var(--paper);
+  color: var(--ov-paper);
   background-image:
-    linear-gradient(90deg, rgba(28, 39, 23, 0.78) 0%, rgba(28, 39, 23, 0.45) 44%, rgba(28, 39, 23, 0.18) 100%),
-    linear-gradient(0deg, rgba(28, 39, 23, 0.72) 0%, rgba(28, 39, 23, 0.04) 40%),
-    url("../src/assets/orchard-vale/scenes/wide-16x9/scene-orchard-vale-village-wide-16x9.webp");
+    linear-gradient(90deg, rgba(15, 40, 24, 0.84) 0%, rgba(15, 40, 24, 0.56) 48%, rgba(15, 40, 24, 0.22) 100%),
+    linear-gradient(0deg, rgba(15, 40, 24, 0.78) 0%, rgba(15, 40, 24, 0.08) 46%),
+    url("../src/assets/orchard-vale/scenes/ultrawide-21x9/scene-orchard-vale-village-wide-21x9.webp");
+  background-color: var(--ov-forest-black);
   background-size: cover;
   background-position: center;
-  border-bottom: 5px solid var(--brass);
+  border-bottom: 5px solid var(--ov-brass);
+  --ov-kicker: var(--ov-brass-light);
+  --ov-focus: var(--ov-focus-dark);
 }
 
-.hero::after {
+.friendly-page .hero::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
-  height: 34px;
+  height: 30px;
   background-image: url("../src/assets/orchard-vale/ornaments/divider-leaf-horizontal-gold.svg");
   background-repeat: repeat-x;
   background-size: 220px 24px;
@@ -124,336 +104,338 @@ a {
   pointer-events: none;
 }
 
-.hero-copy {
+.friendly-page .hero-copy {
   position: relative;
   z-index: 1;
-  max-width: 760px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  max-width: 740px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-.kicker {
-  margin: 0 0 14px;
-  font-size: 17px;
-  color: var(--brass);
+.friendly-page .hero-kicker {
+  margin-bottom: 12px;
+  color: var(--ov-brass-light);
+  font-size: 14px;
+  letter-spacing: 0.1em;
 }
 
-h1 {
+.friendly-page .hero h1 {
   margin: 0;
-  font-size: clamp(54px, 10vw, 128px);
-  line-height: 0.9;
-  letter-spacing: 0;
+  color: var(--ov-paper);
+  font-size: clamp(48px, 9vw, 116px);
+  line-height: 0.92;
 }
 
-.dek {
-  max-width: 680px;
-  margin: 22px 0 0;
-  font-size: clamp(18px, 2vw, 27px);
-  line-height: 1.35;
+.friendly-page .dek {
+  max-width: 660px;
+  margin: 20px 0 0;
+  color: var(--ov-white);
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.38;
 }
 
-.courier {
-  position: absolute;
-  right: clamp(18px, 7vw, 92px);
-  bottom: 42px;
-  width: 128px;
-  height: 128px;
-  background-image: url("../src/assets/orchard-vale/motion/spritesheets/motion-courier-delivery-spritesheet.png");
-  background-size: 1024px 128px;
-  animation: courier-play 1.2s steps(8) infinite;
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.28));
+.friendly-page .hero-courier {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.34));
 }
 
-@keyframes courier-play {
-  to {
-    background-position: -1024px 0;
-  }
-}
-
-.article-shell {
+/* Article surface */
+.friendly-page .article-shell {
+  padding: clamp(28px, 6vw, 68px) clamp(16px, 5vw, 68px) clamp(40px, 8vw, 88px);
+  color: var(--ov-ink);
   background:
-    linear-gradient(rgba(248, 237, 207, 0.88), rgba(248, 237, 207, 0.9)),
-    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.png");
+    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.94)),
+    var(--ov-tex-parchment-aged);
+  background-color: var(--ov-paper);
   background-size: auto, 520px 520px;
-  padding: clamp(28px, 6vw, 74px) clamp(16px, 5vw, 72px) clamp(40px, 8vw, 90px);
+  --ov-link: var(--ov-link-light);
+  --ov-link-hover: var(--ov-link-light-hover);
+  --ov-focus: var(--ov-focus-light);
 }
 
-.article-grid {
+.friendly-page .article-grid {
   width: min(1180px, 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
-  gap: clamp(24px, 5vw, 66px);
+  grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 62px);
   align-items: start;
 }
 
-.article-rail {
+.friendly-page .article-rail {
   position: sticky;
-  top: 92px;
+  top: 72px;
   padding: 22px;
-  background:
-    linear-gradient(rgba(242, 225, 184, 0.92), rgba(242, 225, 184, 0.92)),
-    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
-  background-size: auto, 420px 420px;
-  border: 3px solid var(--walnut);
-  box-shadow: inset 0 0 0 4px var(--paper-deep), 0 10px 24px var(--shadow);
 }
 
-.rail-crest {
-  width: 96px;
-  height: 96px;
+.friendly-page .rail-crest {
+  width: 92px;
+  height: 92px;
   object-fit: contain;
   margin: 0 auto 12px;
 }
 
-.article-rail h2,
-.article-body h2 {
+.friendly-page .article-rail h2,
+.friendly-page .article-body h2 {
   margin: 0;
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.05;
-  letter-spacing: 0;
-  color: var(--forest);
+  color: var(--ov-forest);
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.08;
 }
 
-.article-rail h2 {
+.friendly-page .article-rail h2 {
   text-align: center;
-  font-size: 27px;
+  font-size: 26px;
 }
 
-.article-rail dl {
-  margin: 20px 0 0;
+.friendly-page .article-rail dl {
+  margin: 18px 0 0;
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
-.article-rail dt {
-  color: var(--burgundy);
-  font-weight: 700;
-  font-size: 14px;
+.friendly-page .article-rail dt {
+  color: var(--ov-red-ink);
+  font-family: var(--ov-ui);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.article-rail dd {
+.friendly-page .article-rail dd {
   margin: 4px 0 0;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
-.article-body {
+.friendly-page .article-body {
   max-width: 780px;
+  min-width: 0;
 }
 
-.article-body p {
+.friendly-page .article-body p {
+  margin: 0 0 22px;
   font-size: 19px;
   line-height: 1.68;
-  margin: 0 0 22px;
 }
 
-.article-body .lede {
-  font-size: clamp(22px, 2.6vw, 31px);
-  line-height: 1.42;
-  color: var(--forest);
+.friendly-page .article-body .lede {
+  color: var(--ov-forest);
+  font-size: clamp(21px, 2.4vw, 29px);
+  line-height: 1.44;
 }
 
-.article-body h2 {
-  margin-top: clamp(34px, 7vw, 72px);
+.friendly-page .article-body h2 {
+  margin-top: 12px;
   margin-bottom: 18px;
 }
 
-.wide-figure {
-  margin: clamp(30px, 6vw, 58px) 0;
-  border: 3px solid var(--walnut);
-  background: var(--paper);
-  box-shadow: 0 12px 26px var(--shadow);
+.friendly-page .article-body .ov-divider {
+  margin: clamp(28px, 5vw, 44px) 0;
 }
 
-.wide-figure img {
+.friendly-page .wide-figure {
+  margin: clamp(28px, 5vw, 48px) 0;
+  background: var(--ov-paper);
+  border: 3px solid var(--ov-walnut);
+  border-radius: var(--ov-radius-sm);
+  box-shadow: var(--ov-elev-2);
+  overflow: hidden;
+}
+
+.friendly-page .wide-figure img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-.wide-figure figcaption {
+.friendly-page .wide-figure figcaption {
   padding: 12px 16px 14px;
-  color: var(--ink-soft);
+  color: var(--ov-ink-soft);
+  font-family: var(--ov-ui);
   font-size: 14px;
 }
 
-.customs {
+.friendly-page .customs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  margin: 28px 0 6px;
+  margin: 26px 0 6px;
 }
 
-.customs section {
-  min-width: 0;
+.friendly-page .customs section {
   padding: 18px;
-  background: color-mix(in srgb, var(--paper) 86%, white 14%);
-  border: 2px solid color-mix(in srgb, var(--walnut) 74%, var(--brass) 26%);
 }
 
-.customs img {
+.friendly-page .customs img {
   width: 54px;
   height: 54px;
   object-fit: contain;
   margin-bottom: 12px;
 }
 
-.customs h3,
-.visit-panel h3 {
+.friendly-page .customs h3 {
   margin: 0 0 8px;
-  font-size: 21px;
-  line-height: 1.15;
-  color: var(--forest);
+  color: var(--ov-forest);
+  font-size: 20px;
+  line-height: 1.18;
 }
 
-.customs p {
+.friendly-page .customs p {
   margin: 0;
   font-size: 15px;
-  line-height: 1.48;
+  line-height: 1.5;
 }
 
-.voices {
+/* Voices: tightly pair blockquote and attribution beside the portrait */
+.friendly-page .voices {
   display: grid;
-  gap: 16px;
-  margin: 28px 0 6px;
+  gap: 14px;
+  margin: 26px 0 6px;
 }
 
-.voices figure {
+.friendly-page .voices figure {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 84px minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 6px;
   align-items: center;
   margin: 0;
-  padding: 16px;
-  background: rgba(242, 225, 184, 0.74);
-  border-left: 5px solid var(--blue);
+  padding: 16px 18px;
+  border-left: 5px solid var(--ov-blue);
 }
 
-.voices img {
-  width: 88px;
-  height: 88px;
+.friendly-page .voices img {
+  grid-row: 1 / span 2;
+  align-self: center;
+  width: 84px;
+  height: 84px;
   object-fit: contain;
 }
 
-.voices blockquote {
+.friendly-page .voices blockquote {
   margin: 0;
+  align-self: end;
+  color: var(--ov-forest);
   font-size: 19px;
-  line-height: 1.45;
-  color: var(--forest);
+  line-height: 1.44;
 }
 
-.voices figcaption {
+.friendly-page .voices figcaption {
   grid-column: 2;
-  color: var(--ink-soft);
+  align-self: start;
+  color: var(--ov-ink-soft);
+  font-family: var(--ov-ui);
   font-size: 14px;
+  font-weight: 700;
 }
 
-.visit-panel {
+/* Ornate editorial closing highlight */
+.friendly-page .visit-panel {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: 164px minmax(0, 1fr);
   gap: 22px;
   align-items: center;
   margin-top: 32px;
-  padding: clamp(18px, 4vw, 28px);
-  background:
-    linear-gradient(rgba(47, 107, 63, 0.93), rgba(47, 107, 63, 0.9)),
-    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
-  background-size: auto, 420px 420px;
-  color: var(--paper);
-  border: 3px solid var(--wood);
-  box-shadow: 0 10px 24px var(--shadow);
+  padding: clamp(24px, 4vw, 34px);
 }
 
-.visit-panel img {
-  width: 170px;
-  height: 170px;
+.friendly-page .visit-panel img {
+  width: 164px;
+  height: 164px;
   object-fit: contain;
 }
 
-.visit-panel h3 {
-  color: var(--paper);
+.friendly-page .visit-panel h3 {
+  margin: 0 0 10px;
+  color: var(--ov-paper);
+  font-size: 24px;
+  line-height: 1.15;
 }
 
-.visit-panel p {
-  color: color-mix(in srgb, var(--paper) 92%, white 8%);
+.friendly-page .visit-panel p {
+  margin: 0 0 18px;
+  color: var(--ov-white);
+  font-size: 17px;
+  line-height: 1.55;
 }
 
-.text-link {
+.friendly-page .visit-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+
+/* High-contrast link on dark green (>=10:1 with --ov-link-dark on --ov-forest) */
+.friendly-page .text-link {
   display: inline-block;
-  color: var(--brass);
-  font-weight: 700;
+  color: var(--ov-link-dark);
+  font-family: var(--ov-ui);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
+.friendly-page .text-link:hover,
+.friendly-page .text-link:focus-visible {
+  color: var(--ov-link-dark-hover);
+}
+
 @media (max-width: 860px) {
-  .site-header {
-    position: static;
+  .friendly-page .site-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
   }
 
-  .top-nav {
-    flex-wrap: wrap;
+  .friendly-page .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: var(--ov-space-4);
+    padding-top: 48px;
+    padding-bottom: 44px;
   }
 
-  .hero {
-    min-height: 78svh;
-    padding-top: 76px;
+  .friendly-page .hero-courier {
+    --ov-sprite-size: 88px;
+    justify-self: end;
   }
 
-  .courier {
-    width: 96px;
-    height: 96px;
-    background-size: 768px 96px;
-    right: 12px;
-    bottom: 26px;
-  }
-
-  @keyframes courier-play {
-    to {
-      background-position: -768px 0;
-    }
-  }
-
-  .article-grid {
+  .friendly-page .article-grid {
     grid-template-columns: 1fr;
   }
 
-  .article-rail {
+  .friendly-page .article-rail {
     position: static;
   }
 
-  .customs {
+  .friendly-page .customs {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 560px) {
-  .voices figure,
-  .visit-panel {
+@media (max-width: 600px) {
+  .friendly-page .voices figure {
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .friendly-page .voices img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .friendly-page .visit-panel {
     grid-template-columns: 1fr;
+    text-align: left;
   }
 
-  .voices figcaption {
-    grid-column: auto;
-  }
-
-  .visit-panel img {
-    width: 148px;
-    height: 148px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .courier {
-    animation: none;
-    background-image: url("../src/assets/orchard-vale/motion/static/motion-courier-delivery-static.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  .friendly-page .visit-panel img {
+    width: 132px;
+    height: 132px;
   }
 }

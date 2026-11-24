@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Orchard Vale research report demo with takeaways, evidence status, comparison tables, implications, confidence gaps, and sources.">
+  <meta name="description" content="Orchard Vale research report demo with takeaways, evidence status, comparison tables, implications, confidence gaps, sticky scrollspy navigation, print export, and copyable citations.">
   <meta name="theme-color" content="#173820">
   <title>Orchard Vale Scholar's Field Report</title>
-  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
-  <link rel="stylesheet" href="../src/theme/orchard-components.css">
-  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="orchard-research-report.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="orchard-research-report.js" defer></script>
 </head>
 <body class="ov-theme research-page">
   <a class="ov-skip-link" href="#main-content">Skip to report</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Scholar Field Report" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&#8592; All Demos</a>
+  </nav>
+
   <div class="ov-page">
     <main class="ov-report ov-frame" id="main-content">
       <header class="ov-title-banner ov-report-header" aria-labelledby="page-title">
@@ -20,13 +25,23 @@
           <p class="ov-kicker">Scholar's Field Report · Sample Content</p>
           <h1 id="page-title">Choosing a durable format for a small research team</h1>
           <p>Generated July 16 · Quick research · Decision support</p>
-          <div class="ov-chip-row"><span class="ov-chip ov-chip--green">5 sources</span><span class="ov-chip ov-chip--blue">High confidence</span><span class="ov-chip ov-chip--purple">Reusable report</span></div>
+          <div class="report-header-actions">
+            <div class="ov-chip-row">
+              <span class="ov-chip ov-chip--green">5 sources</span>
+              <span class="ov-chip ov-chip--blue">High confidence</span>
+              <span class="ov-chip ov-chip--purple">Reusable report</span>
+            </div>
+            <button type="button" class="ov-button ov-button--brass ov-button--sm" id="print-report-btn" data-ov-print-hide>
+              <img src="../src/assets/orchard-vale/icons/icon-action-export-32.svg" alt="" width="20" height="20" decoding="async">
+              Print / Export PDF
+            </button>
+          </div>
         </div>
-        <img class="ov-report-header__art" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl scholar reviewing a report" width="170" height="170" fetchpriority="high" decoding="async">
+        <img class="ov-report-header__art" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" alt="Owl scholar reviewing a report" width="170" height="170" fetchpriority="high" decoding="async">
       </header>
 
-      <nav class="ov-top-nav" aria-label="Report sections">
-        <a href="#takeaways">Key Takeaways</a>
+      <nav class="ov-top-nav report-sticky-nav" id="report-nav" aria-label="Report sections">
+        <a href="#takeaways" aria-current="location">Key Takeaways</a>
         <a href="#answer">Short Answer</a>
         <a href="#findings">Findings</a>
         <a href="#implications">Implications</a>
@@ -49,9 +64,19 @@
         <section class="ov-panel ov-report-section" id="answer" aria-labelledby="answer-title">
           <h2 id="answer-title">Short Answer</h2>
           <p class="report-lede">Use Markdown as the editable source and HTML as the primary reading experience. Add PDF as an export rather than treating it as the only report format. This keeps the work portable while giving readers better navigation, responsive tables, and evidence callouts.</p>
-          <div class="ov-callout ov-callout--confirmed"><strong>Confirmed:</strong> HTML provides native semantic structures for headings, sections, tables, links, and disclosure controls.</div>
-          <div class="ov-callout ov-callout--inferred"><strong>Inferred:</strong> A small team will usually maintain one Markdown source more reliably than parallel hand-edited HTML and PDF copies.</div>
-          <div class="ov-callout ov-callout--watch"><strong>Watch item:</strong> Client archival, accessibility, and document-management requirements may still make tagged PDF mandatory.</div>
+
+          <div class="ov-callout ov-callout--confirmed callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Confirmed:</strong> HTML provides native semantic structures for headings, sections, tables, links, and disclosure controls.</div>
+          </div>
+          <div class="ov-callout ov-callout--inferred callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-data-citation-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Inferred:</strong> A small team will usually maintain one Markdown source more reliably than parallel hand-edited HTML and PDF copies.</div>
+          </div>
+          <div class="ov-callout ov-callout--watch callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Watch item:</strong> Client archival, accessibility, and document-management requirements may still make tagged PDF mandatory.</div>
+          </div>
         </section>
 
         <section class="ov-panel ov-report-section" id="findings" aria-labelledby="findings-title">
@@ -93,12 +118,37 @@
 
         <section class="ov-panel ov-report-section" id="sources" aria-labelledby="sources-title">
           <h2 id="sources-title">Sources</h2>
-          <ol class="ov-source-list">
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN: HTML</a> — semantic document and interface structures.</li>
-            <li><a href="https://html.spec.whatwg.org/">WHATWG HTML Living Standard</a> — authoritative HTML behavior and elements.</li>
-            <li><a href="https://spec.commonmark.org/">CommonMark Specification</a> — portable Markdown syntax baseline.</li>
-            <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C Web Content Accessibility Guidelines</a> — accessible web content considerations.</li>
-            <li><a href="https://www.pdfa.org/resource/iso-32000-pdf/">PDF Association: ISO 32000</a> — PDF standard and document-format context.</li>
+          <ol class="ov-source-list report-source-list">
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN: HTML</a> — semantic document and interface structures.</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="MDN Web Docs. HTML: HyperText Markup Language. https://developer.mozilla.org/en-US/docs/Web/HTML" data-ov-copy-toast="MDN citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text"><a href="https://html.spec.whatwg.org/">WHATWG HTML Living Standard</a> — authoritative HTML behavior and elements.</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="WHATWG. HTML Living Standard. https://html.spec.whatwg.org/" data-ov-copy-toast="WHATWG citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text"><a href="https://spec.commonmark.org/">CommonMark Specification</a> — portable Markdown syntax baseline.</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="CommonMark. CommonMark Specification. https://spec.commonmark.org/" data-ov-copy-toast="CommonMark citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C Web Content Accessibility Guidelines</a> — accessible web content considerations.</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="W3C WAI. Web Content Accessibility Guidelines (WCAG). https://www.w3.org/WAI/standards-guidelines/wcag/" data-ov-copy-toast="WCAG citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text"><a href="https://www.pdfa.org/resource/iso-32000-pdf/">PDF Association: ISO 32000</a> — PDF standard and document-format context.</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="PDF Association. ISO 32000 (PDF Standard). https://www.pdfa.org/resource/iso-32000-pdf/" data-ov-copy-toast="ISO 32000 citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
           </ol>
         </section>
       </div>

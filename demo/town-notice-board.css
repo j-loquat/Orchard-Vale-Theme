@@ -1,393 +1,419 @@
-:root {
-  --ink: #2f2417;
-  --ink-soft: #5a3d24;
-  --forest: #243f2b;
-  --green: #2f6b3f;
-  --green-deep: #214a2c;
-  --parchment: #f2e1b8;
-  --paper: #f8edcf;
-  --paper-deep: #dec58e;
-  --walnut: #6f4728;
-  --wood: #3f2718;
-  --brass: #c9962e;
-  --blue: #49759a;
-  --burgundy: #8b3f3b;
-  --amber: #d18a2e;
-  --red: #a94436;
-  --shadow: rgba(37, 24, 12, 0.22);
+/* Town Notice Board — built on Orchard Vale Theme v2.0 tokens & components. */
+
+.board-page {
+  --ov-anchor-offset: 84px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  background:
-    linear-gradient(rgba(36, 63, 43, 0.84), rgba(36, 63, 43, 0.9)),
-    url("../src/assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
-  background-size: auto, 520px 520px;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.app-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
+.board-page .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
-  min-height: 66px;
+  gap: var(--ov-space-4);
+  min-height: 64px;
   padding: 10px clamp(16px, 4vw, 44px);
-  color: var(--paper);
+  color: var(--ov-paper);
   background:
-    linear-gradient(rgba(36, 63, 43, 0.94), rgba(36, 63, 43, 0.94)),
-    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
-  border-bottom: 3px solid var(--brass);
+    linear-gradient(rgba(23, 56, 32, 0.94), rgba(15, 40, 24, 0.96)),
+    var(--ov-tex-signboard);
+  background-color: var(--ov-forest);
+  background-size: auto, 420px 420px;
+  border-bottom: 3px solid var(--ov-brass);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --ov-link: var(--ov-link-dark);
+  --ov-link-hover: var(--ov-link-dark-hover);
+  --ov-focus: var(--ov-focus-dark);
 }
 
-.brand {
+.board-page .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: inherit;
-  text-decoration: none;
+  color: var(--ov-paper);
+  font-family: var(--ov-display);
+  font-size: 19px;
   font-weight: 700;
-  font-size: 18px;
+  text-decoration: none;
 }
 
-.brand img {
+.board-page .brand:hover {
+  color: var(--ov-link-dark-hover);
+}
+
+.board-page .brand img {
   width: 42px;
   height: 42px;
   object-fit: contain;
 }
 
-.header-nav {
+.board-page .header-nav {
   display: flex;
-  gap: clamp(10px, 2vw, 22px);
   flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 22px);
+  font-family: var(--ov-ui);
   font-size: 14px;
+  font-weight: 700;
 }
 
-.header-nav a {
-  color: var(--paper);
+.board-page .header-nav a {
+  padding: 4px 6px;
+  color: var(--ov-paper);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--ov-radius-sm);
 }
 
-.header-nav a:hover,
-.header-nav a:focus-visible {
-  border-bottom-color: var(--brass);
-  outline: none;
+.board-page .header-nav a:hover,
+.board-page .header-nav a:focus-visible {
+  color: var(--ov-link-dark-hover);
+  border-bottom-color: var(--ov-brass-light);
 }
 
-.board-hero {
-  min-height: 390px;
+/* Hero band: dedicated right column for lantern sprite so it never overlaps text */
+.board-page .board-hero {
+  min-height: 320px;
   display: grid;
-  grid-template-columns: minmax(0, 720px) 128px;
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ov-space-6);
   align-items: end;
-  padding: clamp(58px, 9vw, 110px) clamp(18px, 6vw, 80px) clamp(34px, 6vw, 64px);
+  padding: clamp(44px, 7vw, 88px) clamp(18px, 6vw, 76px) clamp(32px, 5vw, 56px);
+  color: var(--ov-paper);
   background-image:
-    linear-gradient(90deg, rgba(28, 39, 23, 0.76), rgba(28, 39, 23, 0.36)),
+    linear-gradient(90deg, rgba(15, 40, 24, 0.84) 0%, rgba(15, 40, 24, 0.62) 55%, rgba(15, 40, 24, 0.36) 100%),
     url("../src/assets/orchard-vale/scenes/wide-16x9/scene-hearthside-mailroom-wide-16x9.webp");
+  background-color: var(--ov-forest-black);
   background-size: cover;
   background-position: center;
-  border-bottom: 5px solid var(--brass);
-  color: var(--paper);
+  border-bottom: 5px solid var(--ov-brass);
+  --ov-kicker: var(--ov-brass-light);
+  --ov-focus: var(--ov-focus-dark);
 }
 
-.hero-panel {
+.board-page .hero-panel {
   max-width: 720px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.42);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.48);
 }
 
-.kicker {
-  margin: 0 0 8px;
-  color: var(--brass);
-  font-weight: 700;
-  font-size: 14px;
+.board-page .hero-kicker {
+  color: var(--ov-brass-light);
 }
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
+.board-page .board-hero h1 {
+  margin-bottom: 12px;
+  color: var(--ov-paper);
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 0.96;
 }
 
-h1 {
-  margin-bottom: 14px;
-  font-size: clamp(48px, 8vw, 94px);
-  line-height: 0.95;
-  letter-spacing: 0;
-}
-
-.hero-panel p:last-child {
-  max-width: 690px;
+.board-page .hero-panel p:last-child {
+  max-width: 660px;
   margin-bottom: 0;
-  font-size: clamp(18px, 2vw, 25px);
-  line-height: 1.35;
+  color: var(--ov-white);
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.38;
 }
 
-.lantern {
-  width: 128px;
-  height: 128px;
-  background-image: url("../src/assets/orchard-vale/motion/spritesheets/motion-lantern-flicker-spritesheet.png");
-  background-size: 1024px 128px;
-  animation: lantern-play 1.1s steps(8) infinite;
-  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.3));
-}
-
-@keyframes lantern-play {
-  to {
-    background-position: -1024px 0;
-  }
-}
-
-.dashboard {
-  width: min(1260px, calc(100% - 32px));
-  margin: clamp(24px, 5vw, 56px) auto clamp(44px, 8vw, 90px);
+.board-page .hero-lantern-wrap {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1.4fr) minmax(300px, 0.9fr);
-  grid-template-areas:
-    "status notices events"
-    "status notices map"
-    "status requests map"
-    "status spot spot";
-  gap: 18px;
+  place-items: end;
 }
 
-.status-column {
-  grid-area: status;
+.board-page .hero-lantern {
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.34));
+}
+
+/* Balanced two-column dashboard with full-width footer band (zero grid voids) */
+.board-page .dashboard {
+  width: min(1260px, calc(100% - 32px));
+  margin: clamp(24px, 4vw, 44px) auto clamp(44px, 7vw, 80px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.95fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.board-page .notices-column,
+.board-page .aside-column {
   display: grid;
   gap: 18px;
   align-content: start;
+  min-width: 0;
 }
 
-.status-card,
-.watch-card,
-.notice-board,
-.events-panel,
-.map-panel,
-.requests-panel,
-.spot-panel {
-  background:
-    linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.92)),
-    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.png");
-  background-size: auto, 460px 460px;
-  border: 3px solid var(--walnut);
-  box-shadow: inset 0 0 0 4px var(--paper-deep), 0 12px 26px var(--shadow);
+.board-page .notice-board,
+.board-page .requests-panel,
+.board-page .status-card,
+.board-page .watch-card,
+.board-page .events-panel,
+.board-page .map-panel {
+  padding: 20px;
 }
 
-.status-card,
-.watch-card,
-.events-panel,
-.map-panel,
-.requests-panel,
-.spot-panel {
-  padding: 18px;
+/* Status & Stewards side-by-side in the right column */
+.board-page .status-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.status-card {
+.board-page .status-card {
+  display: grid;
+  align-content: start;
+  justify-items: center;
   text-align: center;
+  padding: 16px;
 }
 
-.status-crest {
-  width: 92px;
-  height: 92px;
+.board-page .status-crest {
+  width: 72px;
+  height: 72px;
   object-fit: contain;
-  margin: 0 auto 8px;
+  margin-bottom: 8px;
 }
 
-.status-card h2,
-.watch-card h2,
-.section-heading h2,
-.map-header h2,
-.spot-panel h2 {
+.board-page .status-card h2,
+.board-page .watch-card h2,
+.board-page .section-heading h2,
+.board-page .map-header h2,
+.board-page .spot-panel h2 {
   margin: 0;
-  color: var(--forest);
-  font-size: 26px;
-  line-height: 1.05;
+  color: var(--ov-forest);
+  font-size: 24px;
+  line-height: 1.08;
 }
 
-.mood {
-  margin: 10px 0 16px;
-  line-height: 1.45;
+.board-page .mood {
+  margin: 8px 0 12px;
+  font-size: 14px;
+  line-height: 1.42;
 }
 
-.meter {
-  height: 22px;
-  padding: 4px;
-  background: var(--parchment);
-  border: 2px solid var(--walnut);
-}
-
-.meter span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--green), #8daa56);
-  border-right: 3px solid var(--brass);
-}
-
-.watch-card {
+.board-page .meter-row {
+  width: 100%;
   display: grid;
-  gap: 13px;
+  gap: 6px;
 }
 
-.steward {
+.board-page .vale-meter {
+  width: 100%;
+  height: 18px;
+  border: 2px solid var(--ov-walnut);
+  border-radius: var(--ov-radius-sm);
+  background: var(--ov-paper-warm);
+  overflow: hidden;
+}
+
+.board-page .vale-meter::-webkit-meter-bar {
+  background: var(--ov-paper-warm);
+  border: 0;
+}
+
+.board-page .vale-meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, var(--ov-green), #5f8f47);
+}
+
+.board-page .vale-meter::-moz-meter-bar {
+  background: linear-gradient(90deg, var(--ov-green), #5f8f47);
+}
+
+.board-page .meter-label {
+  color: var(--ov-ink-soft);
+  font: 800 var(--ov-text-xs)/1.2 var(--ov-ui);
+}
+
+.board-page .watch-card {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
   gap: 12px;
+  align-content: start;
+  padding: 16px;
+}
+
+.board-page .steward {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 10px;
   align-items: center;
 }
 
-.steward img {
+.board-page .steward img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.board-page .steward strong,
+.board-page .steward span {
+  display: block;
+}
+
+.board-page .steward strong {
+  font-size: 15px;
+}
+
+.board-page .steward span {
+  color: var(--ov-ink-soft);
+  font-family: var(--ov-ui);
+  font-size: 13px;
+}
+
+/* Public notices header & category filter chips */
+.board-page .notice-board__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.board-page .section-heading,
+.board-page .map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.board-page .notice-board__top .section-heading {
+  margin-bottom: 0;
+}
+
+.board-page .section-heading {
+  justify-content: flex-start;
+}
+
+.board-page .section-heading img {
   width: 54px;
   height: 54px;
   object-fit: contain;
 }
 
-.steward strong,
-.steward span {
-  display: block;
+.board-page .section-heading.compact img {
+  width: 46px;
+  height: 46px;
 }
 
-.steward span {
-  color: var(--ink-soft);
-  font-size: 14px;
-}
-
-.notice-board {
-  grid-area: notices;
-  padding: 20px;
-}
-
-.section-heading,
-.map-header {
+.board-page .notice-filters {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 16px;
 }
 
-.section-heading {
-  justify-content: flex-start;
+.board-page .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 5px 12px;
+  color: var(--ov-ink);
+  font: 800 var(--ov-text-sm)/1 var(--ov-ui);
+  cursor: pointer;
+  background: var(--ov-paper-warm);
+  border: 2px solid rgba(112, 72, 38, 0.55);
+  border-radius: var(--ov-radius-pill);
+  transition: background var(--ov-dur-fast), border-color var(--ov-dur-fast), color var(--ov-dur-fast);
 }
 
-.section-heading img {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
+.board-page .filter-chip:hover {
+  background: var(--ov-white);
+  border-color: var(--ov-walnut);
 }
 
-.section-heading.compact img {
-  width: 48px;
-  height: 48px;
+.board-page .filter-chip[aria-pressed="true"] {
+  color: var(--ov-paper);
+  background: var(--ov-forest);
+  border-color: var(--ov-forest-black);
+  --ov-focus: var(--ov-focus-dark);
 }
 
-.notice-grid {
+.board-page .filter-chip__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  color: var(--ov-ink);
+  font-size: 12px;
+  background: var(--ov-paper);
+  border-radius: var(--ov-radius-pill);
+}
+
+.board-page .notice-grid {
   display: grid;
   gap: 14px;
 }
 
-.notice-card,
-.request-list article {
-  padding: 16px;
-  background: color-mix(in srgb, var(--paper) 86%, white 14%);
-  border: 2px solid color-mix(in srgb, var(--walnut) 76%, var(--brass) 24%);
+.board-page .notice-card {
+  padding: 16px 18px;
 }
 
-.notice-card.priority {
-  background:
-    linear-gradient(90deg, rgba(248, 237, 207, 0.98), rgba(242, 225, 184, 0.9));
-  box-shadow: inset 5px 0 0 color-mix(in srgb, var(--green) 74%, var(--brass) 26%);
+/* Clean priority accent without any horizontal gradient tonal seam */
+.board-page .notice-card.priority {
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(248, 237, 207, 0.96));
+  border-left: 5px solid var(--ov-green);
 }
 
-.notice-meta {
+.board-page .notice-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  color: var(--ink-soft);
-  font-size: 14px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 26px;
-  padding: 3px 10px;
-  color: var(--paper);
+  gap: 8px 12px;
+  color: var(--ov-ink-soft);
+  font-family: var(--ov-ui);
   font-size: 13px;
   font-weight: 700;
-  border: 2px solid var(--ink);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
 }
 
-.badge.green {
-  background: var(--green);
+.board-page .notice-card h3,
+.board-page .request-list h3 {
+  margin: 10px 0 8px;
+  color: var(--ov-forest);
+  font-size: 21px;
+  line-height: 1.15;
 }
 
-.badge.amber {
-  background: var(--amber);
-}
-
-.badge.blue {
-  background: var(--blue);
-}
-
-.badge.red {
-  background: var(--red);
-}
-
-.notice-card h3,
-.request-list h3 {
-  margin: 12px 0 8px;
-  color: var(--forest);
-  font-size: 22px;
-  line-height: 1.12;
-}
-
-.notice-card p,
-.request-list p,
-.spot-panel p {
+.board-page .notice-card p,
+.board-page .request-list p,
+.board-page .spot-panel p {
   margin-bottom: 0;
   line-height: 1.5;
 }
 
-.notice-card footer {
+.board-page .notice-card footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
-  color: var(--ink-soft);
-  font-size: 14px;
+  margin-top: 12px;
+  color: var(--ov-ink-soft);
+  font-family: var(--ov-ui);
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.notice-card footer img {
-  width: 24px;
-  height: 24px;
+.board-page .notice-card footer img {
+  width: 22px;
+  height: 22px;
 }
 
-.events-panel {
-  grid-area: events;
+.board-page .notice-empty {
+  margin-top: 12px;
 }
 
-.event-list {
+/* Neighborly requests: comfortable auto-fit cards, never narrow slivers */
+.board-page .request-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.board-page .request-list article {
+  padding: 16px;
+}
+
+/* Events list */
+.board-page .event-list {
   display: grid;
   gap: 12px;
   margin: 0;
@@ -395,254 +421,254 @@ h1 {
   list-style: none;
 }
 
-.event-list li {
+.board-page .event-list li {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr) 28px;
-  gap: 12px;
-  align-items: center;
+  grid-template-columns: 76px minmax(0, 1fr) 26px;
+  gap: 10px;
+  align-items: start;
   padding-bottom: 12px;
-  border-bottom: 1px solid color-mix(in srgb, var(--walnut) 45%, transparent);
+  border-bottom: 1px solid rgba(112, 72, 38, 0.3);
 }
 
-.event-list li:last-child {
+.board-page .event-list li:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-.event-list time {
-  color: var(--burgundy);
+.board-page .event-list time {
+  color: var(--ov-red-ink);
+  font-family: var(--ov-mono);
+  font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
+  padding-top: 2px;
 }
 
-.event-list strong,
-.event-list span {
+.board-page .event-list strong,
+.board-page .event-list span {
   display: block;
 }
 
-.event-list span {
-  color: var(--ink-soft);
+.board-page .event-list span {
+  color: var(--ov-ink-soft);
   font-size: 14px;
-  line-height: 1.35;
+  line-height: 1.38;
 }
 
-.event-list img {
-  width: 28px;
-  height: 28px;
+.board-page .event-list img {
+  width: 26px;
+  height: 26px;
 }
 
-.map-panel {
-  grid-area: map;
+/* Interactive Market District Map */
+.board-page .map-header img {
+  width: 52px;
+  height: 52px;
 }
 
-.map-header img {
-  width: 58px;
-  height: 58px;
-}
-
-.map-frame {
+.board-page .map-frame {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  border: 3px solid var(--walnut);
-  background: var(--parchment);
+  border: 3px solid var(--ov-walnut);
+  border-radius: var(--ov-radius-sm);
+  background: var(--ov-parchment);
 }
 
-.map-art {
+.board-page .map-art {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.marker,
-.route {
+.board-page .route {
   position: absolute;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.24));
-}
-
-.marker {
-  width: 42px;
-  height: 42px;
-}
-
-.marker.fountain {
-  left: 47%;
-  top: 38%;
-}
-
-.marker.library {
-  left: 67%;
-  top: 22%;
-}
-
-.marker.supper {
-  left: 28%;
-  top: 58%;
-}
-
-.route {
   left: 30%;
   top: 48%;
   width: 45%;
   transform: rotate(-7deg);
   opacity: 0.9;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.24));
 }
 
-.map-legend {
+.board-page .marker {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  padding: 2px;
   display: grid;
-  gap: 10px;
-  margin: 14px 0 0;
+  place-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform var(--ov-dur-fast) var(--ov-ease-out), background var(--ov-dur-fast), border-color var(--ov-dur-fast);
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.3));
+}
+
+.board-page .marker img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.board-page .marker.fountain {
+  left: 50%;
+  top: 44%;
+}
+
+.board-page .marker.library {
+  left: 71%;
+  top: 28%;
+}
+
+.board-page .marker.supper {
+  left: 31%;
+  top: 64%;
+}
+
+.board-page .marker:hover,
+.board-page .marker.is-active {
+  background: rgba(248, 237, 207, 0.9);
+  border-color: var(--ov-forest);
+  transform: translate(-50%, -56%) scale(1.12);
+  z-index: 3;
+}
+
+.board-page .map-legend {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
   padding: 0;
   list-style: none;
-  color: var(--ink-soft);
-  font-size: 14px;
 }
 
-.map-legend li {
+.board-page .map-legend__btn {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 9px;
-}
-
-.map-legend img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-.requests-panel {
-  grid-area: requests;
-}
-
-.request-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.spot-panel {
-  grid-area: spot;
-  display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 22px;
-  align-items: center;
-  color: var(--paper);
-  background:
-    linear-gradient(rgba(47, 107, 63, 0.94), rgba(47, 107, 63, 0.92)),
-    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.png");
-}
-
-.spot-panel > img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-}
-
-.spot-panel h2 {
-  color: var(--paper);
-}
-
-.spot-panel p {
-  margin: 10px 0 16px;
-  color: color-mix(in srgb, var(--paper) 90%, white 10%);
-}
-
-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 18px;
-  color: var(--ink);
-  font: 700 15px Georgia, "Times New Roman", serif;
-  background:
-    linear-gradient(rgba(231, 198, 106, 0.9), rgba(201, 150, 46, 0.9)),
-    url("../src/assets/orchard-vale/backplates/backplate-button-brass-primary.svg");
-  border: 2px solid var(--ink);
+  padding: 7px 10px;
+  color: var(--ov-ink);
+  font: 700 14px/1.25 var(--ov-ui);
+  text-align: left;
   cursor: pointer;
+  background: rgba(255, 250, 240, 0.55);
+  border: 1px solid rgba(112, 72, 38, 0.35);
+  border-radius: var(--ov-radius-sm);
+  transition: background var(--ov-dur-fast), border-color var(--ov-dur-fast);
 }
 
-button img {
-  width: 22px;
-  height: 22px;
+.board-page .map-legend__btn:hover {
+  background: var(--ov-white);
+  border-color: var(--ov-walnut);
 }
 
-button:hover,
-button:focus-visible {
-  filter: brightness(1.06);
-  outline: 2px solid var(--paper);
-  outline-offset: 2px;
+.board-page .map-legend__btn.is-active {
+  color: var(--ov-forest);
+  background: var(--ov-green-soft);
+  border-color: var(--ov-green);
+  box-shadow: inset 4px 0 0 var(--ov-green);
 }
 
-@media (max-width: 1120px) {
-  .dashboard {
-    grid-template-columns: 260px minmax(0, 1fr);
-    grid-template-areas:
-      "status notices"
-      "status events"
-      "map map"
-      "requests requests"
-      "spot spot";
+.board-page .map-legend__btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex: none;
+}
+
+.board-page .map-callout {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--ov-brass);
+}
+
+.board-page .map-callout strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ov-forest);
+  font-family: var(--ov-ui);
+  font-size: 14px;
+}
+
+.board-page .map-callout p {
+  margin: 0;
+  color: var(--ov-ink-soft);
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+/* Bottom full-width Leave A Note band */
+.board-page .spot-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 164px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 32px);
+}
+
+.board-page .spot-panel > img {
+  width: 164px;
+  height: 164px;
+  object-fit: contain;
+}
+
+.board-page .spot-panel h2 {
+  color: var(--ov-paper);
+}
+
+.board-page .spot-panel p {
+  margin: 8px 0 16px;
+  color: var(--ov-white);
+  max-width: 60ch;
+}
+
+.board-page .pin-form-fields {
+  display: grid;
+  gap: 14px;
+}
+
+@media (max-width: 1060px) {
+  .board-page .dashboard {
+    grid-template-columns: 1fr;
   }
 
-  .request-list {
-    grid-template-columns: 1fr;
+  .board-page .status-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 780px) {
-  .app-header {
-    position: static;
+  .board-page .app-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 
-  .board-hero {
+  .board-page .board-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: var(--ov-space-3);
+  }
+
+  .board-page .hero-lantern {
+    --ov-sprite-size: 76px;
+  }
+
+  .board-page .status-pair {
     grid-template-columns: 1fr;
   }
 
-  .lantern {
-    width: 96px;
-    height: 96px;
-    background-size: 768px 96px;
-  }
-
-  @keyframes lantern-play {
-    to {
-      background-position: -768px 0;
-    }
-  }
-
-  .dashboard {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "status"
-      "notices"
-      "events"
-      "map"
-      "requests"
-      "spot";
-  }
-
-  .status-column {
+  .board-page .spot-panel {
     grid-template-columns: 1fr;
   }
 
-  .spot-panel {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .lantern {
-    animation: none;
-    background-image: url("../src/assets/orchard-vale/motion/static/motion-lantern-flicker-static.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  .board-page .spot-panel > img {
+    width: 132px;
+    height: 132px;
   }
 }

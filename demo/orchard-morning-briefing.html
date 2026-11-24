@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Orchard Vale daily briefing demo with priorities, consulting watch, schedule, email triage, news, lookahead, and source health.">
+  <meta name="description" content="Orchard Vale daily briefing demo with interactive priorities, consulting watch, schedule, email triage, news, lookahead, and source health.">
   <meta name="theme-color" content="#173820">
   <title>Orchard Vale Morning Briefing</title>
-  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
-  <link rel="stylesheet" href="../src/theme/orchard-components.css">
-  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="orchard-morning-briefing.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="orchard-morning-briefing.js" defer></script>
 </head>
 <body class="ov-theme briefing-page">
   <a class="ov-skip-link" href="#main-content">Skip to briefing</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Morning Briefing" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&#8592; All Demos</a>
+  </nav>
+
   <div class="ov-page">
     <main class="ov-shell ov-frame" id="main-content">
       <header class="ov-header">
         <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
-          <img src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.png" alt="Mail and calendar crest" width="96" height="96" fetchpriority="high" decoding="async">
+          <img src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.webp" alt="Mail and calendar crest" width="96" height="96" fetchpriority="high" decoding="async">
           <div>
             <p class="ov-kicker">The Daily Steward</p>
             <h1 id="page-title">Good morning.</h1>
@@ -25,7 +30,7 @@
           </div>
         </section>
         <section class="ov-panel ov-header__stats" aria-label="Briefing source summary">
-          <article class="ov-panel ov-stat"><strong>3</strong><span>Priorities</span></article>
+          <article class="ov-panel ov-stat"><strong id="stat-priorities">3</strong><span id="stat-priorities-label">Priorities left</span></article>
           <article class="ov-panel ov-stat"><strong>4h</strong><span>Open focus time</span></article>
           <article class="ov-panel ov-stat"><strong>Fresh</strong><span>All sources checked</span></article>
         </section>
@@ -36,30 +41,65 @@
       <div class="ov-dashboard-grid">
         <div class="ov-main-column">
           <section class="ov-panel ov-panel--aged" aria-labelledby="focus-title">
-            <h2 class="ov-panel-title" id="focus-title">Today's Focus</h2>
+            <h2 class="ov-panel-title" id="focus-title">
+              <span>Today's Focus</span>
+              <span class="briefing-progress" id="focus-progress" aria-live="polite">0 / 3 done</span>
+            </h2>
             <div class="ov-panel__body">
-              <article class="ov-priority">
-                <div class="ov-priority__number ov-priority__number--urgent">1</div>
-                <div><h3>Send the revised workshop outline before 10:00</h3><p>The client needs the agenda before inviting department leads.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--red">Time-sensitive</span></div></div>
-              </article>
-              <article class="ov-priority">
-                <div class="ov-priority__number ov-priority__number--good">2</div>
-                <div><h3>Protect the long afternoon focus block</h3><p>Use 1:00–4:00 for the implementation notes while the calendar is clear.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span><span class="ov-chip ov-chip--green">Focus</span></div></div>
-              </article>
-              <article class="ov-priority">
-                <div class="ov-priority__number">3</div>
-                <div><h3>Confirm Saturday family logistics</h3><p>A shared-calendar event still has an uncertain departure time.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--purple">Family</span></div></div>
-              </article>
+              <div class="focus-list" id="focus-list">
+                <article class="ov-priority focus-item" data-priority-item>
+                  <div class="ov-priority__number ov-priority__number--urgent" aria-hidden="true">1</div>
+                  <div class="focus-item__content">
+                    <label class="ov-check focus-check">
+                      <input type="checkbox" data-priority-check>
+                      <span class="focus-check__title">Send the revised workshop outline before 10:00 AM</span>
+                    </label>
+                    <p>The client needs the agenda before inviting department leads.</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--red">Time-sensitive</span></div>
+                  </div>
+                </article>
+                <article class="ov-priority focus-item" data-priority-item>
+                  <div class="ov-priority__number ov-priority__number--good" aria-hidden="true">2</div>
+                  <div class="focus-item__content">
+                    <label class="ov-check focus-check">
+                      <input type="checkbox" data-priority-check>
+                      <span class="focus-check__title">Protect the long afternoon focus block</span>
+                    </label>
+                    <p>Use 1:00–4:00 PM for the implementation notes while the calendar is clear.</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span><span class="ov-chip ov-chip--green">Focus</span></div>
+                  </div>
+                </article>
+                <article class="ov-priority focus-item" data-priority-item>
+                  <div class="ov-priority__number" aria-hidden="true">3</div>
+                  <div class="focus-item__content">
+                    <label class="ov-check focus-check">
+                      <input type="checkbox" data-priority-check>
+                      <span class="focus-check__title">Confirm Saturday family logistics</span>
+                    </label>
+                    <p>A shared-calendar event still has an uncertain departure time.</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--purple">Family</span></div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="ov-empty-state focus-complete" id="focus-complete" hidden>
+                <img class="ov-empty-state__art" src="../src/assets/orchard-vale/empty-states/empty-badger-checklist-complete-800.webp" alt="Badger steward holding a completed checklist" width="240" height="180" decoding="async" loading="lazy">
+                <h3 class="ov-empty-state__title">All morning priorities complete</h3>
+                <p>Every priority on today's ledger is checked off. Enjoy the clear afternoon block—or reset the briefing to walk through it again.</p>
+                <div class="ov-empty-state__actions">
+                  <button type="button" class="ov-button ov-button--brass" id="reset-briefing-btn">Reset briefing</button>
+                </div>
+              </div>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="schedule-title">
             <h2 class="ov-panel-title" id="schedule-title">Schedule</h2>
             <div class="ov-panel__body">
-              <article class="ov-event"><div class="ov-time">8:30–9:00</div><div><h3>Plan the day</h3><p class="ov-muted">Review the outline and send the workshop update.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span></div></div></article>
-              <article class="ov-event"><div class="ov-time">10:30–11:15</div><div><h3>Client workflow review</h3><p class="ov-muted">Decision needed: pilot scope and review owner.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span></div></div></article>
-              <article class="ov-event"><div class="ov-time">11:15–1:00</div><div><h3>Open work block</h3><p class="ov-muted">Best use: meeting notes, lunch, and short follow-ups.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span></div></div></article>
-              <article class="ov-event"><div class="ov-time">1:00–4:00</div><div><h3>Protected focus block</h3><p class="ov-muted">No opaque calendar events overlap this window.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span><span class="ov-chip ov-chip--blue">Focus</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">8:30–9:00 AM</div><div><h3>Plan the day</h3><p class="ov-muted">Review the outline and send the workshop update.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Personal</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">10:30–11:15 AM</div><div><h3>Client workflow review</h3><p class="ov-muted">Decision needed: pilot scope and review owner.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">11:15 AM–1:00 PM</div><div><h3>Open work block</h3><p class="ov-muted">Best use: meeting notes, lunch, and short follow-ups.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span></div></div></article>
+              <article class="ov-event"><div class="ov-time">1:00–4:00 PM</div><div><h3>Protected focus block</h3><p class="ov-muted">No opaque calendar events overlap this window.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Free</span><span class="ov-chip ov-chip--blue">Focus</span></div></div></article>
             </div>
           </section>
 
@@ -77,24 +117,143 @@
           <section class="ov-panel" aria-labelledby="consulting-title">
             <h2 class="ov-panel-title" id="consulting-title">Consulting Watch</h2>
             <div class="ov-panel__body">
-              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span><div><h3>Workshop approval path</h3><p>The sponsor replied, but the pilot owner is still unnamed. Ask for one accountable reviewer during the 10:30 call.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--amber">Decision</span></div><ul><li>Confirm the pilot group.</li><li>Agree on one acceptance measure.</li><li>Send the action note after the call.</li></ul></div></article>
-              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><h3>Platform release worth scanning</h3><p>A new connector option may simplify the proposed document workflow. Read the primary release note before changing the recommendation.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--blue">News</span></div><p><a href="https://example.com/release-note">Primary release note</a></p></div></article>
+              <article class="ov-list-item">
+                <span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span>
+                <div>
+                  <h3>Workshop approval path</h3>
+                  <p>The sponsor replied, but the pilot owner is still unnamed. Ask for one accountable reviewer during the 10:30 call.</p>
+                  <div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--amber">Decision</span></div>
+                  <ul>
+                    <li>Confirm the pilot group.</li>
+                    <li>Agree on one acceptance measure.</li>
+                    <li>Send the action note after the call.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="ov-list-item">
+                <span class="ov-status-dot" aria-hidden="true"></span>
+                <div>
+                  <h3>Platform release worth scanning</h3>
+                  <p>A new connector option may simplify the proposed document workflow. Read the primary release note before changing the recommendation.</p>
+                  <div class="ov-chip-row"><span class="ov-chip ov-chip--green">Consulting</span><span class="ov-chip ov-chip--blue">Release</span></div>
+                  <details class="ov-details">
+                    <summary>Read release note summary</summary>
+                    <div class="ov-details__content">
+                      <strong>Document Sync v4.2 (July 15):</strong> Adds read-only folder mirroring and webhook retries without requiring a custom bridge. Verify rate limits before recommending it for the pilot.
+                    </div>
+                  </details>
+                </div>
+              </article>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="email-title">
-            <h2 class="ov-panel-title" id="email-title">Email</h2>
+            <h2 class="ov-panel-title" id="email-title">
+              <span>Email</span>
+              <span class="briefing-progress" id="email-count">3 active</span>
+            </h2>
             <div class="ov-panel__body">
-              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--bad" aria-hidden="true"></span><div><p class="ov-kicker email-kicker">Urgent</p><h3>Workshop outline approval</h3><p>A direct question is waiting: can department leads be invited today?</p><div class="ov-chip-row"><span class="ov-chip ov-chip--red">Needs response</span><span class="ov-chip ov-chip--green">Consulting</span></div><details class="ov-details"><summary>Show suggested reply</summary><div class="ov-details__content">Yes—the revised outline is ready. Please invite the department leads, and I will send the final agenda before 10:00.</div></details></div></article>
-              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><p class="ov-kicker email-kicker">Waiting on others</p><h3>Venue confirmation</h3><p>The coordinator owns the next action and expects to reply Friday.</p><div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Waiting</span></div></div></article>
+              <div class="email-filters" role="group" aria-label="Filter email triage">
+                <button type="button" class="triage-chip" data-email-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="triage-chip" data-email-filter="urgent" aria-pressed="false">Urgent</button>
+                <button type="button" class="triage-chip" data-email-filter="needs-reply" aria-pressed="false">Needs Reply</button>
+                <button type="button" class="triage-chip" data-email-filter="waiting" aria-pressed="false">Waiting</button>
+              </div>
+
+              <div class="email-list" id="email-list">
+                <article class="ov-list-item email-item" data-email-tags="urgent needs-reply">
+                  <span class="ov-status-dot ov-status-dot--bad" aria-hidden="true"></span>
+                  <div>
+                    <div class="email-item__head">
+                      <p class="ov-kicker email-kicker">Urgent</p>
+                      <button type="button" class="email-done-btn" data-email-handle>Mark handled</button>
+                    </div>
+                    <h3>Workshop outline approval</h3>
+                    <p>A direct question is waiting: can department leads be invited today?</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--red">Needs response</span><span class="ov-chip ov-chip--green">Consulting</span></div>
+                    <details class="ov-details">
+                      <summary>Show suggested reply</summary>
+                      <div class="ov-details__content">
+                        <p class="reply-text" id="reply-workshop">Yes—the revised outline is ready. Please invite the department leads, and I will send the final agenda before 10:00 AM.</p>
+                        <button type="button" class="ov-button ov-button--paper ov-button--sm reply-copy-btn" data-ov-copy data-ov-copy-target="#reply-workshop" data-ov-copy-toast="Workshop reply copied to clipboard.">Copy reply</button>
+                      </div>
+                    </details>
+                  </div>
+                </article>
+
+                <article class="ov-list-item email-item" data-email-tags="needs-reply">
+                  <span class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></span>
+                  <div>
+                    <div class="email-item__head">
+                      <p class="ov-kicker email-kicker--soft">Needs reply</p>
+                      <button type="button" class="email-done-btn" data-email-handle>Mark handled</button>
+                    </div>
+                    <h3>Saturday departure window</h3>
+                    <p>Sam asked whether we are meeting at the north gate at 9:30 AM or 10:00 AM.</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--amber">Needs response</span><span class="ov-chip ov-chip--purple">Family</span></div>
+                    <details class="ov-details">
+                      <summary>Show suggested reply</summary>
+                      <div class="ov-details__content">
+                        <p class="reply-text" id="reply-saturday">Let's aim for 9:30 AM at the north gate so we have time for coffee before the market opens.</p>
+                        <button type="button" class="ov-button ov-button--paper ov-button--sm reply-copy-btn" data-ov-copy data-ov-copy-target="#reply-saturday" data-ov-copy-toast="Family reply copied to clipboard.">Copy reply</button>
+                      </div>
+                    </details>
+                  </div>
+                </article>
+
+                <article class="ov-list-item email-item" data-email-tags="waiting">
+                  <span class="ov-status-dot" aria-hidden="true"></span>
+                  <div>
+                    <div class="email-item__head">
+                      <p class="ov-kicker email-kicker--soft">Waiting on others</p>
+                      <button type="button" class="email-done-btn" data-email-handle>Mark handled</button>
+                    </div>
+                    <h3>Venue confirmation</h3>
+                    <p>The coordinator owns the next action and expects to reply Friday.</p>
+                    <div class="ov-chip-row"><span class="ov-chip ov-chip--blue">Waiting</span></div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="ov-empty-state ov-empty-state--compact email-empty" id="email-empty" hidden>
+                <img class="ov-empty-state__art" src="../src/assets/orchard-vale/empty-states/empty-fox-mail-sorted-800.webp" alt="Fox courier beside a neatly sorted mail tray" width="168" height="126" decoding="async" loading="lazy">
+                <h3 class="ov-empty-state__title">Mail tray sorted</h3>
+                <p id="email-empty-msg">No messages remain in this view.</p>
+                <div class="ov-empty-state__actions">
+                  <button type="button" class="ov-button ov-button--paper ov-button--sm" id="email-show-all">Show all</button>
+                  <button type="button" class="ov-button ov-button--brass ov-button--sm" id="email-restore-btn" hidden>Restore handled</button>
+                </div>
+              </div>
             </div>
           </section>
 
           <section class="ov-panel" aria-labelledby="news-title">
             <h2 class="ov-panel-title" id="news-title">News</h2>
             <div class="ov-panel__body">
-              <article class="ov-list-item"><span class="ov-status-dot" aria-hidden="true"></span><div><h3><a href="https://example.com/ontario-business">Ontario business update</a></h3><p>A new small-business guidance page is available; scan it before the next client planning call.</p><p class="ov-muted">Example Business Journal · July 16</p></div></article>
-              <article class="ov-list-item"><span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span><div><h3><a href="https://example.com/local-economy">Regional economy brief</a></h3><p>The latest summary signals steady local hiring with continued cost pressure.</p><p class="ov-muted">Example Economic Office · July 15</p></div></article>
+              <article class="ov-list-item">
+                <span class="ov-status-dot" aria-hidden="true"></span>
+                <div>
+                  <h3>Ontario business update</h3>
+                  <p>A new small-business guidance page is available; scan it before the next client planning call.</p>
+                  <p class="ov-muted">Regional Business Digest · July 16</p>
+                  <details class="ov-details">
+                    <summary>View key highlights</summary>
+                    <div class="ov-details__content">Updated digital-adoption grant eligibility for teams under 50 staff; application window stays open through September 30.</div>
+                  </details>
+                </div>
+              </article>
+              <article class="ov-list-item">
+                <span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span>
+                <div>
+                  <h3>Regional economy brief</h3>
+                  <p>The latest summary signals steady local hiring with continued cost pressure.</p>
+                  <p class="ov-muted">Municipal Economic Office · July 15</p>
+                  <details class="ov-details">
+                    <summary>View key highlights</summary>
+                    <div class="ov-details__content">Service-sector hiring rose 1.4% quarter-over-quarter while commercial lease renewals averaged 3.2% higher across mid-sized offices.</div>
+                  </details>
+                </div>
+              </article>
             </div>
           </section>
 

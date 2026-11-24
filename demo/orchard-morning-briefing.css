@@ -1,5 +1,58 @@
+/* Orchard Vale Morning Briefing — built on Theme v2.0. */
+
 .briefing-page .briefing-note {
   margin: 12px 0 0;
+}
+
+.briefing-page .briefing-progress {
+  padding: 3px 9px;
+  color: var(--ov-ink);
+  font: 800 var(--ov-text-xs)/1.2 var(--ov-ui);
+  letter-spacing: 0.03em;
+  text-shadow: none;
+  background: var(--ov-paper);
+  border: 1px solid var(--ov-brass-dark);
+  border-radius: var(--ov-radius-pill);
+}
+
+/* Interactive checkable priorities */
+.briefing-page .focus-item__content {
+  min-width: 0;
+}
+
+.briefing-page .focus-check {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 0;
+  margin-bottom: 4px;
+  color: var(--ov-forest);
+  font-family: var(--ov-display);
+  font-size: var(--ov-text-lg);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.briefing-page .focus-check input {
+  margin-top: 2px;
+}
+
+.briefing-page .focus-item.is-done .focus-check__title {
+  color: var(--ov-ink-muted);
+  text-decoration: line-through;
+}
+
+.briefing-page .focus-item.is-done p {
+  color: var(--ov-ink-muted);
+}
+
+.briefing-page .focus-item.is-done .ov-priority__number {
+  background: var(--ov-green);
+  opacity: 0.78;
+}
+
+.briefing-page .focus-complete {
+  margin-top: 4px;
 }
 
 .briefing-page .compact-stack {
@@ -11,9 +64,85 @@
   border-top: 1px solid rgba(112, 72, 38, 0.25);
 }
 
+/* Email triage filters and controls */
+.briefing-page .email-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.briefing-page .triage-chip {
+  min-height: 30px;
+  padding: 4px 10px;
+  color: var(--ov-ink);
+  font: 800 var(--ov-text-xs)/1.1 var(--ov-ui);
+  cursor: pointer;
+  background: var(--ov-paper-warm);
+  border: 1px solid rgba(112, 72, 38, 0.55);
+  border-radius: var(--ov-radius-pill);
+  transition: background var(--ov-dur-fast), color var(--ov-dur-fast), border-color var(--ov-dur-fast);
+}
+
+.briefing-page .triage-chip:hover {
+  background: var(--ov-white);
+  border-color: var(--ov-walnut);
+}
+
+.briefing-page .triage-chip[aria-pressed="true"] {
+  color: var(--ov-paper);
+  background: var(--ov-forest);
+  border-color: var(--ov-forest-black);
+  --ov-focus: var(--ov-focus-dark);
+}
+
+.briefing-page .email-item__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
 .briefing-page .email-kicker {
-  margin-bottom: 4px;
-  color: var(--ov-red);
+  margin-bottom: 0;
+  color: var(--ov-red-ink);
+}
+
+.briefing-page .email-kicker--soft {
+  margin-bottom: 0;
+  color: var(--ov-brass-dark);
+}
+
+.briefing-page .email-done-btn {
+  padding: 2px 8px;
+  color: var(--ov-ink-soft);
+  font: 700 var(--ov-text-xs)/1.2 var(--ov-ui);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(112, 72, 38, 0.4);
+  border-radius: var(--ov-radius-sm);
+}
+
+.briefing-page .email-done-btn:hover {
+  color: var(--ov-ink);
+  background: var(--ov-paper-warm);
+  border-color: var(--ov-walnut);
+}
+
+.briefing-page .reply-text {
+  margin: 0 0 10px;
+  color: var(--ov-ink);
+  font-size: 14px;
+  line-height: 1.48;
+}
+
+.briefing-page .reply-copy-btn {
+  margin-top: 2px;
+}
+
+.briefing-page .email-empty {
+  margin-top: 8px;
 }
 
 .briefing-page .source-health > summary {
