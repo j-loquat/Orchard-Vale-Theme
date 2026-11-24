@@ -3,315 +3,500 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guildhall Planner Projects & Team Workflow</title>
+  <meta name="description" content="Orchard Vale Guildhall Project Board: interactive 5-lane Kanban workflow with sprint capacity tracking, live filters, drag-and-drop, work item drawer, release milestones, and activity chronicle.">
+  <meta name="theme-color" content="#173820">
+  <title>Guildhall Project Board — Orchard Vale</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
   <link rel="stylesheet" href="guildhall-project-board.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="guildhall-project-board.js" defer></script>
 </head>
-<body>
-  <main class="project-shell" aria-label="Guildhall Planner project board">
-    <header class="project-header">
-      <section class="brand-panel" aria-labelledby="page-title">
-        <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.png" alt="" decoding="async">
-        <div>
-          <h1 id="page-title">Guildhall Planner</h1>
-          <p>Projects & Team Workflow</p>
+<body class="ov-theme board-page">
+  <a class="ov-skip-link" href="#main-content">Skip to project board</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Guildhall Project Board" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Guildhall Project Board</span>
+  </nav>
+
+  <div class="ov-page board-page-wrap">
+    <main class="ov-shell ov-frame board-shell" id="main-content">
+      <!-- Compact Sprint Command Bar -->
+      <header class="ov-title-banner board-command-bar" aria-label="Sprint command bar">
+        <div class="command-brand">
+          <img
+            class="command-brand__crest"
+            src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.webp"
+            alt="Guildhall Project Board crest"
+            width="60"
+            height="60"
+            fetchpriority="high"
+            decoding="async">
+          <div class="command-brand__copy">
+            <p class="ov-kicker">Sprint 18 &middot; Orchard Foundations</p>
+            <h1 id="page-title">Guildhall Project Board</h1>
+          </div>
         </div>
-      </section>
 
-      <section class="sprint-panel" aria-label="Sprint status">
-        <div>
-          <strong>Sprint 18: Orchard Foundations</strong>
-          <span>12 days left</span>
-        </div>
-        <div class="sprint-meter" aria-label="Sprint progress at sixty two percent"><span style="width: 62%"></span></div>
-        <b>62%</b>
-      </section>
-
-      <section class="capacity-panel" aria-label="Team capacity">
-        <strong>Team Capacity</strong>
-        <div class="capacity-faces">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger team member" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.png" alt="Fox team member" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit team member" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Owl team member" decoding="async">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.png" alt="Mouse team member" decoding="async">
-        </div>
-        <span>23 / 30 pts</span>
-      </section>
-
-      <section class="release-panel" aria-label="Upcoming releases">
-        <strong>Upcoming Releases</strong>
-        <p><span>v1.4.0</span> May 30, 2025</p>
-        <p><span>v1.5.0</span> Jun 27, 2025</p>
-      </section>
-
-      <section class="quick-create" aria-label="Quick create">
-        <button type="button">Quick Create ▾</button>
-        <div>
-          <span><img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" decoding="async">Task</span>
-          <span><img src="../src/assets/orchard-vale/icons/icon-workflow-bug-32.svg" alt="" decoding="async">Bug</span>
-          <span><img src="../src/assets/orchard-vale/icons/icon-workflow-epic-32.svg" alt="" decoding="async" loading="lazy">Epic</span>
-          <span><img src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt="" decoding="async" loading="lazy">Note</span>
-        </div>
-      </section>
-    </header>
-
-    <section class="control-band" aria-label="Project filters">
-      <article>
-        <h2>Workspaces</h2>
-        <a class="active" href="#"><img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="" decoding="async" loading="lazy"> Orchard Vale Guild</a>
-        <a href="#"><img src="../src/assets/orchard-vale/icons/icon-infra-code-32.svg" alt="" decoding="async" loading="lazy"> Platform Core</a>
-        <a href="#"><img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="" decoding="async" loading="lazy"> Customer Portal</a>
-        <a href="#"><img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" decoding="async" loading="lazy"> Internal Tools</a>
-      </article>
-      <article>
-        <h2>Teams</h2>
-        <a href="#"><img src="../src/assets/orchard-vale/motifs/project/motif-project-work-board-96.svg" alt="" decoding="async" loading="lazy"> Builders <small>8 members</small></a>
-        <a href="#"><img src="../src/assets/orchard-vale/motifs/research/motif-research-books-96.svg" alt="" decoding="async" loading="lazy"> Scribes <small>5 members</small></a>
-        <a href="#"><img src="../src/assets/orchard-vale/data-viz/category-symbol-leaf.svg" alt="" decoding="async" loading="lazy"> Rangers <small>6 members</small></a>
-        <a href="#"><img src="../src/assets/orchard-vale/heraldry/crest-shield-check-fullcolor-512.png" alt="" decoding="async" loading="lazy"> Stewards <small>3 members</small></a>
-      </article>
-      <article>
-        <h2>Filters</h2>
-        <div class="filter-grid">
-          <span>My Tasks <b>15</b></span>
-          <span>Assigned to Me <b>7</b></span>
-          <span>Due This Week <b>9</b></span>
-          <span>High Priority <b>6</b></span>
-          <span>Blocked <b>3</b></span>
-          <span>Recently Updated <b>12</b></span>
-        </div>
-      </article>
-      <article class="saved-view">
-        <h2>Saved View</h2>
-        <button type="button">Sprint Board ★</button>
-      </article>
-    </section>
-
-    <section class="kanban-section" aria-labelledby="board-title">
-      <div class="board-heading">
-        <div>
-          <p class="kicker">Sprint Board</p>
-          <h2 id="board-title">Orchard Foundations Kanban</h2>
-        </div>
-        <div class="board-tools">
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-nav-filters-32.svg" alt="" decoding="async" loading="lazy">Filters</button>
-          <button type="button"><img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" decoding="async" loading="lazy">Add Card</button>
-        </div>
-      </div>
-
-      <div class="kanban-board">
-        <section class="lane backlog" aria-labelledby="lane-backlog">
-          <header><h3 id="lane-backlog">Backlog</h3><span>21</span></header>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1023</small><span class="tag purple">Enhancement</span></div>
-            <h4>Guild Onboarding Flow</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">5 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-robin-courier-perched-1024.png" alt="Robin courier project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1042</small><span class="tag purple">Enhancement</span></div>
-            <h4>Audit Log & History</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="" decoding="async" loading="lazy">Scribes</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl scholar project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1077</small><span class="tag purple">Enhancement</span></div>
-            <h4>Advanced Search Filters</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-infra-shield-32.svg" alt="" decoding="async" loading="lazy">Rangers</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox implementer project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card bug">
-            <div><small>BUG-2051</small><span class="tag red">Bug</span></div>
-            <h4>Fix export date format</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" decoding="async" loading="lazy">2 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse clerk project helper" decoding="async" loading="lazy">
-          </article>
-        </section>
-
-        <section class="lane progress" aria-labelledby="lane-progress">
-          <header><h3 id="lane-progress">In Progress</h3><span>5</span></header>
-          <article class="task-card selected enhancement">
-            <div><small>PLAT-1018</small><span class="tag purple">Enhancement</span></div>
-            <h4>Guildhall Dashboard</h4>
-            <div class="subtask-meter"><span style="width: 40%"></span></div>
-            <p><img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">5 pts · 2 / 5 subtasks</p>
-            <div class="mini-assignees">
-              <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Badger assignee" decoding="async" loading="lazy">
-              <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Rabbit assignee" decoding="async" loading="lazy">
+        <section class="command-sprint" aria-label="Sprint capacity and release countdown">
+          <div class="command-sprint__top">
+            <strong class="command-sprint__label">Sprint Capacity</strong>
+            <span class="command-release-pill" id="release-countdown">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-workflow-release-32.svg" alt="" width="14" height="14" decoding="async">
+              </span>
+              v1.4.0 &middot; 12 days left
+            </span>
+          </div>
+          <div class="command-sprint__meter-row">
+            <div
+              class="ov-meter command-sprint__meter"
+              id="sprint-meter"
+              role="progressbar"
+              aria-label="Sprint story points completed"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="24">
+              <span id="sprint-meter-fill" style="width: 24%"></span>
             </div>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger orchestrator project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1031</small><span class="tag purple">Enhancement</span></div>
-            <h4>Task Comments & Mentions</h4>
-            <div class="subtask-meter"><span style="width: 60%"></span></div>
-            <p><img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">3 pts · 3 / 5 subtasks</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.png" alt="Rabbit planner project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card bug">
-            <div><small>BUG-2044</small><span class="tag red">Bug</span></div>
-            <h4>Search results pagination</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">2 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-otter-success-standing-1024.png" alt="Otter facilitator project helper" decoding="async" loading="lazy">
-          </article>
+            <span class="command-sprint__stats ov-mono" id="sprint-capacity-text">11 / 46 pts (24%)</span>
+          </div>
+          <div class="command-sprint__roster">
+            <div class="command-avatars" aria-label="Active sprint stewards">
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp" alt="Rook" width="26" height="26" decoding="async">
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.webp" alt="Poppy" width="26" height="26" decoding="async">
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp" alt="Rowan" width="26" height="26" decoding="async">
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp" alt="Thistle" width="26" height="26" decoding="async">
+              <img src="../src/assets/orchard-vale/characters/avatars/avatar-mouse-clerk-cheerful-512.webp" alt="Pip" width="26" height="26" decoding="async">
+            </div>
+            <span class="command-sprint__active-note" id="sprint-active-summary">15 items &middot; 3 blocked</span>
+          </div>
         </section>
 
-        <section class="lane review" aria-labelledby="lane-review">
-          <header><h3 id="lane-review">Review</h3><span>4</span></header>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1007</small><span class="tag purple">Enhancement</span></div>
-            <h4>Role-based Permissions</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-infra-crown-32.svg" alt="" decoding="async" loading="lazy">5 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox reviewer project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card enhancement">
-            <div><small>PLAT-1039</small><span class="tag purple">Enhancement</span></div>
-            <h4>Notifications Center</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt="" decoding="async" loading="lazy">2 comments</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse notification project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card bug">
-            <div><small>BUG-2033</small><span class="tag red">Bug</span></div>
-            <h4>Sidebar overflow on small screens</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-workflow-bug-32.svg" alt="" decoding="async" loading="lazy">1 pt</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-mole-engineer-kneeling-1024.png" alt="Mole engineer project helper" decoding="async" loading="lazy">
-          </article>
+        <div class="command-actions">
+          <div class="command-search">
+            <label class="ov-sr-only" for="board-search">Search work items</label>
+            <span class="ov-icon-badge ov-icon-badge--sm command-search__icon" aria-hidden="true">
+              <img src="../src/assets/orchard-vale/icons/icon-nav-search-32.svg" alt="" width="15" height="15" decoding="async">
+            </span>
+            <input
+              class="ov-input command-search__input"
+              id="board-search"
+              type="search"
+              placeholder="Search key, title, assignee..."
+              autocomplete="off">
+          </div>
+
+          <button
+            class="ov-button ov-button--brass command-create-btn"
+            id="quick-create-open"
+            type="button"
+            data-ov-dialog-open="quick-create-dialog">
+            <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+              <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="15" height="15" decoding="async">
+            </span>
+            <span>+ Quick Create</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- True 3-Column Desktop Shell -->
+      <div class="board-workspace">
+        <!-- Left Rail: Workspaces & Filters -->
+        <aside class="board-rail-left" aria-label="Workspaces and filters">
+          <section class="ov-panel" aria-labelledby="workspaces-title">
+            <h2 class="ov-panel-title" id="workspaces-title">
+              <span>Workspaces</span>
+            </h2>
+            <div class="ov-panel__body rail-body">
+              <ul class="workspace-list" id="workspace-list" role="list">
+                <li>
+                  <button class="workspace-btn" type="button" data-workspace="all" aria-pressed="true">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span class="workspace-btn__name">Orchard Vale Guild</span>
+                    <span class="workspace-btn__count" data-ws-count="all">15</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="workspace-btn" type="button" data-workspace="Platform Core" aria-pressed="false">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-infra-code-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span class="workspace-btn__name">Platform Core</span>
+                    <span class="workspace-btn__count" data-ws-count="Platform Core">6</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="workspace-btn" type="button" data-workspace="Customer Portal" aria-pressed="false">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span class="workspace-btn__name">Customer Portal</span>
+                    <span class="workspace-btn__count" data-ws-count="Customer Portal">5</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="workspace-btn" type="button" data-workspace="Internal Tools" aria-pressed="false">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span class="workspace-btn__name">Internal Tools</span>
+                    <span class="workspace-btn__count" data-ws-count="Internal Tools">4</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="ov-panel" aria-labelledby="filters-title">
+            <h2 class="ov-panel-title" id="filters-title">
+              <span>Filters</span>
+              <span class="ov-chip rail-active-badge" id="active-filter-badge" hidden>0 active</span>
+            </h2>
+            <div class="ov-panel__body rail-body filter-stack">
+              <div class="filter-group">
+                <h3 class="filter-group__title">Priority &amp; State</h3>
+                <div class="filter-chips" role="group" aria-label="Filter by priority">
+                  <button class="filter-chip" type="button" data-filter-kind="priority" data-filter-value="High" aria-pressed="false">High</button>
+                  <button class="filter-chip" type="button" data-filter-kind="priority" data-filter-value="Medium" aria-pressed="false">Medium</button>
+                  <button class="filter-chip" type="button" data-filter-kind="priority" data-filter-value="Low" aria-pressed="false">Low</button>
+                  <button class="filter-chip filter-chip--danger" type="button" data-filter-kind="blocked" data-filter-value="true" aria-pressed="false">Blocked</button>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h3 class="filter-group__title">Work Type</h3>
+                <div class="filter-chips" role="group" aria-label="Filter by type">
+                  <button class="filter-chip" type="button" data-filter-kind="type" data-filter-value="Enhancement" aria-pressed="false">Enhancement</button>
+                  <button class="filter-chip" type="button" data-filter-kind="type" data-filter-value="Bug" aria-pressed="false">Bug</button>
+                  <button class="filter-chip" type="button" data-filter-kind="type" data-filter-value="Task" aria-pressed="false">Task</button>
+                  <button class="filter-chip" type="button" data-filter-kind="type" data-filter-value="Epic" aria-pressed="false">Epic</button>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h3 class="filter-group__title">Assignee</h3>
+                <div class="assignee-filter-list" id="assignee-filter-list" role="group" aria-label="Filter by assignee">
+                  <!-- Populated by guildhall-project-board.js -->
+                </div>
+              </div>
+
+              <button class="ov-button ov-button--paper ov-button--sm filter-clear-btn" id="clear-filters-btn" type="button" disabled>
+                Clear filters
+              </button>
+            </div>
+          </section>
+        </aside>
+
+        <!-- Center: 5-Lane Kanban Board -->
+        <section class="ov-panel board-center" aria-labelledby="kanban-heading">
+          <div class="ov-panel-title board-center__header">
+            <div class="board-center__title-wrap">
+              <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                <img src="../src/assets/orchard-vale/icons/icon-workflow-sprint-32.svg" alt="" width="16" height="16" decoding="async">
+              </span>
+              <h2 id="kanban-heading">Sprint 18 Kanban</h2>
+            </div>
+            <div class="board-center__meta">
+              <span class="board-visible-count" id="board-visible-count">Showing 15 of 15 items</span>
+            </div>
+          </div>
+
+          <div class="board-center__body">
+            <div class="board-empty-host" id="board-empty-host" hidden>
+              <div class="ov-empty-state">
+                <img
+                  class="ov-empty-state__art"
+                  src="../src/assets/orchard-vale/empty-states/empty-badger-checklist-complete-800.webp"
+                  alt="Badger steward inspecting a tidy completed checklist"
+                  width="240"
+                  height="180"
+                  decoding="async">
+                <h3 class="ov-empty-state__title">No matching guild items</h3>
+                <p>No cards match your current workspace, search query, and filter selection. Reset filters or post a fresh work item.</p>
+                <div class="ov-empty-state__actions">
+                  <button class="ov-button ov-button--brass ov-button--sm" id="empty-clear-filters-btn" type="button">Clear all filters</button>
+                  <button class="ov-button ov-button--paper ov-button--sm" type="button" data-ov-dialog-open="quick-create-dialog">+ Quick Create</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="kanban-scroll" id="kanban-scroll">
+              <div class="kanban-grid" id="kanban-grid">
+                <section class="kanban-lane" data-lane="Backlog" aria-labelledby="lane-heading-backlog">
+                  <header class="kanban-lane__header kanban-lane__header--backlog">
+                    <div class="kanban-lane__title-row">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-data-ledger-32.svg" alt="" width="15" height="15" decoding="async">
+                      </span>
+                      <h3 id="lane-heading-backlog">Backlog</h3>
+                    </div>
+                    <div class="kanban-lane__controls">
+                      <span class="kanban-lane__count" data-lane-count="Backlog">0</span>
+                      <button class="lane-collapse-btn" type="button" data-lane-toggle="Backlog" aria-expanded="true" aria-controls="lane-list-Backlog" aria-label="Toggle Backlog lane">
+                        <span aria-hidden="true">&#9662;</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div class="kanban-lane__list" id="lane-list-Backlog" data-lane-drop="Backlog"></div>
+                </section>
+
+                <section class="kanban-lane" data-lane="Ready" aria-labelledby="lane-heading-ready">
+                  <header class="kanban-lane__header kanban-lane__header--ready">
+                    <div class="kanban-lane__title-row">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" width="15" height="15" decoding="async">
+                      </span>
+                      <h3 id="lane-heading-ready">Ready</h3>
+                    </div>
+                    <div class="kanban-lane__controls">
+                      <span class="kanban-lane__count" data-lane-count="Ready">0</span>
+                      <button class="lane-collapse-btn" type="button" data-lane-toggle="Ready" aria-expanded="true" aria-controls="lane-list-Ready" aria-label="Toggle Ready lane">
+                        <span aria-hidden="true">&#9662;</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div class="kanban-lane__list" id="lane-list-Ready" data-lane-drop="Ready"></div>
+                </section>
+
+                <section class="kanban-lane" data-lane="In Progress" aria-labelledby="lane-heading-in-progress">
+                  <header class="kanban-lane__header kanban-lane__header--progress">
+                    <div class="kanban-lane__title-row">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-status-in-progress-32.svg" alt="" width="15" height="15" decoding="async">
+                      </span>
+                      <h3 id="lane-heading-in-progress">In Progress</h3>
+                    </div>
+                    <div class="kanban-lane__controls">
+                      <span class="kanban-lane__count" data-lane-count="In Progress">0</span>
+                      <button class="lane-collapse-btn" type="button" data-lane-toggle="In Progress" aria-expanded="true" aria-controls="lane-list-In-Progress" aria-label="Toggle In Progress lane">
+                        <span aria-hidden="true">&#9662;</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div class="kanban-lane__list" id="lane-list-In-Progress" data-lane-drop="In Progress"></div>
+                </section>
+
+                <section class="kanban-lane" data-lane="In Review" aria-labelledby="lane-heading-in-review">
+                  <header class="kanban-lane__header kanban-lane__header--review">
+                    <div class="kanban-lane__title-row">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-status-review-32.svg" alt="" width="15" height="15" decoding="async">
+                      </span>
+                      <h3 id="lane-heading-in-review">In Review</h3>
+                    </div>
+                    <div class="kanban-lane__controls">
+                      <span class="kanban-lane__count" data-lane-count="In Review">0</span>
+                      <button class="lane-collapse-btn" type="button" data-lane-toggle="In Review" aria-expanded="true" aria-controls="lane-list-In-Review" aria-label="Toggle In Review lane">
+                        <span aria-hidden="true">&#9662;</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div class="kanban-lane__list" id="lane-list-In-Review" data-lane-drop="In Review"></div>
+                </section>
+
+                <section class="kanban-lane" data-lane="Done" aria-labelledby="lane-heading-done">
+                  <header class="kanban-lane__header kanban-lane__header--done">
+                    <div class="kanban-lane__title-row">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="15" height="15" decoding="async">
+                      </span>
+                      <h3 id="lane-heading-done">Done</h3>
+                    </div>
+                    <div class="kanban-lane__controls">
+                      <span class="kanban-lane__count" data-lane-count="Done">0</span>
+                      <button class="lane-collapse-btn" type="button" data-lane-toggle="Done" aria-expanded="true" aria-controls="lane-list-Done" aria-label="Toggle Done lane">
+                        <span aria-hidden="true">&#9662;</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div class="kanban-lane__list" id="lane-list-Done" data-lane-drop="Done"></div>
+                </section>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section class="lane blocked" aria-labelledby="lane-blocked">
-          <header><h3 id="lane-blocked">Blocked</h3><span>3</span></header>
-          <article class="task-card blocked-card">
-            <div><small>PLAT-1009</small><span class="tag purple">Enhancement</span></div>
-            <h4>API Rate Limiting</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" decoding="async" loading="lazy">Waiting on API Gateway</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger blocked project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card blocked-card">
-            <div><small>PLAT-1048</small><span class="tag purple">Enhancement</span></div>
-            <h4>Integrate SSO (SAML)</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-workflow-dependency-32.svg" alt="" decoding="async" loading="lazy">Blocked by dependency</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.png" alt="Owl blocked project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card bug">
-            <div><small>BUG-2041</small><span class="tag red">Bug</span></div>
-            <h4>File upload fails on large files</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" decoding="async" loading="lazy">Infra fix in progress</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-squirrel-resource-manager-standing-1024.png" alt="Squirrel resource project helper" decoding="async" loading="lazy">
-          </article>
-        </section>
+        <!-- Right Rail: Selected Work Item Detail Drawer -->
+        <aside class="ov-panel board-rail-right" id="detail-drawer" aria-labelledby="detail-drawer-heading">
+          <div class="ov-panel-title detail-drawer__header">
+            <h2 id="detail-drawer-heading">Selected Item</h2>
+            <span class="ov-mono detail-drawer__key" id="detail-key">PLAT-1018</span>
+          </div>
 
-        <section class="lane done" aria-labelledby="lane-done">
-          <header><h3 id="lane-done">Done</h3><span>18</span></header>
-          <article class="task-card done-card">
-            <div><small>PLAT-0999</small><span class="tag purple">Enhancement</span></div>
-            <h4>Project Templates</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" decoding="async" loading="lazy">3 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-rabbit-planner-standing-1024.png" alt="Rabbit done project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card done-card">
-            <div><small>PLAT-1010</small><span class="tag purple">Enhancement</span></div>
-            <h4>Activity Feed</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" decoding="async" loading="lazy">2 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-fox-implementer-standing-1024.png" alt="Fox done project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card done-card">
-            <div><small>PLAT-1021</small><span class="tag purple">Enhancement</span></div>
-            <h4>Keyboard Shortcuts</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" decoding="async" loading="lazy">2 pts</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Badger done project helper" decoding="async" loading="lazy">
-          </article>
-          <article class="task-card bug">
-            <div><small>BUG-2027</small><span class="tag red">Bug</span></div>
-            <h4>Typo in settings label</h4>
-            <p><img src="../src/assets/orchard-vale/icons/icon-finance-coin-stack-32.svg" alt="" decoding="async" loading="lazy">1 pt</p>
-            <img class="card-character" src="../src/assets/orchard-vale/characters/fullbody/character-mouse-clerk-seated-1024.png" alt="Mouse done project helper" decoding="async" loading="lazy">
-          </article>
-        </section>
+          <div class="ov-panel__body detail-drawer__body" id="detail-drawer-body">
+            <!-- Populated dynamically by guildhall-project-board.js -->
+          </div>
+        </aside>
+
+        <!-- Bottom Band: Release Milestones & Guild Activity Feed (sits beneath Left + Center on desktop) -->
+        <div class="board-bottom-band">
+          <section class="ov-panel milestones-panel" aria-labelledby="milestones-heading">
+            <div class="ov-panel-title">
+              <div class="panel-title-group">
+                <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-data-timeline-32.svg" alt="" width="16" height="16" decoding="async">
+                </span>
+                <h2 id="milestones-heading">Release Milestones</h2>
+              </div>
+              <span class="ov-chip ov-chip--green">Q2 &ndash; Q3 Roadmap</span>
+            </div>
+
+            <div class="milestones-scene-strip">
+              <img
+                src="../src/assets/orchard-vale/scenes/ultrawide-21x9/scene-guildhall-planner-wide-21x9.webp"
+                alt="Orchard Vale Guildhall courtyard and release workshop"
+                width="1260"
+                height="540"
+                decoding="async">
+            </div>
+
+            <div class="ov-panel__body milestones-body">
+              <ol class="ov-timeline milestones-track" aria-label="Release milestone plaques">
+                <li class="milestone-item">
+                  <span class="ov-timeline-plaque ov-timeline-plaque--green">v1.4.0</span>
+                  <strong class="milestone-item__name">Guild Foundations</strong>
+                  <span class="ov-timeline__label">May 30 &middot; Active</span>
+                </li>
+                <li class="milestone-item">
+                  <span class="ov-timeline-plaque ov-timeline-plaque--blue">v1.5.0</span>
+                  <strong class="milestone-item__name">Team Collaboration</strong>
+                  <span class="ov-timeline__label">Jun 27 &middot; Next</span>
+                </li>
+                <li class="milestone-item">
+                  <span class="ov-timeline-plaque ov-timeline-plaque--amber">v1.6.0</span>
+                  <strong class="milestone-item__name">Automation Tools</strong>
+                  <span class="ov-timeline__label">Jul 25 &middot; Scoped</span>
+                </li>
+                <li class="milestone-item">
+                  <span class="ov-timeline-plaque">v1.7.0</span>
+                  <strong class="milestone-item__name">Advanced Analytics</strong>
+                  <span class="ov-timeline__label">Aug 29 &middot; Planned</span>
+                </li>
+              </ol>
+
+              <div class="milestones-legend" aria-label="Milestone status legend">
+                <span><i class="ov-status-dot ov-status-dot--good" aria-hidden="true"></i> Active Release</span>
+                <span><i class="ov-status-dot" aria-hidden="true"></i> Next Up</span>
+                <span><i class="ov-status-dot ov-status-dot--warn" aria-hidden="true"></i> Scoped</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="ov-panel activity-panel" aria-labelledby="activity-heading">
+            <div class="ov-panel-title">
+              <div class="panel-title-group">
+                <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-workflow-note-32.svg" alt="" width="16" height="16" decoding="async">
+                </span>
+                <h2 id="activity-heading">Guild Activity Feed</h2>
+              </div>
+              <span class="ov-chip ov-chip--amber" id="activity-count">5 events</span>
+            </div>
+
+            <div class="ov-panel__body activity-body">
+              <ol class="activity-feed" id="activity-feed" aria-live="polite" aria-relevant="additions">
+                <!-- Populated dynamically by guildhall-project-board.js -->
+              </ol>
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
+    </main>
+  </div>
 
-    <section class="detail-zone" aria-label="Selected project details">
-      <article class="detail-panel">
-        <div class="detail-title">
-          <div>
-            <small>PLAT-1018</small>
-            <h2>Guildhall Dashboard</h2>
-            <span class="tag purple">Enhancement</span>
-          </div>
-          <img src="../src/assets/orchard-vale/characters/fullbody/character-badger-orchestrator-standing-1024.png" alt="Selected task steward" decoding="async" loading="lazy">
+  <!-- Quick Create Work Item Dialog -->
+  <dialog class="ov-dialog" id="quick-create-dialog" aria-labelledby="quick-create-title">
+    <div class="ov-dialog__header">
+      <h2 id="quick-create-title">Create Guild Work Item</h2>
+      <button class="ov-dialog__close" type="button" data-ov-dialog-close="quick-create-dialog" aria-label="Close dialog">&times;</button>
+    </div>
+
+    <form id="quick-create-form" novalidate>
+      <div class="ov-dialog__body dialog-form-grid">
+        <div class="ov-field-group dialog-span-2">
+          <label class="ov-label" for="create-title">Title <span class="ov-required" aria-hidden="true">*</span></label>
+          <input class="ov-input" id="create-title" name="title" type="text" required placeholder="e.g., Add exportable sprint burndown ledger" autocomplete="off">
+          <p class="ov-field-error" id="create-title-error" hidden>Please enter a short work item title.</p>
         </div>
-        <p>Create a customizable dashboard for guild members with key project metrics, recent activity, and upcoming deadlines.</p>
-        <dl class="detail-stats">
-          <div><dt>Status</dt><dd>In Progress</dd></div>
-          <div><dt>Priority</dt><dd>High</dd></div>
-          <div><dt>Story Points</dt><dd>5</dd></div>
-          <div><dt>Due Date</dt><dd>May 24, 2025</dd></div>
-        </dl>
-        <div class="assignees">
-          <strong>Assignees</strong>
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Rook assignee" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Poppy assignee" decoding="async" loading="lazy">
-          <img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Thistle assignee" decoding="async" loading="lazy">
-          <button type="button" aria-label="Add assignee">+</button>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-type">Work Type</label>
+          <select class="ov-select" id="create-type" name="type">
+            <option value="Enhancement">Enhancement</option>
+            <option value="Task">Task</option>
+            <option value="Bug">Bug</option>
+            <option value="Epic">Epic</option>
+          </select>
         </div>
-      </article>
 
-      <article class="subtasks-panel">
-        <h2>Subtasks <span>2 / 5</span></h2>
-        <ul>
-          <li class="complete"><span></span> Design dashboard layout <b>Rook</b></li>
-          <li class="complete"><span></span> Implement summary widgets <b>Poppy</b></li>
-          <li><span></span> Add activity feed widget <b>Thistle</b></li>
-          <li><span></span> Connect metrics API <b>Rook</b></li>
-          <li><span></span> Add customization options <b>Poppy</b></li>
-        </ul>
-      </article>
-
-      <article class="dependency-panel">
-        <h2>Dependencies</h2>
-        <dl>
-          <div><dt>Blocks</dt><dd>PLAT-1045 Reporting Engine <mark>In Progress</mark></dd></div>
-          <div><dt>Depends on</dt><dd>PLAT-1003 Metrics Service <mark class="green">Done</mark></dd></div>
-        </dl>
-      </article>
-
-      <article class="comments-panel">
-        <h2>Comments</h2>
-        <div><img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Poppy avatar" decoding="async" loading="lazy"><p><b>Poppy</b> Updated the summary widgets based on feedback.</p></div>
-        <div><img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Rook avatar" decoding="async" loading="lazy"><p><b>Rook</b> Looks great. I will hook up the API this afternoon.</p></div>
-      </article>
-    </section>
-
-    <section class="bottom-grid" aria-label="Milestones and activity">
-      <article class="milestone-panel">
-        <h2>Milestone Timeline</h2>
-        <div class="milestone-scene">
-          <img src="../src/assets/orchard-vale/scenes/wide-16x9/scene-guildhall-planner-wide-16x9.webp" alt="Guildhall planning village scene" decoding="async" loading="lazy">
-          <div class="milestone-track">
-            <span class="done"></span>
-            <span class="active"></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="release-cards">
-            <section><b>v1.4.0</b><span>Guild Foundations<br>May 30</span></section>
-            <section><b>v1.5.0</b><span>Team Collaboration<br>Jun 27</span></section>
-            <section><b>v1.6.0</b><span>Automation Tools<br>Jul 25</span></section>
-            <section><b>v1.7.0</b><span>Advanced Analytics<br>Aug 29</span></section>
-          </div>
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-lane">Status Lane</label>
+          <select class="ov-select" id="create-lane" name="lane">
+            <option value="Backlog">Backlog</option>
+            <option value="Ready" selected>Ready</option>
+            <option value="In Progress">In Progress</option>
+            <option value="In Review">In Review</option>
+            <option value="Done">Done</option>
+          </select>
         </div>
-      </article>
 
-      <article class="activity-panel">
-        <h2>Activity Feed</h2>
-        <ol>
-          <li><img src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.png" alt="Thistle avatar" decoding="async" loading="lazy"><span>Thistle moved <b>PLAT-1031</b> to In Progress</span></li>
-          <li><img src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.png" alt="Rook avatar" decoding="async" loading="lazy"><span>Rook completed <b>PLAT-1021</b> Keyboard Shortcuts</span></li>
-          <li><img src="../src/assets/orchard-vale/characters/avatars/avatar-rabbit-planner-attentive-512.png" alt="Poppy avatar" decoding="async" loading="lazy"><span>Poppy added a comment on <b>PLAT-1018</b></span></li>
-          <li><img src="../src/assets/orchard-vale/icons/icon-infra-gear-32.svg" alt="" decoding="async" loading="lazy"><span>System started Sprint 18: Orchard Foundations</span></li>
-        </ol>
-      </article>
-    </section>
-  </main>
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-priority">Priority</label>
+          <select class="ov-select" id="create-priority" name="priority">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-points">Story Points</label>
+          <select class="ov-select" id="create-points" name="points">
+            <option value="1">1 pt</option>
+            <option value="2">2 pts</option>
+            <option value="3" selected>3 pts</option>
+            <option value="5">5 pts</option>
+            <option value="8">8 pts</option>
+          </select>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-workspace">Workspace</label>
+          <select class="ov-select" id="create-workspace" name="workspace">
+            <option value="Platform Core">Platform Core</option>
+            <option value="Customer Portal">Customer Portal</option>
+            <option value="Internal Tools">Internal Tools</option>
+          </select>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="create-assignee">Assignee</label>
+          <select class="ov-select" id="create-assignee" name="assignee">
+            <!-- Populated by guildhall-project-board.js -->
+          </select>
+        </div>
+
+        <div class="ov-field-group dialog-span-2">
+          <label class="ov-label" for="create-description">Description</label>
+          <textarea class="ov-textarea create-textarea" id="create-description" name="description" rows="3" placeholder="Summarize acceptance criteria or guild notes..."></textarea>
+        </div>
+
+        <div class="dialog-span-2">
+          <label class="ov-check">
+            <input id="create-blocked" name="blocked" type="checkbox">
+            <span>Mark as blocked by an active dependency</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="ov-dialog__footer">
+        <button class="ov-button ov-button--paper" type="button" data-ov-dialog-close="quick-create-dialog">Cancel</button>
+        <button class="ov-button ov-button--brass" type="submit">Add to Board</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>
