@@ -140,7 +140,7 @@
 /* True 3-Column Desktop Shell */
 .board-workspace {
   display: grid;
-  grid-template-columns: 202px minmax(0, 1fr) 314px;
+  grid-template-columns: 194px minmax(0, 1fr) 296px;
   grid-template-rows: auto 1fr;
   gap: var(--ov-space-3);
   align-items: start;
@@ -285,7 +285,7 @@
 
 .kanban-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(186px, 1fr));
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
   gap: 8px;
   align-items: start;
 }

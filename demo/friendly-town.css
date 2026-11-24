@@ -14,7 +14,7 @@
   color: var(--ov-paper);
   background:
     linear-gradient(rgba(23, 56, 32, 0.94), rgba(15, 40, 24, 0.96)),
-    var(--ov-tex-signboard);
+    url("../src/assets/orchard-vale/textures/texture-green-signboard-1024.webp");
   background-color: var(--ov-forest);
   background-size: auto, 420px 420px;
   border-bottom: 3px solid var(--ov-brass);
@@ -146,7 +146,7 @@
   color: var(--ov-ink);
   background:
     linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.94)),
-    var(--ov-tex-parchment-aged);
+    url("../src/assets/orchard-vale/textures/texture-parchment-aged-soft-1024.webp");
   background-color: var(--ov-paper);
   background-size: auto, 520px 520px;
   --ov-link: var(--ov-link-light);

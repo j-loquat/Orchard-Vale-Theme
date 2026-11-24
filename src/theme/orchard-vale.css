@@ -187,9 +187,14 @@
     line-height: 1.06;
   }
 
+  .ov-theme [hidden] {
+    display: none !important;
+  }
+
   .ov-theme :where(img) {
     display: block;
     max-width: 100%;
+    height: auto;
   }
 
   .ov-theme :where(button, input, select, textarea) {

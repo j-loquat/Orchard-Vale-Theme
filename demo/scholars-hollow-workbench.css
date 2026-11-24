@@ -107,7 +107,7 @@
 
 .report-page {
   flex: 1 1 auto; min-width: 0; padding: clamp(18px, 3vw, 36px) clamp(16px, 3.2vw, 44px) 24px;
-  background: linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.95)), var(--ov-tex-speckle);
+  background: linear-gradient(rgba(248, 237, 207, 0.9), rgba(248, 237, 207, 0.95)), url("../src/assets/orchard-vale/textures/overlay-ink-speckle-subtle-1024.png");
   background-size: auto, 480px 480px;
 }
 
