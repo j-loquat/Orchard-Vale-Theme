@@ -294,13 +294,18 @@ async function checkContrast() {
     return null;
   };
 
+  const darkFocusCandidates = ["--ov-focus-dark", "--ov-focus-on-dark", "--ov-focus-inverse", "--ov-focus"];
+  const lightFocusCandidates = ["--ov-focus-light", "--ov-focus-on-light", "--ov-focus"];
+  const darkFocus = darkFocusCandidates.find((c) => tokens.has(c)) ?? "--ov-focus";
+  const lightFocus = lightFocusCandidates.find((c) => tokens.has(c)) ?? "--ov-focus";
+
   const pairs = [
     ["--ov-ink", "--ov-paper", 4.5], ["--ov-ink", "--ov-paper-warm", 4.5], ["--ov-ink", "--ov-parchment", 4.5],
     ["--ov-ink-muted", "--ov-paper", 4.5], ["--ov-ink-muted", "--ov-paper-warm", 4.5],
     ["--ov-paper", "--ov-forest", 4.5], ["--ov-paper", "--ov-forest-black", 4.5],
     ["--ov-brass-dark", "--ov-paper", 4.5], ["--ov-brass-light", "--ov-forest", 4.5],
     // Non-text focus indicator (WCAG 1.4.11).
-    ["--ov-focus", "--ov-paper", 3], ["--ov-focus", "--ov-paper-warm", 3], ["--ov-focus", "--ov-forest", 3],
+    [lightFocus, "--ov-paper", 3], [lightFocus, "--ov-paper-warm", 3], [darkFocus, "--ov-forest", 3],
   ];
   for (const [fgBase, bgBase, minimum] of pairs) {
     const fg = lookup(fgBase);
