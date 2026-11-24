@@ -6,40 +6,40 @@ Generated for asset category `4. Crests, Seals, And Heraldry`.
 
 ### Crests
 
-- `crest-orchard-tree-fullcolor-512.png`
-- `crest-crossed-tools-fullcolor-512.png`
-- `crest-book-quill-fullcolor-512.png`
-- `crest-shield-check-fullcolor-512.png`
-- `crest-gear-shield-fullcolor-512.png`
-- `crest-finance-coin-tree-fullcolor-512.png`
-- `crest-mail-calendar-fullcolor-512.png`
-- `crest-guildhall-board-fullcolor-512.png`
+- `crest-orchard-tree-fullcolor-512.webp`
+- `crest-crossed-tools-fullcolor-512.webp`
+- `crest-book-quill-fullcolor-512.webp`
+- `crest-shield-check-fullcolor-512.webp`
+- `crest-gear-shield-fullcolor-512.webp`
+- `crest-finance-coin-tree-fullcolor-512.webp`
+- `crest-mail-calendar-fullcolor-512.webp`
+- `crest-guildhall-board-fullcolor-512.webp`
 
 ### Seals
 
-- `seal-approved-green-512.png`
-- `seal-draft-parchment-512.png`
-- `seal-blocked-red-512.png`
-- `seal-review-blue-512.png`
-- `seal-urgent-orange-512.png`
-- `seal-archived-gray-512.png`
+- `seal-approved-green-512.webp`
+- `seal-draft-parchment-512.webp`
+- `seal-blocked-red-512.webp`
+- `seal-review-blue-512.webp`
+- `seal-urgent-orange-512.webp`
+- `seal-archived-gray-512.webp`
 
 ### Heraldic Elements
 
-- `frame-laurel-gold-green-512.png`
-- `ornament-crown-gold-512.png`
-- `frame-badge-shield-blank-512.png`
+- `frame-laurel-gold-green-512.webp`
+- `ornament-crown-gold-512.webp`
+- `frame-badge-shield-blank-512.webp`
 
 ### Preview And Sources
 
 - `heraldry-contact-sheet.png`
 - `heraldry-preview-checker.png`
 - `heraldry-preview.html`
-- `source-keyed/` contains the original magenta chroma-key source images.
+- Original magenta chroma-key source images are archived in `art-sources/heraldry/source-keyed/`.
 
 ## Verification
 
-- Final project assets are transparent PNGs.
+- Final project assets are transparent WebP files.
 - Final project assets are normalized to `512x512`.
 - Background removal used the imagegen chroma-key helper.
 - Final sizing, alpha checks, and contact sheets were run with `uv run --with pillow --with numpy python`.

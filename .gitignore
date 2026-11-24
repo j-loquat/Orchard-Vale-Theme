@@ -34,3 +34,6 @@ demo/screenshots/*
 
 # Keep theme assets tracked.
 !src/assets/
+
+# Local pet generation runs (not part of the kit)
+pets/.pet-runs/
