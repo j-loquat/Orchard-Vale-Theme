@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hearthside Commons — Orchard Vale productivity suite demo for mail, calendar, and tasks with parchment panels, wax seals, empty states, and interactive workflows.">
+  <meta name="theme-color" content="#173820">
+  <title>Hearthside Commons — Mail, Calendar &amp; Tasks</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
+  <link rel="stylesheet" href="hearthside-commons.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="hearthside-commons.js" defer></script>
+</head>
+<body class="ov-theme hc-body">
+  <a class="ov-skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Hearthside Commons" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Hearthside Commons</span>
+    <div data-ov-demo-actions>
+      <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="compose-dialog">New Mail</button>
+    </div>
+  </nav>
+
+  <div class="ov-page">
+    <main class="ov-shell ov-frame hc-shell" id="main-content">
+      <!-- Top Command Header -->
+      <header class="hc-header">
+        <section class="ov-title-banner hc-hero" aria-labelledby="page-title">
+          <div class="hc-hero__brand">
+            <img
+              class="hc-hero__crest"
+              src="../src/assets/orchard-vale/heraldry/crest-mail-calendar-fullcolor-512.webp"
+              alt="Hearthside Commons mail and calendar crest"
+              width="92"
+              height="92"
+              fetchpriority="high"
+              decoding="async">
+            <div class="hc-hero__titles">
+              <p class="ov-kicker">Orchard Vale Productivity Suite</p>
+              <h1 id="page-title">Hearthside Commons</h1>
+              <p class="hc-hero__subtitle">Mail, Calendar &amp; Tasks &middot; Wednesday, May 21</p>
+            </div>
+          </div>
+
+          <div class="hc-hero__right">
+            <div class="hc-profile-badge">
+              <img
+                class="ov-avatar"
+                src="../src/assets/orchard-vale/characters/avatars/avatar-badger-orchestrator-neutral-512.webp"
+                alt="Brambles Badger"
+                width="44"
+                height="44"
+                decoding="async">
+              <div>
+                <p class="hc-profile-badge__name">Brambles Badger</p>
+                <p class="hc-profile-badge__status">
+                  <span class="ov-status-dot ov-status-dot--good" aria-hidden="true"></span>
+                  <span id="presence-label">Orchard Vale &middot; Online</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hc-command-strip" aria-label="Workspace metrics and quick actions">
+          <div class="hc-kpi-grid" aria-label="Daily summary counters">
+            <article class="ov-panel hc-kpi">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-inbox-tray-96.svg" alt="" width="44" height="44" decoding="async">
+              <div class="hc-kpi__body">
+                <span class="hc-kpi__label">Inbox</span>
+                <strong class="hc-kpi__value" id="kpi-unread">5</strong>
+                <span class="hc-kpi__meta" id="kpi-unread-meta">Unread across desk</span>
+              </div>
+            </article>
+
+            <article class="ov-panel hc-kpi">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-calendar-tile-96.svg" alt="" width="44" height="44" decoding="async">
+              <div class="hc-kpi__body">
+                <span class="hc-kpi__label">Meetings</span>
+                <strong class="hc-kpi__value" id="kpi-meetings">3</strong>
+                <span class="hc-kpi__meta">Next: 11:00 AM</span>
+              </div>
+            </article>
+
+            <article class="ov-panel hc-kpi">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-task-scroll-96.svg" alt="" width="44" height="44" decoding="async">
+              <div class="hc-kpi__body">
+                <span class="hc-kpi__label">Tasks Open</span>
+                <strong class="hc-kpi__value" id="kpi-tasks-open">4</strong>
+                <span class="hc-kpi__meta" id="kpi-tasks-meta">2 High Priority</span>
+              </div>
+            </article>
+
+            <article class="ov-panel hc-kpi">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-clock-96.svg" alt="" width="44" height="44" decoding="async">
+              <div class="hc-kpi__body">
+                <span class="hc-kpi__label">Focus Time</span>
+                <strong class="hc-kpi__value" id="kpi-focus">45m</strong>
+                <span class="hc-kpi__meta" id="kpi-focus-meta">Until 12:00 PM</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="ov-panel hc-quick-actions" role="toolbar" aria-label="Quick commands">
+            <button class="hc-action-tile" type="button" data-ov-dialog-open="compose-dialog">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-envelope-96.svg" alt="" width="34" height="34" decoding="async">
+              <span>New Mail</span>
+            </button>
+            <button class="hc-action-tile" type="button" id="quick-quiet-day">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-stamp-96.svg" alt="" width="34" height="34" decoding="async">
+              <span>Quiet Day</span>
+            </button>
+            <button class="hc-action-tile" type="button" id="quick-new-task">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-task-scroll-96.svg" alt="" width="34" height="34" decoding="async">
+              <span>New Task</span>
+            </button>
+            <button class="hc-action-tile" type="button" id="toggle-focus-mode" aria-pressed="false">
+              <img src="../src/assets/orchard-vale/motifs/productivity/motif-productivity-notification-bell-96.svg" alt="" width="34" height="34" decoding="async">
+              <span>Focus Mode</span>
+            </button>
+          </div>
+        </section>
+      </header>
+
+      <!-- Three-Zone Productivity Workspace -->
+      <div class="hc-workspace">
+        <!-- Zone 1: Left Folder & Search Rail -->
+        <aside class="hc-rail ov-stack" aria-label="Mail folders and search">
+          <section class="ov-panel" aria-labelledby="mail-nav-title">
+            <h2 class="ov-panel-title" id="mail-nav-title">
+              <span class="hc-title-with-icon">
+                <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-nav-inbox-32.svg" alt="" width="16" height="16" decoding="async">
+                </span>
+                <span>Mailroom</span>
+              </span>
+            </h2>
+
+            <div class="ov-panel__body hc-rail__body">
+              <button class="ov-button ov-button--brass hc-compose-btn" type="button" data-ov-dialog-open="compose-dialog">
+                <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="20" height="20" decoding="async">
+                <span>Quick Compose</span>
+              </button>
+
+              <div class="hc-search-box">
+                <label class="ov-sr-only" for="mail-search">Search dispatches</label>
+                <span class="hc-search-box__icon" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-nav-search-32.svg" alt="" width="18" height="18" decoding="async">
+                </span>
+                <input
+                  class="ov-input hc-search-box__input"
+                  id="mail-search"
+                  type="search"
+                  placeholder="Search mail..."
+                  autocomplete="off">
+              </div>
+
+              <div class="hc-rail-group">
+                <p class="ov-kicker hc-rail-kicker">Folders</p>
+                <ul class="hc-folder-list" id="folder-list">
+                  <li>
+                    <button class="hc-folder-btn" type="button" data-folder="inbox" aria-current="true">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-nav-inbox-32.svg" alt="" width="16" height="16" decoding="async">
+                      </span>
+                      <span class="hc-folder-btn__label">Inbox</span>
+                      <span class="ov-nav-list__count" id="count-inbox" aria-label="3 unread in Inbox">3</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="hc-folder-btn" type="button" data-folder="urgent" aria-current="false">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" width="16" height="16" decoding="async">
+                      </span>
+                      <span class="hc-folder-btn__label">Urgent</span>
+                      <span class="ov-nav-list__count" id="count-urgent">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="hc-folder-btn" type="button" data-folder="waiting" aria-current="false">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-status-pending-32.svg" alt="" width="16" height="16" decoding="async">
+                      </span>
+                      <span class="hc-folder-btn__label">Waiting</span>
+                      <span class="ov-nav-list__count" id="count-waiting">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="hc-folder-btn" type="button" data-folder="archived" aria-current="false">
+                      <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                        <img src="../src/assets/orchard-vale/icons/icon-nav-archive-32.svg" alt="" width="16" height="16" decoding="async">
+                      </span>
+                      <span class="hc-folder-btn__label">Archived</span>
+                      <span class="ov-nav-list__count" id="count-archived">2</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="hc-rail-group">
+                <p class="ov-kicker hc-rail-kicker">Labels</p>
+                <div class="hc-label-filters" id="label-filters" role="group" aria-label="Filter by label">
+                  <button class="hc-label-btn is-active" type="button" data-label="all" aria-pressed="true">All</button>
+                  <button class="hc-label-btn" type="button" data-label="Council" aria-pressed="false"><span class="hc-dot hc-dot--green" aria-hidden="true"></span>Council</button>
+                  <button class="hc-label-btn" type="button" data-label="Guild" aria-pressed="false"><span class="hc-dot hc-dot--blue" aria-hidden="true"></span>Guild</button>
+                  <button class="hc-label-btn" type="button" data-label="Projects" aria-pressed="false"><span class="hc-dot hc-dot--purple" aria-hidden="true"></span>Projects</button>
+                  <button class="hc-label-btn" type="button" data-label="Finance" aria-pressed="false"><span class="hc-dot hc-dot--amber" aria-hidden="true"></span>Finance</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="ov-panel ov-panel--aged hc-wisdom-card" aria-labelledby="wisdom-title">
+            <h2 class="ov-sr-only" id="wisdom-title">Steward's desk note</h2>
+            <div class="hc-wisdom-card__inner">
+              <img
+                class="ov-avatar ov-avatar--lg"
+                src="../src/assets/orchard-vale/characters/avatars/avatar-fox-implementer-focused-512.webp"
+                alt="Forge Fox mailroom steward"
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async">
+              <div>
+                <p class="hc-wisdom-card__quote">&ldquo;A tidy inbox is a calm mind, friend.&rdquo;</p>
+                <p class="hc-wisdom-card__by">&mdash; Forge Fox, Mailroom Clerk</p>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <!-- Zone 2: Center Mail List + Message Reader Split -->
+        <section class="hc-mail-zone" aria-label="Mail list and message reader">
+          <!-- Mail List Column -->
+          <section class="ov-panel hc-mail-list-panel" aria-labelledby="folder-heading">
+            <div class="ov-panel-title">
+              <h2 class="hc-panel-heading" id="folder-heading">Inbox</h2>
+              <span class="ov-chip" id="folder-summary-chip">4 letters</span>
+            </div>
+
+            <div class="hc-list-toolbar" role="toolbar" aria-label="Folder actions">
+              <button class="ov-button ov-button--paper ov-button--sm" type="button" id="mark-all-read-btn">
+                <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="16" height="16" decoding="async">
+                <span>Mark All Read</span>
+              </button>
+              <button class="ov-button ov-button--paper ov-button--sm" type="button" id="clear-folder-btn">
+                <img src="../src/assets/orchard-vale/icons/icon-nav-archive-32.svg" alt="" width="16" height="16" decoding="async">
+                <span id="clear-folder-label">Clear Folder</span>
+              </button>
+            </div>
+
+            <div class="hc-mail-list-wrap">
+              <ul class="hc-mail-list" id="mail-list" aria-label="Messages"></ul>
+
+              <div class="ov-empty-state ov-empty-state--compact hc-mail-empty" id="mail-empty-state" hidden>
+                <img
+                  class="ov-empty-state__art"
+                  src="../src/assets/orchard-vale/empty-states/empty-fox-mail-sorted-800.webp"
+                  alt="Fox steward sorting envelopes into tidy wooden pigeonholes"
+                  width="220"
+                  height="165"
+                  loading="lazy"
+                  decoding="async">
+                <h3 class="ov-empty-state__title" id="mail-empty-title">Inbox Zero &mdash; All Sorted</h3>
+                <p id="mail-empty-copy">Every letter in this folder has been filed away neatly. Take a breath or restore the sample dispatches to keep exploring.</p>
+                <div class="ov-empty-state__actions">
+                  <button class="ov-button ov-button--brass ov-button--sm" type="button" id="restore-mail-btn">Restore sample mail</button>
+                  <button class="ov-button ov-button--paper ov-button--sm" type="button" id="clear-search-btn" hidden>Clear search</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Parchment Message Reader -->
+          <section class="ov-panel ov-panel--ornate ov-panel--ornate-sm hc-reader-panel" aria-labelledby="reader-panel-title">
+            <h2 class="ov-panel-title" id="reader-panel-title">Reading Desk</h2>
+
+            <div class="ov-panel__body hc-reader-body" id="reader-content">
+              <!-- Toolbar -->
+              <div class="hc-reader-toolbar" id="reader-toolbar" role="toolbar" aria-label="Message actions">
+                <button class="ov-button ov-button--sm" type="button" id="reader-reply-btn">
+                  <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                    <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="" width="16" height="16" decoding="async">
+                  </span>
+                  <span>Reply</span>
+                </button>
+                <button class="ov-button ov-button--paper ov-button--sm" type="button" id="reader-toggle-read-btn">
+                  <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="16" height="16" decoding="async">
+                  <span id="reader-toggle-read-label">Mark Unread</span>
+                </button>
+                <button class="ov-button ov-button--paper ov-button--sm" type="button" id="reader-archive-btn">
+                  <img src="../src/assets/orchard-vale/icons/icon-nav-archive-32.svg" alt="" width="16" height="16" decoding="async">
+                  <span id="reader-archive-label">Archive</span>
+                </button>
+              </div>
+
+              <!-- Active Letter -->
+              <article class="hc-letter" id="reader-letter" aria-live="polite">
+                <header class="hc-letter__head">
+                  <div class="hc-letter__title-group">
+                    <div class="hc-letter__badges">
+                      <span class="ov-chip ov-chip--green" id="reader-category-chip">Council</span>
+                      <span class="ov-chip" id="reader-seal-chip">Approved</span>
+                    </div>
+                    <h3 class="hc-letter__subject" id="reader-subject">Monthly Council Update</h3>
+                    <div class="hc-letter__sender">
+                      <img
+                        class="ov-avatar"
+                        id="reader-avatar"
+                        src="../src/assets/orchard-vale/characters/avatars/avatar-owl-scholar-neutral-512.webp"
+                        alt="Elder Oakley"
+                        width="44"
+                        height="44"
+                        decoding="async">
+                      <div>
+                        <p class="hc-letter__from"><strong id="reader-from-name">Elder Oakley</strong> <span class="ov-muted" id="reader-from-addr">&lt;elder.oakley@orchardvale.gov&gt;</span></p>
+                        <p class="hc-letter__meta"><span id="reader-to">To: Orchard Vale Council, Guild Leaders</span> &middot; <time id="reader-time">May 21, 9:12 AM</time></p>
+                      </div>
+                    </div>
+                  </div>
+                  <figure class="hc-letter__seal">
+                    <img
+                      class="ov-seal"
+                      id="reader-seal-img"
+                      src="../src/assets/orchard-vale/heraldry/seal-approved-green-512.webp"
+                      alt="Green approved wax seal"
+                      width="64"
+                      height="64"
+                      decoding="async">
+                    <figcaption id="reader-seal-caption">Approved</figcaption>
+                  </figure>
+                </header>
+
+                <div class="hc-thread" id="reader-thread"></div>
+
+                <div class="hc-attachments" id="reader-attachments-section">
+                  <p class="hc-attachments__heading" id="reader-attachments-count">2 Attachments</p>
+                  <div class="hc-attachments__grid" id="reader-attachments-list"></div>
+                </div>
+
+                <hr class="ov-divider">
+
+                <!-- Inline Reply Composer -->
+                <form class="hc-reply-form" id="reply-form" novalidate>
+                  <div class="hc-reply-form__head">
+                    <span class="ov-sprite ov-sprite--quill ov-sprite--sm" aria-hidden="true"></span>
+                    <div>
+                      <label class="ov-label" for="reply-textarea" id="reply-label">Quick Reply to Elder Oakley</label>
+                      <p class="ov-field-hint">Dispatches immediately via Hearthside courier post.</p>
+                    </div>
+                  </div>
+                  <textarea
+                    class="ov-textarea hc-reply-form__textarea"
+                    id="reply-textarea"
+                    rows="3"
+                    placeholder="Write your reply on fresh parchment..."
+                    aria-describedby="reply-error"></textarea>
+                  <p class="ov-field-error" id="reply-error" hidden>Please write a short message before dispatching your reply.</p>
+
+                  <div class="hc-reply-form__foot">
+                    <div class="hc-courier-status" id="courier-status" hidden>
+                      <span class="ov-sprite ov-sprite--courier ov-sprite--sm" aria-hidden="true"></span>
+                      <span id="courier-status-text">Courier dispatched!</span>
+                    </div>
+                    <div class="hc-reply-form__actions">
+                      <button class="ov-button ov-button--paper ov-button--sm" type="button" id="reply-clear-btn">Clear</button>
+                      <button class="ov-button ov-button--sm" type="submit" id="reply-send-btn">
+                        <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                          <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="" width="16" height="16" decoding="async">
+                        </span>
+                        <span>Send Reply</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </article>
+
+              <!-- Reader Empty Placeholder -->
+              <div class="ov-empty-state hc-reader-empty" id="reader-empty-state" hidden>
+                <img
+                  class="ov-empty-state__art"
+                  src="../src/assets/orchard-vale/empty-states/empty-fox-mail-sorted-800.webp"
+                  alt="Fox mailroom clerk with neatly sorted letters"
+                  width="240"
+                  height="180"
+                  loading="lazy"
+                  decoding="async">
+                <h3 class="ov-empty-state__title">Reading Desk Clear</h3>
+                <p>No letter is currently open. Pick a folder with messages, restore the sample dispatches, or pen a fresh letter.</p>
+                <div class="ov-empty-state__actions">
+                  <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="compose-dialog">Compose Letter</button>
+                  <button class="ov-button ov-button--paper ov-button--sm" type="button" id="reader-restore-btn">Restore sample mail</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Zone 3: Right / Lower Calendar & Tasks Split -->
+        <aside class="hc-side-zone ov-stack" aria-label="Calendar and tasks">
+          <!-- Calendar Panel -->
+          <section class="ov-panel hc-calendar-panel" aria-labelledby="calendar-title">
+            <div class="ov-panel-title">
+              <h2 class="hc-panel-heading hc-title-with-icon" id="calendar-title">
+                <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-nav-calendar-32.svg" alt="" width="16" height="16" decoding="async">
+                </span>
+                <span>Calendar</span>
+              </h2>
+              <span class="hc-panel-date">May 19 &ndash; 23</span>
+            </div>
+
+            <div class="ov-panel__body hc-calendar-body">
+              <div class="hc-calendar-controls" role="toolbar" aria-label="Calendar view controls">
+                <div class="hc-segmented" role="group" aria-label="Schedule range">
+                  <button class="hc-seg-btn is-active" type="button" id="cal-view-week" aria-pressed="true">Week</button>
+                  <button class="hc-seg-btn" type="button" id="cal-view-day" aria-pressed="false">Day (Wed)</button>
+                </div>
+                <button class="ov-button ov-button--paper ov-button--sm" type="button" id="cal-quiet-btn" aria-pressed="false">
+                  View quiet day (Fri)
+                </button>
+              </div>
+
+              <!-- Week Schedule View -->
+              <div class="hc-week-grid" id="cal-week-view" aria-label="Weekly schedule">
+                <div class="hc-day-col">
+                  <p class="hc-day-col__head"><span>Mon</span><strong>19</strong></p>
+                  <article class="hc-cal-card hc-cal-card--green">
+                    <span class="hc-cal-card__time">9:00 &ndash; 9:30</span>
+                    <h3>Team Standup</h3>
+                    <p>Town Hall</p>
+                  </article>
+                  <article class="hc-cal-card hc-cal-card--blue">
+                    <span class="hc-cal-card__time">2:00 &ndash; 3:00</span>
+                    <h3>Watermill Review</h3>
+                    <p>Millie Mole</p>
+                  </article>
+                </div>
+
+                <div class="hc-day-col">
+                  <p class="hc-day-col__head"><span>Tue</span><strong>20</strong></p>
+                  <article class="hc-cal-card hc-cal-card--purple">
+                    <span class="hc-cal-card__time">10:00 &ndash; 10:45</span>
+                    <h3>Project Check-in</h3>
+                    <p>Signage Guild</p>
+                  </article>
+                  <article class="hc-cal-card hc-cal-card--purple">
+                    <span class="hc-cal-card__time">1:00 &ndash; 2:00</span>
+                    <h3>Design Review</h3>
+                    <p>Draft Studio</p>
+                  </article>
+                </div>
+
+                <div class="hc-day-col hc-day-col--today">
+                  <p class="hc-day-col__head"><span>Wed</span><strong>21</strong></p>
+                  <article class="hc-cal-card hc-cal-card--green">
+                    <span class="hc-cal-card__time">9:00 &ndash; 11:00</span>
+                    <h3>Council Meeting</h3>
+                    <p>Elder Oakley</p>
+                  </article>
+                  <article class="hc-cal-card hc-cal-card--amber">
+                    <span class="hc-cal-card__time">3:00 &ndash; 4:00</span>
+                    <h3>Vendor Call</h3>
+                    <p>Market Stalls</p>
+                  </article>
+                </div>
+
+                <div class="hc-day-col">
+                  <p class="hc-day-col__head"><span>Thu</span><strong>22</strong></p>
+                  <article class="hc-cal-card hc-cal-card--green">
+                    <span class="hc-cal-card__time">11:00 &ndash; 12:00</span>
+                    <h3>Guild Leaders Sync</h3>
+                    <p>Pippa Planner</p>
+                  </article>
+                  <article class="hc-cal-card hc-cal-card--amber">
+                    <span class="hc-cal-card__time">2:00 &ndash; 2:30</span>
+                    <h3>Budget Review</h3>
+                    <p>Treasury Desk</p>
+                  </article>
+                </div>
+
+                <div class="hc-day-col hc-day-col--quiet">
+                  <p class="hc-day-col__head"><span>Fri</span><strong>23</strong></p>
+                  <button class="hc-quiet-pill-btn" type="button" id="cal-fri-shortcut">
+                    <span>Clear Day</span>
+                    <small>Open quiet view</small>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Day Schedule View (Wednesday May 21) -->
+              <div class="hc-day-schedule" id="cal-day-view" hidden aria-label="Wednesday May 21 schedule">
+                <div class="hc-slot">
+                  <span class="ov-time">9:00 AM</span>
+                  <article class="hc-cal-card hc-cal-card--green">
+                    <h3>Council Meeting &mdash; Summer Market Charter</h3>
+                    <p>Elder Oakley, Pippa Planner &middot; Town Hall Parlour (2h)</p>
+                  </article>
+                </div>
+                <div class="hc-slot">
+                  <span class="ov-time">11:15 AM</span>
+                  <article class="hc-cal-card hc-cal-card--blue">
+                    <h3>Deep Focus Block &mdash; Mail &amp; Dispatches</h3>
+                    <p>45m protected craft time before midday bell</p>
+                  </article>
+                </div>
+                <div class="hc-slot">
+                  <span class="ov-time">3:00 PM</span>
+                  <article class="hc-cal-card hc-cal-card--amber">
+                    <h3>Vendor Call &mdash; Orchard Timber &amp; Lanterns</h3>
+                    <p>Confirm Southbridge signage delivery schedule (1h)</p>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Quiet Day Empty State (Friday May 23) -->
+              <div class="ov-empty-state ov-empty-state--compact" id="cal-empty-state" hidden>
+                <img
+                  class="ov-empty-state__art"
+                  src="../src/assets/orchard-vale/empty-states/empty-rabbit-calendar-clear-800.webp"
+                  alt="Rabbit planner standing beside a clear wooden calendar board"
+                  width="200"
+                  height="150"
+                  loading="lazy"
+                  decoding="async">
+                <h3 class="ov-empty-state__title">Friday, May 23 is Clear</h3>
+                <p>No meetings on the board. Enjoy an uninterrupted day for deep craft, sketching, or long correspondence.</p>
+                <div class="ov-empty-state__actions">
+                  <button class="ov-button ov-button--paper ov-button--sm" type="button" id="cal-return-week-btn">Return to Week</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tasks Panel -->
+          <section class="ov-panel hc-tasks-panel" aria-labelledby="tasks-title">
+            <div class="ov-panel-title">
+              <h2 class="hc-panel-heading hc-title-with-icon" id="tasks-title">
+                <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                  <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" width="16" height="16" decoding="async">
+                </span>
+                <span>Tasks</span>
+              </h2>
+              <span class="ov-chip ov-chip--green" id="tasks-ratio-chip">3 / 7 done</span>
+            </div>
+
+            <div class="ov-panel__body hc-tasks-body">
+              <div class="hc-task-progress">
+                <div class="hc-task-progress__meta">
+                  <span class="hc-task-progress__label">Daily Checklist Progress</span>
+                  <strong class="ov-mono" id="tasks-percent-label">43%</strong>
+                </div>
+                <div
+                  class="ov-meter"
+                  role="progressbar"
+                  id="tasks-progressbar"
+                  aria-label="Task checklist completion"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="43">
+                  <span id="tasks-meter-fill" style="width: 43%"></span>
+                </div>
+              </div>
+
+              <div class="hc-task-filters" id="task-filters" role="group" aria-label="Filter tasks">
+                <button class="hc-label-btn is-active" type="button" data-task-filter="all" aria-pressed="true">All</button>
+                <button class="hc-label-btn" type="button" data-task-filter="high" aria-pressed="false">High Priority</button>
+                <button class="hc-label-btn" type="button" data-task-filter="open" aria-pressed="false">Open</button>
+                <button class="hc-label-btn" type="button" data-task-filter="done" aria-pressed="false">Completed</button>
+              </div>
+
+              <ul class="hc-task-list" id="task-list" aria-label="Task checklist"></ul>
+
+              <form class="hc-add-task-form" id="add-task-form" novalidate>
+                <label class="ov-sr-only" for="new-task-input">Add a new task</label>
+                <input
+                  class="ov-input hc-add-task-form__input"
+                  id="new-task-input"
+                  type="text"
+                  placeholder="Add a task to your ledger..."
+                  autocomplete="off">
+                <label class="ov-sr-only" for="new-task-priority">Task priority</label>
+                <select class="ov-select hc-add-task-form__select" id="new-task-priority">
+                  <option value="high">High</option>
+                  <option value="normal" selected>Normal</option>
+                  <option value="upcoming">Upcoming</option>
+                </select>
+                <button class="ov-button ov-button--brass ov-button--sm" type="submit">
+                  <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="16" height="16" decoding="async">
+                  <span>Add</span>
+                </button>
+              </form>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Bottom Chronicle Strip -->
+      <section class="ov-panel hc-chronicle-panel" aria-labelledby="chronicle-title">
+        <div class="ov-panel-title">
+          <h2 class="hc-panel-heading hc-title-with-icon" id="chronicle-title">
+            <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+              <img src="../src/assets/orchard-vale/icons/icon-data-timeline-32.svg" alt="" width="16" height="16" decoding="async">
+            </span>
+            <span>Hearthside Chronicle</span>
+          </h2>
+          <div class="hc-chronicle-filters" id="chronicle-filters" role="group" aria-label="Filter chronicle entries">
+            <button class="hc-chron-filter is-active" type="button" data-chron="all" aria-pressed="true">All</button>
+            <button class="hc-chron-filter" type="button" data-chron="mail" aria-pressed="false">Mail</button>
+            <button class="hc-chron-filter" type="button" data-chron="calendar" aria-pressed="false">Calendar</button>
+            <button class="hc-chron-filter" type="button" data-chron="tasks" aria-pressed="false">Tasks</button>
+          </div>
+        </div>
+
+        <div class="ov-panel__body hc-chronicle-body">
+          <ol class="hc-chronicle-strip" id="chronicle-list" aria-label="Recent activity chronicle"></ol>
+          <figure class="hc-mailroom-vignette">
+            <img
+              src="../src/assets/orchard-vale/scenes/wide-16x9/scene-hearthside-mailroom-wide-16x9.webp"
+              alt="Lantern-lit Hearthside mailroom desk with pigeonholes, wax-sealed envelopes, and wooden calendar board"
+              width="320"
+              height="180"
+              loading="lazy"
+              decoding="async">
+            <figcaption>Hearthside Post &middot; Open until dusk</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Quick Compose Dialog -->
+  <dialog class="ov-dialog" id="compose-dialog" aria-labelledby="compose-dialog-title">
+    <header class="ov-dialog__header">
+      <div class="hc-dialog-title-wrap">
+        <span class="ov-sprite ov-sprite--quill ov-sprite--sm" aria-hidden="true"></span>
+        <h2 id="compose-dialog-title">Compose New Dispatch</h2>
+      </div>
+      <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close compose dialog">&times;</button>
+    </header>
+
+    <form id="compose-form" novalidate>
+      <div class="ov-dialog__body ov-stack">
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="compose-to">Recipient <span class="ov-required" aria-hidden="true">*</span></label>
+            <select class="ov-select" id="compose-to" name="to">
+              <option value="Elder Oakley|elder.oakley@orchardvale.gov|avatar-owl-scholar-neutral-512.webp">Elder Oakley (Council)</option>
+              <option value="Pippa Planner|pippa.planner@orchardvale.gov|avatar-rabbit-planner-attentive-512.webp">Pippa Planner (Strategy)</option>
+              <option value="Millie Mole|millie.mole@orchardvale.gov|avatar-mole-engineer-focused-512.webp">Millie Mole (Engineering)</option>
+              <option value="Docu Deer|docu.deer@orchardvale.gov|avatar-deer-governance-calm-512.webp">Docu Deer (Governance)</option>
+              <option value="Robin Courier|robin.courier@orchardvale.gov|avatar-robin-courier-alert-512.webp">Robin Courier (Post)</option>
+            </select>
+          </div>
+
+          <div class="ov-field-group">
+            <label class="ov-label" for="compose-folder">Destination Folder</label>
+            <select class="ov-select" id="compose-folder" name="folder">
+              <option value="inbox">Inbox (Copy to Desk)</option>
+              <option value="urgent">Urgent</option>
+              <option value="waiting" selected>Waiting (Awaiting Reply)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ov-two-up">
+          <div class="ov-field-group">
+            <label class="ov-label" for="compose-category">Category Label</label>
+            <select class="ov-select" id="compose-category" name="category">
+              <option value="Council">Council</option>
+              <option value="Guild">Guild</option>
+              <option value="Projects">Projects</option>
+              <option value="Finance">Finance</option>
+            </select>
+          </div>
+
+          <div class="ov-field-group">
+            <label class="ov-label" for="compose-seal">Wax Seal Status</label>
+            <select class="ov-select" id="compose-seal" name="seal">
+              <option value="review">In Review (Blue Seal)</option>
+              <option value="approved">Approved (Green Seal)</option>
+              <option value="urgent">Urgent (Orange Seal)</option>
+              <option value="draft">Draft (Parchment Seal)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="compose-subject">Subject <span class="ov-required" aria-hidden="true">*</span></label>
+          <input
+            class="ov-input"
+            id="compose-subject"
+            name="subject"
+            type="text"
+            placeholder="e.g., Summer Market Stall Allocation"
+            autocomplete="off"
+            aria-describedby="compose-subject-error"
+            required>
+          <p class="ov-field-error" id="compose-subject-error" hidden>Please enter a subject line.</p>
+        </div>
+
+        <div class="ov-field-group">
+          <label class="ov-label" for="compose-body">Letter Body <span class="ov-required" aria-hidden="true">*</span></label>
+          <textarea
+            class="ov-textarea"
+            id="compose-body"
+            name="body"
+            rows="4"
+            placeholder="Write your correspondence..."
+            aria-describedby="compose-body-error"
+            required></textarea>
+          <p class="ov-field-error" id="compose-body-error" hidden>Please enter a message before sending.</p>
+        </div>
+      </div>
+
+      <footer class="ov-dialog__footer">
+        <button class="ov-button ov-button--paper" type="button" data-ov-dialog-close>Cancel</button>
+        <button class="ov-button" type="submit">
+          <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+            <img src="../src/assets/orchard-vale/icons/icon-action-reply-32.svg" alt="" width="16" height="16" decoding="async">
+          </span>
+          <span>Seal &amp; Dispatch</span>
+        </button>
+      </footer>
+    </form>
+  </dialog>
+</body>
+</html>
