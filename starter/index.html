@@ -3,85 +3,591 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Minimal Orchard Vale theme starter with reusable panels, controls, status chips, and responsive layout.">
+  <meta name="description" content="Orchard Vale v2.0 starter kit showcasing the single-import theme CSS, craft utilities, accessible tabs, dialog, toasts, and interactive form patterns.">
   <meta name="theme-color" content="#173820">
-  <title>Orchard Vale Starter</title>
-  <link rel="stylesheet" href="../src/theme/orchard-vale.css">
-  <link rel="stylesheet" href="../src/theme/orchard-components.css">
-  <link rel="stylesheet" href="../src/theme/orchard-layouts.css">
+  <title>Orchard Vale Starter Kit</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <style>
+    /* Minimal page-specific alignment tweaks (unlayered, overrides ov.* cleanly). */
+    .starter-status-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .starter-task-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px 12px;
+      margin-bottom: 6px;
+    }
+
+    .starter-task-foot {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 12px;
+      margin-top: 10px;
+    }
+
+    .starter-code {
+      margin: 0;
+      padding: 12px 14px;
+      overflow-x: auto;
+      color: var(--ov-ink);
+      font: 13px/1.45 var(--ov-mono);
+      background: var(--ov-paper-warm);
+      border: 1px solid rgba(112, 72, 38, 0.55);
+      border-radius: var(--ov-radius-sm);
+    }
+
+    .starter-form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 <body class="ov-theme">
   <a class="ov-skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Starter Kit" aria-label="Orchard Vale demo navigation">
+    <a class="ov-demo-bar__back" href="../demo/index.html">&larr; All Demos</a>
+    <span class="ov-demo-bar__current">Starter Kit</span>
+    <div data-ov-demo-actions>
+      <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog">Adoption Snippet</button>
+    </div>
+  </nav>
+
   <div class="ov-page">
     <main class="ov-shell ov-frame" id="main-content">
       <header class="ov-header">
         <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
-          <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.png" alt="Orchard tree crest" width="96" height="96">
+          <img
+            src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+            alt="Orchard Vale tree crest"
+            width="96"
+            height="96"
+            decoding="async">
           <div>
-            <p class="ov-kicker">Starter App</p>
+            <p class="ov-kicker">Theme Kit v2.0 Starter</p>
             <h1 id="page-title">Orchard Vale Workspace</h1>
-            <p>Replace this sample content with your application structure.</p>
+            <p>A working, zero-dependency front-end built on <code>src/theme/index.css</code> and <code>orchard-vale.js</code>.</p>
           </div>
         </section>
+
         <section class="ov-panel ov-header__stats" aria-label="Workspace summary">
-          <article class="ov-panel ov-stat"><strong>12</strong><span>Open records</span></article>
-          <article class="ov-panel ov-stat"><strong>4</strong><span>In review</span></article>
-          <article class="ov-panel ov-stat"><strong>8</strong><span>Complete</span></article>
+          <article class="ov-panel ov-stat">
+            <strong id="stat-open">3</strong>
+            <span>Active tasks</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong id="stat-review">1</strong>
+            <span>In review</span>
+          </article>
+          <article class="ov-panel ov-stat">
+            <strong id="stat-complete">0</strong>
+            <span>Completed</span>
+          </article>
         </section>
       </header>
 
       <div class="ov-starter-grid">
-        <aside class="ov-panel" aria-labelledby="nav-title">
-          <h2 class="ov-panel-title" id="nav-title">Workspace</h2>
-          <div class="ov-panel__body ov-stack">
-            <a href="#overview">Overview</a>
-            <a href="#records">Records</a>
-            <a href="#create">Create</a>
-          </div>
+        <aside class="ov-stack" aria-label="Workspace sidebar">
+          <section class="ov-panel" aria-labelledby="nav-title">
+            <h2 class="ov-panel-title" id="nav-title">Workspace</h2>
+            <div class="ov-panel__body">
+              <ul class="ov-nav-list">
+                <li>
+                  <a href="#workspace-panel" aria-current="page">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span>Overview &amp; Tasks</span>
+                    <span class="ov-nav-list__count" id="nav-count-open">3</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#create-panel">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span>Create Task</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../demo/asset-pattern-library.html">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span>Pattern Library</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="../demo/index.html">
+                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
+                      <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="" width="16" height="16" decoding="async">
+                    </span>
+                    <span>All Demos</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="ov-panel ov-panel--green" aria-labelledby="ready-title">
+            <div class="ov-panel__body ov-stack">
+              <p class="ov-kicker">Kit Status</p>
+              <div class="starter-status-row">
+                <span class="ov-sprite ov-sprite--shield" role="img" aria-label="Verified shield animation"></span>
+                <div>
+                  <h2 id="ready-title" style="margin-bottom: 4px; font-size: 20px;">Ready to Ship</h2>
+                  <p class="ov-muted" style="margin-bottom: 0; font-size: 14px;">WCAG AA contrast, cascade layers, and ~400 KB WebP texture core.</p>
+                </div>
+              </div>
+              <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog">View Setup Guide</button>
+            </div>
+          </section>
         </aside>
 
         <div class="ov-stack">
-          <section class="ov-panel" id="overview" aria-labelledby="overview-title">
-            <h2 class="ov-panel-title" id="overview-title">Overview</h2>
+          <section class="ov-panel ov-panel--ornate" id="workspace-panel" aria-labelledby="workspace-title">
+            <h2 class="ov-panel-title" id="workspace-title">Guildhall Desk</h2>
             <div class="ov-panel__body">
-              <div class="ov-priority">
-                <div class="ov-priority__number">1</div>
-                <div>
-                  <h3>Use real interface structure first</h3>
-                  <p>Keep controls, tables, text, and status semantics in HTML. Add themed artwork as supporting context.</p>
-                  <div class="ov-chip-row"><span class="ov-chip ov-chip--green">Healthy</span><span class="ov-chip ov-chip--blue">Starter</span></div>
+              <p class="ov-kicker">Interactive Primitives</p>
+              <p>Start with real HTML structure, then layer Orchard Vale surfaces, ornaments, and helpers. Use the tabs below with mouse or keyboard (<kbd class="ov-kbd">&larr;</kbd> / <kbd class="ov-kbd">&rarr;</kbd>, <kbd class="ov-kbd">Home</kbd>, <kbd class="ov-kbd">End</kbd>).</p>
+
+              <hr class="ov-divider">
+
+              <div class="ov-tabs" data-ov-tabs id="starter-tabs">
+                <div class="ov-tablist" role="tablist" aria-label="Workspace views">
+                  <button class="ov-tab" type="button" role="tab" id="tab-active" aria-controls="panel-active" aria-selected="true">
+                    Active Tasks <span class="ov-chip ov-chip--green" id="tab-count-active">3</span>
+                  </button>
+                  <button class="ov-tab" type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false">
+                    Ledger Table
+                  </button>
+                  <button class="ov-tab" type="button" role="tab" id="tab-completed" aria-controls="panel-completed" aria-selected="false">
+                    Completed <span class="ov-chip ov-chip--blue" id="tab-count-completed">0</span>
+                  </button>
+                </div>
+
+                <div class="ov-tabpanel" role="tabpanel" id="panel-active" aria-labelledby="tab-active">
+                  <ul class="ov-card-list" id="active-task-list">
+                    <li class="ov-card ov-card--interactive ov-card--green" data-task-item data-status="ready">
+                      <div class="starter-task-head">
+                        <div>
+                          <h3 class="ov-card__title">Import the single-file theme entry</h3>
+                          <p class="ov-card__meta">Planning guild &middot; Theme setup</p>
+                        </div>
+                        <span class="ov-chip ov-chip--green">Ready</span>
+                      </div>
+                      <p>Link <code>src/theme/index.css</code> once to get layered tokens, accessible components, craft ornaments, and responsive layouts.</p>
+                      <div class="starter-task-foot">
+                        <span class="ov-chip">CSS Layers</span>
+                        <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
+                      </div>
+                    </li>
+
+                    <li class="ov-card ov-card--interactive ov-card--amber" data-task-item data-status="review">
+                      <div class="starter-task-head">
+                        <div>
+                          <h3 class="ov-card__title">Inspect contrast &amp; focus rings</h3>
+                          <p class="ov-card__meta">Accessibility desk &middot; Review</p>
+                        </div>
+                        <span class="ov-chip ov-chip--amber">Review</span>
+                      </div>
+                      <p>Links, kickers, and focus outlines automatically switch between deep ink on parchment and pale gold on dark green wood.</p>
+                      <div class="starter-task-foot">
+                        <span class="ov-chip ov-chip--blue">WCAG AA</span>
+                        <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
+                      </div>
+                    </li>
+
+                    <li class="ov-card ov-card--interactive ov-card--blue" data-task-item data-status="ready">
+                      <div class="starter-task-head">
+                        <div>
+                          <h3 class="ov-card__title">Add a new task with the form below</h3>
+                          <p class="ov-card__meta">Courier desk &middot; Operations</p>
+                        </div>
+                        <span class="ov-chip ov-chip--blue">Starter</span>
+                      </div>
+                      <p>Submitting the form appends a card here, adds a row to the ledger table, updates the summary counters, and announces a toast.</p>
+                      <div class="starter-task-foot">
+                        <span class="ov-chip">Zero Deps</span>
+                        <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="ov-empty-state" id="active-empty-state" hidden>
+                    <img
+                      class="ov-empty-state__art"
+                      src="../src/assets/orchard-vale/empty-states/empty-badger-checklist-complete-800.webp"
+                      alt="Badger checking off a completed checklist"
+                      width="280"
+                      height="210"
+                      decoding="async"
+                      loading="lazy">
+                    <h3 class="ov-empty-state__title">Every active task is complete</h3>
+                    <p>Nice work! All items on the desk have been cleared. Create a fresh task below when the next round begins.</p>
+                    <div class="ov-empty-state__actions">
+                      <a class="ov-button" href="#create-panel">Create a Task</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ov-tabpanel" role="tabpanel" id="panel-records" aria-labelledby="tab-records" hidden>
+                  <div class="ov-table-wrap">
+                    <table class="ov-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Task</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody id="records-table-body">
+                        <tr>
+                          <td>Import the single-file theme entry</td>
+                          <td>Planning</td>
+                          <td><span class="ov-chip ov-chip--green">Ready</span></td>
+                        </tr>
+                        <tr>
+                          <td>Inspect contrast &amp; focus rings</td>
+                          <td>Research</td>
+                          <td><span class="ov-chip ov-chip--amber">Review</span></td>
+                        </tr>
+                        <tr>
+                          <td>Add a new task with the form below</td>
+                          <td>Operations</td>
+                          <td><span class="ov-chip ov-chip--blue">Starter</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="ov-inline-note" style="margin-top: 12px; margin-bottom: 0;">
+                    Tip: Need the stylesheet tag right now?
+                    <button
+                      class="ov-button ov-button--paper ov-button--sm"
+                      type="button"
+                      style="margin-left: 8px;"
+                      data-ov-copy='<link rel="stylesheet" href="../src/theme/index.css">'
+                      data-ov-copy-toast="Copied stylesheet link tag.">
+                      Copy CSS Import
+                    </button>
+                  </p>
+                </div>
+
+                <div class="ov-tabpanel" role="tabpanel" id="panel-completed" aria-labelledby="tab-completed" hidden>
+                  <ul class="ov-card-list" id="completed-task-list" hidden></ul>
+
+                  <div class="ov-empty-state" id="completed-empty-state">
+                    <img
+                      class="ov-empty-state__art"
+                      src="../src/assets/orchard-vale/empty-states/empty-badger-checklist-complete-800.webp"
+                      alt="Badger with a tidy checklist board"
+                      width="280"
+                      height="210"
+                      decoding="async"
+                      loading="lazy">
+                    <h3 class="ov-empty-state__title">No completed tasks yet</h3>
+                    <p>Mark any item in Active Tasks as complete to move it into your finished ledger and keep the desk tidy.</p>
+                    <div class="ov-empty-state__actions">
+                      <button class="ov-button ov-button--paper" type="button" id="jump-to-active">View Active Tasks</button>
+                      <a class="ov-button" href="#create-panel">Add New Task</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section class="ov-panel" id="records" aria-labelledby="records-title">
-            <h2 class="ov-panel-title" id="records-title">Records</h2>
-            <div class="ov-panel__body">
-              <div class="ov-table-wrap">
-                <table class="ov-table">
-                  <thead><tr><th>Record</th><th>Owner</th><th>Status</th></tr></thead>
-                  <tbody>
-                    <tr><td>Village welcome guide</td><td>Planning guild</td><td><span class="ov-chip ov-chip--green">Ready</span></td></tr>
-                    <tr><td>Market route notes</td><td>Courier desk</td><td><span class="ov-chip ov-chip--amber">Review</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
+          <section class="ov-panel" id="create-panel" aria-labelledby="create-title">
+            <h2 class="ov-panel-title" id="create-title">Create a Task</h2>
+            <form class="ov-panel__body ov-stack" id="starter-task-form" novalidate>
+              <div class="ov-two-up">
+                <div class="ov-field-group">
+                  <label class="ov-label" for="task-title">Task Title <span class="ov-required" aria-hidden="true">*</span></label>
+                  <input
+                    class="ov-input"
+                    id="task-title"
+                    name="title"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="e.g., Inspect orchard irrigation sluice"
+                    aria-describedby="task-title-hint task-title-error"
+                    required>
+                  <p class="ov-field-hint" id="task-title-hint">Keep titles action-oriented and under 80 characters.</p>
+                  <p class="ov-field-error" id="task-title-error" hidden>Please enter a task title before saving.</p>
+                </div>
 
-          <section class="ov-panel" id="create" aria-labelledby="create-title">
-            <h2 class="ov-panel-title" id="create-title">Create A Record</h2>
-            <form class="ov-panel__body ov-stack">
-              <label><strong>Title</strong><input class="ov-field" name="title" autocomplete="off"></label>
-              <label><strong>Category</strong><select class="ov-select" name="category"><option>Planning</option><option>Research</option><option>Operations</option></select></label>
-              <label><strong>Notes</strong><textarea class="ov-textarea" name="notes"></textarea></label>
-              <div><button class="ov-button" type="submit">Save Sample Record</button></div>
+                <div class="ov-field-group">
+                  <label class="ov-label" for="task-category">Category</label>
+                  <select class="ov-select" id="task-category" name="category">
+                    <option value="Planning">Planning</option>
+                    <option value="Research">Research</option>
+                    <option value="Operations">Operations</option>
+                  </select>
+                  <p class="ov-field-hint">Sets the left accent strip and ledger tag.</p>
+                </div>
+              </div>
+
+              <div class="ov-field-group">
+                <label class="ov-label" for="task-notes">Notes</label>
+                <textarea
+                  class="ov-textarea"
+                  id="task-notes"
+                  name="notes"
+                  rows="3"
+                  placeholder="Optional context, owner, or acceptance check..."></textarea>
+              </div>
+
+              <fieldset class="ov-fieldset">
+                <legend>Task Options</legend>
+                <div class="ov-check-row">
+                  <label class="ov-check">
+                    <input type="checkbox" id="task-review" name="review">
+                    <span>Requires guild review</span>
+                  </label>
+                  <label class="ov-check">
+                    <input type="checkbox" id="task-urgent" name="urgent">
+                    <span>Mark high priority</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="starter-form-actions">
+                <button class="ov-button" type="submit">Add Task to Desk</button>
+                <button class="ov-button ov-button--paper" type="reset">Clear Form</button>
+                <span class="ov-tooltip">
+                  <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog" aria-describedby="tip-snippet">Copy Starter HTML</button>
+                  <span class="ov-tooltip__bubble" role="tooltip" id="tip-snippet">Opens the minimal copy-paste setup snippet.</span>
+                </span>
+              </div>
             </form>
           </section>
         </div>
       </div>
     </main>
   </div>
+
+  <dialog class="ov-dialog" id="starter-kit-dialog" aria-labelledby="dialog-title">
+    <header class="ov-dialog__header">
+      <h2 id="dialog-title">Lightweight Adoption Snippet</h2>
+      <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close dialog">&times;</button>
+    </header>
+    <div class="ov-dialog__body ov-stack">
+      <p style="margin-bottom: 0;">Copy <code>src/theme/</code> and the ~400 KB WebP texture core from <code>src/assets/orchard-vale/textures/</code>, then include two tags in your page head:</p>
+      <pre class="starter-code" id="adoption-snippet">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/theme/index.css&quot;&gt;
+&lt;script src=&quot;src/theme/orchard-vale.js&quot; defer&gt;&lt;/script&gt;</pre>
+      <p class="ov-inline-note" style="margin-bottom: 0;">Embedding inside an existing app? Put <code>class="ov-theme"</code> on any wrapper <code>&lt;div&gt;</code> instead of <code>&lt;body&gt;</code>; all rules live inside <code>@layer ov.*</code>.</p>
+    </div>
+    <footer class="ov-dialog__footer">
+      <button class="ov-button ov-button--paper" type="button" data-ov-copy data-ov-copy-target="#adoption-snippet" data-ov-copy-toast="Copied starter snippet.">Copy Snippet</button>
+      <button class="ov-button" type="button" data-ov-dialog-close>Done</button>
+    </footer>
+  </dialog>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var form = document.getElementById('starter-task-form');
+      var titleInput = document.getElementById('task-title');
+      var titleError = document.getElementById('task-title-error');
+      var categorySelect = document.getElementById('task-category');
+      var notesInput = document.getElementById('task-notes');
+      var reviewCheck = document.getElementById('task-review');
+      var urgentCheck = document.getElementById('task-urgent');
+
+      var activeList = document.getElementById('active-task-list');
+      var completedList = document.getElementById('completed-task-list');
+      var activeEmpty = document.getElementById('active-empty-state');
+      var completedEmpty = document.getElementById('completed-empty-state');
+      var recordsBody = document.getElementById('records-table-body');
+      var tabsRoot = document.getElementById('starter-tabs');
+
+      var statOpen = document.getElementById('stat-open');
+      var statReview = document.getElementById('stat-review');
+      var statComplete = document.getElementById('stat-complete');
+      var navCountOpen = document.getElementById('nav-count-open');
+      var tabCountActive = document.getElementById('tab-count-active');
+      var tabCountCompleted = document.getElementById('tab-count-completed');
+      var jumpToActive = document.getElementById('jump-to-active');
+
+      function syncCounts() {
+        var activeItems = activeList.querySelectorAll('[data-task-item]');
+        var completedItems = completedList.querySelectorAll('[data-task-item]');
+        var reviewCount = activeList.querySelectorAll('[data-task-item][data-status="review"]').length;
+
+        statOpen.textContent = String(activeItems.length);
+        statReview.textContent = String(reviewCount);
+        statComplete.textContent = String(completedItems.length);
+        navCountOpen.textContent = String(activeItems.length);
+        tabCountActive.textContent = String(activeItems.length);
+        tabCountCompleted.textContent = String(completedItems.length);
+
+        activeList.hidden = activeItems.length === 0;
+        activeEmpty.hidden = activeItems.length > 0;
+        completedList.hidden = completedItems.length === 0;
+        completedEmpty.hidden = completedItems.length > 0;
+      }
+
+      function clearTitleError() {
+        titleInput.removeAttribute('aria-invalid');
+        titleError.hidden = true;
+      }
+
+      titleInput.addEventListener('input', function () {
+        if (titleInput.value.trim()) clearTitleError();
+      });
+
+      form.addEventListener('reset', clearTitleError);
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var title = titleInput.value.trim();
+        if (!title) {
+          titleInput.setAttribute('aria-invalid', 'true');
+          titleError.hidden = false;
+          titleInput.focus();
+          if (window.OrchardVale) {
+            window.OrchardVale.announce('Please enter a task title before saving.', 'assertive');
+          }
+          return;
+        }
+
+        clearTitleError();
+        var category = categorySelect.value;
+        var notes = notesInput.value.trim() || 'Logged from the Orchard Vale starter form.';
+        var needsReview = reviewCheck.checked;
+        var isUrgent = urgentCheck.checked;
+
+        var accentClass = isUrgent ? 'ov-card--red'
+          : needsReview ? 'ov-card--amber'
+          : category === 'Research' ? 'ov-card--purple'
+          : category === 'Operations' ? 'ov-card--blue'
+          : 'ov-card--green';
+
+        var chipClass = isUrgent ? 'ov-chip--red' : needsReview ? 'ov-chip--amber' : 'ov-chip--green';
+        var chipText = isUrgent ? 'Priority' : needsReview ? 'Review' : 'Ready';
+
+        var li = document.createElement('li');
+        li.className = 'ov-card ov-card--interactive ' + accentClass;
+        li.setAttribute('data-task-item', '');
+        li.setAttribute('data-status', needsReview ? 'review' : 'ready');
+
+        var head = document.createElement('div');
+        head.className = 'starter-task-head';
+
+        var titleWrap = document.createElement('div');
+        var h3 = document.createElement('h3');
+        h3.className = 'ov-card__title';
+        h3.textContent = title;
+        var meta = document.createElement('p');
+        meta.className = 'ov-card__meta';
+        meta.textContent = category + ' desk \u00b7 Just added';
+        titleWrap.appendChild(h3);
+        titleWrap.appendChild(meta);
+
+        var chip = document.createElement('span');
+        chip.className = 'ov-chip ' + chipClass;
+        chip.textContent = chipText;
+
+        head.appendChild(titleWrap);
+        head.appendChild(chip);
+
+        var desc = document.createElement('p');
+        desc.textContent = notes;
+
+        var foot = document.createElement('div');
+        foot.className = 'starter-task-foot';
+        var catChip = document.createElement('span');
+        catChip.className = 'ov-chip';
+        catChip.textContent = category;
+
+        var doneBtn = document.createElement('button');
+        doneBtn.type = 'button';
+        doneBtn.className = 'ov-button ov-button--paper ov-button--sm';
+        doneBtn.setAttribute('data-complete-task', '');
+        doneBtn.textContent = 'Mark Complete';
+
+        foot.appendChild(catChip);
+        foot.appendChild(doneBtn);
+
+        li.appendChild(head);
+        li.appendChild(desc);
+        li.appendChild(foot);
+        activeList.insertBefore(li, activeList.firstChild);
+
+        var row = document.createElement('tr');
+        var tdTitle = document.createElement('td');
+        tdTitle.textContent = title;
+        var tdCat = document.createElement('td');
+        tdCat.textContent = category;
+        var tdStatus = document.createElement('td');
+        var rowChip = document.createElement('span');
+        rowChip.className = 'ov-chip ' + chipClass;
+        rowChip.textContent = chipText;
+        tdStatus.appendChild(rowChip);
+        row.appendChild(tdTitle);
+        row.appendChild(tdCat);
+        row.appendChild(tdStatus);
+        recordsBody.insertBefore(row, recordsBody.firstChild);
+
+        form.reset();
+        syncCounts();
+
+        if (tabsRoot && typeof tabsRoot._ovActivateTab === 'function') {
+          tabsRoot._ovActivateTab(0);
+        }
+
+        if (window.OrchardVale) {
+          window.OrchardVale.toast('Added "' + title + '" to Active Tasks.', 'success');
+        }
+      });
+
+      activeList.addEventListener('click', function (event) {
+        var btn = event.target.closest('[data-complete-task]');
+        if (!btn) return;
+        var item = btn.closest('[data-task-item]');
+        if (!item) return;
+
+        var titleEl = item.querySelector('.ov-card__title');
+        var title = titleEl ? titleEl.textContent : 'Task';
+        btn.remove();
+
+        var chip = item.querySelector('.starter-task-head .ov-chip');
+        if (chip) {
+          chip.className = 'ov-chip ov-chip--green';
+          chip.textContent = 'Completed';
+        }
+        item.setAttribute('data-status', 'complete');
+        completedList.insertBefore(item, completedList.firstChild);
+        syncCounts();
+
+        if (window.OrchardVale) {
+          window.OrchardVale.toast('Completed "' + title + '".', 'info');
+        }
+      });
+
+      if (jumpToActive) {
+        jumpToActive.addEventListener('click', function () {
+          if (tabsRoot && typeof tabsRoot._ovActivateTab === 'function') {
+            tabsRoot._ovActivateTab(0);
+          }
+        });
+      }
+
+      syncCounts();
+    })();
+  </script>
 </body>
 </html>

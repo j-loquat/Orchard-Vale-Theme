@@ -1,164 +1,409 @@
-/* Orchard Vale theme foundation: tokens, base typography, and global safeguards. */
+/* Orchard Vale theme foundation v2.0: tokens, base typography, surface context,
+   focus, reduced motion, and print. Import first (or use index.css).
 
-:root {
-  color-scheme: light;
-  --ov-ink: #24180d;
-  --ov-ink-soft: #594025;
-  --ov-ink-muted: #775d3d;
-  --ov-paper: #f8edcf;
-  --ov-paper-warm: #efd9a7;
-  --ov-parchment: #e2c37e;
-  --ov-parchment-deep: #c9a866;
-  --ov-wood-dark: #181006;
-  --ov-wood: #2b1a0b;
-  --ov-walnut: #704826;
-  --ov-brass: #c9962e;
-  --ov-brass-light: #e5bd58;
-  --ov-brass-dark: #6c4215;
-  --ov-forest-black: #0f2818;
-  --ov-forest: #173820;
-  --ov-green: #2f6b3f;
-  --ov-green-soft: #dcebd7;
-  --ov-blue: #49759a;
-  --ov-blue-soft: #dbe7f0;
-  --ov-red: #9a4337;
-  --ov-red-soft: #f1d9d2;
-  --ov-amber: #b86f28;
-  --ov-amber-soft: #f4e2bf;
-  --ov-purple: #73508b;
-  --ov-purple-soft: #e8dff0;
-  --ov-gray-soft: #e8e1d2;
-  --ov-shadow: rgba(29, 18, 7, 0.28);
-  --ov-shadow-deep: rgba(20, 12, 4, 0.5);
-  --ov-display: Georgia, "Times New Roman", serif;
-  --ov-body: Georgia, "Times New Roman", serif;
-  --ov-ui: "Trebuchet MS", Arial, sans-serif;
-  --ov-mono: Consolas, "Courier New", monospace;
-  --ov-radius-sm: 3px;
-  --ov-radius-md: 6px;
-  --ov-content: 1480px;
-  --ov-report: 1040px;
-  --ov-focus: #2f78b5;
+   Cascade layers: everything in the theme lives in ov.* layers, so any unlayered
+   app/demo CSS overrides the theme without specificity battles. */
+
+@layer ov.tokens, ov.base, ov.components, ov.layouts;
+
+/* -------------------------------------------------------------------------- */
+/* Tokens                                                                     */
+/* -------------------------------------------------------------------------- */
+
+@layer ov.tokens {
+  :root {
+    color-scheme: light;
+
+    /* Ink */
+    --ov-ink: #24180d;
+    --ov-ink-soft: #594025;
+    --ov-ink-muted: #5f4628;
+
+    /* Paper and parchment */
+    --ov-paper: #f8edcf;
+    --ov-paper-warm: #efd9a7;
+    --ov-parchment: #e2c37e;
+    --ov-parchment-deep: #c9a866;
+    --ov-white: #fffaf0;
+
+    /* Wood and brass */
+    --ov-wood-dark: #181006;
+    --ov-wood: #2b1a0b;
+    --ov-walnut: #704826;
+    --ov-brass: #c9962e;
+    --ov-brass-light: #e5bd58;
+    --ov-brass-dark: #6c4215;
+
+    /* Forest */
+    --ov-forest-black: #0f2818;
+    --ov-forest: #173820;
+    --ov-forest-mid: #1c4a2a;
+    --ov-green: #2f6b3f;
+    --ov-green-soft: #dcebd7;
+
+    /* Status hues (fills pass >= 4.5:1 with --ov-paper text) */
+    --ov-blue: #355d7f;
+    --ov-blue-soft: #dbe7f0;
+    --ov-red: #9a4337;
+    --ov-red-ink: #7d2f25;
+    --ov-red-soft: #f1d9d2;
+    --ov-amber: #b86f28;
+    --ov-amber-ink: #754512;
+    --ov-amber-soft: #f4e2bf;
+    --ov-purple: #73508b;
+    --ov-purple-soft: #e8dff0;
+    --ov-gray-soft: #e8e1d2;
+
+    /* Links and focus */
+    --ov-link-light: #235f91;
+    --ov-link-light-hover: #163f64;
+    --ov-link-dark: #f6e2a8;
+    --ov-link-dark-hover: #fff6d6;
+    --ov-focus-light: #235f91;
+    --ov-focus-dark: var(--ov-brass-light);
+    --ov-focus: var(--ov-focus-light);
+
+    /* Shadow colors (kept for backwards compatibility) and elevations */
+    --ov-shadow: rgba(29, 18, 7, 0.28);
+    --ov-shadow-deep: rgba(20, 12, 4, 0.5);
+    --ov-elev-1: 0 2px 5px rgba(51, 31, 12, 0.14);
+    --ov-elev-2: 0 7px 15px rgba(51, 31, 12, 0.16);
+    --ov-elev-3: 0 12px 28px var(--ov-shadow-deep);
+    --ov-elev-modal: 0 24px 60px rgba(10, 6, 2, 0.55);
+    --ov-inset-brass: inset 0 0 0 2px rgba(201, 150, 46, 0.18);
+
+    /* Typography */
+    --ov-display: Georgia, "Times New Roman", serif;
+    --ov-body: Georgia, "Times New Roman", serif;
+    --ov-ui: "Trebuchet MS", Arial, sans-serif;
+    --ov-mono: Consolas, "Courier New", monospace;
+    --ov-text-xs: 0.75rem;     /* 12px */
+    --ov-text-sm: 0.8125rem;   /* 13px */
+    --ov-text-md: 1rem;        /* 16px */
+    --ov-text-lg: 1.125rem;    /* 18px */
+    --ov-text-xl: 1.5rem;      /* 24px */
+    --ov-text-2xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+    --ov-text-display: clamp(2.125rem, 1.4rem + 3vw, 4rem);
+    --ov-leading-tight: 1.1;
+    --ov-leading: 1.45;
+
+    /* Spacing (4px grid) */
+    --ov-space-1: 4px;
+    --ov-space-2: 8px;
+    --ov-space-3: 12px;
+    --ov-space-4: 16px;
+    --ov-space-5: 20px;
+    --ov-space-6: 24px;
+    --ov-space-7: 32px;
+    --ov-space-8: 48px;
+
+    /* Radii */
+    --ov-radius-sm: 3px;
+    --ov-radius-md: 6px;
+    --ov-radius-lg: 10px;
+    --ov-radius-pill: 999px;
+
+    /* Layout */
+    --ov-content: 1480px;
+    --ov-report: 1040px;
+    --ov-anchor-offset: 84px;
+
+    /* Z-index scale */
+    --ov-z-base: 1;
+    --ov-z-dropdown: 100;
+    --ov-z-sticky: 200;
+    --ov-z-modal: 1000;
+    --ov-z-toast: 1100;
+    --ov-z-skip: 1200;
+
+    /* Motion */
+    --ov-dur-fast: 120ms;
+    --ov-dur-base: 200ms;
+    --ov-dur-slow: 320ms;
+    --ov-dur-sprite: 900ms;
+    --ov-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --ov-ease-in-out: cubic-bezier(0.45, 0, 0.25, 1);
+
+    /* Texture core (~400 KB WebP total). Paths resolve relative to src/theme/. */
+    --ov-tex-parchment: url("../assets/orchard-vale/textures/texture-parchment-seamless-1024.webp");
+    --ov-tex-parchment-aged: url("../assets/orchard-vale/textures/texture-parchment-aged-soft-1024.webp");
+    --ov-tex-wood-dark: url("../assets/orchard-vale/textures/texture-wood-dark-carved-1024.webp");
+    --ov-tex-walnut: url("../assets/orchard-vale/textures/texture-wood-walnut-panel-1024.webp");
+    --ov-tex-signboard: url("../assets/orchard-vale/textures/texture-green-signboard-1024.webp");
+    --ov-tex-brass: url("../assets/orchard-vale/textures/texture-brass-hammered-1024.webp");
+    --ov-tex-watercolor: url("../assets/orchard-vale/textures/texture-watercolor-countryside-wash-1024.webp");
+    --ov-tex-speckle: url("../assets/orchard-vale/textures/overlay-ink-speckle-subtle-1024.png");
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
 
-body.ov-theme {
-  min-width: 0;
-  margin: 0;
-  color: var(--ov-ink);
-  font-family: var(--ov-body);
-  font-size: 16px;
-  line-height: 1.45;
-  background:
-    linear-gradient(rgba(16, 38, 24, 0.9), rgba(16, 38, 24, 0.96)),
-    url("../assets/orchard-vale/textures/texture-wood-dark-carved-1024.png");
-  background-size: auto, 540px 540px;
-}
-
-.ov-theme *,
-.ov-theme *::before,
-.ov-theme *::after {
-  box-sizing: border-box;
-}
-
-.ov-theme :where(h1, h2, h3, h4, p, ul, ol, blockquote, figure) {
-  margin-top: 0;
-}
-
-.ov-theme :where(h1, h2, h3, h4) {
-  color: var(--ov-forest);
-  font-family: var(--ov-display);
-  line-height: 1.06;
-}
-
-.ov-theme img {
-  display: block;
-  max-width: 100%;
-}
-
-.ov-theme a {
-  color: #235f91;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  overflow-wrap: anywhere;
-}
-
-.ov-theme a:hover {
-  color: #163f64;
-}
-
-.ov-theme :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
-  outline: 3px solid var(--ov-focus);
-  outline-offset: 3px;
-}
-
-.ov-theme ::selection {
-  color: var(--ov-paper);
-  background: var(--ov-green);
-}
-
-.ov-skip-link {
-  position: fixed;
-  z-index: 1000;
-  top: 8px;
-  left: 8px;
-  padding: 9px 12px;
-  color: var(--ov-paper) !important;
-  background: var(--ov-forest);
-  border: 2px solid var(--ov-brass);
-  transform: translateY(-160%);
-}
-
-.ov-skip-link:focus {
-  transform: translateY(0);
-}
-
-.ov-sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-.ov-ui-text {
-  font-family: var(--ov-ui);
-}
-
-.ov-mono {
-  font-family: var(--ov-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@layer ov.base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 
+  /* Subtree-safe base: works on <body> or on any embedded container. */
+  .ov-theme {
+    --ov-link: var(--ov-link-light);
+    --ov-link-hover: var(--ov-link-light-hover);
+    --ov-kicker: var(--ov-brass-dark);
+    min-width: 0;
+    color: var(--ov-ink);
+    font-family: var(--ov-body);
+    font-size: var(--ov-text-md);
+    line-height: var(--ov-leading);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Page canvas only when the theme owns the whole page. */
+  body.ov-theme,
+  .ov-theme.ov-theme--canvas {
+    margin: 0;
+    background:
+      linear-gradient(rgba(16, 38, 24, 0.9), rgba(16, 38, 24, 0.96)),
+      var(--ov-tex-wood-dark);
+    background-color: var(--ov-forest-black);
+    background-size: auto, 540px 540px;
+  }
+
+  .ov-theme,
   .ov-theme *,
   .ov-theme *::before,
   .ov-theme *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-@media print {
-  body.ov-theme {
-    color: #111;
-    background: #fff;
+    box-sizing: border-box;
   }
 
-  .ov-theme :where(.ov-skip-link, .ov-screen-only) {
-    display: none !important;
+  .ov-theme :where(h1, h2, h3, h4, p, ul, ol, blockquote, figure) {
+    margin-top: 0;
+  }
+
+  .ov-theme :where(h1, h2, h3, h4) {
+    color: var(--ov-forest);
+    font-family: var(--ov-display);
+    line-height: 1.06;
+  }
+
+  .ov-theme :where(img) {
+    display: block;
+    max-width: 100%;
+  }
+
+  .ov-theme :where(button, input, select, textarea) {
+    font: inherit;
+  }
+
+  .ov-theme :where(a) {
+    color: var(--ov-link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+  }
+
+  .ov-theme :where(a):hover {
+    color: var(--ov-link-hover);
+  }
+
+  .ov-theme :where(a, button, input, select, textarea, summary, dialog, [tabindex]):focus-visible {
+    outline: 3px solid var(--ov-focus);
+    outline-offset: 3px;
+  }
+
+  .ov-theme ::selection {
+    color: var(--ov-paper);
+    background: var(--ov-green);
+  }
+
+  /* ---------------------------------------------------------------------- */
+  /* Surface context: links, kickers, and focus rings adapt automatically.   */
+  /* Light surfaces first, dark surfaces after, so .ov-panel.ov-panel--green */
+  /* resolves to dark. Nested surfaces inherit from the nearest ancestor.   */
+  /* ---------------------------------------------------------------------- */
+
+  .ov-panel,
+  .ov-card,
+  .ov-dialog,
+  .ov-dialog__body,
+  .ov-callout,
+  .ov-inline-note,
+  .ov-empty-state,
+  .ov-toast,
+  .ov-table-wrap,
+  .ov-light-surface {
+    --ov-link: var(--ov-link-light);
+    --ov-link-hover: var(--ov-link-light-hover);
+    --ov-kicker: var(--ov-brass-dark);
+    --ov-focus: var(--ov-focus-light);
+  }
+
+  body.ov-theme,
+  .ov-theme--canvas,
+  .ov-frame,
+  .ov-panel--green,
+  .ov-panel-title,
+  .ov-title-banner,
+  .ov-ribbon,
+  .ov-dark-surface,
+  .ov-demo-bar,
+  .ov-top-nav,
+  .ov-dialog__header {
+    --ov-link: var(--ov-link-dark);
+    --ov-link-hover: var(--ov-link-dark-hover);
+    --ov-kicker: var(--ov-brass-light);
+    --ov-focus: var(--ov-focus-dark);
+  }
+
+  .ov-skip-link {
+    position: fixed;
+    z-index: var(--ov-z-skip);
+    top: 8px;
+    left: 8px;
+    padding: 9px 12px;
+    color: var(--ov-paper) !important;
+    font: 800 var(--ov-text-sm)/1.2 var(--ov-ui);
+    background: var(--ov-forest);
+    border: 2px solid var(--ov-brass);
+    transform: translateY(-160%);
+  }
+
+  .ov-skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .ov-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .ov-ui-text {
+    font-family: var(--ov-ui);
+  }
+
+  .ov-mono {
+    font-family: var(--ov-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------------------------------------------------------------------- */
+  /* Reduced motion: kill durations AND delays (no stalled staggers).        */
+  /* ---------------------------------------------------------------------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .ov-theme,
+    .ov-theme *,
+    .ov-theme *::before,
+    .ov-theme *::after,
+    .ov-theme ::backdrop {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-delay: 0s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0s !important;
+    }
+  }
+
+  /* ---------------------------------------------------------------------- */
+  /* Print: dark ink on crisp white. !important inside a layer outranks      */
+  /* unlayered demo CSS, so every page using the theme prints cleanly.       */
+  /* ---------------------------------------------------------------------- */
+
+  @media print {
+    @page {
+      margin: 14mm 12mm;
+    }
+
+    body.ov-theme,
+    .ov-theme {
+      color: #111 !important;
+      background: #fff !important;
+    }
+
+    .ov-theme :where(
+      .ov-frame, .ov-panel, .ov-panel--green, .ov-panel--aged, .ov-title-banner,
+      .ov-panel-title, .ov-ribbon, .ov-dark-surface, .ov-card, .ov-callout,
+      .ov-inline-note, .ov-empty-state, .ov-chart-frame, .ov-table-wrap,
+      .ov-header__stats, .ov-stat, .ov-tabpanel, .ov-dialog, .ov-dialog__header
+    ) {
+      color: #111 !important;
+      background: #fff !important;
+      border-color: #9a8b74 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    .ov-theme :where(.ov-panel, .ov-card, .ov-callout, .ov-title-banner, .ov-empty-state, .ov-chart-frame) {
+      border: 1px solid #9a8b74 !important;
+    }
+
+    .ov-theme :where(.ov-panel-title, .ov-ribbon, .ov-dialog__header) {
+      border: 0 !important;
+      border-bottom: 2px solid #333 !important;
+    }
+
+    .ov-theme :where(.ov-panel--ornate, .ov-panel--wood-corners)::before {
+      display: none !important;
+    }
+
+    .ov-theme :where(h1, h2, h3, h4, strong, .ov-kicker, .ov-muted, .ov-stat strong, .ov-stat span) {
+      color: #111 !important;
+      text-shadow: none !important;
+    }
+
+    .ov-theme :where(.ov-kicker, .ov-muted) {
+      color: #444 !important;
+    }
+
+    .ov-theme :where(a) {
+      color: #111 !important;
+      text-decoration: underline !important;
+    }
+
+    .ov-theme :where(.ov-table th) {
+      color: #111 !important;
+      background: #fff !important;
+      border-bottom: 2px solid #333 !important;
+    }
+
+    .ov-theme :where(.ov-table td) {
+      border-bottom: 1px solid #bbb !important;
+    }
+
+    .ov-theme :where(.ov-chip, .ov-status-dot, .ov-priority__number, .ov-meter, .ov-meter > span) {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .ov-theme :where(
+      .ov-skip-link, .ov-screen-only, .ov-top-nav, .ov-demo-bar, .ov-toast-region,
+      .ov-tooltip__bubble, .ov-sprite, button, .ov-button, .ov-icon-button,
+      input[type="submit"], input[type="button"], input[type="reset"], [data-ov-print-hide]
+    ) {
+      display: none !important;
+    }
+
+    .ov-theme :where(.ov-panel, .ov-card, .ov-callout, .ov-stat, .ov-empty-state, .ov-chart-frame, figure, tr, img) {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .ov-theme :where(h1, h2, h3, h4, .ov-panel-title, .ov-ribbon) {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
   }
 }
