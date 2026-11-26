@@ -1,6 +1,6 @@
 # Orchard Vale Design System
 
-The canonical Orchard Vale v2.0 design specification is [`docs/design.md`](docs/design.md). For pixel-faithful recreation of the original 1672×941 village operations artboard, see [`docs/design-reference-dashboard.md`](docs/design-reference-dashboard.md).
+The canonical Orchard Vale design specification is [`docs/design.md`](docs/design.md). For pixel-faithful recreation of the original 1672×941 village operations artboard, see [`docs/design-reference-dashboard.md`](docs/design-reference-dashboard.md).
 
 Before designing or modifying any user-facing interface, read `docs/design.md` in full and treat it as the visual source of truth.
 
@@ -14,7 +14,7 @@ Import the single-entry theme bundle and optional progressive behavior helpers b
   - [`src/theme/orchard-layouts.css`](src/theme/orchard-layouts.css) — responsive shells and layout recipes.
 - [`src/theme/orchard-vale.js`](src/theme/orchard-vale.js) — zero-dependency, `file://`-safe helpers (`window.OrchardVale`) for accessible tabs, native `<dialog>` focus restoration, clipboard copy, toasts, screen-reader announcements, and `.ov-demo-bar` navigation.
 
-For examples, start from [`starter/index.html`](starter/index.html) or the closest matching implementation under [`demo/`](demo/) instead of inventing a new visual system.
+Follow the [setup guide](starter/index.html) to create a working page. For layout examples, use the closest matching implementation under [`demo/`](demo/).
 
 ## Design intent
 

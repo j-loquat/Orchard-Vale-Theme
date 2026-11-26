@@ -1,4 +1,4 @@
-/* Orchard Vale Scholar's Field Report — built on Theme v2.0. */
+/* Orchard Vale Scholar's Field Report — built on the Orchard Vale theme. */
 
 .research-page {
   --ov-anchor-offset: 132px;
@@ -11,6 +11,13 @@
   justify-content: space-between;
   gap: 12px;
   margin-top: 12px;
+}
+
+.research-page .report-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ov-space-2);
 }
 
 /* Sticky section navigation below .ov-demo-bar */

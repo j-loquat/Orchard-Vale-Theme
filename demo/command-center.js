@@ -12,8 +12,8 @@
       name: 'Blacksmith Forge',
       role: 'Builder / Implementer',
       districtMap: 'maps/backgrounds/map-district-forge-unlabeled-16x9.webp',
-      x: 74,
-      y: 65,
+      x: 77,
+      y: 76,
       shield: 'maps/controls/marker-shield-amber.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -26,10 +26,10 @@
       fourthValue: '1',
       summary: 'Active build bays forging the Payment Service and User Authentication modules with automated patch verification.',
       stations: [
-        { id: 'forge-anvil', name: 'Anvil Build Bay', role: 'Core Compilation', x: 46, y: 54, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: '14 build targets active · Payment Service at 68%.' },
-        { id: 'forge-intake', name: 'Ore & PR Intake', role: 'Patch Triage', x: 43, y: 14, marker: 'maps/controls/marker-pin-blue.svg', status: 'Ready', detail: '3 pull requests staged for implementer review.' },
-        { id: 'forge-bellows', name: 'Steam Compiler', role: 'Worker Pool', x: 33, y: 86, marker: 'maps/controls/marker-pin-amber.svg', status: 'Busy', detail: 'High parallelism active across 7 guild builders.' },
-        { id: 'forge-crane', name: 'Artifact Crane', role: 'Release Hoist', x: 83, y: 44, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Signed build bundles queued for Watermill CI.' }
+        { id: 'forge-anvil', name: 'Anvil Build Bay', role: 'Core Compilation', x: 42, y: 65, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: '14 build targets active · Payment Service at 68%.' },
+        { id: 'forge-intake', name: 'Ore & PR Intake', role: 'Patch Triage', x: 32, y: 33, marker: 'maps/controls/marker-pin-blue.svg', status: 'Ready', detail: '3 pull requests staged for implementer review.' },
+        { id: 'forge-bellows', name: 'Steam Compiler', role: 'Worker Pool', x: 24, y: 85, marker: 'maps/controls/marker-pin-amber.svg', status: 'Busy', detail: 'High parallelism active across 7 guild builders.' },
+        { id: 'forge-crane', name: 'Artifact Crane', role: 'Release Hoist', x: 83, y: 51, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Signed build bundles queued for Watermill CI.' }
       ]
     },
     watchtower: {
@@ -37,8 +37,8 @@
       name: 'Watchtower',
       role: 'Monitoring / Alerts',
       districtMap: null,
-      x: 82,
-      y: 17,
+      x: 84,
+      y: 25,
       shield: 'maps/controls/marker-shield-red.svg',
       health: 'Watch',
       healthTone: 'amber',
@@ -57,8 +57,8 @@
       name: 'Scribe House',
       role: 'Planner / Docs',
       districtMap: 'maps/backgrounds/map-district-library-unlabeled-16x9.webp',
-      x: 69,
-      y: 43,
+      x: 73,
+      y: 52,
       shield: 'maps/controls/marker-shield-blue.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -71,10 +71,10 @@
       fourthValue: '0',
       summary: 'Quiet domed archive drafting architecture blueprints, API reference manuals, and rollout diagrams.',
       stations: [
-        { id: 'lib-hall', name: 'API Reference Hall', role: 'Doc Generation', x: 59, y: 51, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Docu Deer updating REST and webhook contract guides.' },
-        { id: 'lib-alcove', name: 'Spec Archives', role: 'RFC Ledger', x: 32, y: 27, marker: 'maps/controls/marker-pin-blue.svg', status: 'Ready', detail: '8 specifications indexed and cross-referenced.' },
-        { id: 'lib-loom', name: 'Diagram Loom', role: 'Visual Maps', x: 63, y: 70, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Sequence diagrams synced at 60% completion.' },
-        { id: 'lib-cart', name: 'Changelog Cart', role: 'Release Notes', x: 26, y: 83, marker: 'maps/controls/marker-pin-purple.svg', status: 'Draft', detail: 'Drafting release notes for v2.0 deployment.' }
+        { id: 'lib-hall', name: 'API Reference Hall', role: 'Doc Generation', x: 58, y: 54, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Docu Deer updating REST and webhook contract guides.' },
+        { id: 'lib-alcove', name: 'Spec Archives', role: 'RFC Ledger', x: 31, y: 35, marker: 'maps/controls/marker-pin-blue.svg', status: 'Ready', detail: '8 specifications indexed and cross-referenced.' },
+        { id: 'lib-loom', name: 'Diagram Loom', role: 'Visual Maps', x: 70, y: 82, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Sequence diagrams synced at 60% completion.' },
+        { id: 'lib-cart', name: 'Changelog Cart', role: 'Release Notes', x: 23, y: 86, marker: 'maps/controls/marker-pin-purple.svg', status: 'Draft', detail: 'Drafting release notes for the next deployment.' }
       ]
     },
     market: {
@@ -83,7 +83,7 @@
       role: 'Dependencies',
       districtMap: 'maps/backgrounds/map-district-market-unlabeled-16x9.webp',
       x: 35,
-      y: 38,
+      y: 45,
       shield: 'maps/controls/marker-shield-amber.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -96,10 +96,10 @@
       fourthValue: '0',
       summary: 'Supply square auditing upstream packages, lockfiles, and database query libraries with zero CVEs.',
       stations: [
-        { id: 'mkt-fountain', name: 'Registry Fountain', role: 'Package Mirror', x: 49, y: 51, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Local mirror cache 99.4% warm across all guilds.' },
-        { id: 'mkt-audit', name: 'Package Audit Desk', role: 'License & CVE', x: 48, y: 14, marker: 'maps/controls/marker-pin-blue.svg', status: 'Healthy', detail: '0 known vulnerabilities in active dependency tree.' },
-        { id: 'mkt-board', name: 'CVE Advisories', role: 'Upgrade Watch', x: 72, y: 19, marker: 'maps/controls/marker-pin-amber.svg', status: '1 Outdated', detail: 'Minor update available: lodash@4.17.22.' },
-        { id: 'mkt-stalls', name: 'Lockfile Stalls', role: 'Pin Integrity', x: 57, y: 76, marker: 'maps/controls/marker-shield-green.svg', status: 'Verified', detail: 'Checksums verified for all 48 packages.' }
+        { id: 'mkt-fountain', name: 'Registry Fountain', role: 'Package Mirror', x: 50, y: 64, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Local mirror cache 99.4% warm across all guilds.' },
+        { id: 'mkt-audit', name: 'Package Audit Desk', role: 'License & CVE', x: 47, y: 24, marker: 'maps/controls/marker-pin-blue.svg', status: 'Healthy', detail: '0 known vulnerabilities in active dependency tree.' },
+        { id: 'mkt-board', name: 'CVE Advisories', role: 'Upgrade Watch', x: 78, y: 23, marker: 'maps/controls/marker-pin-amber.svg', status: '1 Outdated', detail: 'Minor update available: lodash@4.17.22.' },
+        { id: 'mkt-stalls', name: 'Lockfile Stalls', role: 'Pin Integrity', x: 62, y: 89, marker: 'maps/controls/marker-shield-green.svg', status: 'Verified', detail: 'Checksums verified for all 48 packages.' }
       ]
     },
     guildhall: {
@@ -107,8 +107,8 @@
       name: 'Town Hall',
       role: 'Orchestrator HQ',
       districtMap: 'maps/backgrounds/map-district-guildhall-unlabeled-16x9.webp',
-      x: 56,
-      y: 24,
+      x: 55,
+      y: 38,
       shield: 'maps/controls/marker-shield-green.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -121,10 +121,10 @@
       fourthValue: '6',
       summary: 'Central council coordinating active quest routing, priority escalation, and guild load balancing.',
       stations: [
-        { id: 'gh-council', name: 'Orchestrator Council', role: 'Routing Desk', x: 39, y: 66, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Bramble Badger coordinating 6 active quests at 62% load.' },
-        { id: 'gh-registry', name: 'Quest Registry', role: 'Priority Ledger', x: 54, y: 45, marker: 'maps/controls/marker-pin-blue.svg', status: '6 Active', detail: '2 High, 3 Medium, and 1 Low priority quests ranked.' },
-        { id: 'gh-board', name: 'Dispatch Board', role: 'Guild Signals', x: 36, y: 22, marker: 'maps/controls/marker-pin-amber.svg', status: 'Synced', detail: 'Courier routes open to Forge, Watermill, and Stables.' },
-        { id: 'gh-plaza', name: 'Triage Courtyard', role: 'Escalation Ring', x: 86, y: 33, marker: 'maps/controls/marker-shield-green.svg', status: 'Clear', detail: 'No unrouted escalations waiting on council review.' }
+        { id: 'gh-council', name: 'Orchestrator Council', role: 'Routing Desk', x: 40, y: 80, marker: 'maps/controls/marker-shield-green.svg', status: 'Healthy', detail: 'Bramble Badger coordinating 6 active quests at 62% load.' },
+        { id: 'gh-registry', name: 'Quest Registry', role: 'Priority Ledger', x: 64, y: 59, marker: 'maps/controls/marker-pin-blue.svg', status: '6 Active', detail: '2 High, 3 Medium, and 1 Low priority quests ranked.' },
+        { id: 'gh-board', name: 'Dispatch Board', role: 'Guild Signals', x: 32, y: 35, marker: 'maps/controls/marker-pin-amber.svg', status: 'Synced', detail: 'Courier routes open to Forge, Watermill, and Stables.' },
+        { id: 'gh-plaza', name: 'Triage Courtyard', role: 'Escalation Ring', x: 84, y: 44, marker: 'maps/controls/marker-shield-green.svg', status: 'Clear', detail: 'No unrouted escalations waiting on council review.' }
       ]
     },
     tavern: {
@@ -132,8 +132,8 @@
       name: 'Tavern',
       role: 'Ops / Coordination',
       districtMap: null,
-      x: 53,
-      y: 84,
+      x: 54,
+      y: 89,
       shield: 'maps/controls/marker-shield-purple.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -152,8 +152,8 @@
       name: 'Watermill',
       role: 'CI / Automation',
       districtMap: 'maps/backgrounds/map-district-watermill-unlabeled-16x9.webp',
-      x: 15,
-      y: 55,
+      x: 18,
+      y: 64,
       shield: 'maps/controls/marker-shield-green.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -166,10 +166,10 @@
       fourthValue: '0',
       summary: 'River-powered automation mill running continuous integration, integration test suites, and security scans.',
       stations: [
-        { id: 'wm-sluice', name: 'CI Trigger Sluice', role: 'Build Intake', x: 48, y: 15, marker: 'maps/controls/marker-shield-green.svg', status: 'Active', detail: 'Pipeline #2145 passed all automated gate checks.' },
-        { id: 'wm-wheel', name: 'Test Runner Wheel', role: 'Integration Suite', x: 30, y: 53, marker: 'maps/controls/marker-pin-blue.svg', status: '5/5 Green', detail: 'Millie Mole running full integration suite.' },
-        { id: 'wm-scanner', name: 'Security Scanner', role: 'Static Analysis', x: 86, y: 26, marker: 'maps/controls/marker-shield-green.svg', status: '5/5 Clean', detail: 'Zero critical or high policy findings.' },
-        { id: 'wm-outflow', name: 'Artifact Outflow', role: 'Staging Feed', x: 81, y: 75, marker: 'maps/controls/marker-pin-green.svg', status: 'Ready', detail: 'Signed build delivered to The Stables caravan.' }
+        { id: 'wm-sluice', name: 'CI Trigger Sluice', role: 'Build Intake', x: 41, y: 23, marker: 'maps/controls/marker-shield-green.svg', status: 'Active', detail: 'Pipeline #2145 passed all automated gate checks.' },
+        { id: 'wm-wheel', name: 'Test Runner Wheel', role: 'Integration Suite', x: 45, y: 62, marker: 'maps/controls/marker-pin-blue.svg', status: '5/5 Green', detail: 'Millie Mole running full integration suite.' },
+        { id: 'wm-scanner', name: 'Security Scanner', role: 'Static Analysis', x: 83, y: 33, marker: 'maps/controls/marker-shield-green.svg', status: '5/5 Clean', detail: 'Zero critical or high policy findings.' },
+        { id: 'wm-outflow', name: 'Artifact Outflow', role: 'Staging Feed', x: 74, y: 79, marker: 'maps/controls/marker-pin-green.svg', status: 'Ready', detail: 'Signed build delivered to The Stables caravan.' }
       ]
     },
     stables: {
@@ -177,8 +177,8 @@
       name: 'The Stables',
       role: 'Deployment',
       districtMap: 'maps/backgrounds/map-district-stables-unlabeled-16x9.webp',
-      x: 15,
-      y: 80,
+      x: 18,
+      y: 88,
       shield: 'maps/controls/marker-shield-blue.svg',
       health: 'Healthy',
       healthTone: 'green',
@@ -191,10 +191,10 @@
       fourthValue: '0',
       summary: 'Courier dispatch yard managing staging caravans, canary health checks, and production release rollouts.',
       stations: [
-        { id: 'st-caravan', name: 'Staging Caravan', role: 'Pre-Prod Fleet', x: 50, y: 57, marker: 'maps/controls/marker-shield-green.svg', status: '2/2 Live', detail: 'Staging deployment verified with zero regressions.' },
-        { id: 'st-paddock', name: 'Courier Mounts', role: 'Canary Runners', x: 32, y: 31, marker: 'maps/controls/marker-pin-blue.svg', status: 'Saddled', detail: 'Canary health probes armed for production cutover.' },
-        { id: 'st-crates', name: 'Prod Release Crates', role: 'Production Gate', x: 68, y: 84, marker: 'maps/controls/marker-pin-amber.svg', status: 'Awaiting Go', detail: 'Stable Stan standing by for Run Deploy Prod.' },
-        { id: 'st-harness', name: 'Rollback Harness', role: 'Safety Net', x: 88, y: 64, marker: 'maps/controls/marker-shield-green.svg', status: 'Armed', detail: 'Instant snapshot rollback tested and ready.' }
+        { id: 'st-caravan', name: 'Staging Caravan', role: 'Pre-Prod Fleet', x: 42, y: 68, marker: 'maps/controls/marker-shield-green.svg', status: '2/2 Live', detail: 'Staging deployment verified with zero regressions.' },
+        { id: 'st-paddock', name: 'Courier Mounts', role: 'Canary Runners', x: 31, y: 36, marker: 'maps/controls/marker-pin-blue.svg', status: 'Saddled', detail: 'Canary health probes armed for production cutover.' },
+        { id: 'st-crates', name: 'Prod Release Crates', role: 'Production Gate', x: 70, y: 87, marker: 'maps/controls/marker-pin-amber.svg', status: 'Awaiting Go', detail: 'Stable Stan standing by for Run Deploy Prod.' },
+        { id: 'st-harness', name: 'Rollback Harness', role: 'Safety Net', x: 82, y: 61, marker: 'maps/controls/marker-shield-green.svg', status: 'Armed', detail: 'Instant snapshot rollback tested and ready.' }
       ]
     }
   };

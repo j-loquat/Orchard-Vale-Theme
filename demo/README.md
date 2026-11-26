@@ -1,6 +1,6 @@
 # Orchard Vale Demos
 
-This folder holds 12 interactive static HTML/CSS/JS demo pages built on the shared Orchard Vale v2.0 theme (`src/theme/index.css` + `src/theme/orchard-vale.js`), alongside [`../starter/index.html`](../starter/index.html) as a minimal adoption template. Every page opens directly from the filesystem (`file://`) with zero build steps.
+This folder holds 12 interactive static HTML/CSS/JS demo pages built on the shared Orchard Vale theme (`src/theme/index.css` + `src/theme/orchard-vale.js`). The [setup guide](../starter/index.html) explains how to use the theme in your own project. Every page opens directly from the filesystem (`file://`) with zero build steps.
 
 ## Pages
 
@@ -8,7 +8,7 @@ This folder holds 12 interactive static HTML/CSS/JS demo pages built on the shar
 - `friendly-town.html` — Simple editorial article and tone proof demonstrating scenes, parchment rhythm, ornaments, heraldry, characters, maps, and motifs in a readable layout.
 - `town-notice-board.html` — Medium-density civic/public information board with interactive notice filters, event details, steward avatars, status badges, and map markers.
 - `orchard-morning-briefing.html` — Generic mixed-information daily briefing template with top priorities, consulting watch, schedule/free blocks, seven-day lookahead, email triage, news, disclosure replies, and source health.
-- `orchard-research-report.html` — Generic sourced-research template with key takeaways, short answer, confirmed/inferred/watch callouts, comparison tables, practical implications, confidence gaps, complete source list, and print-safe layout.
+- `orchard-research-report.html` — Sourced research report with takeaways, evidence callouts, comparison tables, and print view. Open the report to download the standalone kit with editable HTML and AI instructions.
 - `hearthside-commons.html` — Productivity suite for mail, calendar, and tasks featuring folder switching, interactive message reading, a ruled calendar view, and task management.
 - `command-center.html` — Flagship operations dashboard featuring the interactive Village Tableau, 6 switchable district maps, alert queue, system-health charts, response workflow, steward roster, and live event ledger.
 - `guildhall-project-board.html` — Flagship 3-column interactive Kanban project board (consolidating the retired `guildhall-planner.html`) with workspace/assignee filters, card movement, task details, milestone timeline, and activity feed.

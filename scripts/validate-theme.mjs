@@ -16,7 +16,7 @@ const ignoredRootPaths = ["art-sources", "pets/.pet-runs"];
 const errors = [];
 const checked = {
   html: 0, css: 0, markdown: 0, references: 0, js: 0, jsSyntax: 0,
-  jsAssetRefs: 0, images: 0, contrastPairs: 0, ids: 0,
+  jsAssetRefs: 0, images: 0, manifestAssets: 0, contrastPairs: 0, ids: 0,
 };
 
 function relative(file) {
@@ -242,6 +242,46 @@ async function checkImageMagic(file) {
   }
 }
 
+// ---------------------------------------------------------------- manifests
+
+async function checkAssetManifests() {
+  const directory = path.join(root, "src", "assets", "orchard-vale");
+  const jsonFile = path.join(directory, "asset-manifest.json");
+  const jsFile = path.join(directory, "asset-manifest.js");
+  let entries;
+  try {
+    const [json, js] = await Promise.all([readFile(jsonFile, "utf8"), readFile(jsFile, "utf8")]);
+    entries = JSON.parse(json);
+    const payload = js.match(/^window\.ORCHARD_ASSET_MANIFEST\s*=\s*([\s\S]+);\s*$/)?.[1];
+    if (!Array.isArray(entries) || JSON.stringify(entries) !== JSON.stringify(JSON.parse(payload))) {
+      errors.push(`${relative(jsFile)}: expected the same asset list as ${relative(jsonFile)}`);
+      return;
+    }
+  } catch (error) {
+    errors.push(`${relative(jsonFile)} and ${relative(jsFile)}: could not read both manifests: ${error.message}`);
+    return;
+  }
+
+  const issues = await Promise.all(entries.map(async (entry) => {
+    if (typeof entry?.path !== "string") return "manifest entry is missing its asset path";
+    const target = path.resolve(root, entry.path);
+    if (!target.startsWith(directory + path.sep)) return `manifest path is outside the asset directory: ${entry.path}`;
+    let contents;
+    try {
+      contents = await readFile(target);
+    } catch (error) {
+      return `could not read ${entry.path}: ${error.code}`;
+    }
+    // Git stores SVGs with LF even when their working-tree copies use CRLF.
+    const bytes = path.extname(target) === ".svg"
+      ? Buffer.byteLength(contents.toString("utf8").replaceAll("\r\n", "\n"))
+      : contents.length;
+    if (bytes !== entry.bytes) return `${entry.path}: expected ${bytes} bytes, recorded ${entry.bytes}`;
+  }));
+  checked.manifestAssets = entries.length;
+  for (const issue of issues.filter(Boolean)) errors.push(`${relative(jsonFile)}: ${issue}`);
+}
+
 // ---------------------------------------------------------------- contrast
 
 function parseHex(value) {
@@ -255,7 +295,7 @@ function parseHex(value) {
 function luminance([r, g, b]) {
   const channel = (value) => {
     const s = value / 255;
-    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
   };
   return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
 }
@@ -284,41 +324,36 @@ async function checkContrast() {
     if (variable) return resolve(variable[1], depth + 1);
     return parseHex(value);
   };
-  // Allow minor naming variations: --ov-ink, --ov-color-ink, --ov-ink-default ...
-  const lookup = (base) => {
-    const short = base.replace(/^--ov-/, "");
-    for (const candidate of [base, `--ov-color-${short}`, `--ov-${short}-default`, `--ov-${short}-color`]) {
-      const rgb = resolve(candidate);
-      if (rgb) return { name: candidate, rgb };
-    }
-    return null;
-  };
-
-  const darkFocusCandidates = ["--ov-focus-dark", "--ov-focus-on-dark", "--ov-focus-inverse", "--ov-focus"];
-  const lightFocusCandidates = ["--ov-focus-light", "--ov-focus-on-light", "--ov-focus"];
-  const darkFocus = darkFocusCandidates.find((c) => tokens.has(c)) ?? "--ov-focus";
-  const lightFocus = lightFocusCandidates.find((c) => tokens.has(c)) ?? "--ov-focus";
-
-  const pairs = [
-    ["--ov-ink", "--ov-paper", 4.5], ["--ov-ink", "--ov-paper-warm", 4.5], ["--ov-ink", "--ov-parchment", 4.5],
-    ["--ov-ink-muted", "--ov-paper", 4.5], ["--ov-ink-muted", "--ov-paper-warm", 4.5],
-    ["--ov-paper", "--ov-forest", 4.5], ["--ov-paper", "--ov-forest-black", 4.5],
-    ["--ov-brass-dark", "--ov-paper", 4.5], ["--ov-brass-light", "--ov-forest", 4.5],
-    // Non-text focus indicator (WCAG 1.4.11).
-    [lightFocus, "--ov-paper", 3], [lightFocus, "--ov-paper-warm", 3], [darkFocus, "--ov-forest", 3],
+  const light = ["paper", "paper-warm", "parchment"];
+  const dark = ["forest-black", "forest", "forest-mid"];
+  // Each group tests every foreground against every background in the documented matrix.
+  const groups = [
+    [["ink", "ink-soft", "ink-muted", "forest", "brass-dark"], light, 4.5],
+    [["paper", "brass-light"], dark, 4.5],
+    [["link-light", "link-light-hover"], light, 4.5],
+    [["link-dark", "link-dark-hover"], ["forest-black", "forest"], 4.5],
+    [["paper"], ["green", "blue", "red", "purple"], 4.5],
+    [["red-ink"], ["red-soft"], 4.5],
+    [["amber-ink"], ["amber-soft"], 4.5],
+    [["focus-light"], light, 3],
+    [["focus-dark"], dark, 3],
+    [["amber"], ["paper"], 3],
   ];
-  for (const [fgBase, bgBase, minimum] of pairs) {
-    const fg = lookup(fgBase);
-    const bg = lookup(bgBase);
+  const pairs = groups.flatMap(([foregrounds, backgrounds, minimum]) =>
+    foregrounds.flatMap((foreground) =>
+      backgrounds.map((background) => [`--ov-${foreground}`, `--ov-${background}`, minimum])));
+  for (const [foreground, background, minimum] of pairs) {
+    const fg = resolve(foreground);
+    const bg = resolve(background);
     if (!fg || !bg) {
-      const missing = [!fg && fgBase, !bg && bgBase].filter(Boolean).join(", ");
-      console.warn(`warning: ${relative(cssFile)}: skipped contrast ${fgBase} on ${bgBase}; token(s) not found as hex: ${missing}`);
+      const missing = [!fg && foreground, !bg && background].filter(Boolean).join(", ");
+      errors.push(`${relative(cssFile)}: cannot check contrast ${foreground} on ${background}; unresolvable color: ${missing}`);
       continue;
     }
     checked.contrastPairs += 1;
-    const ratio = contrastRatio(fg.rgb, bg.rgb);
+    const ratio = contrastRatio(fg, bg);
     if (ratio < minimum) {
-      errors.push(`${relative(cssFile)}: contrast ${fg.name} on ${bg.name} is ${ratio.toFixed(2)}:1, needs at least ${minimum}:1`);
+      errors.push(`${relative(cssFile)}: contrast ${foreground} on ${background} is ${ratio.toFixed(2)}:1, needs at least ${minimum}:1`);
     }
   }
 }
@@ -370,10 +405,11 @@ for (const file of jsFiles) {
 }
 
 for (const file of await imageCandidates()) await checkImageMagic(file);
+await checkAssetManifests();
 await checkContrast();
 
 const summary = `${checked.html} HTML (${checked.ids} ids), ${checked.css} CSS, ${checked.markdown} Markdown, ${checked.references} local references, `
-  + `${checked.jsSyntax} JS syntax checks, ${checked.jsAssetRefs} JS asset references, ${checked.images} image signatures, ${checked.contrastPairs} contrast pairs`;
+  + `${checked.jsSyntax} JS syntax checks, ${checked.jsAssetRefs} JS asset references, ${checked.images} image signatures, ${checked.manifestAssets} manifest entries, ${checked.contrastPairs} contrast pairs`;
 
 if (errors.length) {
   const label = warnOnly ? "warning" : "failed";

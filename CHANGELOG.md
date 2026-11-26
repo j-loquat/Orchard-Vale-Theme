@@ -2,6 +2,18 @@
 
 All notable changes to Orchard Vale are recorded here. The project follows semantic versioning for documented releases.
 
+## Unreleased
+
+- Refreshed the Village Overview and all six Command Center district maps with daylight artwork and aligned the live markers with their landmarks.
+- Refreshed the countryside route map in the same daylight style with 12 blank waypoint sockets.
+- Kept Asset Pattern Library thumbnails within their preview frames across family tabs and search results.
+- Reworked the starter kit into a setup guide with readable navigation, complete starter HTML, and steps for new pages, existing pages, and coding assistants.
+- Removed version labels from site copy and added reuse instructions to the Asset Pattern Library’s Component Examples tab.
+- Added a downloadable research report kit with the editable template, offline example, and coding assistant instructions.
+- Moved the Command Center controls and scale below the map on narrow screens.
+- Expanded automated contrast coverage to all 44 documented token pairs and darkened light-surface links for parchment.
+- Aligned the package version with the release, corrected asset sizes in both manifests, and added manifest and HTML image hint checks to CI.
+
 ## [2.0.0] - 2026-11-24
 
 ### Added
@@ -12,7 +24,7 @@ All notable changes to Orchard Vale are recorded here. The project follows seman
 - **Hearthside Commons (`demo/hearthside-commons.html`)** productivity demo for mail, calendar, and tasks.
 - **Machine-readable asset manifests** (`src/assets/orchard-vale/asset-manifest.json` and `asset-manifest.js`) indexing all 321 runtime deliverables.
 - **Archived raw art directory (`art-sources/`)** separating 66 raw PNG masters (~170 MB) from the runtime asset tree.
-- **Standalone legacy artboard spec (`docs/design-reference-dashboard.md`)** separating the fixed 1672×941 pixel-faithful reference spec from the canonical adaptive v2.0 design guide.
+- **Standalone legacy artboard spec (`docs/design-reference-dashboard.md`)** separating the fixed 1672×941 pixel-faithful reference spec from the canonical adaptive design guide.
 
 ### Changed
 

@@ -1,4 +1,4 @@
-/* Orchard Vale components v2.0. Import after orchard-vale.css (or use index.css).
+/* Orchard Vale components. Import after orchard-vale.css (or use index.css).
    All rules live in the ov.components layer so unlayered app CSS always wins. */
 
 @layer ov.tokens, ov.base, ov.components, ov.layouts;

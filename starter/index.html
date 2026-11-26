@@ -3,18 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Orchard Vale v2.0 starter kit showcasing the single-import theme CSS, craft utilities, accessible tabs, dialog, toasts, and interactive form patterns.">
+  <meta name="description" content="Set up Orchard Vale in a new HTML page or an existing site. Includes copy-ready starter HTML and a working example.">
   <meta name="theme-color" content="#173820">
-  <title>Orchard Vale Starter Kit</title>
+  <title>Orchard Vale Setup Guide</title>
   <link rel="stylesheet" href="../src/theme/index.css">
   <script src="../src/theme/orchard-vale.js" defer></script>
   <style>
-    /* Minimal page-specific alignment tweaks (unlayered, overrides ov.* cleanly). */
-    .starter-status-row {
+    .starter-guide {
+      --ov-content: 1120px;
+    }
+
+    .starter-guide .ov-header__identity h1 {
+      font-size: var(--ov-text-2xl);
+    }
+
+    .starter-guide-nav .ov-nav-list a {
+      color: var(--ov-link-light);
+      font-size: var(--ov-text-md);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .starter-guide-nav .ov-nav-list a:hover {
+      color: var(--ov-link-light-hover);
+      background: var(--ov-paper-warm);
+    }
+
+    .starter-steps {
+      display: grid;
+      gap: var(--ov-space-4);
+      margin: 0 0 var(--ov-space-4);
+      padding-inline-start: 1.6rem;
+    }
+
+    .starter-steps > li {
+      min-width: 0;
+      padding-inline-start: 0.25rem;
+    }
+
+    .starter-steps > li::marker {
+      color: var(--ov-brass-dark);
+      font-weight: 800;
+    }
+
+    .starter-steps h3,
+    .starter-steps p {
+      margin-bottom: var(--ov-space-2);
+    }
+
+    .starter-steps pre + p,
+    .starter-steps button + p,
+    .starter-next,
+    .starter-guide-actions {
+      margin-top: var(--ov-space-3);
+    }
+
+    .starter-next,
+    .starter-steps p:last-child {
+      margin-bottom: 0;
+    }
+
+    .starter-guide-actions {
       display: flex;
       flex-wrap: wrap;
+      gap: var(--ov-space-3);
       align-items: center;
-      gap: 14px;
+    }
+
+    .starter-code--prompt {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .starter-example {
+      margin-top: var(--ov-space-3);
+      scroll-margin-top: var(--ov-anchor-offset);
+    }
+
+    .starter-example > summary {
+      padding: var(--ov-space-4);
+      color: var(--ov-link-light);
+      font: 800 var(--ov-text-md)/1.25 var(--ov-ui);
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .starter-guide-nav .ov-nav-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .starter-guide-nav .ov-nav-list a {
+        padding-inline: 6px;
+        font-size: var(--ov-text-sm);
+      }
+
+      #starter-tabs .ov-tablist {
+        flex-wrap: wrap;
+      }
     }
 
     .starter-task-head {
@@ -57,121 +142,174 @@
 <body class="ov-theme">
   <a class="ov-skip-link" href="#main-content">Skip to content</a>
 
-  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Starter Kit" aria-label="Orchard Vale demo navigation">
+  <nav class="ov-demo-bar" data-ov-demo-bar data-ov-demo-current="Setup Guide" aria-label="Orchard Vale demo navigation">
     <a class="ov-demo-bar__back" href="../demo/index.html">&larr; All Demos</a>
-    <span class="ov-demo-bar__current">Starter Kit</span>
-    <div data-ov-demo-actions>
-      <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog">Adoption Snippet</button>
-    </div>
+    <span class="ov-demo-bar__current">Setup Guide</span>
   </nav>
 
   <div class="ov-page">
-    <main class="ov-shell ov-frame" id="main-content">
-      <header class="ov-header">
-        <section class="ov-title-banner ov-header__identity" aria-labelledby="page-title">
-          <img
-            src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
-            alt="Orchard Vale tree crest"
-            width="96"
-            height="96"
-            decoding="async">
-          <div>
-            <p class="ov-kicker">Theme Kit v2.0 Starter</p>
-            <h1 id="page-title">Orchard Vale Workspace</h1>
-            <p>A working, zero-dependency front-end built on <code>src/theme/index.css</code> and <code>orchard-vale.js</code>.</p>
-          </div>
-        </section>
-
-        <section class="ov-panel ov-header__stats" aria-label="Workspace summary">
-          <article class="ov-panel ov-stat">
-            <strong id="stat-open">3</strong>
-            <span>Active tasks</span>
-          </article>
-          <article class="ov-panel ov-stat">
-            <strong id="stat-review">1</strong>
-            <span>In review</span>
-          </article>
-          <article class="ov-panel ov-stat">
-            <strong id="stat-complete">0</strong>
-            <span>Completed</span>
-          </article>
-        </section>
+    <main class="ov-shell ov-frame starter-guide" id="main-content">
+      <header class="ov-title-banner ov-header__identity">
+        <img
+          src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp"
+          alt=""
+          width="96"
+          height="96"
+          decoding="async">
+        <div>
+          <h1 id="page-title">Start a page with Orchard Vale</h1>
+          <p>Build a new HTML page or apply the theme to part of an existing site. You can run the starter directly in a browser with the theme files on disk.</p>
+        </div>
       </header>
 
       <div class="ov-starter-grid">
-        <aside class="ov-stack" aria-label="Workspace sidebar">
-          <section class="ov-panel" aria-labelledby="nav-title">
-            <h2 class="ov-panel-title" id="nav-title">Workspace</h2>
+        <aside>
+          <nav class="ov-panel starter-guide-nav" aria-labelledby="guide-nav-title">
+            <h2 class="ov-panel-title" id="guide-nav-title">On this page</h2>
             <div class="ov-panel__body">
               <ul class="ov-nav-list">
-                <li>
-                  <a href="#workspace-panel" aria-current="page">
-                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
-                      <img src="../src/assets/orchard-vale/icons/icon-nav-tasks-32.svg" alt="" width="16" height="16" decoding="async">
-                    </span>
-                    <span>Overview &amp; Tasks</span>
-                    <span class="ov-nav-list__count" id="nav-count-open">3</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#create-panel">
-                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
-                      <img src="../src/assets/orchard-vale/icons/icon-action-add-32.svg" alt="" width="16" height="16" decoding="async" loading="lazy">
-                    </span>
-                    <span>Create Task</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="../demo/asset-pattern-library.html">
-                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
-                      <img src="../src/assets/orchard-vale/icons/icon-data-document-32.svg" alt="" width="16" height="16" decoding="async" loading="lazy">
-                    </span>
-                    <span>Pattern Library</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="../demo/index.html">
-                    <span class="ov-icon-badge ov-icon-badge--sm" aria-hidden="true">
-                      <img src="../src/assets/orchard-vale/icons/icon-data-map-32.svg" alt="" width="16" height="16" decoding="async" loading="lazy">
-                    </span>
-                    <span>All Demos</span>
-                  </a>
-                </li>
+                <li><a href="#new-page">Set up a new page</a></li>
+                <li><a href="#existing-page">Theme an existing page</a></li>
+                <li><a href="#ai-assistants">AI setup request</a></li>
+                <li><a href="#live-example">Workspace example</a></li>
               </ul>
             </div>
-          </section>
-
-          <section class="ov-panel ov-panel--green" aria-labelledby="ready-title">
-            <div class="ov-panel__body ov-stack">
-              <p class="ov-kicker">Kit Status</p>
-              <div class="starter-status-row">
-                <span class="ov-sprite ov-sprite--shield" role="img" aria-label="Verified shield animation"></span>
-                <div>
-                  <h2 id="ready-title" style="margin-bottom: 4px; font-size: 20px;">Ready to Ship</h2>
-                  <p class="ov-muted" style="margin-bottom: 0; font-size: 14px;">WCAG AA contrast, cascade layers, and ~400 KB WebP texture core.</p>
-                </div>
-              </div>
-              <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog">View Setup Guide</button>
-            </div>
-          </section>
+          </nav>
         </aside>
 
         <div class="ov-stack">
+          <section class="ov-panel ov-panel--ornate" id="new-page" aria-labelledby="new-page-title">
+            <h2 class="ov-panel-title" id="new-page-title">Set up a new page</h2>
+            <div class="ov-panel__body">
+              <ol class="starter-steps">
+                <li>
+                  <h3>Copy the theme folders</h3>
+                  <p>From the kit, copy <code>src/theme/</code> and <code>src/assets/orchard-vale/</code> into your project. Keep these folder paths so the stylesheet can find its textures and artwork.</p>
+                  <pre class="starter-code" tabindex="0" aria-label="Required folder layout">your-project/
+  index.html
+  src/
+    theme/
+    assets/
+      orchard-vale/</pre>
+                  <p><a href="https://github.com/j-loquat/Orchard-Vale-Theme">Get the theme files on GitHub</a></p>
+                </li>
+                <li>
+                  <h3>Create <code>index.html</code></h3>
+                  <p>Save the full starter HTML as <code>index.html</code> next to the <code>src</code> folder. It includes the stylesheet, a themed panel, and a button that opens a dialog.</p>
+                  <button class="ov-button" type="button" data-ov-copy data-ov-copy-target="#starter-html">Copy starter HTML</button>
+                  <details class="ov-details">
+                    <summary>View starter HTML</summary>
+                    <pre class="starter-code" id="starter-html" tabindex="0" aria-label="Complete starter HTML">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;My Orchard Vale page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;src/theme/index.css&quot;&gt;
+  &lt;script src=&quot;src/theme/orchard-vale.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body class=&quot;ov-theme&quot;&gt;
+  &lt;div class=&quot;ov-page&quot;&gt;
+    &lt;main class=&quot;ov-shell ov-frame&quot;&gt;
+      &lt;section class=&quot;ov-panel ov-panel--ornate&quot; aria-labelledby=&quot;page-title&quot;&gt;
+        &lt;h1 class=&quot;ov-panel-title&quot; id=&quot;page-title&quot;&gt;My Orchard Vale page&lt;/h1&gt;
+        &lt;div class=&quot;ov-panel__body&quot;&gt;
+          &lt;p&gt;Replace this text with your content.&lt;/p&gt;
+          &lt;button class=&quot;ov-button&quot; type=&quot;button&quot; data-ov-dialog-open=&quot;example-dialog&quot;&gt;Test the dialog&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+  &lt;dialog class=&quot;ov-dialog&quot; id=&quot;example-dialog&quot; aria-labelledby=&quot;example-title&quot;&gt;
+    &lt;header class=&quot;ov-dialog__header&quot;&gt;
+      &lt;h2 id=&quot;example-title&quot;&gt;Orchard Vale is working&lt;/h2&gt;
+      &lt;button class=&quot;ov-dialog__close&quot; type=&quot;button&quot; data-ov-dialog-close aria-label=&quot;Close dialog&quot;&gt;&amp;times;&lt;/button&gt;
+    &lt;/header&gt;
+    &lt;p class=&quot;ov-dialog__body&quot;&gt;The theme stylesheet and JavaScript helper both loaded.&lt;/p&gt;
+  &lt;/dialog&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                  </details>
+                </li>
+                <li>
+                  <h3>Open and check the page</h3>
+                  <p>Open <code>index.html</code> in a browser. Look for a parchment panel on a dark wood background. Select <strong>Test the dialog</strong>, then press <kbd class="ov-kbd">Esc</kbd> to close it.</p>
+                  <button class="ov-button ov-button--paper" type="button" data-ov-dialog-open="starter-kit-dialog">Try the dialog here</button>
+                  <p>If the page looks unstyled, check that <code>index.html</code> sits next to <code>src</code>. If the dialog stays closed, check the path to <code>orchard-vale.js</code>.</p>
+                </li>
+              </ol>
+              <p class="starter-next">To build out the page, start with a <a href="../demo/asset-pattern-library.html#recipes">component example</a> or inspect the source of a <a href="../demo/index.html">showcase demo</a>.</p>
+            </div>
+          </section>
+
+          <section class="ov-panel" id="existing-page" aria-labelledby="existing-page-title">
+            <h2 class="ov-panel-title" id="existing-page-title">Theme an existing page</h2>
+            <div class="ov-panel__body">
+              <ol class="starter-steps">
+                <li>
+                  <p>Copy the theme folders using the <a href="#new-page">folder layout above</a>.</p>
+                </li>
+                <li>
+                  <p>Add the stylesheet link to your page’s <code>&lt;head&gt;</code>. These paths assume the HTML file sits next to <code>src</code>. For an HTML file one folder deeper, prefix each path with <code>../</code>.</p>
+                  <pre class="starter-code" tabindex="0" aria-label="Theme stylesheet link">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/theme/index.css&quot;&gt;</pre>
+                </li>
+                <li>
+                  <p>Add <code>class="ov-theme"</code> to <code>&lt;body&gt;</code> for the full page, or to a wrapper around the section you want to theme. Add <code>ov-panel</code> to a container inside that section to give it a parchment surface.</p>
+                </li>
+              </ol>
+              <p>If you use the kit’s tabs, dialogs, or copy buttons, load the JavaScript helper in <code>&lt;head&gt;</code> as well.</p>
+              <pre class="starter-code" tabindex="0" aria-label="Optional theme JavaScript helper">&lt;script src=&quot;src/theme/orchard-vale.js&quot; defer&gt;&lt;/script&gt;</pre>
+              <p class="starter-next">Open the page on desktop and mobile. Check that the target section uses the theme and that the existing controls still work.</p>
+            </div>
+          </section>
+
+          <section class="ov-panel" id="ai-assistants" aria-labelledby="ai-assistants-title">
+            <h2 class="ov-panel-title" id="ai-assistants-title">Work with an AI assistant</h2>
+            <div class="ov-panel__body">
+              <p>Give your coding assistant access to this kit and your project. Copy the request below and replace <code>[page or feature]</code> with the part of your project you want to theme.</p>
+              <pre class="starter-code starter-code--prompt" id="ai-setup-request" tabindex="0" aria-label="Request for an AI coding assistant">Apply the Orchard Vale theme to [page or feature] in this project. Read docs/design.md and starter/README.md in the theme kit. Keep the theme and asset folders in their original relative locations. Load src/theme/index.css through this project's existing asset setup. Put ov-theme on the target page or section. Reuse the kit's components and real page controls. Add orchard-vale.js for any kit interactions you use. Preserve the existing workflow. Verify the result at desktop and mobile widths and test the controls with a keyboard.</pre>
+              <div class="starter-guide-actions">
+                <button class="ov-button ov-button--paper" type="button" data-ov-copy data-ov-copy-target="#ai-setup-request">Copy AI setup request</button>
+                <a href="README.md">Read the technical setup notes</a>
+                <a href="../docs/design.md">Read the design guide</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <details class="ov-panel starter-example" id="live-example">
+        <summary>Try the workspace example</summary>
+        <div class="ov-panel__body ov-stack">
+          <p>Use this sample workspace to try tabs, a table, and a task form. Sample changes reset when you reload the page.</p>
+          <div class="ov-stat-grid" role="group" aria-label="Sample task counts">
+            <article class="ov-panel ov-stat">
+              <strong id="stat-open">3</strong>
+              <span>Active tasks</span>
+            </article>
+            <article class="ov-panel ov-stat">
+              <strong id="stat-review">1</strong>
+              <span>In review</span>
+            </article>
+            <article class="ov-panel ov-stat">
+              <strong id="stat-complete">0</strong>
+              <span>Completed</span>
+            </article>
+          </div>
           <section class="ov-panel ov-panel--ornate" id="workspace-panel" aria-labelledby="workspace-title">
             <h2 class="ov-panel-title" id="workspace-title">Guildhall Desk</h2>
             <div class="ov-panel__body">
-              <p class="ov-kicker">Interactive Primitives</p>
-              <p>Start with real HTML structure, then layer Orchard Vale surfaces, ornaments, and helpers. Use the tabs below with mouse or keyboard (<kbd class="ov-kbd">&larr;</kbd> / <kbd class="ov-kbd">&rarr;</kbd>, <kbd class="ov-kbd">Home</kbd>, <kbd class="ov-kbd">End</kbd>).</p>
+              <p>Add a task with the form below, mark a task complete, or open the Ledger tab. Use the arrow keys to switch tabs with a keyboard.</p>
 
               <hr class="ov-divider">
 
               <div class="ov-tabs" data-ov-tabs id="starter-tabs">
                 <div class="ov-tablist" role="tablist" aria-label="Workspace views">
                   <button class="ov-tab" type="button" role="tab" id="tab-active" aria-controls="panel-active" aria-selected="true">
-                    Active Tasks <span class="ov-chip ov-chip--green" id="tab-count-active">3</span>
+                    Active <span class="ov-chip ov-chip--green" id="tab-count-active">3</span>
                   </button>
                   <button class="ov-tab" type="button" role="tab" id="tab-records" aria-controls="panel-records" aria-selected="false">
-                    Ledger Table
+                    Ledger
                   </button>
                   <button class="ov-tab" type="button" role="tab" id="tab-completed" aria-controls="panel-completed" aria-selected="false">
                     Completed <span class="ov-chip ov-chip--blue" id="tab-count-completed">0</span>
@@ -183,14 +321,14 @@
                     <li class="ov-card ov-card--interactive ov-card--green" data-task-item data-status="ready">
                       <div class="starter-task-head">
                         <div>
-                          <h3 class="ov-card__title">Import the single-file theme entry</h3>
+                          <h3 class="ov-card__title">Schedule a garden walk</h3>
                           <p class="ov-card__meta">Planning guild &middot; Theme setup</p>
                         </div>
                         <span class="ov-chip ov-chip--green">Ready</span>
                       </div>
-                      <p>Link <code>src/theme/index.css</code> once to get layered tokens, accessible components, craft ornaments, and responsive layouts.</p>
+                      <p>Choose a date for the spring orchard tour.</p>
                       <div class="starter-task-foot">
-                        <span class="ov-chip">CSS Layers</span>
+                        <span class="ov-chip">Planning</span>
                         <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
                       </div>
                     </li>
@@ -198,14 +336,14 @@
                     <li class="ov-card ov-card--interactive ov-card--amber" data-task-item data-status="review">
                       <div class="starter-task-head">
                         <div>
-                          <h3 class="ov-card__title">Inspect contrast &amp; focus rings</h3>
+                          <h3 class="ov-card__title">Review the trail map</h3>
                           <p class="ov-card__meta">Accessibility desk &middot; Review</p>
                         </div>
                         <span class="ov-chip ov-chip--amber">Review</span>
                       </div>
-                      <p>Links, kickers, and focus outlines automatically switch between deep ink on parchment and pale gold on dark green wood.</p>
+                      <p>Check which paths are open and mark the route for the tour.</p>
                       <div class="starter-task-foot">
-                        <span class="ov-chip ov-chip--blue">WCAG AA</span>
+                        <span class="ov-chip ov-chip--blue">Research</span>
                         <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
                       </div>
                     </li>
@@ -213,14 +351,14 @@
                     <li class="ov-card ov-card--interactive ov-card--blue" data-task-item data-status="ready">
                       <div class="starter-task-head">
                         <div>
-                          <h3 class="ov-card__title">Add a new task with the form below</h3>
+                          <h3 class="ov-card__title">Check the mill gate</h3>
                           <p class="ov-card__meta">Courier desk &middot; Operations</p>
                         </div>
-                        <span class="ov-chip ov-chip--blue">Starter</span>
+                        <span class="ov-chip ov-chip--blue">Ready</span>
                       </div>
-                      <p>Submitting the form appends a card here, adds a row to the ledger table, updates the summary counters, and announces a toast.</p>
+                      <p>Ask the mill keeper to confirm the gate opens before the tour.</p>
                       <div class="starter-task-foot">
-                        <span class="ov-chip">Zero Deps</span>
+                        <span class="ov-chip">Operations</span>
                         <button class="ov-button ov-button--paper ov-button--sm" type="button" data-complete-task>Mark Complete</button>
                       </div>
                     </li>
@@ -236,7 +374,7 @@
                       decoding="async"
                       loading="lazy">
                     <h3 class="ov-empty-state__title">Every active task is complete</h3>
-                    <p>Nice work! All items on the desk have been cleared. Create a fresh task below when the next round begins.</p>
+                    <p>Add another sample task with the form below.</p>
                     <div class="ov-empty-state__actions">
                       <a class="ov-button" href="#create-panel">Create a Task</a>
                     </div>
@@ -255,34 +393,23 @@
                       </thead>
                       <tbody id="records-table-body">
                         <tr>
-                          <td>Import the single-file theme entry</td>
+                          <td>Schedule a garden walk</td>
                           <td>Planning</td>
                           <td><span class="ov-chip ov-chip--green">Ready</span></td>
                         </tr>
                         <tr>
-                          <td>Inspect contrast &amp; focus rings</td>
+                          <td>Review the trail map</td>
                           <td>Research</td>
                           <td><span class="ov-chip ov-chip--amber">Review</span></td>
                         </tr>
                         <tr>
-                          <td>Add a new task with the form below</td>
+                          <td>Check the mill gate</td>
                           <td>Operations</td>
-                          <td><span class="ov-chip ov-chip--blue">Starter</span></td>
+                          <td><span class="ov-chip ov-chip--blue">Ready</span></td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <p class="ov-inline-note" style="margin-top: 12px; margin-bottom: 0;">
-                    Tip: Need the stylesheet tag right now?
-                    <button
-                      class="ov-button ov-button--paper ov-button--sm"
-                      type="button"
-                      style="margin-left: 8px;"
-                      data-ov-copy='<link rel="stylesheet" href="../src/theme/index.css">'
-                      data-ov-copy-toast="Copied stylesheet link tag.">
-                      Copy CSS Import
-                    </button>
-                  </p>
                 </div>
 
                 <div class="ov-tabpanel" role="tabpanel" id="panel-completed" aria-labelledby="tab-completed" hidden>
@@ -298,9 +425,9 @@
                       decoding="async"
                       loading="lazy">
                     <h3 class="ov-empty-state__title">No completed tasks yet</h3>
-                    <p>Mark any item in Active Tasks as complete to move it into your finished ledger and keep the desk tidy.</p>
+                    <p>Select Mark Complete on a task in the Active tab to move it here.</p>
                     <div class="ov-empty-state__actions">
-                      <button class="ov-button ov-button--paper" type="button" id="jump-to-active">View Active Tasks</button>
+                      <button class="ov-button ov-button--paper" type="button" id="jump-to-active">View Active</button>
                       <a class="ov-button" href="#create-panel">Add New Task</a>
                     </div>
                   </div>
@@ -321,10 +448,11 @@
                     name="title"
                     type="text"
                     autocomplete="off"
-                    placeholder="e.g., Inspect orchard irrigation sluice"
+                    placeholder="e.g., Check the orchard gate"
+                    maxlength="80"
                     aria-describedby="task-title-hint task-title-error"
                     required>
-                  <p class="ov-field-hint" id="task-title-hint">Keep titles action-oriented and under 80 characters.</p>
+                  <p class="ov-field-hint" id="task-title-hint">Enter a title of up to 80 characters.</p>
                   <p class="ov-field-error" id="task-title-error" hidden>Please enter a task title before saving.</p>
                 </div>
 
@@ -366,33 +494,20 @@
               <div class="starter-form-actions">
                 <button class="ov-button" type="submit">Add Task to Desk</button>
                 <button class="ov-button ov-button--paper" type="reset">Clear Form</button>
-                <span class="ov-tooltip">
-                  <button class="ov-button ov-button--brass ov-button--sm" type="button" data-ov-dialog-open="starter-kit-dialog" aria-describedby="tip-snippet">Copy Starter HTML</button>
-                  <span class="ov-tooltip__bubble" role="tooltip" id="tip-snippet">Opens the minimal copy-paste setup snippet.</span>
-                </span>
               </div>
             </form>
           </section>
         </div>
-      </div>
+      </details>
     </main>
   </div>
 
   <dialog class="ov-dialog" id="starter-kit-dialog" aria-labelledby="dialog-title">
     <header class="ov-dialog__header">
-      <h2 id="dialog-title">Lightweight Adoption Snippet</h2>
+      <h2 id="dialog-title">Orchard Vale is working</h2>
       <button class="ov-dialog__close" type="button" data-ov-dialog-close aria-label="Close dialog">&times;</button>
     </header>
-    <div class="ov-dialog__body ov-stack">
-      <p style="margin-bottom: 0;">Copy <code>src/theme/</code> and the ~400 KB WebP texture core from <code>src/assets/orchard-vale/textures/</code>, then include two tags in your page head:</p>
-      <pre class="starter-code" id="adoption-snippet">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/theme/index.css&quot;&gt;
-&lt;script src=&quot;src/theme/orchard-vale.js&quot; defer&gt;&lt;/script&gt;</pre>
-      <p class="ov-inline-note" style="margin-bottom: 0;">Embedding inside an existing app? Put <code>class="ov-theme"</code> on any wrapper <code>&lt;div&gt;</code> instead of <code>&lt;body&gt;</code>; all rules live inside <code>@layer ov.*</code>.</p>
-    </div>
-    <footer class="ov-dialog__footer">
-      <button class="ov-button ov-button--paper" type="button" data-ov-copy data-ov-copy-target="#adoption-snippet" data-ov-copy-toast="Copied starter snippet.">Copy Snippet</button>
-      <button class="ov-button" type="button" data-ov-dialog-close>Done</button>
-    </footer>
+    <p class="ov-dialog__body">The theme stylesheet and JavaScript helper both loaded.</p>
   </dialog>
 
   <script>
@@ -417,7 +532,6 @@
       var statOpen = document.getElementById('stat-open');
       var statReview = document.getElementById('stat-review');
       var statComplete = document.getElementById('stat-complete');
-      var navCountOpen = document.getElementById('nav-count-open');
       var tabCountActive = document.getElementById('tab-count-active');
       var tabCountCompleted = document.getElementById('tab-count-completed');
       var jumpToActive = document.getElementById('jump-to-active');
@@ -430,7 +544,6 @@
         statOpen.textContent = String(activeItems.length);
         statReview.textContent = String(reviewCount);
         statComplete.textContent = String(completedItems.length);
-        navCountOpen.textContent = String(activeItems.length);
         tabCountActive.textContent = String(activeItems.length);
         tabCountCompleted.textContent = String(completedItems.length);
 
@@ -550,7 +663,7 @@
         }
 
         if (window.OrchardVale) {
-          window.OrchardVale.toast('Added "' + title + '" to Active Tasks.', 'success');
+          window.OrchardVale.toast('Added "' + title + '" to Active.', 'success');
         }
       });
 

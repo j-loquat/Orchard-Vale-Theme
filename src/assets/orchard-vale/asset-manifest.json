@@ -8,7 +8,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2865
+    "bytes": 2807
   },
   {
     "id": "backplates/backplate-button-brass-primary-pressed",
@@ -19,7 +19,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2856
+    "bytes": 2798
   },
   {
     "id": "backplates/backplate-button-brass-primary",
@@ -30,7 +30,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2860
+    "bytes": 2802
   },
   {
     "id": "backplates/backplate-button-parchment-default",
@@ -41,7 +41,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2803
+    "bytes": 2747
   },
   {
     "id": "backplates/backplate-button-parchment-disabled",
@@ -52,7 +52,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2795
+    "bytes": 2739
   },
   {
     "id": "backplates/backplate-button-parchment-hover",
@@ -63,7 +63,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2808
+    "bytes": 2752
   },
   {
     "id": "backplates/backplate-button-parchment-pressed",
@@ -74,7 +74,7 @@
     "format": "svg",
     "width": 320,
     "height": 80,
-    "bytes": 2795
+    "bytes": 2739
   },
   {
     "id": "backplates/backplate-field-parchment-input",
@@ -85,7 +85,7 @@
     "format": "svg",
     "width": 400,
     "height": 80,
-    "bytes": 2676
+    "bytes": 2620
   },
   {
     "id": "backplates/backplate-header-green-signboard",
@@ -96,7 +96,7 @@
     "format": "svg",
     "width": 640,
     "height": 108,
-    "bytes": 2979
+    "bytes": 2921
   },
   {
     "id": "backplates/backplate-icon-button-square",
@@ -107,7 +107,7 @@
     "format": "svg",
     "width": 80,
     "height": 80,
-    "bytes": 2670
+    "bytes": 2614
   },
   {
     "id": "backplates/badge-category-purple-blank",
@@ -118,7 +118,7 @@
     "format": "svg",
     "width": 240,
     "height": 64,
-    "bytes": 2610
+    "bytes": 2555
   },
   {
     "id": "backplates/badge-count-small-blank",
@@ -129,7 +129,7 @@
     "format": "svg",
     "width": 96,
     "height": 64,
-    "bytes": 2591
+    "bytes": 2536
   },
   {
     "id": "backplates/badge-pill-amber-blank",
@@ -140,7 +140,7 @@
     "format": "svg",
     "width": 192,
     "height": 64,
-    "bytes": 2610
+    "bytes": 2555
   },
   {
     "id": "backplates/badge-pill-green-blank",
@@ -151,7 +151,7 @@
     "format": "svg",
     "width": 192,
     "height": 64,
-    "bytes": 2610
+    "bytes": 2555
   },
   {
     "id": "backplates/badge-pill-red-blank",
@@ -162,7 +162,7 @@
     "format": "svg",
     "width": 192,
     "height": 64,
-    "bytes": 2608
+    "bytes": 2553
   },
   {
     "id": "backplates/badge-seal-amber-blank",
@@ -173,7 +173,7 @@
     "format": "svg",
     "width": 128,
     "height": 132,
-    "bytes": 2966
+    "bytes": 2909
   },
   {
     "id": "backplates/badge-seal-green-blank",
@@ -184,7 +184,7 @@
     "format": "svg",
     "width": 128,
     "height": 132,
-    "bytes": 2966
+    "bytes": 2909
   },
   {
     "id": "backplates/badge-seal-red-blank",
@@ -195,7 +195,7 @@
     "format": "svg",
     "width": 128,
     "height": 132,
-    "bytes": 2964
+    "bytes": 2907
   },
   {
     "id": "backplates/badge-tab-blue-selected",
@@ -206,7 +206,7 @@
     "format": "svg",
     "width": 272,
     "height": 80,
-    "bytes": 2654
+    "bytes": 2599
   },
   {
     "id": "backplates/ribbon-scroll-blank-wide",
@@ -217,7 +217,7 @@
     "format": "svg",
     "width": 640,
     "height": 100,
-    "bytes": 2924
+    "bytes": 2867
   },
   {
     "id": "characters/avatar-badger-orchestrator-neutral-512",
@@ -448,7 +448,7 @@
     "format": "svg",
     "width": 120,
     "height": 36,
-    "bytes": 783
+    "bytes": 778
   },
   {
     "id": "data-viz/axis-origin-rivet",
@@ -459,7 +459,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 611
+    "bytes": 606
   },
   {
     "id": "data-viz/axis-tick-flourish-horizontal",
@@ -470,7 +470,7 @@
     "format": "svg",
     "width": 80,
     "height": 24,
-    "bytes": 840
+    "bytes": 835
   },
   {
     "id": "data-viz/axis-tick-flourish-vertical",
@@ -481,7 +481,7 @@
     "format": "svg",
     "width": 24,
     "height": 80,
-    "bytes": 836
+    "bytes": 831
   },
   {
     "id": "data-viz/callout-pin-medallion",
@@ -492,7 +492,7 @@
     "format": "svg",
     "width": 56,
     "height": 72,
-    "bytes": 679
+    "bytes": 674
   },
   {
     "id": "data-viz/category-symbol-bell",
@@ -503,7 +503,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 806
+    "bytes": 801
   },
   {
     "id": "data-viz/category-symbol-book",
@@ -514,7 +514,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 690
+    "bytes": 685
   },
   {
     "id": "data-viz/category-symbol-coin",
@@ -525,7 +525,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 617
+    "bytes": 612
   },
   {
     "id": "data-viz/category-symbol-gear",
@@ -536,7 +536,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 1243
+    "bytes": 1238
   },
   {
     "id": "data-viz/category-symbol-leaf",
@@ -547,7 +547,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 688
+    "bytes": 683
   },
   {
     "id": "data-viz/category-symbol-map-pin",
@@ -558,7 +558,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 684
+    "bytes": 679
   },
   {
     "id": "data-viz/category-symbol-scroll",
@@ -569,7 +569,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 966
+    "bytes": 961
   },
   {
     "id": "data-viz/category-symbol-shield",
@@ -580,7 +580,7 @@
     "format": "svg",
     "width": 40,
     "height": 40,
-    "bytes": 523
+    "bytes": 518
   },
   {
     "id": "data-viz/chart-frame-corner-brass-bottom-left",
@@ -591,7 +591,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1852
+    "bytes": 1847
   },
   {
     "id": "data-viz/chart-frame-corner-brass-bottom-right",
@@ -602,7 +602,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1856
+    "bytes": 1851
   },
   {
     "id": "data-viz/chart-frame-corner-brass-top-left",
@@ -613,7 +613,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1799
+    "bytes": 1794
   },
   {
     "id": "data-viz/chart-frame-corner-brass-top-right",
@@ -624,7 +624,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1848
+    "bytes": 1843
   },
   {
     "id": "data-viz/chart-frame-ornate-rect",
@@ -635,7 +635,7 @@
     "format": "svg",
     "width": 320,
     "height": 200,
-    "bytes": 1504
+    "bytes": 1499
   },
   {
     "id": "data-viz/chart-gridline-major",
@@ -646,7 +646,7 @@
     "format": "svg",
     "width": 240,
     "height": 16,
-    "bytes": 759
+    "bytes": 754
   },
   {
     "id": "data-viz/chart-gridline-minor",
@@ -657,7 +657,7 @@
     "format": "svg",
     "width": 240,
     "height": 12,
-    "bytes": 427
+    "bytes": 422
   },
   {
     "id": "data-viz/chart-plot-background-parchment",
@@ -668,7 +668,7 @@
     "format": "svg",
     "width": 320,
     "height": 200,
-    "bytes": 867
+    "bytes": 862
   },
   {
     "id": "data-viz/donut-center-medallion-brass",
@@ -679,7 +679,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 965
+    "bytes": 960
   },
   {
     "id": "data-viz/donut-center-medallion-parchment",
@@ -690,7 +690,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1198
+    "bytes": 1193
   },
   {
     "id": "data-viz/ledger-balance-medallion",
@@ -701,7 +701,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 936
+    "bytes": 931
   },
   {
     "id": "data-viz/ledger-divider-thin-ornament",
@@ -712,7 +712,7 @@
     "format": "svg",
     "width": 320,
     "height": 24,
-    "bytes": 1532
+    "bytes": 1527
   },
   {
     "id": "data-viz/ledger-row-rule-vine",
@@ -723,7 +723,7 @@
     "format": "svg",
     "width": 320,
     "height": 20,
-    "bytes": 646
+    "bytes": 641
   },
   {
     "id": "data-viz/ledger-section-tab-green",
@@ -734,7 +734,7 @@
     "format": "svg",
     "width": 180,
     "height": 44,
-    "bytes": 951
+    "bytes": 946
   },
   {
     "id": "data-viz/ledger-total-rule-brass",
@@ -745,7 +745,7 @@
     "format": "svg",
     "width": 320,
     "height": 28,
-    "bytes": 961
+    "bytes": 956
   },
   {
     "id": "data-viz/legend-swatch-frame",
@@ -756,7 +756,7 @@
     "format": "svg",
     "width": 48,
     "height": 32,
-    "bytes": 809
+    "bytes": 804
   },
   {
     "id": "data-viz/meter-endcap-brass-left",
@@ -767,7 +767,7 @@
     "format": "svg",
     "width": 44,
     "height": 44,
-    "bytes": 642
+    "bytes": 637
   },
   {
     "id": "data-viz/meter-endcap-brass-right",
@@ -778,7 +778,7 @@
     "format": "svg",
     "width": 44,
     "height": 44,
-    "bytes": 691
+    "bytes": 686
   },
   {
     "id": "data-viz/meter-fill-amber",
@@ -789,7 +789,7 @@
     "format": "svg",
     "width": 240,
     "height": 28,
-    "bytes": 616
+    "bytes": 611
   },
   {
     "id": "data-viz/meter-fill-green",
@@ -800,7 +800,7 @@
     "format": "svg",
     "width": 240,
     "height": 28,
-    "bytes": 616
+    "bytes": 611
   },
   {
     "id": "data-viz/meter-fill-red",
@@ -811,7 +811,7 @@
     "format": "svg",
     "width": 240,
     "height": 28,
-    "bytes": 612
+    "bytes": 607
   },
   {
     "id": "data-viz/meter-tick-rivet",
@@ -822,7 +822,7 @@
     "format": "svg",
     "width": 24,
     "height": 32,
-    "bytes": 598
+    "bytes": 593
   },
   {
     "id": "data-viz/meter-track-parchment",
@@ -833,7 +833,7 @@
     "format": "svg",
     "width": 240,
     "height": 36,
-    "bytes": 653
+    "bytes": 648
   },
   {
     "id": "data-viz/mini-bar-frame-parchment",
@@ -844,7 +844,7 @@
     "format": "svg",
     "width": 180,
     "height": 64,
-    "bytes": 1382
+    "bytes": 1377
   },
   {
     "id": "data-viz/sparkline-frame-parchment",
@@ -855,7 +855,7 @@
     "format": "svg",
     "width": 180,
     "height": 64,
-    "bytes": 828
+    "bytes": 823
   },
   {
     "id": "data-viz/stat-medallion-small",
@@ -866,7 +866,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 781
+    "bytes": 776
   },
   {
     "id": "data-viz/timeline-connector-vine",
@@ -877,7 +877,7 @@
     "format": "svg",
     "width": 320,
     "height": 32,
-    "bytes": 1168
+    "bytes": 1163
   },
   {
     "id": "data-viz/timeline-milestone-plaque-amber",
@@ -888,7 +888,7 @@
     "format": "svg",
     "width": 104,
     "height": 36,
-    "bytes": 975
+    "bytes": 816
   },
   {
     "id": "data-viz/timeline-milestone-plaque-blue",
@@ -899,7 +899,7 @@
     "format": "svg",
     "width": 104,
     "height": 36,
-    "bytes": 973
+    "bytes": 814
   },
   {
     "id": "data-viz/timeline-milestone-plaque-green",
@@ -910,7 +910,7 @@
     "format": "svg",
     "width": 104,
     "height": 36,
-    "bytes": 975
+    "bytes": 816
   },
   {
     "id": "data-viz/timeline-milestone-plaque-parchment",
@@ -921,7 +921,7 @@
     "format": "svg",
     "width": 104,
     "height": 36,
-    "bytes": 983
+    "bytes": 824
   },
   {
     "id": "data-viz/timeline-milestone-plaque-red",
@@ -932,7 +932,7 @@
     "format": "svg",
     "width": 104,
     "height": 36,
-    "bytes": 971
+    "bytes": 812
   },
   {
     "id": "data-viz/timeline-now-marker-banner",
@@ -943,7 +943,7 @@
     "format": "svg",
     "width": 64,
     "height": 92,
-    "bytes": 787
+    "bytes": 782
   },
   {
     "id": "data-viz/tooltip-compact-value-bubble",
@@ -954,7 +954,7 @@
     "format": "svg",
     "width": 128,
     "height": 64,
-    "bytes": 774
+    "bytes": 769
   },
   {
     "id": "data-viz/tooltip-green-header-shell",
@@ -965,7 +965,7 @@
     "format": "svg",
     "width": 240,
     "height": 132,
-    "bytes": 995
+    "bytes": 990
   },
   {
     "id": "data-viz/tooltip-parchment-shell-top",
@@ -976,7 +976,7 @@
     "format": "svg",
     "width": 220,
     "height": 112,
-    "bytes": 850
+    "bytes": 845
   },
   {
     "id": "data-viz/tooltip-parchment-shell",
@@ -987,7 +987,7 @@
     "format": "svg",
     "width": 220,
     "height": 112,
-    "bytes": 827
+    "bytes": 822
   },
   {
     "id": "empty-states/empty-badger-checklist-complete-800",
@@ -1295,7 +1295,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 715
+    "bytes": 710
   },
   {
     "id": "icons/icon-action-delete-32",
@@ -1306,7 +1306,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1082
+    "bytes": 1077
   },
   {
     "id": "icons/icon-action-download-32",
@@ -1317,7 +1317,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 759
+    "bytes": 754
   },
   {
     "id": "icons/icon-action-edit-32",
@@ -1328,7 +1328,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 729
+    "bytes": 724
   },
   {
     "id": "icons/icon-action-export-32",
@@ -1339,7 +1339,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1065
+    "bytes": 1060
   },
   {
     "id": "icons/icon-action-publish-32",
@@ -1350,7 +1350,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1055
+    "bytes": 1050
   },
   {
     "id": "icons/icon-action-reply-32",
@@ -1361,7 +1361,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 453
+    "bytes": 448
   },
   {
     "id": "icons/icon-action-share-32",
@@ -1372,7 +1372,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1048
+    "bytes": 1043
   },
   {
     "id": "icons/icon-action-upload-32",
@@ -1383,7 +1383,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 755
+    "bytes": 750
   },
   {
     "id": "icons/icon-data-chart-32",
@@ -1394,7 +1394,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1109
+    "bytes": 1104
   },
   {
     "id": "icons/icon-data-citation-32",
@@ -1405,7 +1405,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 602
+    "bytes": 597
   },
   {
     "id": "icons/icon-data-document-32",
@@ -1416,7 +1416,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1047
+    "bytes": 1042
   },
   {
     "id": "icons/icon-data-ledger-32",
@@ -1427,7 +1427,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1219
+    "bytes": 1214
   },
   {
     "id": "icons/icon-data-map-32",
@@ -1438,7 +1438,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 916
+    "bytes": 911
   },
   {
     "id": "icons/icon-data-source-32",
@@ -1449,7 +1449,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1207
+    "bytes": 1202
   },
   {
     "id": "icons/icon-data-table-32",
@@ -1460,7 +1460,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1056
+    "bytes": 1051
   },
   {
     "id": "icons/icon-data-timeline-32",
@@ -1471,7 +1471,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1368
+    "bytes": 1363
   },
   {
     "id": "icons/icon-export-docx-32",
@@ -1482,7 +1482,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 875
+    "bytes": 867
   },
   {
     "id": "icons/icon-export-markdown-32",
@@ -1493,7 +1493,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 594
+    "bytes": 586
   },
   {
     "id": "icons/icon-export-pdf-32",
@@ -1504,7 +1504,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 701
+    "bytes": 693
   },
   {
     "id": "icons/icon-export-share-report-32",
@@ -1515,7 +1515,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 614
+    "bytes": 606
   },
   {
     "id": "icons/icon-finance-bank-32",
@@ -1526,7 +1526,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1037
+    "bytes": 1032
   },
   {
     "id": "icons/icon-finance-bill-32",
@@ -1537,7 +1537,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 784
+    "bytes": 779
   },
   {
     "id": "icons/icon-finance-card-32",
@@ -1548,7 +1548,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 924
+    "bytes": 919
   },
   {
     "id": "icons/icon-finance-coin-stack-32",
@@ -1559,7 +1559,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1093
+    "bytes": 1088
   },
   {
     "id": "icons/icon-finance-investment-tree-32",
@@ -1570,7 +1570,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1080
+    "bytes": 1075
   },
   {
     "id": "icons/icon-finance-purse-32",
@@ -1581,7 +1581,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 775
+    "bytes": 770
   },
   {
     "id": "icons/icon-finance-savings-32",
@@ -1592,7 +1592,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 915
+    "bytes": 910
   },
   {
     "id": "icons/icon-infra-code-32",
@@ -1603,7 +1603,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 725
+    "bytes": 720
   },
   {
     "id": "icons/icon-infra-crown-32",
@@ -1614,7 +1614,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 944
+    "bytes": 939
   },
   {
     "id": "icons/icon-infra-gear-32",
@@ -1625,7 +1625,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1829
+    "bytes": 1824
   },
   {
     "id": "icons/icon-infra-package-32",
@@ -1636,7 +1636,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 765
+    "bytes": 760
   },
   {
     "id": "icons/icon-infra-pipeline-32",
@@ -1647,7 +1647,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1301
+    "bytes": 1296
   },
   {
     "id": "icons/icon-infra-server-32",
@@ -1658,7 +1658,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1274
+    "bytes": 1269
   },
   {
     "id": "icons/icon-infra-shield-32",
@@ -1669,7 +1669,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 649
+    "bytes": 644
   },
   {
     "id": "icons/icon-infra-test-flask-32",
@@ -1680,7 +1680,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 964
+    "bytes": 959
   },
   {
     "id": "icons/icon-nav-archive-32",
@@ -1691,7 +1691,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 933
+    "bytes": 928
   },
   {
     "id": "icons/icon-nav-calendar-32",
@@ -1702,7 +1702,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1935
+    "bytes": 1930
   },
   {
     "id": "icons/icon-nav-filters-32",
@@ -1713,7 +1713,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 734
+    "bytes": 729
   },
   {
     "id": "icons/icon-nav-inbox-32",
@@ -1724,7 +1724,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1058
+    "bytes": 1053
   },
   {
     "id": "icons/icon-nav-search-32",
@@ -1735,7 +1735,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 728
+    "bytes": 723
   },
   {
     "id": "icons/icon-nav-settings-32",
@@ -1746,7 +1746,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1826
+    "bytes": 1821
   },
   {
     "id": "icons/icon-nav-tasks-32",
@@ -1757,7 +1757,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1217
+    "bytes": 1212
   },
   {
     "id": "icons/icon-status-blocked-32",
@@ -1768,7 +1768,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 564
+    "bytes": 559
   },
   {
     "id": "icons/icon-status-done-32",
@@ -1779,7 +1779,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 641
+    "bytes": 636
   },
   {
     "id": "icons/icon-status-error-32",
@@ -1790,7 +1790,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 754
+    "bytes": 749
   },
   {
     "id": "icons/icon-status-healthy-32",
@@ -1801,7 +1801,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 958
+    "bytes": 953
   },
   {
     "id": "icons/icon-status-in-progress-32",
@@ -1812,7 +1812,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1253
+    "bytes": 1248
   },
   {
     "id": "icons/icon-status-pending-32",
@@ -1823,7 +1823,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1095
+    "bytes": 1090
   },
   {
     "id": "icons/icon-status-review-32",
@@ -1834,7 +1834,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 761
+    "bytes": 756
   },
   {
     "id": "icons/icon-status-warning-32",
@@ -1845,7 +1845,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 737
+    "bytes": 732
   },
   {
     "id": "icons/icon-workflow-bug-32",
@@ -1856,7 +1856,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1364
+    "bytes": 1359
   },
   {
     "id": "icons/icon-workflow-dependency-32",
@@ -1867,7 +1867,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 806
+    "bytes": 801
   },
   {
     "id": "icons/icon-workflow-enhancement-32",
@@ -1878,7 +1878,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1515
+    "bytes": 1510
   },
   {
     "id": "icons/icon-workflow-epic-32",
@@ -1889,7 +1889,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1102
+    "bytes": 1097
   },
   {
     "id": "icons/icon-workflow-note-32",
@@ -1900,7 +1900,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 886
+    "bytes": 881
   },
   {
     "id": "icons/icon-workflow-release-32",
@@ -1911,7 +1911,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 1075
+    "bytes": 1070
   },
   {
     "id": "icons/icon-workflow-sprint-32",
@@ -1922,7 +1922,7 @@
     "format": "svg",
     "width": 32,
     "height": 32,
-    "bytes": 905
+    "bytes": 900
   },
   {
     "id": "maps/map-base-parchment-blank-16x9",
@@ -1944,7 +1944,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 663148
+    "bytes": 719200
   },
   {
     "id": "maps/map-district-guildhall-unlabeled-16x9",
@@ -1955,7 +1955,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 618118
+    "bytes": 749744
   },
   {
     "id": "maps/map-district-library-unlabeled-16x9",
@@ -1966,7 +1966,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 595486
+    "bytes": 720768
   },
   {
     "id": "maps/map-district-market-unlabeled-16x9",
@@ -1977,7 +1977,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 654884
+    "bytes": 681532
   },
   {
     "id": "maps/map-district-stables-unlabeled-16x9",
@@ -1988,7 +1988,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 630800
+    "bytes": 709068
   },
   {
     "id": "maps/map-district-watermill-unlabeled-16x9",
@@ -1999,7 +1999,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 623076
+    "bytes": 736120
   },
   {
     "id": "maps/map-route-countryside-empty-16x9",
@@ -2010,7 +2010,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 596294
+    "bytes": 721200
   },
   {
     "id": "maps/map-village-overview-unlabeled-16x9",
@@ -2021,7 +2021,7 @@
     "format": "webp",
     "width": 1600,
     "height": 900,
-    "bytes": 670574
+    "bytes": 694748
   },
   {
     "id": "maps/compass-rose-brass",
@@ -2032,7 +2032,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1180
+    "bytes": 1175
   },
   {
     "id": "maps/map-control-home",
@@ -2043,7 +2043,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 790
+    "bytes": 785
   },
   {
     "id": "maps/map-control-layers",
@@ -2054,7 +2054,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 956
+    "bytes": 951
   },
   {
     "id": "maps/map-control-locate",
@@ -2065,7 +2065,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 1419
+    "bytes": 1414
   },
   {
     "id": "maps/map-control-zoom-in",
@@ -2076,7 +2076,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 768
+    "bytes": 763
   },
   {
     "id": "maps/map-control-zoom-out",
@@ -2087,7 +2087,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 613
+    "bytes": 608
   },
   {
     "id": "maps/map-label-ribbon-blank",
@@ -2098,7 +2098,7 @@
     "format": "svg",
     "width": 180,
     "height": 48,
-    "bytes": 630
+    "bytes": 625
   },
   {
     "id": "maps/map-scale-plaque",
@@ -2109,7 +2109,7 @@
     "format": "svg",
     "width": 180,
     "height": 44,
-    "bytes": 1404
+    "bytes": 1399
   },
   {
     "id": "maps/marker-current-location-brass",
@@ -2120,7 +2120,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1238
+    "bytes": 1233
   },
   {
     "id": "maps/marker-pin-amber",
@@ -2131,7 +2131,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 826
+    "bytes": 821
   },
   {
     "id": "maps/marker-pin-blue",
@@ -2142,7 +2142,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 824
+    "bytes": 819
   },
   {
     "id": "maps/marker-pin-gray",
@@ -2153,7 +2153,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 824
+    "bytes": 819
   },
   {
     "id": "maps/marker-pin-green",
@@ -2164,7 +2164,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 826
+    "bytes": 821
   },
   {
     "id": "maps/marker-pin-purple",
@@ -2175,7 +2175,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 828
+    "bytes": 823
   },
   {
     "id": "maps/marker-pin-red",
@@ -2186,7 +2186,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 822
+    "bytes": 817
   },
   {
     "id": "maps/marker-route-node-empty",
@@ -2197,7 +2197,7 @@
     "format": "svg",
     "width": 48,
     "height": 48,
-    "bytes": 595
+    "bytes": 590
   },
   {
     "id": "maps/marker-shield-amber",
@@ -2208,7 +2208,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 842
+    "bytes": 837
   },
   {
     "id": "maps/marker-shield-blue",
@@ -2219,7 +2219,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 840
+    "bytes": 835
   },
   {
     "id": "maps/marker-shield-gray",
@@ -2230,7 +2230,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 840
+    "bytes": 835
   },
   {
     "id": "maps/marker-shield-green",
@@ -2241,7 +2241,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 842
+    "bytes": 837
   },
   {
     "id": "maps/marker-shield-purple",
@@ -2252,7 +2252,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 844
+    "bytes": 839
   },
   {
     "id": "maps/marker-shield-red",
@@ -2263,7 +2263,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 838
+    "bytes": 833
   },
   {
     "id": "maps/route-line-dashed-brass",
@@ -2274,7 +2274,7 @@
     "format": "svg",
     "width": 240,
     "height": 32,
-    "bytes": 827
+    "bytes": 822
   },
   {
     "id": "maps/route-line-solid-green",
@@ -2285,7 +2285,7 @@
     "format": "svg",
     "width": 240,
     "height": 32,
-    "bytes": 801
+    "bytes": 796
   },
   {
     "id": "motifs/motif-ai-agent-medallion-96",
@@ -2296,7 +2296,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1097
+    "bytes": 1092
   },
   {
     "id": "motifs/motif-ai-compute-gears-96",
@@ -2307,7 +2307,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1553
+    "bytes": 1548
   },
   {
     "id": "motifs/motif-ai-context-book-96",
@@ -2318,7 +2318,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1283
+    "bytes": 1278
   },
   {
     "id": "motifs/motif-ai-pipeline-96",
@@ -2329,7 +2329,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1307
+    "bytes": 1302
   },
   {
     "id": "motifs/motif-ai-prompt-quill-96",
@@ -2340,7 +2340,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1125
+    "bytes": 1120
   },
   {
     "id": "motifs/motif-ai-risk-shield-96",
@@ -2351,7 +2351,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 662
+    "bytes": 657
   },
   {
     "id": "motifs/motif-ai-token-scroll-96",
@@ -2362,7 +2362,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1267
+    "bytes": 1262
   },
   {
     "id": "motifs/motif-crm-contact-card-96",
@@ -2373,7 +2373,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 936
+    "bytes": 931
   },
   {
     "id": "motifs/motif-crm-handshake-seal-96",
@@ -2384,7 +2384,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 961
+    "bytes": 956
   },
   {
     "id": "motifs/motif-crm-meeting-table-96",
@@ -2395,7 +2395,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1086
+    "bytes": 1081
   },
   {
     "id": "motifs/motif-crm-note-card-96",
@@ -2406,7 +2406,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 919
+    "bytes": 914
   },
   {
     "id": "motifs/motif-crm-profile-medallion-96",
@@ -2417,7 +2417,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 777
+    "bytes": 772
   },
   {
     "id": "motifs/motif-crm-relationship-threads-96",
@@ -2428,7 +2428,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1247
+    "bytes": 1242
   },
   {
     "id": "motifs/motif-crm-roster-book-96",
@@ -2439,7 +2439,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1099
+    "bytes": 1094
   },
   {
     "id": "motifs/motif-finance-bank-96",
@@ -2450,7 +2450,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1214
+    "bytes": 1209
   },
   {
     "id": "motifs/motif-finance-bill-96",
@@ -2461,7 +2461,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 805
+    "bytes": 800
   },
   {
     "id": "motifs/motif-finance-budget-ledger-96",
@@ -2472,7 +2472,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1261
+    "bytes": 1256
   },
   {
     "id": "motifs/motif-finance-coins-96",
@@ -2483,7 +2483,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1105
+    "bytes": 1100
   },
   {
     "id": "motifs/motif-finance-investment-tree-96",
@@ -2494,7 +2494,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1100
+    "bytes": 1095
   },
   {
     "id": "motifs/motif-finance-purse-96",
@@ -2505,7 +2505,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 795
+    "bytes": 790
   },
   {
     "id": "motifs/motif-finance-savings-jar-96",
@@ -2516,7 +2516,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 852
+    "bytes": 847
   },
   {
     "id": "motifs/motif-operations-checklist-board-96",
@@ -2527,7 +2527,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1113
+    "bytes": 1108
   },
   {
     "id": "motifs/motif-operations-crate-96",
@@ -2538,7 +2538,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 780
+    "bytes": 775
   },
   {
     "id": "motifs/motif-operations-route-marker-96",
@@ -2549,7 +2549,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 677
+    "bytes": 672
   },
   {
     "id": "motifs/motif-operations-shelves-96",
@@ -2560,7 +2560,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1824
+    "bytes": 1819
   },
   {
     "id": "motifs/motif-operations-stock-ledger-96",
@@ -2571,7 +2571,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1431
+    "bytes": 1426
   },
   {
     "id": "motifs/motif-operations-wagon-96",
@@ -2582,7 +2582,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1106
+    "bytes": 1101
   },
   {
     "id": "motifs/motif-operations-workshop-tools-96",
@@ -2593,7 +2593,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 948
+    "bytes": 943
   },
   {
     "id": "motifs/motif-productivity-calendar-tile-96",
@@ -2604,7 +2604,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1467
+    "bytes": 1462
   },
   {
     "id": "motifs/motif-productivity-clock-96",
@@ -2615,7 +2615,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 916
+    "bytes": 911
   },
   {
     "id": "motifs/motif-productivity-envelope-96",
@@ -2626,7 +2626,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 651
+    "bytes": 646
   },
   {
     "id": "motifs/motif-productivity-inbox-tray-96",
@@ -2637,7 +2637,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 791
+    "bytes": 786
   },
   {
     "id": "motifs/motif-productivity-notification-bell-96",
@@ -2648,7 +2648,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 813
+    "bytes": 808
   },
   {
     "id": "motifs/motif-productivity-stamp-96",
@@ -2659,7 +2659,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 969
+    "bytes": 964
   },
   {
     "id": "motifs/motif-productivity-task-scroll-96",
@@ -2670,7 +2670,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1121
+    "bytes": 1116
   },
   {
     "id": "motifs/motif-project-bug-jar-96",
@@ -2681,7 +2681,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 972
+    "bytes": 967
   },
   {
     "id": "motifs/motif-project-dependency-chain-96",
@@ -2692,7 +2692,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 839
+    "bytes": 834
   },
   {
     "id": "motifs/motif-project-milestone-flag-96",
@@ -2703,7 +2703,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 770
+    "bytes": 765
   },
   {
     "id": "motifs/motif-project-release-crate-96",
@@ -2714,7 +2714,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 790
+    "bytes": 785
   },
   {
     "id": "motifs/motif-project-sprint-banner-96",
@@ -2725,7 +2725,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 773
+    "bytes": 768
   },
   {
     "id": "motifs/motif-project-task-plaque-96",
@@ -2736,7 +2736,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 780
+    "bytes": 775
   },
   {
     "id": "motifs/motif-project-work-board-96",
@@ -2747,7 +2747,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1164
+    "bytes": 1159
   },
   {
     "id": "motifs/motif-research-books-96",
@@ -2758,7 +2758,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 988
+    "bytes": 983
   },
   {
     "id": "motifs/motif-research-citation-96",
@@ -2769,7 +2769,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 625
+    "bytes": 620
   },
   {
     "id": "motifs/motif-research-evidence-card-96",
@@ -2780,7 +2780,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1129
+    "bytes": 1124
   },
   {
     "id": "motifs/motif-research-library-shelves-96",
@@ -2791,7 +2791,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 1650
+    "bytes": 1645
   },
   {
     "id": "motifs/motif-research-magnifying-glass-96",
@@ -2802,7 +2802,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 776
+    "bytes": 771
   },
   {
     "id": "motifs/motif-research-quill-96",
@@ -2813,7 +2813,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 780
+    "bytes": 775
   },
   {
     "id": "motifs/motif-research-scroll-96",
@@ -2824,7 +2824,7 @@
     "format": "svg",
     "width": 96,
     "height": 96,
-    "bytes": 941
+    "bytes": 936
   },
   {
     "id": "motion/motion-courier-delivery-spritesheet",
@@ -2967,7 +2967,7 @@
     "format": "svg",
     "width": 80,
     "height": 192,
-    "bytes": 1718
+    "bytes": 1689
   },
   {
     "id": "ornaments/corner-brass-ivy-bottom-left",
@@ -2978,7 +2978,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2029
+    "bytes": 1994
   },
   {
     "id": "ornaments/corner-brass-ivy-bottom-right",
@@ -2989,7 +2989,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2032
+    "bytes": 1997
   },
   {
     "id": "ornaments/corner-brass-ivy-top-left",
@@ -3000,7 +3000,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1988
+    "bytes": 1953
   },
   {
     "id": "ornaments/corner-brass-ivy-top-right",
@@ -3011,7 +3011,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2029
+    "bytes": 1994
   },
   {
     "id": "ornaments/corner-wood-carved-bottom-left",
@@ -3022,7 +3022,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1867
+    "bytes": 1833
   },
   {
     "id": "ornaments/corner-wood-carved-bottom-right",
@@ -3033,7 +3033,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1870
+    "bytes": 1836
   },
   {
     "id": "ornaments/corner-wood-carved-top-left",
@@ -3044,7 +3044,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1826
+    "bytes": 1792
   },
   {
     "id": "ornaments/corner-wood-carved-top-right",
@@ -3055,7 +3055,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1867
+    "bytes": 1833
   },
   {
     "id": "ornaments/divider-leaf-horizontal-gold",
@@ -3066,7 +3066,7 @@
     "format": "svg",
     "width": 512,
     "height": 64,
-    "bytes": 1796
+    "bytes": 1765
   },
   {
     "id": "ornaments/divider-vine-horizontal-green",
@@ -3077,7 +3077,7 @@
     "format": "svg",
     "width": 512,
     "height": 64,
-    "bytes": 1805
+    "bytes": 1774
   },
   {
     "id": "ornaments/flourish-ivy-corner-bottom-left",
@@ -3088,7 +3088,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2001
+    "bytes": 1966
   },
   {
     "id": "ornaments/flourish-ivy-corner-bottom-right",
@@ -3099,7 +3099,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2004
+    "bytes": 1969
   },
   {
     "id": "ornaments/flourish-ivy-corner-top-left",
@@ -3110,7 +3110,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 1960
+    "bytes": 1925
   },
   {
     "id": "ornaments/flourish-ivy-corner-top-right",
@@ -3121,7 +3121,7 @@
     "format": "svg",
     "width": 128,
     "height": 128,
-    "bytes": 2001
+    "bytes": 1966
   },
   {
     "id": "ornaments/frame-overlay-ornate-panel",
@@ -3132,7 +3132,7 @@
     "format": "svg",
     "width": 1024,
     "height": 584,
-    "bytes": 1985
+    "bytes": 1952
   },
   {
     "id": "ornaments/frame-overlay-wood-brass-panel",
@@ -3143,7 +3143,7 @@
     "format": "svg",
     "width": 1024,
     "height": 584,
-    "bytes": 1692
+    "bytes": 1662
   },
   {
     "id": "ornaments/hinge-brass-vertical",
@@ -3154,7 +3154,7 @@
     "format": "svg",
     "width": 80,
     "height": 192,
-    "bytes": 1634
+    "bytes": 1603
   },
   {
     "id": "ornaments/ribbon-tail-green-left",
@@ -3165,7 +3165,7 @@
     "format": "svg",
     "width": 128,
     "height": 112,
-    "bytes": 1438
+    "bytes": 1409
   },
   {
     "id": "ornaments/ribbon-tail-green-right",
@@ -3176,7 +3176,7 @@
     "format": "svg",
     "width": 128,
     "height": 112,
-    "bytes": 1494
+    "bytes": 1463
   },
   {
     "id": "ornaments/rivet-brass-small",
@@ -3187,7 +3187,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1362
+    "bytes": 1334
   },
   {
     "id": "ornaments/scroll-endcap-left",
@@ -3198,7 +3198,7 @@
     "format": "svg",
     "width": 128,
     "height": 112,
-    "bytes": 1594
+    "bytes": 1565
   },
   {
     "id": "ornaments/scroll-endcap-right",
@@ -3209,7 +3209,7 @@
     "format": "svg",
     "width": 128,
     "height": 112,
-    "bytes": 1650
+    "bytes": 1619
   },
   {
     "id": "ornaments/tack-iron-small",
@@ -3220,7 +3220,7 @@
     "format": "svg",
     "width": 64,
     "height": 64,
-    "bytes": 1347
+    "bytes": 1319
   },
   {
     "id": "scenes/scene-countryside-route-map-wide-21x9",

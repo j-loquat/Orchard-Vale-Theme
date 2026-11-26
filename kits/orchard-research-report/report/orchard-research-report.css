@@ -1,0 +1,153 @@
+/* Orchard Vale Scholar's Field Report — built on the Orchard Vale theme. */
+
+.research-page {
+  --ov-anchor-offset: 132px;
+}
+
+.research-page .report-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.research-page .report-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ov-space-2);
+}
+
+/* Sticky section navigation below .ov-demo-bar */
+.research-page .report-sticky-nav {
+  position: sticky;
+  top: 50px;
+  z-index: 150;
+  margin-top: var(--ov-space-3);
+  border-radius: var(--ov-radius-sm);
+  box-shadow: 0 6px 16px rgba(10, 20, 12, 0.32);
+}
+
+.research-page .takeaways {
+  background:
+    linear-gradient(rgba(225, 235, 215, 0.93), rgba(248, 237, 207, 0.97)),
+    url("../src/assets/orchard-vale/textures/texture-parchment-seamless-1024.webp");
+  background-color: var(--ov-paper);
+  border-color: var(--ov-green);
+}
+
+.research-page .takeaway-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
+.research-page .report-lede {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Status icon pairing inside callouts */
+.research-page .callout-with-icon {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.research-page .callout-with-icon > img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-top: 1px;
+}
+
+.research-page blockquote {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  color: var(--ov-ink-soft);
+  font-size: 19px;
+  font-style: italic;
+  background: rgba(239, 217, 167, 0.42);
+  border-left: 6px solid var(--ov-brass-dark);
+}
+
+.research-page .implication-card {
+  min-width: 0;
+  padding: 16px;
+  background: rgba(239, 217, 167, 0.38);
+  border: 1px solid rgba(112, 72, 38, 0.4);
+  border-radius: var(--ov-radius-sm);
+}
+
+.research-page .implication-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.research-page .confidence-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.research-page .confidence-grid article {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  background: rgba(239, 217, 167, 0.32);
+  border: 1px solid rgba(112, 72, 38, 0.35);
+  border-radius: var(--ov-radius-sm);
+}
+
+.research-page .confidence-grid p {
+  margin-bottom: 0;
+}
+
+/* Sources list with copy-citation controls */
+.research-page .report-source-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
+.research-page .source-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+}
+
+.research-page .source-entry__text {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.research-page .source-copy-btn {
+  flex: none;
+}
+
+@media (max-width: 600px) {
+  .research-page {
+    --ov-anchor-offset: 92px;
+  }
+
+  .research-page .report-sticky-nav {
+    top: 0;
+  }
+
+  .research-page .report-lede {
+    font-size: 18px;
+  }
+
+  .research-page .confidence-grid article {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Developer specimen workbench for all 301 non-character Orchard Vale assets, Theme v2.0 interactive recipes, and live motion spritesheet playback.">
+  <meta name="description" content="Browse 301 Orchard Vale assets and try working examples of buttons, charts, empty states, and motion.">
   <meta name="theme-color" content="#173820">
   <title>Orchard Vale Asset Pattern Library</title>
   <link rel="stylesheet" href="../src/theme/index.css">
@@ -34,9 +34,9 @@
             height="96"
             decoding="async">
           <div>
-            <p class="ov-kicker">Developer Specimen Workbench &middot; Theme v2.0</p>
+            <p class="ov-kicker">Assets and components</p>
             <h1 id="page-title">Orchard Vale Pattern Library</h1>
-            <p class="workbench-subtitle">Inspect all 301 non-character kit deliverables individually with live search, surface contrast toggles, one-click path &amp; snippet copy, and interactive v2.0 recipes.</p>
+            <p class="workbench-subtitle">Browse 301 assets, preview them on different backgrounds, and copy file paths or snippets. Open Component Examples to see the theme in use.</p>
           </div>
         </section>
 
@@ -143,7 +143,7 @@
               Motion <span class="ov-chip" data-tab-count="motion">12</span>
             </button>
             <button type="button" class="ov-tab" id="tab-recipes" role="tab" aria-selected="false" aria-controls="panel-recipes" data-ov-tab-key="recipes">
-              Theme v2.0 Recipes &amp; Motion
+              Component Examples
             </button>
           </div>
 
@@ -162,20 +162,30 @@
           <section class="ov-tabpanel recipes-panel" id="panel-recipes" role="tabpanel" aria-labelledby="tab-recipes" hidden>
             <div class="family-banner">
               <div>
-                <p class="ov-kicker">Theme v2.0 Living Recipes</p>
-                <h2>Interactive Primitives, Ornate Surfaces &amp; Live Motion Sprites</h2>
-                <p>Live examples built directly from <code>src/theme/index.css</code> and <code>src/theme/orchard-vale.js</code>. Icons inside recipes are decorative and never hijack clicks.</p>
+                <h2>Component Examples</h2>
+                <p>Try buttons and motion, and see how status labels, callouts, charts, and empty states look in a page. Use these examples as starting points for your own interface.</p>
               </div>
             </div>
 
             <div class="recipes-stack">
+              <details class="ov-details example-help">
+                <summary>Use an example in your project</summary>
+                <div class="ov-details__content">
+                  <ol>
+                    <li>Follow the <a href="../starter/index.html">setup guide</a> to load the theme in your page.</li>
+                    <li>Select <strong>Copy HTML</strong> on a motion card. For other examples, find the section by its heading in <code>demo/asset-pattern-library.html</code> and copy its markup.</li>
+                    <li>Keep the <code>ov-*</code> classes and adjust image paths for your page. Check the library’s CSS and JavaScript for examples with custom layout or button actions.</li>
+                  </ol>
+                </div>
+              </details>
+
               <section class="ov-panel ov-panel--ornate" aria-labelledby="recipe-sprites-title">
                 <div class="ov-panel-title recipe-head-split">
-                  <h3 id="recipe-sprites-title" class="recipe-panel-heading">Live Motion Spritesheet Playback</h3>
+                  <h3 id="recipe-sprites-title" class="recipe-panel-heading">Motion and Loading Indicators</h3>
                   <button type="button" class="ov-button ov-button--brass ov-button--sm" id="sprites-toggle" aria-pressed="false">Pause All Sprites</button>
                 </div>
                 <div class="ov-panel__body">
-                  <p class="recipe-lead">All six 8-frame horizontal spritesheets animate via CSS <code>steps(8)</code> and automatically switch to their static frame when <code>prefers-reduced-motion: reduce</code> is enabled.</p>
+                  <p class="recipe-lead">Use these animations for activity such as loading, writing, or sending. They show a still frame when reduced motion is enabled.</p>
                   <div class="sprite-showcase-grid" id="sprite-showcase-grid">
                     <article class="ov-card sprite-tile">
                       <span class="ov-sprite ov-sprite--gear" role="img" aria-label="Spinning brass gear sprite"></span>
@@ -221,8 +231,9 @@
 
               <div class="ov-two-up">
                 <section class="ov-panel" aria-labelledby="recipe-buttons-title">
-                  <h3 class="ov-panel-title" id="recipe-buttons-title">Interactive Button States &amp; Chips</h3>
+                  <h3 class="ov-panel-title" id="recipe-buttons-title">Buttons and Status Labels</h3>
                   <div class="ov-panel__body ov-stack">
+                    <p>Select <strong>Primary Forest</strong> to see a notification or <strong>Toggle Pressed</strong> to try a button with on and off states.</p>
                     <div class="recipe-button-row">
                       <button type="button" class="ov-button" id="recipe-toast-trigger">Primary Forest</button>
                       <button type="button" class="ov-button ov-button--paper">Parchment</button>
@@ -245,23 +256,23 @@
                 </section>
 
                 <section class="ov-panel ov-panel--wood-corners" aria-labelledby="recipe-callouts-title">
-                  <h3 class="ov-panel-title" id="recipe-callouts-title">Callouts &amp; Heraldry Feature</h3>
+                  <h3 class="ov-panel-title" id="recipe-callouts-title">Callouts and Crests</h3>
                   <div class="ov-panel__body ov-stack">
                     <div class="ov-callout ov-callout--confirmed">
-                      <strong>Confirmed &mdash;</strong> All surface pairs meet WCAG AA contrast across light parchment and dark forest green.
+                      <strong>Confirmed &mdash;</strong> The bridge inspection is complete.
                     </div>
                     <div class="ov-callout ov-callout--watch">
-                      <strong>Watch &mdash;</strong> Keep ornate corner frames clear of interactive close buttons with balanced padding.
+                      <strong>Watch &mdash;</strong> Check the river level after the next rain.
                     </div>
                     <div class="ov-callout ov-callout--warning">
-                      <strong>Warning &mdash;</strong> Never attach click-to-zoom handlers to small decorative status icons inside composed UI.
+                      <strong>Warning &mdash;</strong> The east footpath is closed for repairs.
                     </div>
                     <article class="heraldry-feature">
                       <img src="../src/assets/orchard-vale/heraldry/crest-guildhall-board-fullcolor-512.webp" alt="Guildhall board crest" width="96" height="96" decoding="async" loading="lazy">
                       <div>
                         <p>Application Crest</p>
                         <h4>Guildhall Board</h4>
-                        <span>High-contrast kicker text (7.42:1) paired with a crisp WebP crest for workspace headers.</span>
+                        <span>Pair a crest with a title to identify a workspace or team.</span>
                       </div>
                     </article>
                   </div>
@@ -270,7 +281,7 @@
 
               <div class="ov-two-up">
                 <section class="ov-panel" aria-labelledby="recipe-chart-title">
-                  <h3 class="ov-panel-title" id="recipe-chart-title">Data Viz Frame, Meter &amp; Timeline</h3>
+                  <h3 class="ov-panel-title" id="recipe-chart-title">Charts, Progress, and Milestones</h3>
                   <div class="ov-panel__body ov-stack">
                     <div class="ov-chart-frame">
                       <p class="ov-chart-frame__title">Harvest Ledger Velocity (Q4)</p>
@@ -297,7 +308,7 @@
                 </section>
 
                 <section class="ov-panel" aria-labelledby="recipe-empty-title">
-                  <h3 class="ov-panel-title" id="recipe-empty-title">Empty State &amp; Composed Cards</h3>
+                  <h3 class="ov-panel-title" id="recipe-empty-title">Empty States and Cards</h3>
                   <div class="ov-panel__body ov-stack">
                     <div class="ov-empty-state ov-empty-state--compact">
                       <img

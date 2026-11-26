@@ -10,7 +10,7 @@
     templates: 'Content Templates',
     civic: 'Civic & Editorial pages',
     galleries: 'Specimen Galleries',
-    starter: 'Starter Kit'
+    starter: 'setup guide'
   };
 
   function initShowcaseHub() {
@@ -96,20 +96,6 @@
     // Optional initial hash support (e.g. demo/index.html#flagship).
     var initialHash = (window.location.hash || '').replace(/^#/, '').toLowerCase();
     applyFilter(counts[initialHash] ? initialHash : 'all', false);
-
-    var copySnippetBtn = document.getElementById('copy-starter-snippet');
-    if (copySnippetBtn) {
-      copySnippetBtn.addEventListener('click', function () {
-        var snippet = '<link rel="stylesheet" href="src/theme/index.css">\n<script src="src/theme/orchard-vale.js" defer></script>';
-        if (window.OrchardVale && typeof window.OrchardVale.copyText === 'function') {
-          window.OrchardVale.copyText(snippet).then(function () {
-            window.OrchardVale.toast('Copied Theme v2.0 import snippet.', 'success');
-          }, function () {
-            window.OrchardVale.toast('Could not copy automatically. Please copy manually.', 'warning');
-          });
-        }
-      });
-    }
   }
 
   if (document.readyState === 'loading') {

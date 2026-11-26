@@ -1,6 +1,6 @@
 /* Scholar's Hollow Research Report Workbench — scoped layout & domain widgets.
    Tokens, panels, buttons, forms, tables, dialogs, sprites, toasts & empty states
-   come from ../src/theme/index.css v2.0. */
+   come from ../src/theme/index.css. */
 
 .ov-empty-state[hidden] { display: none !important; }
 .workbench-wrap { padding: var(--ov-space-2); min-width: 0; max-width: 100%; }

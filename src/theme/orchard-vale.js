@@ -1,4 +1,4 @@
-/* Orchard Vale progressive behavior helpers v2.0.
+/* Orchard Vale progressive behavior helpers.
    Zero external dependencies, file://-safe IIFE exposing window.OrchardVale.
    Provides: accessible tabs, dialogs, clipboard copy, demo navigation bar,
    screen-reader announcements, toast notifications, and tooltip Esc dismissal. */

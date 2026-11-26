@@ -12,11 +12,11 @@ The goal is not to make a generic fantasy skin. The goal is to make serious inte
 
 ## Highlights
 
-- **Single-import v2.0 theme architecture**: import [src/theme/index.css](src/theme/index.css) and zero-dependency [src/theme/orchard-vale.js](src/theme/orchard-vale.js) (`window.OrchardVale`) with no build step required.
+- **Single-import theme architecture** import [src/theme/index.css](src/theme/index.css) and zero-dependency [src/theme/orchard-vale.js](src/theme/orchard-vale.js) (`window.OrchardVale`) with no build step required.
 - **Cascade-layered and subtree-safe**: tokens, base styles, components, and layouts live in `@layer ov.tokens, ov.base, ov.components, ov.layouts` scoped under `.ov-theme`, so app CSS overrides cleanly without specificity battles.
 - **WCAG AA contrast and craft utilities**: verified across 44 foreground/background pairs, with asset-backed framing (`.ov-panel--ornate`, `.ov-divider`, `.ov-icon-badge`, `.ov-chart-frame`, `.ov-empty-state`, `.ov-sprite--*`), accessible dialogs, tabs, toasts, print-safe rules, and reduced-motion support.
-- **Interactive demo suite**: all 12 demos plus [starter/index.html](starter/index.html) run on the shared v2.0 theme layer with real vanilla JS interactivity and a unified `.ov-demo-bar` navigator.
-- **WebP-optimized asset pack**: 321 deliverables (225 SVG, 83 WebP, 13 PNG) indexed by `asset-manifest.json` / `asset-manifest.js`, bringing the runtime asset footprint down 86% from ~221 MiB to ~30.6 MiB while preserving 66 raw PNG masters in [art-sources/](art-sources/).
+- **Interactive demo suite**: all 12 demos plus [starter/index.html](starter/index.html) run on the shared theme with real vanilla JS interactivity and a unified `.ov-demo-bar` navigator.
+- **WebP-optimized asset pack** with 321 deliverables (225 SVG, 83 WebP, 13 PNG) indexed by both asset manifests. The 31.4 MiB runtime footprint is about 86% smaller than the original ~221 MiB. The [source archive](art-sources/) contains 74 raw PNG masters.
 - **Developer specimen workbench**: browse, search, preview live motion, and copy ready-to-use snippets for all 301 non-character assets in [Asset Pattern Library](demo/asset-pattern-library.html).
 
 ## Demo Tour
@@ -36,7 +36,7 @@ Start with the [live demo directory](https://j-loquat.github.io/Orchard-Vale-The
 | [Prosperity Grove Ledger](demo/prosperity-grove-ledger.html) | A finance and household-ledger dashboard with real multi-month math, live SVG income/expense and donut charts, goals, bills, and add-record dialog. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/prosperity-grove-ledger.html) |
 | [Character Registry](demo/character-gallery.html) | A large-format interactive gallery of every final full-body character and matching avatar. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/character-gallery.html) |
 | [Asset Pattern Library](demo/asset-pattern-library.html) | A Developer Specimen Workbench exposing all 301 non-character assets with live search, copyable snippets, live motion playback, and composed UI recipes. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/demo/asset-pattern-library.html) |
-| [Minimal Starter](starter/index.html) | A clean, copy-ready starting page wired to `src/theme/index.css` and `src/theme/orchard-vale.js`. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/starter/index.html) |
+| [Setup Guide](starter/index.html) | Three steps to create a themed HTML page, with copy-ready starter HTML, instructions for existing apps, and a request for coding assistants. | [Open live](https://j-loquat.github.io/Orchard-Vale-Theme/starter/index.html) |
 
 ## Screenshots
 
@@ -62,6 +62,8 @@ Start with the [live demo directory](https://j-loquat.github.io/Orchard-Vale-The
 
 ### Sourced Research Report Template
 
+Download the [Orchard Vale Research Report Kit](kits/orchard-research-report.zip) to create a report in this format. The kit includes a working example, editable HTML, local assets, and instructions for a coding assistant. [Read the kit instructions](kits/orchard-research-report/README.md)
+
 ![Orchard Vale Scholar's Field Report](demo/screenshots/orchard-research-report-desktop.png)
 
 ### Finance And Ledger Dashboard
@@ -78,7 +80,7 @@ Start with the [live demo directory](https://j-loquat.github.io/Orchard-Vale-The
 
 ## Asset Families
 
-The reusable runtime assets live under [src/assets/orchard-vale](src/assets/orchard-vale) (321 deliverables: 225 SVG, 83 WebP, 13 PNG; ~30.6 MiB total on disk). Machine-readable indexes live in `asset-manifest.json` and `asset-manifest.js`, while 66 raw PNG masters are archived in [art-sources/](art-sources/).
+The reusable [runtime asset tree](src/assets/orchard-vale) occupies 31.4 MiB and includes 321 deliverables (225 SVG, 83 WebP, and 13 PNG). Machine-readable indexes live in `asset-manifest.json` and `asset-manifest.js`, and [art-sources/](art-sources/) contains 74 raw PNG masters.
 
 | Family | Use |
 | --- | --- |
@@ -109,7 +111,7 @@ The canonical design documentation is [docs/design.md](docs/design.md) (with a q
 
 It covers:
 
-- The Orchard Vale v2.0 aesthetic model, cascade-layered CSS architecture, and `window.OrchardVale` behavior helpers.
+- The Orchard Vale visual style, cascade-layered CSS architecture, and `window.OrchardVale` behavior helpers.
 - Verified WCAG AA color tokens, surface context rules, typography, spacing, craft utilities, print, and reduced-motion rules.
 - How to use storybook illustration without sacrificing product readability.
 - How to translate image-generation mock-ups into real HTML/CSS/JS front-ends.
@@ -122,21 +124,11 @@ This repository is intentionally simple. You can open any demo HTML file directl
 demo/index.html
 ```
 
-For a new page:
+Open the [setup guide](starter/index.html) to copy the theme and asset folders, create your first HTML page, and check it in a browser. The guide also explains how to add the theme to an existing page. [Starter instructions for developers and coding assistants](starter/README.md)
 
-1. Start with the [minimal starter](starter/index.html) or the demo closest to your target layout.
-2. Load the single-import theme stylesheet and optional zero-dependency helper script:
+Once the page works, use [the design guide](docs/design.md) and [Component Examples](demo/asset-pattern-library.html#recipes) to choose components for your workflow.
 
-```html
-<link rel="stylesheet" href="../src/theme/index.css">
-<script src="../src/theme/orchard-vale.js" defer></script>
-```
-
-3. Add `class="ov-theme"` to `<body>` (for a full-page canvas) or to any embedded container (subtree-safe).
-4. Reuse assets from [src/assets/orchard-vale](src/assets/orchard-vale) and follow [docs/design.md](docs/design.md) as the visual contract.
-5. Keep real interface controls as semantic HTML/CSS/JS. Use images for atmosphere, identity, ornament, maps, helpers, and empty states.
-
-All 12 demos and `starter/index.html` now run on the shared v2.0 theme (`src/theme/index.css` + `src/theme/orchard-vale.js`) with real vanilla JS interactivity—including filters, dialogs, tabs, live charts, card movement, map switching, clipboard copy, and toast notifications.
+All 12 demos and `starter/index.html` now run on the shared theme (`src/theme/index.css` + `src/theme/orchard-vale.js`) with real vanilla JS interactivity—including filters, dialogs, tabs, live charts, card movement, map switching, clipboard copy, and toast notifications.
 
 Run the dependency-free validation suite and HTML image-optimization check with:
 
@@ -144,6 +136,8 @@ Run the dependency-free validation suite and HTML image-optimization check with:
 npm run validate
 npm run optimize:images:check
 ```
+
+Use `python scripts/build-report-kit.py` to refresh the report kit and ZIP after changes to the report or theme. Append `--check` to verify the bundle without writing files.
 
 ## Optional Codex Pet
 
@@ -167,14 +161,14 @@ CHANGELOG.md                            Version history and release notes.
 package.json                            Package exports and validation/optimization scripts.
 LICENSE                                 MIT license.
 docs/
-  design.md                             Canonical Orchard Vale v2.0 adaptive design system guide.
+  design.md                             Canonical Orchard Vale adaptive design system guide.
   design-reference-dashboard.md         Legacy 1672x941 pixel-faithful reference dashboard spec.
   asset-generation-plan.md              Asset category plan and generation progress record.
   asset-inventory.md                    Runtime and archived asset inventory and manifest guide.
   github-publishing-checklist.md        Pre-publish checklist for GitHub and GitHub Pages.
   licensing-and-provenance.md           Code, artwork, reference, and reuse provenance notes.
 art-sources/
-  Archived raw PNG masters (~170 MB) separated from the runtime asset tree.
+  Archived raw PNG masters separated from the runtime asset tree.
 references/
   Original reference mock-ups used to develop the visual language.
 pets/
@@ -183,7 +177,7 @@ src/
   assets/orchard-vale/
     321 optimized runtime assets (SVG, WebP, PNG) plus asset-manifest.json and asset-manifest.js.
   theme/
-    index.css                           Single-import v2.0 entry point.
+    index.css                           Single-import theme entry point.
     orchard-vale.css                    Tokens, base surfaces, surface context, focus, motion, print.
     orchard-components.css              Reusable UI components and asset-backed craft utilities.
     orchard-layouts.css                 Responsive shells and layout recipes.

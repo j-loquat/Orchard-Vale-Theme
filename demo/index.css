@@ -194,7 +194,22 @@
   border-color: var(--ov-brass-dark);
 }
 
-/* Prominent Starter Kit Banner */
+.hub-start-link {
+  text-decoration: none;
+}
+
+.hub-start-link strong {
+  color: var(--ov-link-light);
+  font-size: var(--ov-text-md);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hub-start-link:hover strong {
+  color: var(--ov-link-light-hover);
+}
+
+/* Setup Guide Banner */
 .starter-banner {
   background:
     linear-gradient(125deg, rgba(23, 56, 32, 0.96), rgba(15, 40, 24, 0.98)),
@@ -225,7 +240,7 @@
 }
 
 .starter-banner__copy h3 {
-  margin: 8px 0 6px;
+  margin: 0 0 6px;
   color: var(--ov-paper);
   font-size: var(--ov-text-xl);
   line-height: 1.1;
@@ -237,16 +252,6 @@
   font-size: var(--ov-text-md);
   line-height: 1.45;
   max-width: 68ch;
-}
-
-.starter-banner__copy code {
-  padding: 1px 5px;
-  color: var(--ov-paper);
-  font-family: var(--ov-mono);
-  font-size: 0.875rem;
-  background: rgba(255, 250, 240, 0.12);
-  border: 1px solid rgba(229, 189, 88, 0.35);
-  border-radius: var(--ov-radius-sm);
 }
 
 .starter-banner__actions {

@@ -1,4 +1,4 @@
-/* Orchard Vale Theme Kit v2.0 — single-import entry point.
+/* Orchard Vale Theme Kit — single-import entry point.
    Imports tokens/base, components, and responsive layouts in cascade-layer order. */
 
 @import "./orchard-vale.css";

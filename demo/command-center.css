@@ -241,6 +241,7 @@
   border-bottom: 2px solid rgba(112, 72, 38, 0.45);
 }
 
+.cc-map { position: relative; }
 .cc-map-viewport {
   position: relative;
   width: 100%;
@@ -287,8 +288,9 @@
 .cc-map-pins { position: absolute; inset: 0; z-index: 5; }
 
 .cc-pin {
+  --cc-pin-offset-x: -50%;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(var(--cc-pin-offset-x), -50%);
   display: inline-flex;
   flex-direction: column;
   max-width: 152px;
@@ -305,7 +307,7 @@
 .cc-pin:hover,
 .cc-pin:focus-visible {
   z-index: 12;
-  transform: translate(-50%, -50%) translateY(-2px);
+  transform: translate(var(--cc-pin-offset-x), calc(-50% - 2px));
   border-color: var(--ov-brass-light);
   box-shadow: 0 6px 14px rgba(15, 10, 4, 0.65), 0 0 0 2px var(--ov-brass-light);
 }
@@ -353,6 +355,7 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
 }
 
+.cc-map-hud { --ov-focus: var(--ov-focus-dark); }
 .cc-map-controls { position: absolute; z-index: 8; top: 10px; right: 10px; display: grid; gap: 5px; }
 
 .cc-map-ctrl {
@@ -603,17 +606,53 @@
   .cc-stage:not(:last-child)::after { display: none; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .cc-pin { max-width: 108px; }
   .cc-pin__meta { display: none; }
   .cc-pin__title { font-size: 0.62rem; max-width: 72px; overflow: hidden; text-overflow: ellipsis; }
   .cc-map-compass { width: 32px; height: 32px; }
-  .cc-map-ctrl { width: 30px; height: 30px; }
+  .cc-map-hud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px 12px;
+    padding: 8px;
+    background: var(--ov-paper-warm);
+    border-bottom: 1px solid var(--ov-walnut);
+    --ov-focus: var(--ov-focus-light);
+  }
+  .cc-map-controls { position: static; display: flex; flex-wrap: wrap; justify-content: center; }
+  .cc-map-ctrl { width: 40px; height: 40px; }
   .cc-map-ctrl img { width: 22px; height: 22px; }
+  .cc-map-scale { position: static; }
   .cc-map-scale img { width: 104px; height: 24px; }
 }
 
+@media (width > 760px) {
+  .cc-pin:is([data-station-pin="gh-plaza"], [data-station-pin="wm-scanner"]) {
+    --cc-pin-offset-x: -85%;
+  }
+}
+
 @media (max-width: 600px) {
+  .cc-pin {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    --ov-focus: var(--ov-focus-dark);
+  }
+  .cc-pin__head {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+  }
+  .cc-pin__shield { width: 22px; height: 22px; }
+  .cc-pin__title { display: none; }
   .cc-page { padding: 0; }
   .cc-shell { padding: 8px; border-radius: 0; }
   .cc-brand { grid-template-columns: 54px minmax(0, 1fr); padding: 9px 10px; }

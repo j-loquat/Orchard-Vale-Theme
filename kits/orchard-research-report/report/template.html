@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="[One-sentence description of the report]">
+  <meta name="theme-color" content="#173820">
+  <title>[Report title] | Scholar's Field Report</title>
+  <link rel="stylesheet" href="../src/theme/index.css">
+  <link rel="stylesheet" href="orchard-research-report.css">
+  <script src="../src/theme/orchard-vale.js" defer></script>
+  <script src="orchard-research-report.js" defer></script>
+</head>
+<body class="ov-theme research-page">
+  <a class="ov-skip-link" href="#main-content">Skip to report</a>
+
+  <header class="ov-demo-bar" aria-label="Orchard Vale report">
+    <span class="ov-demo-bar__brand">
+      <img src="../src/assets/orchard-vale/heraldry/crest-orchard-tree-fullcolor-512.webp" alt="" width="26" height="26" decoding="async">
+      <span>Orchard Vale</span>
+    </span>
+    <span class="ov-demo-bar__current">Scholar's Field Report</span>
+  </header>
+
+  <div class="ov-page">
+    <main class="ov-report ov-frame" id="main-content">
+      <header class="ov-title-banner ov-report-header" aria-labelledby="page-title">
+        <div>
+          <p class="ov-kicker">Scholar's Field Report</p>
+          <h1 id="page-title">[Report title]</h1>
+          <p>[Report date] · [Research scope] · [Audience or decision]</p>
+          <div class="report-header-actions">
+            <div class="ov-chip-row">
+              <span class="ov-chip ov-chip--green">[Source count]</span>
+              <span class="ov-chip ov-chip--blue">[Confidence summary]</span>
+              <span class="ov-chip ov-chip--purple">[Report type]</span>
+            </div>
+            <div class="report-controls">
+              <button type="button" class="ov-button ov-button--brass ov-button--sm" id="print-report-btn" data-ov-print-hide>
+                <img src="../src/assets/orchard-vale/icons/icon-action-export-32.svg" alt="" width="20" height="20" decoding="async">
+                Print / Export PDF
+              </button>
+            </div>
+          </div>
+        </div>
+        <img class="ov-report-header__art" src="../src/assets/orchard-vale/characters/fullbody/character-owl-scholar-seated-1024.webp" alt="Owl scholar reviewing a report" width="170" height="170" fetchpriority="high" decoding="async" loading="lazy">
+      </header>
+
+      <nav class="ov-top-nav report-sticky-nav" id="report-nav" aria-label="Report sections">
+        <a href="#takeaways" aria-current="location">Key Takeaways</a>
+        <a href="#answer">Short Answer</a>
+        <a href="#findings">Findings</a>
+        <a href="#implications">Implications</a>
+        <a href="#confidence">Confidence</a>
+        <a href="#sources">Sources</a>
+      </nav>
+
+      <div class="ov-report-content">
+        <section class="ov-panel ov-report-section takeaways" id="takeaways" aria-labelledby="takeaways-title">
+          <p class="ov-kicker">Key Takeaways</p>
+          <h2 id="takeaways-title">What the reader needs to know first</h2>
+          <ul class="takeaway-list">
+            <li><strong>[Key takeaway]</strong> [Why it matters.]</li>
+            <li><strong>[Supporting takeaway]</strong> [What the evidence shows.]</li>
+            <li><strong>[Important caveat]</strong> [When the finding applies.]</li>
+          </ul>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="answer" aria-labelledby="answer-title">
+          <h2 id="answer-title">Short Answer</h2>
+          <p class="report-lede">[Answer the reader's question directly in a short paragraph.]</p>
+          <div class="ov-callout ov-callout--confirmed callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-status-done-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Confirmed:</strong> [Finding supported by the sources.]</div>
+          </div>
+          <div class="ov-callout ov-callout--inferred callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-data-citation-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Inferred:</strong> [What the evidence suggests.]</div>
+          </div>
+          <div class="ov-callout ov-callout--watch callout-with-icon">
+            <img src="../src/assets/orchard-vale/icons/icon-status-warning-32.svg" alt="" width="32" height="32" decoding="async" loading="lazy">
+            <div><strong>Watch item:</strong> [A condition that could affect the conclusion.]</div>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="findings" aria-labelledby="findings-title">
+          <h2 id="findings-title">What I Found</h2>
+          <p>[Summarize the evidence and explain how to read the comparison.]</p>
+          <div class="ov-table-wrap">
+            <table class="ov-table">
+              <thead>
+                <tr><th scope="col">Option</th><th scope="col">Best use</th><th scope="col">Strength</th><th scope="col">Tradeoff</th><th scope="col">Recommendation</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>[Option]</strong></td><td>[Best use]</td><td>[Strength]</td><td>[Tradeoff]</td><td><span class="ov-chip ov-chip--green">[Recommendation]</span></td></tr>
+                <tr><td><strong>[Option]</strong></td><td>[Best use]</td><td>[Strength]</td><td>[Tradeoff]</td><td><span class="ov-chip ov-chip--amber">[Recommendation]</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>[Finding worth explaining]</h3>
+          <p>[Interpret the finding and connect it to the sources.]</p>
+          <blockquote>[A key observation from the analysis or a short, attributed quote.]</blockquote>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="implications" aria-labelledby="implications-title">
+          <h2 id="implications-title">Practical Implications</h2>
+          <div class="ov-two-up">
+            <article class="implication-card">
+              <img src="../src/assets/orchard-vale/motifs/research/motif-research-quill-96.svg" alt="" width="64" height="64" loading="lazy" decoding="async">
+              <h3>[Implication for the author or team]</h3>
+              <p>[Explain what the finding means for this group.]</p>
+            </article>
+            <article class="implication-card">
+              <img src="../src/assets/orchard-vale/motifs/research/motif-research-evidence-card-96.svg" alt="" width="64" height="64" loading="lazy" decoding="async">
+              <h3>[Implication for the reader or decision-maker]</h3>
+              <p>[Explain what changes for this group.]</p>
+            </article>
+          </div>
+          <h3>Recommended next step</h3>
+          <p>[Give a concrete next step supported by the findings.]</p>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="confidence" aria-labelledby="confidence-title">
+          <h2 id="confidence-title">Confidence and Gaps</h2>
+          <div class="confidence-grid">
+            <article><span class="ov-chip ov-chip--green">High confidence</span><p>[What the evidence supports well.]</p></article>
+            <article><span class="ov-chip ov-chip--amber">Context dependent</span><p>[What varies by situation.]</p></article>
+            <article><span class="ov-chip ov-chip--red">Could not verify</span><p>[What remains unknown and what could resolve it.]</p></article>
+          </div>
+        </section>
+
+        <section class="ov-panel ov-report-section" id="sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ol class="ov-source-list report-source-list">
+            <li>
+              <div class="source-entry">
+                <span class="source-entry__text">[Source title and link, when available] — [What it supports.]</span>
+                <button type="button" class="ov-button ov-button--paper ov-button--sm source-copy-btn" data-ov-copy="[Full citation, including the URL when available]" data-ov-copy-toast="Citation copied." data-ov-print-hide>Copy citation</button>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

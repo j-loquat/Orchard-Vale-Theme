@@ -1,6 +1,6 @@
 # Orchard Vale Reference Dashboard Spec (1672×941 Artboard)
 
-> **Scope note:** This document preserves the legacy pixel-faithful measurement spec for recreating the original `references/orchard-vale-dashboard.png` concept artboard. For building adaptive Orchard Vale v2.0 applications, use the canonical design system in [`docs/design.md`](design.md) and the shipped theme in [`src/theme/index.css`](../src/theme/index.css).
+> **Scope note:** This document preserves the legacy pixel-faithful measurement spec for recreating the original `references/orchard-vale-dashboard.png` concept artboard. For building adaptive Orchard Vale applications, use the canonical design system in [`docs/design.md`](design.md) and the shipped theme in [`src/theme/index.css`](../src/theme/index.css).
 >
 > **Class naming note:** Every example class in this file uses the `.ov-ref-*` prefix so nothing collides with production `.ov-*` classes in `src/theme/`.
 
@@ -58,7 +58,7 @@ Use a single fixed artboard for exact recreation. For responsive implementations
 
 ## Reference Material Approximations
 
-In production v2.0 pages, use `.ov-frame`, `.ov-panel`, `.ov-ribbon`, and `.ov-meter` from [`src/theme/orchard-components.css`](../src/theme/orchard-components.css). The snippets below record the fixed-artboard visual approximations for exact screenshot study:
+In production pages, use `.ov-frame`, `.ov-panel`, `.ov-ribbon`, and `.ov-meter` from [`src/theme/orchard-components.css`](../src/theme/orchard-components.css). The snippets below record the fixed-artboard visual approximations for exact screenshot study:
 
 ```css
 .ov-ref-frame {

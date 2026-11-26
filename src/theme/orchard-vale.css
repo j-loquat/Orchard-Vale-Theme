@@ -1,4 +1,4 @@
-/* Orchard Vale theme foundation v2.0: tokens, base typography, surface context,
+/* Orchard Vale theme foundation: tokens, base typography, surface context,
    focus, reduced motion, and print. Import first (or use index.css).
 
    Cascade layers: everything in the theme lives in ov.* layers, so any unlayered
@@ -41,7 +41,7 @@
     --ov-green: #2f6b3f;
     --ov-green-soft: #dcebd7;
 
-    /* Status hues (fills pass >= 4.5:1 with --ov-paper text) */
+    /* Status fills and their companion text colors */
     --ov-blue: #355d7f;
     --ov-blue-soft: #dbe7f0;
     --ov-red: #9a4337;
@@ -55,7 +55,7 @@
     --ov-gray-soft: #e8e1d2;
 
     /* Links and focus */
-    --ov-link-light: #235f91;
+    --ov-link-light: #1e5481;
     --ov-link-light-hover: #163f64;
     --ov-link-dark: #f6e2a8;
     --ov-link-dark-hover: #fff6d6;

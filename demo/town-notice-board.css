@@ -1,4 +1,4 @@
-/* Town Notice Board — built on Orchard Vale Theme v2.0 tokens & components. */
+/* Town Notice Board — built on Orchard Vale theme tokens & components. */
 
 .board-page {
   --ov-anchor-offset: 84px;
@@ -516,17 +516,17 @@
 
 .board-page .marker.fountain {
   left: 50%;
-  top: 44%;
+  top: 53%;
 }
 
 .board-page .marker.library {
-  left: 71%;
-  top: 28%;
+  left: 69%;
+  top: 34%;
 }
 
 .board-page .marker.supper {
-  left: 31%;
-  top: 64%;
+  left: 27%;
+  top: 67%;
 }
 
 .board-page .marker:hover,

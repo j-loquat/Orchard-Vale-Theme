@@ -554,7 +554,7 @@
       });
     }
 
-    // Theme v2.0 Recipes & Motion interactive controls.
+    // Component example controls.
     var spritesToggle = document.getElementById('sprites-toggle');
     var spriteGrid = document.getElementById('sprite-showcase-grid');
     if (spritesToggle && spriteGrid) {

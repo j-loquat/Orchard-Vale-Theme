@@ -17,4 +17,6 @@ jobs:
         with:
           node-version: 22
       - name: Validate HTML, CSS, JS, images, contrast, and local references
-        run: node scripts/validate-theme.mjs
+        run: npm run validate
+      - name: Check HTML image hints
+        run: npm run optimize:images:check

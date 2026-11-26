@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is the Orchard Vale Theme Kit (v2.0). Treat this file as the working brief for coding agents modifying the project.
+This repository is the Orchard Vale Theme Kit. Treat this file as the working brief for coding agents modifying the project.
 
 ## Project Identity
 
@@ -14,10 +14,10 @@ Before making design or code changes, inspect these files:
 
 - `README.md` for the public repo overview.
 - `DESIGN.md` for the quick design-system entry point.
-- `docs/design.md` for the canonical Orchard Vale v2.0 adaptive design guide.
+- `docs/design.md` for the canonical Orchard Vale adaptive design guide.
 - `docs/design-reference-dashboard.md` when recreating the original 1672×941 reference artboard.
-- `src/theme/index.css` and `src/theme/orchard-vale.js` for the shipped v2.0 CSS layers and JS helpers.
-- `starter/index.html` for the minimal adoption template.
+- `src/theme/index.css` and `src/theme/orchard-vale.js` for the shipped CSS layers and JS helpers.
+- `starter/index.html` for the setup guide and copy-ready HTML.
 - `demo/index.html` for the full demo directory.
 - `demo/asset-pattern-library.html` for the Developer Specimen Workbench exposing all 301 non-character assets.
 - `demo/character-gallery.html` for the full character set.
@@ -29,7 +29,7 @@ When you need an example layout, start from `starter/index.html` or the closest 
 
 ```text
 docs/
-  design.md                         Canonical Orchard Vale v2.0 adaptive design guide.
+  design.md                         Canonical Orchard Vale adaptive design guide.
   design-reference-dashboard.md     Legacy 1672x941 pixel-faithful reference dashboard spec.
   asset-generation-plan.md          Asset category plan and progress record.
   asset-inventory.md                Runtime & archived asset inventory and manifest guide.
@@ -37,7 +37,7 @@ docs/
   licensing-and-provenance.md       Licensing and asset-provenance notes.
 
 art-sources/
-  Archived raw PNG masters (~170 MB) separated from the runtime asset tree. Not referenced by demos or theme.
+  Archived raw PNG masters separated from the runtime asset tree. Not referenced by demos or theme.
 
 references/
   Original reference mock-ups used to define the visual language.
@@ -61,7 +61,7 @@ src/assets/orchard-vale/
   textures/         7 WebP seamless surfaces + 1 PNG ink-speckle overlay.
 
 src/theme/
-  index.css                         Single-import entry point for v2.0 CSS layers.
+  index.css                         Single-import entry point for the theme’s CSS layers.
   orchard-vale.css                  @layer ov.tokens & ov.base: tokens, subtree-safe .ov-theme, surface context, focus, motion, print.
   orchard-components.css            @layer ov.components: reusable controls, dialogs, tabs, toasts, and asset-backed craft utilities.
   orchard-layouts.css               @layer ov.layouts: responsive shells and layout recipes.
@@ -94,7 +94,7 @@ All 12 demos and `starter/index.html` run on `src/theme/index.css` + `src/theme/
 - `demo/prosperity-grove-ledger.html`: finance and household-ledger dashboard with real multi-month math, SVG income/expense & donut charts, and add-record dialog.
 - `demo/character-gallery.html`: full character and avatar registry showcase.
 - `demo/asset-pattern-library.html`: Developer Specimen Workbench exposing all 301 non-character assets with search, copy snippet, live motion playback, and UI recipes.
-- `starter/index.html`: clean minimal starting template for new Orchard Vale pages.
+- `starter/index.html`: setup guide for new and existing pages, with copy-ready HTML and an interactive example.
 
 ## Design Rules
 

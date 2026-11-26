@@ -179,71 +179,74 @@
             <button class="cc-district-pill" type="button" data-map-view="watermill" aria-pressed="false">Watermill</button>
           </div>
 
-          <!-- Interactive Map Viewport -->
-          <div class="cc-map-viewport" id="map-viewport">
-            <div class="cc-map-canvas" id="map-canvas">
-              <img
-                class="cc-map-art"
-                id="map-art"
-                src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp"
-                alt="Illustrated overview map of Orchard Vale village showing Town Hall, Blacksmith Forge, Watchtower, Scribe House, General Store, Tavern, Watermill, and The Stables"
-                width="1280"
-                height="720"
-                fetchpriority="high" decoding="async" loading="lazy">
+          <div class="cc-map">
+            <!-- Interactive Map Viewport -->
+            <div class="cc-map-viewport" id="map-viewport">
+              <div class="cc-map-canvas" id="map-canvas">
+                <img
+                  class="cc-map-art"
+                  id="map-art"
+                  src="../src/assets/orchard-vale/maps/backgrounds/map-village-overview-unlabeled-16x9.webp"
+                  alt="Illustrated overview map of Orchard Vale village showing Town Hall, Blacksmith Forge, Watchtower, Scribe House, General Store, Tavern, Watermill, and The Stables"
+                  width="1600"
+                  height="900"
+                  fetchpriority="high" decoding="async" loading="lazy">
 
-              <!-- Optional Route Overlay (toggled by Layers control) -->
-              <div class="cc-map-routes" id="map-routes" aria-hidden="true">
-                <img class="cc-route cc-route--forge" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="" decoding="async" loading="lazy" width="240" height="32">
-                <img class="cc-route cc-route--mill" src="../src/assets/orchard-vale/maps/controls/route-line-solid-green.svg" alt="" decoding="async" loading="lazy" width="240" height="32">
+                <!-- Optional Route Overlay (toggled by Layers control) -->
+                <div class="cc-map-routes" id="map-routes" aria-hidden="true">
+                  <img class="cc-route cc-route--forge" src="../src/assets/orchard-vale/maps/controls/route-line-dashed-brass.svg" alt="" decoding="async" loading="lazy" width="240" height="32">
+                  <img class="cc-route cc-route--mill" src="../src/assets/orchard-vale/maps/controls/route-line-solid-green.svg" alt="" decoding="async" loading="lazy" width="240" height="32">
+                </div>
+
+                <!-- Current Location Brass Pulse Marker -->
+                <img
+                  class="cc-current-marker"
+                  id="map-current-marker"
+                  src="../src/assets/orchard-vale/maps/controls/marker-current-location-brass.svg"
+                  alt=""
+                  width="44"
+                  height="44"
+                  decoding="async" loading="lazy">
+
+                <!-- Interactive Pins / Callout Cards Layer (rendered by JS) -->
+                <div class="cc-map-pins" id="map-pins" role="group" aria-label="Interactive village buildings and stations"></div>
               </div>
 
-              <!-- Current Location Brass Pulse Marker -->
+              <!-- Decorative Compass Rose -->
               <img
-                class="cc-current-marker"
-                id="map-current-marker"
-                src="../src/assets/orchard-vale/maps/controls/marker-current-location-brass.svg"
+                class="cc-map-compass"
+                src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg"
                 alt=""
-                width="44"
-                height="44"
+                width="54"
+                height="54"
+                aria-hidden="true"
                 decoding="async" loading="lazy">
-
-              <!-- Interactive Pins / Callout Cards Layer (rendered by JS) -->
-              <div class="cc-map-pins" id="map-pins" role="group" aria-label="Interactive village buildings and stations"></div>
             </div>
+            <div class="cc-map-hud">
+              <!-- Working Map Controls (framed on parchment buttons) -->
+              <div class="cc-map-controls" role="group" aria-label="Map controls">
+                <button class="cc-map-ctrl" type="button" id="ctrl-zoom-in" aria-label="Zoom in map" title="Zoom in">
+                  <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-in.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
+                </button>
+                <button class="cc-map-ctrl" type="button" id="ctrl-zoom-out" aria-label="Zoom out map" title="Zoom out">
+                  <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-out.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
+                </button>
+                <button class="cc-map-ctrl" type="button" id="ctrl-home" aria-label="Return to Village Overview and reset zoom" title="Village Overview">
+                  <img src="../src/assets/orchard-vale/maps/controls/map-control-home.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
+                </button>
+                <button class="cc-map-ctrl" type="button" id="ctrl-layers" aria-label="Toggle telemetry callouts and route lines" aria-pressed="true" title="Toggle callout telemetry">
+                  <img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
+                </button>
+                <button class="cc-map-ctrl" type="button" id="ctrl-locate" aria-label="Locate focused building or station" title="Locate active node">
+                  <img src="../src/assets/orchard-vale/maps/controls/map-control-locate.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
+                </button>
+              </div>
 
-            <!-- Decorative Compass Rose -->
-            <img
-              class="cc-map-compass"
-              src="../src/assets/orchard-vale/maps/controls/compass-rose-brass.svg"
-              alt=""
-              width="54"
-              height="54"
-              aria-hidden="true"
-              decoding="async" loading="lazy">
-
-            <!-- Working Map Controls (framed on parchment buttons) -->
-            <div class="cc-map-controls" role="group" aria-label="Map controls">
-              <button class="cc-map-ctrl" type="button" id="ctrl-zoom-in" aria-label="Zoom in map" title="Zoom in">
-                <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-in.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
-              </button>
-              <button class="cc-map-ctrl" type="button" id="ctrl-zoom-out" aria-label="Zoom out map" title="Zoom out">
-                <img src="../src/assets/orchard-vale/maps/controls/map-control-zoom-out.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
-              </button>
-              <button class="cc-map-ctrl" type="button" id="ctrl-home" aria-label="Return to Village Overview and reset zoom" title="Village Overview">
-                <img src="../src/assets/orchard-vale/maps/controls/map-control-home.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
-              </button>
-              <button class="cc-map-ctrl" type="button" id="ctrl-layers" aria-label="Toggle telemetry callouts and route lines" aria-pressed="true" title="Toggle callout telemetry">
-                <img src="../src/assets/orchard-vale/maps/controls/map-control-layers.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
-              </button>
-              <button class="cc-map-ctrl" type="button" id="ctrl-locate" aria-label="Locate focused building or station" title="Locate active node">
-                <img src="../src/assets/orchard-vale/maps/controls/map-control-locate.svg" alt="" width="34" height="34" decoding="async" loading="lazy">
-              </button>
-            </div>
-
-            <!-- Map Scale Plaque -->
-            <div class="cc-map-scale" aria-live="polite">
-              <img src="../src/assets/orchard-vale/maps/controls/map-scale-plaque.svg" alt="" width="136" height="34" aria-hidden="true" decoding="async" loading="lazy">
-              <span class="cc-map-scale__text" id="map-scale-label">1:2400 &middot; 100%</span>
+              <!-- Map Scale Plaque -->
+              <div class="cc-map-scale" aria-live="polite">
+                <img src="../src/assets/orchard-vale/maps/controls/map-scale-plaque.svg" alt="" width="136" height="34" aria-hidden="true" decoding="async" loading="lazy">
+                <span class="cc-map-scale__text" id="map-scale-label">1:2400 &middot; 100%</span>
+              </div>
             </div>
           </div>
 

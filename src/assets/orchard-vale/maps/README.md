@@ -4,6 +4,8 @@ Category 10 asset pack for Orchard Vale HTML front-ends.
 
 This pack contains unlabeled map backgrounds plus SVG controls and markers. Labels, status text, route names, and interactive elements should be drawn with HTML/SVG on top of the raster maps.
 
+The Village Overview, all six Command Center districts, and the countryside route feature daylight artwork with distinct landmarks. The Market background shows the wider General Store district. The [source archive](../../../../art-sources/README.md#daylight-map-refresh) records the prompts for the refreshed maps.
+
 ## Map Backgrounds
 
 - `backgrounds/map-base-parchment-blank-16x9.webp` - Base Parchment Blank
@@ -48,6 +50,7 @@ This pack contains unlabeled map backgrounds plus SVG controls and markers. Labe
 - Use map backgrounds as static contextual layers with `object-fit: cover` or inside fixed-aspect map panels.
 - Place shield markers, pin markers, labels, and status badges as live HTML/SVG overlays so state remains accessible and editable.
 - Keep actual district names and route text out of the image assets; the generated maps are intentionally unlabeled.
+- Use the countryside route background for pre-drawn lanes and 12 empty waypoint sockets that can carry live markers.
 - Use `map-base-parchment-blank-16x9.webp` when the app needs to draw all routes and nodes dynamically.
 - Pair marker colors with the established status palette: green success/healthy, amber warning/review, red urgent/error, blue active/info, purple category, gray archived/disabled.
 

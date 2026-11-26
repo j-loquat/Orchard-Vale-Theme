@@ -1,0 +1,370 @@
+/* Orchard Vale responsive layout recipes. Import after components (or use index.css).
+   Standard breakpoints: 1100px (tablet/split), 820px (compact), 600px (mobile).
+   Uses @container queries for adaptive grids inside panels and narrow columns. */
+
+@layer ov.tokens, ov.base, ov.components, ov.layouts;
+
+@layer ov.layouts {
+
+  /* Keep anchored sections clear of sticky demo/top navigation bars. */
+  .ov-theme :where(section[id], article[id], div[id], h1[id], h2[id], h3[id], h4[id]) {
+    scroll-margin-top: var(--ov-anchor-offset, 84px);
+  }
+
+  .ov-page {
+    min-height: 100vh;
+    padding: var(--ov-space-3);
+  }
+
+  .ov-shell {
+    width: min(100%, var(--ov-content));
+    margin: 0 auto;
+    padding: var(--ov-space-3);
+  }
+
+  .ov-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, auto);
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .ov-header__identity {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 15px;
+    align-items: center;
+    padding: 18px;
+  }
+
+  .ov-header__identity > img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.28));
+  }
+
+  .ov-header__identity h1 {
+    margin-bottom: 7px;
+    font-size: var(--ov-text-display);
+  }
+
+  .ov-header__identity p:last-child {
+    margin-bottom: 0;
+    font-size: var(--ov-text-lg);
+  }
+
+  .ov-header__stats {
+    container-type: inline-size;
+    container-name: ov-stats;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(112px, 1fr));
+    gap: var(--ov-space-2);
+    min-width: 380px;
+    padding: var(--ov-space-3);
+  }
+
+  /* Reusable adaptive stat grid for any panel or dashboard band. */
+  .ov-stat-grid {
+    container-type: inline-size;
+    container-name: ov-stats;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+    gap: var(--ov-space-2);
+  }
+
+  .ov-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.75fr);
+    gap: var(--ov-space-3);
+    margin-top: var(--ov-space-3);
+  }
+
+  .ov-main-column,
+  .ov-side-column {
+    container-type: inline-size;
+    container-name: ov-column;
+    display: grid;
+    align-content: start;
+    gap: var(--ov-space-3);
+    min-width: 0;
+  }
+
+  .ov-stack {
+    display: grid;
+    align-content: start;
+    gap: var(--ov-space-3);
+    min-width: 0;
+  }
+
+  .ov-panel__body {
+    container-type: inline-size;
+    container-name: ov-panel;
+  }
+
+  .ov-two-up {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ov-space-3);
+  }
+
+  .ov-three-up {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--ov-space-3);
+  }
+
+  .ov-auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--ov-space-3);
+  }
+
+  .ov-report {
+    width: min(100%, var(--ov-report));
+    margin: 0 auto;
+    padding: var(--ov-space-3);
+  }
+
+  .ov-report-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 18px;
+    align-items: center;
+    padding: 22px;
+  }
+
+  .ov-report-header h1 {
+    margin-bottom: 10px;
+    font-size: var(--ov-text-display);
+  }
+
+  .ov-report-header__art {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    justify-self: end;
+  }
+
+  .ov-report-content {
+    display: grid;
+    gap: 14px;
+    margin-top: var(--ov-space-3);
+  }
+
+  .ov-report-section {
+    container-type: inline-size;
+    container-name: ov-panel;
+    padding: 22px;
+  }
+
+  .ov-report-section > h2 {
+    margin-bottom: 13px;
+    font-size: var(--ov-text-2xl);
+  }
+
+  .ov-finance-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+    gap: var(--ov-space-3);
+    margin-top: var(--ov-space-3);
+  }
+
+  .ov-starter-grid {
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    gap: var(--ov-space-3);
+    margin-top: var(--ov-space-3);
+  }
+
+  /* ======================================================================== */
+  /* Container queries: adapt nested grids and rows to their panel width      */
+  /* ======================================================================== */
+
+  @container ov-panel (max-width: 680px) {
+    .ov-three-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @container ov-panel (max-width: 480px) {
+    .ov-two-up,
+    .ov-three-up {
+      grid-template-columns: 1fr;
+    }
+
+    .ov-event,
+    .ov-day-group,
+    .ov-source-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @container ov-column (max-width: 560px) {
+    .ov-three-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @container ov-column (max-width: 420px) {
+    .ov-two-up,
+    .ov-three-up {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @container ov-stats (max-width: 440px) {
+    .ov-stat {
+      min-height: 66px;
+      padding: 8px 6px;
+    }
+
+    .ov-stat strong {
+      font-size: 22px;
+    }
+
+    .ov-stat span {
+      font-size: var(--ov-text-xs);
+    }
+  }
+
+  /* ======================================================================== */
+  /* Standard viewport breakpoints: 1100px, 820px, 600px                      */
+  /* ======================================================================== */
+
+  @media (max-width: 1100px) {
+    .ov-header,
+    .ov-dashboard-grid,
+    .ov-finance-grid,
+    .ov-starter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ov-header__stats {
+      min-width: 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 820px) {
+    .ov-page {
+      padding: var(--ov-space-2);
+    }
+
+    .ov-header__identity {
+      grid-template-columns: 80px minmax(0, 1fr);
+      padding: 15px;
+    }
+
+    .ov-header__identity > img {
+      width: 76px;
+      height: 76px;
+    }
+
+    .ov-report-header {
+      grid-template-columns: 1fr;
+      padding: 18px;
+    }
+
+    .ov-report-header__art {
+      display: none;
+    }
+
+    .ov-three-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .ov-page {
+      padding: 0;
+    }
+
+    .ov-shell,
+    .ov-report {
+      padding: var(--ov-space-2);
+      border-right: 0;
+      border-left: 0;
+    }
+
+    .ov-header__identity {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 12px;
+      padding: 13px;
+    }
+
+    .ov-header__identity > img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .ov-header__identity h1,
+    .ov-report-header h1 {
+      font-size: 30px;
+    }
+
+    .ov-header__identity p:last-child {
+      font-size: var(--ov-text-md);
+    }
+
+    /* Compact multi-column stats on mobile instead of tall 1-per-row stacks. */
+    .ov-header__stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      padding: var(--ov-space-2);
+    }
+
+    .ov-header__stats:has(> :nth-child(4)) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ov-header__stats .ov-stat {
+      min-height: 64px;
+      padding: 8px 5px;
+    }
+
+    .ov-header__stats .ov-stat strong {
+      font-size: 22px;
+    }
+
+    .ov-header__stats .ov-stat span {
+      font-size: var(--ov-text-xs);
+    }
+
+    .ov-two-up,
+    .ov-three-up {
+      grid-template-columns: 1fr;
+    }
+
+    .ov-report-section {
+      padding: 16px;
+    }
+  }
+
+  @media print {
+    .ov-page,
+    .ov-shell,
+    .ov-report {
+      width: 100%;
+      padding: 0;
+    }
+
+    .ov-header,
+    .ov-dashboard-grid,
+    .ov-finance-grid,
+    .ov-starter-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ov-header__stats {
+      min-width: 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .ov-frame,
+    .ov-panel,
+    .ov-title-banner {
+      box-shadow: none;
+    }
+  }
+}

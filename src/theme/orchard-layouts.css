@@ -1,4 +1,4 @@
-/* Orchard Vale responsive layout recipes v2.0. Import after components (or use index.css).
+/* Orchard Vale responsive layout recipes. Import after components (or use index.css).
    Standard breakpoints: 1100px (tablet/split), 820px (compact), 600px (mobile).
    Uses @container queries for adaptive grids inside panels and narrow columns. */
 

@@ -1,4 +1,4 @@
-# Orchard Vale Design Guide (v2.0)
+# Orchard Vale Design Guide
 
 Orchard Vale is a handcrafted storybook-village UI design system for practical HTML front-ends. It combines warm parchment panels, dark forest-green headers, walnut and brass framing, illustrated maps, and woodland helper characters with real, accessible product interfaces.
 
@@ -6,20 +6,20 @@ Orchard Vale is a handcrafted storybook-village UI design system for practical H
 
 ## Using This Guide
 
-This document is the canonical specification for the **Adaptive Orchard Vale v2.0 Design System** shipped in `src/theme/`.
+This document is the canonical specification for the **Orchard Vale design system** shipped in `src/theme/`.
 
 - **Adaptive Product Theme (this guide):** Use this document when building dashboards, reports, briefings, Kanban boards, ledgers, workbenches, productivity suites, or embedded widgets.
 - **Pixel-Faithful 1672×941 Reference Artboard:** If you are recreating the original fixed-canvas `references/orchard-vale-dashboard.png` screenshot pixel for pixel, see [`docs/design-reference-dashboard.md`](design-reference-dashboard.md). That document isolates all fixed-artboard bounds and `.ov-ref-*` reference snippets so nothing collides with production `.ov-*` CSS.
 
-For implementation work, treat the shipped v2.0 files as canonical:
+Use the shipped files as the implementation reference.
 
 - [`src/theme/index.css`](../src/theme/index.css) — single-import entry point that loads all CSS layers in cascade order.
   - [`src/theme/orchard-vale.css`](../src/theme/orchard-vale.css) — `@layer ov.tokens` and `@layer ov.base` (WCAG AA verified tokens, subtree-safe `.ov-theme`, automatic surface context, focus, reduced motion, and print-safe rules).
   - [`src/theme/orchard-components.css`](../src/theme/orchard-components.css) — `@layer ov.components` (reusable panels, ribbons, controls, dialogs, tabs, toasts, cards, tables, charts, and asset-backed craft utilities).
   - [`src/theme/orchard-layouts.css`](../src/theme/orchard-layouts.css) — `@layer ov.layouts` (responsive shells and layout recipes).
 - [`src/theme/orchard-vale.js`](../src/theme/orchard-vale.js) — zero-dependency, `file://`-safe progressive helpers (`window.OrchardVale`).
-- [`starter/index.html`](../starter/index.html) — minimal adoption template showing the recommended markup and imports.
-- [`demo/asset-pattern-library.html`](../demo/asset-pattern-library.html) — Developer Specimen Workbench for browsing and copying all 301 non-character assets.
+- [Setup guide](../starter/index.html) — copy-ready HTML and steps for using Orchard Vale in a new or existing page.
+- [`demo/asset-pattern-library.html`](../demo/asset-pattern-library.html) — Browse and copy 301 assets or try the [component examples](../demo/asset-pattern-library.html#recipes).
 - [Live demo directory](https://j-loquat.github.io/Orchard-Vale-Theme/) — all 12 interactive reference demos in a browser.
 
 ## Visual Thesis
@@ -68,7 +68,7 @@ These references prove that Orchard Vale is a design language, not one fixed scr
 - Bottom chronicle, timeline, or activity bands for recent events.
 - Consistent status semantics: green healthy/done, amber warning/medium, red urgent/blocked, blue/purple category/selection.
 
-## Architecture (v2.0)
+## Architecture
 
 ### Single Import And Cascade Layers
 
@@ -107,7 +107,20 @@ Apply `class="ov-theme"` in either of two ways:
 
 ## Tokens And WCAG AA Contrast Contract
 
-All production tokens live in [`src/theme/orchard-vale.css`](../src/theme/orchard-vale.css). Every foreground/background combination in the theme is verified to meet **WCAG 2.1 AA** (`>= 4.5:1` for normal text, `>= 3:1` for large text and UI components) across all 44 documented surface pairs.
+All production tokens live in [`src/theme/orchard-vale.css`](../src/theme/orchard-vale.css). [`npm run validate`](../scripts/validate-theme.mjs) checks 44 token pairs against **WCAG 2.1 AA** contrast thresholds. Each foreground in a row is checked against each background in that row. Token names below omit the `--ov-` prefix.
+
+| Use | Foregrounds | Backgrounds | Minimum ratio | Pairs |
+| --- | --- | --- | ---: | ---: |
+| Text, headings, and kickers on light surfaces | `ink`, `ink-soft`, `ink-muted`, `forest`, `brass-dark` | `paper`, `paper-warm`, `parchment` | 4.5:1 | 15 |
+| Text and kickers on dark surfaces | `paper`, `brass-light` | `forest-black`, `forest`, `forest-mid` | 4.5:1 | 6 |
+| Links on light surfaces | `link-light`, `link-light-hover` | `paper`, `paper-warm`, `parchment` | 4.5:1 | 6 |
+| Links on dark surfaces | `link-dark`, `link-dark-hover` | `forest-black`, `forest` | 4.5:1 | 4 |
+| Text on solid status fills | `paper` | `green`, `blue`, `red`, `purple` | 4.5:1 | 4 |
+| Text on pale red | `red-ink` | `red-soft` | 4.5:1 | 1 |
+| Text on pale amber | `amber-ink` | `amber-soft` | 4.5:1 | 1 |
+| Light-surface focus rings | `focus-light` | `paper`, `paper-warm`, `parchment` | 3:1 | 3 |
+| Dark-surface focus rings | `focus-dark` | `forest-black`, `forest`, `forest-mid` | 3:1 | 3 |
+| Amber status marker | `amber` | `paper` | 3:1 | 1 |
 
 ### Palette Tokens
 
@@ -140,7 +153,7 @@ All production tokens live in [`src/theme/orchard-vale.css`](../src/theme/orchar
   --ov-green: #2f6b3f;
   --ov-green-soft: #dcebd7;
 
-  /* Status hues (solid fills pass >= 4.5:1 with --ov-paper text; *-ink tokens pass on parchment) */
+  /* Status fills and their companion text colors */
   --ov-blue: #355d7f;
   --ov-blue-soft: #dbe7f0;
   --ov-red: #9a4337;
@@ -154,7 +167,7 @@ All production tokens live in [`src/theme/orchard-vale.css`](../src/theme/orchar
   --ov-gray-soft: #e8e1d2;
 
   /* Links and focus (switched automatically by surface context) */
-  --ov-link-light: #235f91;
+  --ov-link-light: #1e5481;
   --ov-link-light-hover: #163f64;
   --ov-link-dark: #f6e2a8;
   --ov-link-dark-hover: #fff6d6;
